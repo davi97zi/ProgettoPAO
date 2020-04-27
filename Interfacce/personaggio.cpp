@@ -56,13 +56,11 @@ unsigned int Personaggio::getArmor() const{return armor;}
 
 bool Personaggio::increaseLevel(unsigned int newExpPoint){//newExpPoint guadagnati dalla vittoria della battaglia
     if(newExpPoint + getExpPoint() >= 100){
-        setLevel(1);
-        setExp(0);
+        setLevel((newExpPoint+getExpPoint())/100);
+        setExp((newExpPoint+getExpPoint())%100);
         return true;
     }
-    else{
-        setExp(newExpPoint);
-    }
+    setExp(newExpPoint);
     return false;
 }
 

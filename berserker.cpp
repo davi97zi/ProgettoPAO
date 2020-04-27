@@ -2,8 +2,7 @@
 
 //***aumentare i punti esperienza necessari per aumentare di livello nei personaggi complessi??***
 bool Berserker::increaseLevel(unsigned int newExpPoint){//newExpPoint guadagnati dalla vittoria della battaglia
-        if(newExpPoint + getExpPoint() >= 100){
-            Personaggio::increaseLevel(newExpPoint);
+        if(Personaggio::increaseLevel(newExpPoint) == true){
             increaseMaxHealth(6*getLevel());
             increaseArmor(4*getLevel());
             increaseAttack(7*getLevel());

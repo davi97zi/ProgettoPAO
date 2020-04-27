@@ -3,8 +3,7 @@
 Arciere::~Arciere() {}
 
 bool Arciere::increaseLevel(unsigned int newExpPoint){//newExpPoint guadagnati dalla vittoria della battaglia
-    if(newExpPoint + getExpPoint() >= 100){
-        Personaggio::increaseLevel(newExpPoint);
+    if(Personaggio::increaseLevel(newExpPoint) == true){
         increaseMaxHealth(5*getLevel());
         increaseArmor(3*getLevel());
         increaseAttack(6*getLevel());

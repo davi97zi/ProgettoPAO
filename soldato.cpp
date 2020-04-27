@@ -1,8 +1,7 @@
 #include "soldato.h"
 
 bool Soldato::increaseLevel(unsigned int newExpPoint){
-    if(newExpPoint + getExpPoint() >= 100){
-        Personaggio::increaseLevel(newExpPoint);
+    if(Personaggio::increaseLevel(newExpPoint) == true){
         increaseMaxHealth(5*getLevel());
         increaseArmor(4*getLevel());
         increaseAttack(5*getLevel());

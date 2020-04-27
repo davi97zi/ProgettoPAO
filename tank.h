@@ -9,8 +9,7 @@ protected:
 
 public:
     Tank(QString nome, unsigned int ex): Personaggio(80,6,1,25,"Tank",nome,1), DefenceInterface(35) {   //MaxArmor come MaxMana?
-        while(ex >= 100)
-            increaseLevel(ex);
+        increaseLevel(ex);
     }
     virtual ~Tank() {}
 

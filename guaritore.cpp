@@ -1,19 +1,18 @@
 #include "guaritore.h"
 
 Guaritore::Guaritore(QString nome, unsigned int ex, unsigned int pr): Personaggio(20, 10, 1, 5, "guaritore", nome, pr), HealInterface(){
-    while(ex>=100){
-        increaseLevel(ex);
-        ex-=100;
-    }
+    increaseLevel(ex);
 }
 
-bool Guaritore::increaseLevel(unsigned int newExpPoints){
-    bool result= Personaggio::increaseLevel(newExpPoints);//do as normal
-    increaseArmor(2+getLevel());
-    increaseAttack(2*getLevel());
-    increaseMaxHealth(5+getLevel());
-    increaseBlessing();//chiama reset con NEWLevel, in entrambi i casi riporta a "zero" il blessing per la prossima BATTAGLIA
-    return result;
+bool Guaritore::increaseLevel(unsigned int newExpPoint){
+    if(Personaggio::increaseLevel(newExpPoint) == true){
+        increaseArmor(2+getLevel());
+        increaseAttack(2*getLevel());
+        increaseMaxHealth(5+getLevel());
+        increaseBlessing();//chiama reset con NEWLevel, in entrambi i casi riporta a "zero" il blessing per la prossima BATTAGLIA
+        return true;
+    } else
+        return false;
 }
 
 unsigned int Guaritore::useBlessing(){//ridef da healIterf

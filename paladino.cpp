@@ -3,20 +3,19 @@
 Paladino::Paladino(unsigned int armr, QString nome, unsigned int ex, unsigned int pr):
     Personaggio(30, 20, 1, armr, "Paladino", nome, pr),
     DefenceInterface(armr), HealInterface(){
-    while(ex>=100){
         increaseLevel(ex);
-        ex-=100;
-    }
 }
 
-bool Paladino::increaseLevel(unsigned int newExpPoints){
-    bool result= Personaggio::increaseLevel(newExpPoints);//do as normal
-    increaseArmor(2*getLevel());
-    increaseAttack(4+getLevel());
-    increaseMaxHealth(5+(getLevel()*2));
-    setMaxArmor(getArmor());//nb manca un setmaxarmorrrrr
-    increaseBlessing();//chiama reset con NEWLevel, in entrambi i casi riporta a "zero" il blessing per la prossima BATTAGLIA
-    return result;
+bool Paladino::increaseLevel(unsigned int newExpPoint){
+    if(Personaggio::increaseLevel(newExpPoint) == true){
+        increaseArmor(2*getLevel());
+        increaseAttack(4+getLevel());
+        increaseMaxHealth(5+(getLevel()*2));
+        setMaxArmor(getArmor());//nb manca un setmaxarmorrrrr
+        increaseBlessing();//chiama reset con NEWLevel, in entrambi i casi riporta a "zero" il blessing per la prossima BATTAGLIA
+        return true;
+    } else
+        return false;
 }
 
 bool Paladino::buffArmor(){

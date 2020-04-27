@@ -12,8 +12,7 @@ public:
     ProbCritico sempre a 20, valutare se togliere il parametro in dps***/
     //max serve per inizializzare maxarmor di defenceinterface
     Berserker(QString nome, unsigned int ex, unsigned int max)
-      : Personaggio (120, 70, 1, 50, "Berserker", nome, 5), DefenceInterface(max){
-        while(ex >= 100)
+      : Personaggio (120, 70, 1, 50, "Berserker", nome, 5), DpsInterface(10), DefenceInterface(max){
             increaseLevel(ex);
     }
     virtual ~Berserker() {}
