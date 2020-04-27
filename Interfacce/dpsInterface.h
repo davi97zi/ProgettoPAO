@@ -18,7 +18,6 @@ protected:
 public:
     //***usa il costruttore standard di personaggio***
     DpsInterface(unsigned int p): probCritico(p) {}
-    virtual ~DpsInterface() = default;
 };
 
 #endif // DPSINTERFACE_H
