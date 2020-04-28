@@ -1,9 +1,5 @@
 #include "guaritore.h"
 
-Guaritore::Guaritore(QString nome, unsigned int ex, unsigned int pr): Personaggio(20, 10, 1, 5, "guaritore", nome, pr), HealInterface(){
-    increaseLevel(ex);
-}
-
 bool Guaritore::increaseLevel(unsigned int newExpPoint){
     if(Personaggio::increaseLevel(newExpPoint) == true){
         increaseArmor(2+getLevel());

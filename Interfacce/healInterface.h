@@ -1,5 +1,5 @@
-#ifndef HEALERINTERFACE_H
-#define HEALERINTERFACE_H
+#ifndef HEALINTERFACE_H
+#define HEALINTERFACE_H
 
 #include "personaggio.h"
 
@@ -28,4 +28,4 @@ public:
 };
 
 
-#endif // HEALERINTERFACE_H
+#endif // HEALINTERFACE_H

@@ -1,17 +1,16 @@
 #ifndef GUARITORE_H
 #define GUARITORE_H
 
-#include "Interfacce/healInterface.cpp"
+#include "Interfacce/healInterface.h"
 
 class Guaritore: public HealInterface{
 protected:
-
-public:
-
-    //NB consiglio di aggiungere PREZZO QUI COME ESPLICITO!!!
-    Guaritore(QString nome, unsigned int ex, unsigned int pr);
-
     virtual bool increaseLevel(unsigned int newExpPoints);
+public:
+    //NB consiglio di aggiungere PREZZO QUI COME ESPLICITO!!!
+    Guaritore(QString nome, unsigned int ex, unsigned int pr): Personaggio(20, 10, 1, 5, "guaritore", nome, pr), HealInterface(){
+        increaseLevel(ex);
+    }
 
     virtual unsigned int useBlessing();//ridef da healIterf
 
