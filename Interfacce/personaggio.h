@@ -57,6 +57,7 @@ public:
                  prezzo(p){}
   virtual ~Personaggio() = default;
 
+
   QString getTipoPersonaggio()const;
   QString getNome()const;
   unsigned int getPrezzo() const;
