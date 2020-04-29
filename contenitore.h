@@ -3,62 +3,72 @@
 #include "Interfacce/personaggio.h"
 
 class Contenitore{
+friend class Iteratore;
 private:
-    class Nodo{
-    private:
-        Personaggio* info;
-        Nodo* next;
+    class Nodo;
+
+    //sembra OK
+    class SmartP{
     public:
-        Nodo(): info(0), next(0) {}
-        Nodo(Personaggio* i, Nodo* n): info(i), next(n) {}
-        ~Nodo(){
-            delete info;
-            if(next)
-                delete next;
+        Nodo* punt;
+        SmartP(Nodo*p=0): punt(p){
+            if (punt)
+                punt->riferimenti++;
         }
-        //RIVEDERE (*n.getNext) è una shallow copy
-        Nodo(const Nodo& n): info(new Personaggio(*n.getInfo())), next(new Nodo(*n.getNext())) {}
-        //RIVEDERE
-        Nodo& operator=(const Nodo& n){
-            if(this!=&n){
-                delete info;
-                delete next;
-                info=new Personaggio(*n.getInfo());
-                next=new Nodo(*n.getNext());
-            }
-            return *this;
-        }
-
-        Personaggio* getInfo() const;
-        Nodo* getNext() const;
-        //Nodo* setNext(Personaggio* p);
-
+        SmartP(const SmartP&);
+        ~SmartP();
+        SmartP& operator=(const SmartP&);
+        Nodo& operator*()const;
+        Nodo* operator->()const;
+        bool operator==(const SmartP&)const;
+        bool operator!=(const SmartP&)const;
     };
-    Nodo* first;
+
+    class Nodo{       
+    public:
+        Personaggio* info;
+        SmartP next;
+        int riferimenti;
+        Nodo(): info(0), next(0), riferimenti(0) {}
+        Nodo(Personaggio* i, SmartP n): info(i), next(n), riferimenti(0) {}
+        ~Nodo(){
+            if(info)
+                delete info;
+            if(next.punt)
+                delete next.punt;
+        }
+    };
+    SmartP first;
 
 public:
     class Iteratore{
+    friend class Contenitore;
     private:
-        Nodo* punt;
+        SmartP sPunt;
+        //Serve per usare begin()
+        Contenitore& parent;
     public:
-        Iteratore(): punt(0) {}
+        Iteratore(Contenitore& p, SmartP s=0): sPunt(s), parent(p) {}
         ~Iteratore(){
-            if (punt)
-                delete punt;
+            if (sPunt.punt)
+                delete sPunt.punt;
         }
-        Nodo& operator*() const; //*p
-        Nodo* operator->() const; //p
+        Personaggio& operator*() const; //*p
+        Personaggio* operator->() const; //p
         Iteratore& operator++();
+        Iteratore& operator--();
         bool operator==(const Iteratore&) const;
         bool operator!=(const Iteratore&) const;
     };
     Contenitore(): first(0) {}
     ~Contenitore(){
-        if (first)
-            delete first;
+        if (first.punt)
+            delete first.punt;
     }
-    Iteratore addNodo(Personaggio*);
+    void addNodo(Personaggio*);
     Iteratore deleteNodo(Iteratore&);
+    Iteratore begin();
+    Iteratore end();
 
 
 

@@ -40,7 +40,8 @@ SOURCES += \
     soldato.cpp \
     tank.cpp \
     partita.cpp \
-    battaglia.cpp
+    battaglia.cpp \
+    contenitore.cpp
 
 HEADERS += \
     mainwindow.h \
