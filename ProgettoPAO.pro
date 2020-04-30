@@ -36,7 +36,6 @@ SOURCES += \
     berserker.cpp \
     guaritore.cpp \
     mago.cpp \
-    mostro.cpp \
     paladino.cpp \
     soldato.cpp \
     tank.cpp
@@ -53,7 +52,6 @@ HEADERS += \
     berserker.h \
     guaritore.h \
     mago.h \
-    mostro.h \
     paladino.h \
     soldato.h \
     tank.h
