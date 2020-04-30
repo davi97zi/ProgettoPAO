@@ -1,5 +1,5 @@
 #include "personaggio.h"
-    
+
 void Personaggio::increaseMaxHealth(unsigned int addVal){
     maxHealth+= addVal;
     health=static_cast<int>(maxHealth);
@@ -19,6 +19,9 @@ void Personaggio::setLevel(unsigned int newLevel){
 
 void Personaggio::setHealth(int damage){//proposta da healInterf:(int+)= guarigione; (int-)=colpo subito; 0=Dead==true
     health=health + damage;
+    if(static_cast<int>(maxHealth)< health){ //NB correzione funzione per evitare OVERHEALING
+        health=maxHealth;
+    }
     if(health<=0){
         kill();
         health=0;
@@ -28,6 +31,7 @@ void Personaggio::setHealth(int damage){//proposta da healInterf:(int+)= guarigi
 void Personaggio::setExp(unsigned int ex){
     expPoint+=ex;
 }
+
 
 unsigned int Personaggio::reducedDamageWithArmor(unsigned int damage) const{ //restituisce il danno ridotto dall'armatura (in defence interface usa maxarmor, invece che armor)
     return damage - (damage*armor)/100;

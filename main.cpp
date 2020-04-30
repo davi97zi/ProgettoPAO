@@ -1,11 +1,7 @@
 #include "mainwindow.h"
 #include <QApplication>
 
-#include "mago.h"
-#include "artificiere.h"
-#include "soldato.h"
-#include "tank.h"
-#include "guaritore.h"
+#include "mostro.h"
 
 #include <iostream>
 
@@ -16,19 +12,43 @@ int main(int argc, char *argv[]){
     MainWindow w;
     w.show();*/
 
-    Mago* m = new Mago("aifseiof", 100);
-    cout << m->getCostoA1() << " " << m->getExpPoint() << " " << m->getLevel() << endl;
+    Mostro* boss= new Mostro(100, "Vlad", 2);
 
-    Tank* t = new Tank("Malphite", 230);
-    cout << "Danno abilita' 2: " << t->schiacciasassi() << " Armor: " << t->getArmor()<< endl;
+    cout << "prepare to meet the " << boss->getLevel() << " " << boss->getTipoPersonaggio().QString::toStdString() << " "<< boss->getNome().QString::toStdString() << "\nNOW FIGHT!!!\n";
 
-    Artificiere* ar = new Artificiere("jjj", 200);
-    cout << ar->getCostoA1() << " " << ar->getExpPoint() << " " << ar->getLevel() << endl;
+    cout <<"his hp is: " << boss->getMaxHealth() << endl;
+    cout << boss->getNome().QString::toStdString() << " attacks for " << boss->getBaseAttack()<< endl;
+    boss->receiveDamage(100);
+    cout << "you attack, the moster hp goes to " << boss->getHealth() << "/" << boss->getMaxHealth()<< endl;
+    boss->morsoVampirico();
+    cout <<"the monster used vampire bite you lost " <<boss->attaccoSemplice() << " and he healed and has now " << boss->getHealth() << "/" << boss->getMaxHealth()<< endl;
 
-    Guaritore* g = new Guaritore("fff", 100, 2);
-    cout << g->getArmor() << endl;
-    cout << g->getBaseAttack() << " LIV: " << g->getLevel() << endl;
 
+    //battaglia
+    //cheat: we kill him dead
+    boss->receiveDamage(100000);
+    cout << "you oneshot the monster! " << boss->getHealth() << "the boss is dead?";
+
+    if(boss->getDeathState()){ //victory: loot
+        cout << "you won\n";
+        cout << boss->getNome().QString::toStdString() << " was a " << boss->getLevel() << " level monster with " << boss->getExpPoint() << " exp and an armor of" << boss->getArmor();
+        cout <<"\nhe surrenders:\n";
+        cout << boss->giveUpExp() << endl;
+        cout << boss->giveUpCoins() << endl;
+
+        unsigned int * chest= boss->giveUpLoot();
+        cout << "in a chest you find: " << chest[0] << " exp and " <<chest[1] << "coins!\n";
+    }
+    else{//loss: loot box is empty
+        cout << "you lost!\n";
+        cout << boss->getNome().QString::toStdString() << " was a " << boss->getLevel() << " level monster with " << boss->getExpPoint() << " exp and an armor of" << boss->getArmor();
+        cout <<"\nhe surrenders:\n";
+        cout << boss->giveUpExp() << endl;
+        cout << boss->giveUpCoins() << endl;
+
+        unsigned int * chest= boss->giveUpLoot();
+        cout << "in a chest you find: " << chest[0] << " exp and " <<chest[1] << "coins!\n";
+    }
     //return a.exec();
     return 0;
 }
