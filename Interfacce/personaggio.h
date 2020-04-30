@@ -10,7 +10,7 @@ private:
     unsigned int level;
     unsigned int expPoint;
     unsigned int armor;
-    //proposta da healInterf-> aggiungere un campo bool Dead x controllare stato, (hp==0? true : false)
+    //proposta da healInterf-> aggiungere un campo bool alive x controllare stato, true= is alive, false= is alive
     bool dead;
     const QString tipoPersonaggio;// dovrebbe essere static? idk
     const QString nome;
@@ -40,7 +40,7 @@ public:
   //Personaggio(QString t= "tipo", QString n="nome", unsigned int p=1): tipoPersonaggio(t), nome(n), prezzo(p) {}
   Personaggio(unsigned int mh,
               unsigned int ba,
-              unsigned int lv,
+              unsigned int exp, // NB sostituito a lv xke quello è calcolato via increaseLevel
               unsigned int a,
               QString t,
               QString n,
@@ -48,13 +48,14 @@ public:
                  maxHealth(mh),
                  health(static_cast<int>(mh)),
                  baseAttack(ba),
-                 level(lv),
-                 expPoint(0),
+                 level(1),
+                 expPoint(exp),
                  armor(a),
-                 dead(true),
+                 dead(false),
                  tipoPersonaggio(t),
                  nome(n),
                  prezzo(p){}
+
   virtual ~Personaggio() = default;
 
   QString getTipoPersonaggio()const;
