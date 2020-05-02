@@ -7,6 +7,9 @@
 #include "tank.h"
 #include "guaritore.h"
 #include "berserker.h"
+//da togliere poi
+#include <cstdlib>
+#include <ctime>
 
 #include <iostream>
 
@@ -30,14 +33,24 @@ int main(int argc, char *argv[]){
     cout << g->getArmor() << endl;
     cout << g->getBaseAttack() << " LIV: " << g->getLevel() << endl;*/
 
+
+
+
+    //NOTA: critico() FUNZIONA MA VA MESSA LA RIGA SEGUENTE NEL MAIN (O IN PARTITA) PER FARLO FUNZIONARE
+    srand(static_cast<unsigned int>(time(NULL)));
+
+
+
+
+
     Soldato* s=new Soldato("sss", 115);
     cout<<s->getBaseAttack()<<' '<<s->getLevel()<<' '<<s->getExpPoint()<<endl;
 
-    Berserker* b=new Berserker("bbb", 15);
-    cout<<b->getBaseAttack()<<' '<<b->getLevel()<<' '<<b->getExpPoint()<<endl;
-    Berserker* b2=new Berserker("bbb", 115);
-    cout<<b2->getBaseAttack()<<' '<<b2->getLevel()<<' '<<b2->getExpPoint()<<endl;
+    delete s;
+    Soldato* s2=new Soldato("sss", 0);
+    cout<<s->getBaseAttack()<<' '<<s->getLevel()<<' '<<s->getExpPoint()<<endl;
+    cout<<s2->getBaseAttack()<<' '<<s2->getLevel()<<' '<<s2->getExpPoint()<<endl;
 
-    //return a.exec();
+
     return 0;
 }
