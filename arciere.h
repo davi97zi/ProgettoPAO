@@ -5,7 +5,7 @@
 
 class Arciere: public DpsInterface{
 protected:
-    bool increaseLevel(unsigned int newExpPoint);
+    virtual bool increaseLevel(unsigned int newExpPoint);
 
 public:
     /***Il costruttore richiama in automatico il costruttore standard di DpsInterface, che inizializza
