@@ -25,3 +25,9 @@ unsigned int Soldato::fendente(){
 unsigned int Soldato::coltellata(){
     return 2*getBaseAttack()*critico()+getLevel()*3;
 }
+
+//PER TEST
+std::ostream &operator<<(std::ostream &os, const Soldato &s)
+{
+    return os<<"arm= "<<s.getArmor()<<" bAtt= "<<s.getBaseAttack()<<" alive? "<<s.getDeathState();
+}

@@ -7,7 +7,9 @@
 #include "tank.h"
 #include "guaritore.h"
 #include "berserker.h"
-//da togliere poi
+#include "contenitore.h"
+
+//da togliere poi?
 #include <cstdlib>
 #include <ctime>
 
@@ -48,8 +50,18 @@ int main(int argc, char *argv[]){
 
     delete s;
     Soldato* s2=new Soldato("sss", 0);
-    cout<<s->getBaseAttack()<<' '<<s->getLevel()<<' '<<s->getExpPoint()<<endl;
-    cout<<s2->getBaseAttack()<<' '<<s2->getLevel()<<' '<<s2->getExpPoint()<<endl;
+    cout<<s->getArmor()<<' '<<s->getBaseAttack()<<' '<<s->getDeathState()<<endl;
+    cout<<s2->getArmor()<<' '<<s2->getBaseAttack()<<' '<<s2->getDeathState()<<endl;
+    cout<<*s2<<endl;
+    cout<<*s;
+    //***VA BENE CHE s ORA PUNTA ALLO STESSO DI s2?***
+
+    Contenitore Pers;
+    Pers.addNodo(s2);
+    Pers.addNodo(s);
+
+    Contenitore::Iteratore it=Pers.begin();
+
 
 
     return 0;

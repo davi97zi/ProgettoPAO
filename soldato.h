@@ -2,6 +2,8 @@
 #define SOLDATO_H
 
 #include "Interfacce/dpsInterface.h"
+//iostream serve per l'operator<<
+#include <iostream>
 
 class Soldato: public DpsInterface{
 protected:
@@ -19,5 +21,7 @@ public:
     unsigned int coltellata();
 };
 
+//PER TEST
+std::ostream& operator<<(std::ostream&, const Soldato&);
 
 #endif // SOLDATO_H
