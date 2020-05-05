@@ -56,8 +56,7 @@ Personaggio *Contenitore::Iteratore::operator->() const{
 }
 
 Contenitore::Iteratore &Contenitore::Iteratore::operator++(){
-    //AGGIUNTO l'if
-    if(sPunt!=0)
+    if(sPunt->next!=0)
         sPunt=sPunt->next;
     return *this;
 }
@@ -65,7 +64,7 @@ Contenitore::Iteratore &Contenitore::Iteratore::operator++(){
 Contenitore::Iteratore &Contenitore::Iteratore::operator--(){
 //sembra quasi OK
     Iteratore it=parent.begin();
-    while(it.sPunt!=0 || it.sPunt.punt->next==this->sPunt){
+    while(it.sPunt->next!=0 && it.sPunt.punt->next!=this->sPunt){
         ++it;
     }
     sPunt=it.sPunt;

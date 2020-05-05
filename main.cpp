@@ -57,7 +57,7 @@ int main(int argc, char *argv[]){
     Soldato* s3=new Soldato("ss3", 526);
     cout<<"s3=> "<<*s3<<endl;
     Mago* m = new Mago("aifseiof", 100);
-    cout << m->getArmor() << " " << m->getBaseAttack() << " " << m->getDeathState() << endl;
+    cout <<"mago= "<< m->getArmor() << " " << m->getBaseAttack() << " " << m->getDeathState() << endl;
 
     Contenitore Pers;
     Pers.addNodo(s2);
@@ -84,17 +84,19 @@ int main(int argc, char *argv[]){
     cout<<it4->getBaseAttack()<<endl;
     cout<<"sssss"<<endl;
     //++it4;
+    //cout<<it4->getBaseAttack()<<endl;
     //cout<<it4->getBaseAttack()<<endl; //qui it4 punta a 0, bisogna evitare che venga fatto il get->dovrebbe dare seg. fault
     //it4=Pers.begin(); //non si può usare perchè serve l'operator=
 
 
-    //--it4; //operator-- non va
     //cout<<it4->getBaseAttack()<<endl;
-    //--it4;
-    //cout<<it4->getBaseAttack()<<endl;
+    --it4; //operator-- non va
+    cout<<it4->getBaseAttack()<<endl;
+    --it4;
+    cout<<it4->getBaseAttack()<<endl;
 
     // !!CRASHA OGNI VOLTA alla fine!!
 
 
-    return a;
+    return a.exec();
 }
