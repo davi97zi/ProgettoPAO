@@ -56,7 +56,9 @@ Personaggio *Contenitore::Iteratore::operator->() const{
 }
 
 Contenitore::Iteratore &Contenitore::Iteratore::operator++(){
-    sPunt=sPunt->next;
+    //AGGIUNTO l'if
+    if(sPunt!=0)
+        sPunt=sPunt->next;
     return *this;
 }
 
@@ -79,8 +81,12 @@ bool Contenitore::Iteratore::operator!=(const Contenitore::Iteratore & it) const
 }
 
 void Contenitore::addNodo(Personaggio *p){
+    //MODIFICATO, prima era: first=SmartP(new Nodo(p,0); e non funzionava
+        //SmartP vecchioFirst(first);
+        //first.punt=new Nodo(p, first);
     first=SmartP(new Nodo(p,first));
 }
+
 
 //sembra OK; restituisce il successivo di quello eliminato FORSE
 Contenitore::Iteratore Contenitore::deleteNodo(Contenitore::Iteratore & it){
@@ -95,11 +101,24 @@ Contenitore::Iteratore Contenitore::deleteNodo(Contenitore::Iteratore & it){
 }
 
 Contenitore::Iteratore Contenitore::begin(){
+    std::cout<<'1';
     Iteratore it(*this, first);
+    std::cout<<'2';
     return it;
 }
 
 Contenitore::Iteratore Contenitore::end(){
     Iteratore it(*this, 0);
     return it;
+}
+
+//per test
+Contenitore::SmartP Contenitore::getFirst()
+{
+    return first;
+}
+
+Personaggio* Contenitore::getPersFirst()
+{
+    return first.punt->info;
 }

@@ -1,6 +1,8 @@
 #ifndef CONTENITORE_H
 #define CONTENITORE_H
 #include "Interfacce/personaggio.h"
+//per test addNodo()
+#include <iostream>
 
 class Contenitore{
 friend class Iteratore;
@@ -48,7 +50,9 @@ public:
         //Serve per usare begin()
         Contenitore& parent;
     public:
-        Iteratore(Contenitore& p, SmartP s=0): sPunt(s), parent(p) {}
+        Iteratore(Contenitore& p, SmartP s=0): sPunt(s), parent(p) {std::cout<<"normale";}
+        //AGGIUNTO IL COSTRUTTORE DI COPIA
+        Iteratore(const Iteratore& it): sPunt(it.sPunt), parent(it.parent) {std::cout<<"copia";}
         ~Iteratore(){
             if (sPunt.punt)
                 delete sPunt.punt;
@@ -69,6 +73,10 @@ public:
     Iteratore deleteNodo(Iteratore&);
     Iteratore begin();
     Iteratore end();
+
+    //Per test
+    SmartP getFirst();
+    Personaggio* getPersFirst();
 
 
 
