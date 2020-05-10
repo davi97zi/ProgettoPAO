@@ -8,7 +8,7 @@ protected:
     virtual bool increaseLevel(unsigned int newExpPoints);
 public:
     //NB consiglio di aggiungere PREZZO QUI COME ESPLICITO!!!
-    Guaritore(QString nome, unsigned int ex, unsigned int pr): Personaggio(20, 10, 1, 5, "guaritore", nome, pr), HealInterface(){
+    Guaritore(QString nome, unsigned int ex): Personaggio(20, 10, 1, 5, "guaritore", nome, 2), HealInterface(){
         increaseLevel(ex);
     }
 

@@ -1,8 +1,8 @@
 #include "paladino.h"
 
-Paladino::Paladino(unsigned int armr, QString nome, unsigned int ex, unsigned int pr):
-    Personaggio(30, 20, 1, armr, "Paladino", nome, pr),
-    DefenceInterface(armr), HealInterface(){
+Paladino::Paladino(QString nome, unsigned int ex):
+    Personaggio(30, 20, 1, 30, "Paladino", nome, 3),
+    DefenceInterface(30), HealInterface(){
         increaseLevel(ex);
 }
 

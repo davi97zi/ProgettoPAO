@@ -7,7 +7,7 @@
 
 class Paladino: public DefenceInterface, public HealInterface{
 public:
-    Paladino(unsigned int armr, QString nome, unsigned int ex, unsigned int pr);
+    Paladino(QString nome, unsigned int ex);
 
     bool increaseLevel(unsigned int newExpPoints) override;
 

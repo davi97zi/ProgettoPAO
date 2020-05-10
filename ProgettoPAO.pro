@@ -6,6 +6,8 @@
 
 QT       += core gui
 
+QT += xml
+
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = ProgettoPAO
@@ -54,7 +56,13 @@ HEADERS += \
     mago.h \
     paladino.h \
     soldato.h \
-    tank.h
+    tank.h \
+    taverna.h
 
 FORMS += \
         mainwindow.ui
+
+DISTFILES +=
+
+RESOURCES += \
+    myqrc.qrc
