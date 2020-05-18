@@ -1,5 +1,7 @@
 <RCC>
     <qresource prefix="/">
         <file>taverna</file>
+        <file>dungeon</file>
+        <file>storico</file>
     </qresource>
 </RCC>

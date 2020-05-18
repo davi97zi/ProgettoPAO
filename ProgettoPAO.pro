@@ -57,7 +57,12 @@ HEADERS += \
     paladino.h \
     soldato.h \
     tank.h \
-    taverna.h
+    taverna.h \
+    partita.h \
+    storico.h \
+    xmlitem.h \
+    dungeon.h \
+    dungeonItem.h
 
 FORMS += \
         mainwindow.ui

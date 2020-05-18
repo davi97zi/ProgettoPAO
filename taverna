@@ -1,18 +1,18 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <taverna>
-    <avventuriero>
+    <avventuriero id="1">
         <nome>Magnus Burnsides</nome>
         <tipo>Tank</tipo>
         <livello>14</livello>
         <prezzo>20</prezzo>
     </avventuriero>
-    <avventuriero>
+    <avventuriero id="2">
         <nome>Taako Taaco</nome>
         <tipo>Mago</tipo>
         <livello>16</livello>
         <prezzo>200</prezzo>
     </avventuriero>
-    <avventuriero>
+    <avventuriero id="3">
         <nome>Merle Hightower Highchurch</nome>
         <tipo>Guaritore</tipo>
         <livello>12</livello>

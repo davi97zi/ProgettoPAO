@@ -6,67 +6,63 @@
 #include <QFile>
 #include <QtXml>
 
+#include "xmlitem.h"
+
+#include "Interfacce/personaggio.h"
+
 class Taverna{
 private:
-    class Item{
-    public:
-        //dati per la costruzione
-        QString nome;
-        QString tipo;
-        int livello; // da usare come exp!!! (assumo che basti un semplice numero)
-
-        //dati per il display
-        int prezzo;
-
-      //costruttore devo passare ALL the data
-      Item(QString n, QString t, int l, int p): nome(n), tipo(t), livello(l), prezzo(p){}
-
-      //fun stampa
-      void stampaItem()const{
-          qDebug() << "avventuriero: " << nome;
-          qDebug() << "classe: " << tipo;
-          qDebug() << "livello: " << livello;
-          qDebug() <<"paga richiesta: " << prezzo;
-      }
-
-    };
-
-    std::vector<Item> v;
+    std::vector<XmlItem> v;
 
     //legge un "adventuriero" da "taverna" (file xml)
     void readTheRoom(const QDomElement & root){
-        //dove metto i dati raccolti:
-        QString nomeAdv, tipoAdv;
-        int livelloAdv, prezzoAdv;
-
         //entra in primo figlio (adventuriero)
         QDomElement adventurer=root.firstChild().toElement();
         while(!adventurer.isNull()){//leggi tutti gli adventurieri
-            QDomElement charAdv=adventurer.firstChild().toElement();// entro in primo figlio
-            while(!charAdv.isNull()){//leggo le caratteristiche dell'avventuriero
-                if(charAdv.tagName()=="nome"){
-                    nomeAdv= charAdv.firstChild().toText().data();
-                }
-                if(charAdv.tagName()=="tipo"){
-                    tipoAdv= charAdv.firstChild().toText().data();
-                }
-                if(charAdv.tagName()=="livello"){
-                    livelloAdv= charAdv.firstChild().toText().data().toInt();
-                }
-                if(charAdv.tagName()=="prezzo"){
-                    prezzoAdv= charAdv.firstChild().toText().data().toInt();
-                }
-                //passo alla char successiva:
-                charAdv=charAdv.nextSibling().toElement();
-            }
-            //scrivo caratteristiche in nuovo item
-            v.push_back(Item(nomeAdv, tipoAdv, livelloAdv, prezzoAdv));
-            //passo all'avventuriero successivo
+            readTheAdventurer(adventurer);
             adventurer= adventurer.nextSibling().toElement();
         }
     }
 
+    void readTheAdventurer(const QDomElement & adventurer){
+        //dove metto i dati raccolti:
+        QString nomeAdv, tipoAdv;
+        int livelloAdv, prezzoAdv;
+        QDomElement charAdv=adventurer.firstChild().toElement();// entro in primo figlio
+        while(!charAdv.isNull()){//leggo le caratteristiche dell'avventuriero
+            if(charAdv.tagName()=="nome"){
+                nomeAdv= charAdv.firstChild().toText().data();
+            }
+            if(charAdv.tagName()=="tipo"){
+                tipoAdv= charAdv.firstChild().toText().data();
+            }
+            if(charAdv.tagName()=="livello"){
+                livelloAdv= charAdv.firstChild().toText().data().toInt();
+            }
+            if(charAdv.tagName()=="prezzo"){
+                prezzoAdv= charAdv.firstChild().toText().data().toInt();
+            }
+            //passo alla char successiva:
+            charAdv=charAdv.nextSibling().toElement();
+        }
+        //scrivo caratteristiche in nuovo item
+        v.push_back(XmlItem(nomeAdv, tipoAdv, livelloAdv, prezzoAdv));
+        //passo all'avventuriero successivo
+    }
+
+    /*void ingaggiaAdv(QString nome, int gold){
+        std::vector<XmlItem>::iterator it=v.begin();
+        while(it!=v.end() && it->nome!= nome){
+            qDebug() << it->nome;
+            it++;
+        }
+        if(it!=v.end() && gold==it->prezzo){
+            v.erase(it);
+        }
+    }*/
+
 public:
+
     //costruttore: usa QXml per recuperare i dati dalla risorsa
     Taverna(){
         //apri file in lettura
@@ -93,6 +89,29 @@ public:
             it->stampaItem();
         }
     }
+
+    XmlItem ingaggia(QString nome, int prezzo){
+        XmlItem res;
+        bool found=false;
+        for(auto it=v.begin(); it!=v.end() && !found; it++){
+            if(it->getNome() == nome && it->getPrezzo() == prezzo){
+                res=*it;
+                v.erase(it);
+                found=true;
+            }
+        }
+        if(found){
+            qDebug() << "congratulations congratulations congratulations! " << res.getNome() << " is part of your party!";
+            return res;
+        }
+        else{
+            qDebug() << "there is no one there with that name or that asks that amount of money";
+            //error found! not enough money or the adventurer is not in the tavern (wrong name)
+        }
+
+
+    }
+
 };
 
 #endif // TAVERNA_H

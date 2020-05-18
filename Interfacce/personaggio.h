@@ -51,7 +51,7 @@ public:
                  level(lv),
                  expPoint(0),
                  armor(a),
-                 dead(true),
+                 dead(false),
                  tipoPersonaggio(t),
                  nome(n),
                  prezzo(p){}
@@ -78,6 +78,11 @@ public:
 
   //gain=hp guarita, divineIntervention=is a REZ or NOT
   void receiveHealing(unsigned int gain, bool divineIntervention=false);
+
+  //funzioni di utilizzo di abilità
+  virtual unsigned int useAbilityOne()=0;
+  virtual unsigned int useAbilityTwo()=0;
+  virtual unsigned int useAbilityThree()=0;
 
 };
 #endif // PERSONAGGIO_H
