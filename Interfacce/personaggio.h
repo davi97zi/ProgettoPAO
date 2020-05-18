@@ -2,6 +2,8 @@
 #define PERSONAGGIO_H
 #include <QApplication>
 
+
+
 class Personaggio{
 private:
     unsigned int maxHealth;

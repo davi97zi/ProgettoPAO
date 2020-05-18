@@ -27,3 +27,9 @@ unsigned int Arciere::frecciaInfuocata(){
 unsigned int Arciere::frecciaPesante(){
     return 2*getBaseAttack()*critico()+getLevel()*2;
 }
+
+//PER TEST
+std::ostream &operator<<(std::ostream &os, const Arciere &a)
+{
+    return os<<"arm= "<<a.getArmor()<<" bAtt= "<<a.getBaseAttack()<<" Exp= "<<a.getExpPoint()<<" lvl= "<<a.getLevel();
+}

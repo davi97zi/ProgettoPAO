@@ -29,5 +29,5 @@ unsigned int Soldato::coltellata(){
 //PER TEST
 std::ostream &operator<<(std::ostream &os, const Soldato &s)
 {
-    return os<<"arm= "<<s.getArmor()<<" bAtt= "<<s.getBaseAttack()<<" alive? "<<s.getDeathState();
+    return os<<"arm= "<<s.getArmor()<<" bAtt= "<<s.getBaseAttack()<<" Exp= "<<s.getExpPoint()<<" lvl= "<<s.getLevel();
 }

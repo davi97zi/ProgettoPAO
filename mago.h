@@ -26,4 +26,7 @@ public:
     unsigned int avadaKedavra();
 };
 
+//PER TEST
+std::ostream& operator<<(std::ostream&, const Mago&);
+
 #endif // MAGO_H

@@ -19,4 +19,7 @@ public:
     unsigned int frecciaPesante();
 };
 
+//PER TEST
+std::ostream& operator<<(std::ostream&, const Arciere&);
+
 #endif // ARCIERE_H

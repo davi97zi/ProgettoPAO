@@ -18,7 +18,7 @@
 using namespace std;
 
 int main(int argc, char *argv[]){
-    QApplication a(argc, argv);
+    //QApplication a(argc, argv);
     /*MainWindow w;
     w.show();*/
 
@@ -50,14 +50,14 @@ int main(int argc, char *argv[]){
     cout<<"s confronto cout=> "<<s->getArmor()<<' '<<s->getBaseAttack()<<' '<<s->getDeathState()<<endl;
     cout<<"s=> "<<*s<<endl;
     delete s;
+
     Soldato* s2=new Soldato("ss2", 0);
     cout<<"s2=> "<<*s2<<endl;
-    cout<<"s post delete=> "<<*s<<endl;
-    //***VA BENE CHE s ORA PUNTA ALLO STESSO DI s2?***
+
     Soldato* s3=new Soldato("ss3", 526);
     cout<<"s3=> "<<*s3<<endl;
     Mago* m = new Mago("aifseiof", 100);
-    cout <<"mago= "<< m->getArmor() << " " << m->getBaseAttack() << " " << m->getDeathState() << endl;
+    cout <<"mago= "<<*m<< endl;
 
     Contenitore Pers;
     Pers.addNodo(s2);
@@ -65,38 +65,60 @@ int main(int argc, char *argv[]){
     Pers.addNodo(m);
     cout<<"ok"<<endl;
 
+    //cout<<Pers<<endl;
 
-    Contenitore::Iteratore it(Pers); //QUESTO FUNZIONA
-    Contenitore::Iteratore it2(it); //QUESTO FUNZIONA
+    //Contenitore::Iteratore it(Pers); //QUESTO FUNZIONA
+    //Contenitore::Iteratore it2(it); //QUESTO FUNZIONA
     cout<<endl<<"getfirst: "<<Pers.getPersFirst()<<endl; //stampa l'indirizzo
-    //Contenitore::Iteratore it3(Pers, Pers.getFirst()); //DOPO QUESTO SI BLOCCA PER QUALCHE MOTIVO
-    cout<<endl<<"ok2"<<endl;
+    Contenitore::Iteratore it3(Pers, Pers.getFirst()); //FUNZIONA
     Contenitore::Iteratore it4=Pers.begin();
-    cout<<endl<<"ok3"<<endl;
-    cout<<it4->getBaseAttack()<<endl; //funziona
-    cout<<"1"<<endl;
-    ++it4; //funziona
-    cout<<"2"<<endl;
-    cout<<"crasha dopo questo"<<endl;
-    cout<<it4->getBaseAttack()<<endl; //funziona
+
+
+    //cout<<it3->getBaseAttack()<<endl;
+    cout<<it4->getBaseAttack()<<endl;
     ++it4;
-    cout<<"3"<<endl;
-    cout<<it4->getBaseAttack()<<endl;
-    cout<<"sssss"<<endl;
-    //++it4;
-    //cout<<it4->getBaseAttack()<<endl;
+    cout<<"IT++ "<<it4->getBaseAttack()<<endl;
+    ++it4;
+
+    cout<<"IT++ "<<it4->getBaseAttack()<<endl;
+
+    ++it4;
+    ++it4;
+
+    //cout<<"IT++ "<<it4->getBaseAttack()<<endl;
+
     //cout<<it4->getBaseAttack()<<endl; //qui it4 punta a 0, bisogna evitare che venga fatto il get->dovrebbe dare seg. fault
-    //it4=Pers.begin(); //non si può usare perchè serve l'operator=
+    //it4=Pers.begin(); //ora si può fare
 
 
-    //cout<<it4->getBaseAttack()<<endl;
-    --it4; //operator-- non va
-    cout<<it4->getBaseAttack()<<endl;
     --it4;
-    cout<<it4->getBaseAttack()<<endl;
+    cout<<"IT-- "<<it4->getBaseAttack()<<endl;
+    --it4;
+    cout<<"IT-- "<<it4->getBaseAttack()<<endl;
+    //it4=Pers.begin();
+    //cout<<"restart"<<it4->getBaseAttack()<<endl;
+    //++it4;
+    //cout<<"IT++ "<<it4->getBaseAttack()<<endl;
+    --it4;
+    cout<<"IT-- "<<it4->getBaseAttack()<<endl;
+    --it4;
+    cout<<"IT-- "<<it4->getBaseAttack()<<endl;
 
-    // !!CRASHA OGNI VOLTA alla fine!!
 
 
-    return a.exec();
+    //  TEST DEL DELETE :)
+    cout<<"Pers PRE delete: "<<Pers<<endl;
+    ++it4;
+    ++it4;
+    cout<<"test del delete (punta all'ultimo): "<<it4->getArmor()<<endl;
+    it3=Pers.deleteNodo(it4);
+    cout<<"delete fatta: "<<it4->getArmor()<<endl;
+    cout<<"Pers POST delete: "<<Pers<<endl;
+
+    //come prima stampa s2 anche se l'ho cancellato ma in realtà è eliminato
+    //cout<<*s2<<endl;
+    Contenitore::Iteratore iter=Pers.trovaPersonaggio("aifseiof");
+    cout<<iter->getBaseAttack()<<endl;
+
+    return 0;
 }
