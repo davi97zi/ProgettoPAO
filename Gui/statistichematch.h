@@ -1,0 +1,33 @@
+#ifndef STATISTICHEMATCH_H
+#define STATISTICHEMATCH_H
+
+#include <QWidget>
+#include <QLabel>
+#include <QVBoxLayout>
+#include <QPushButton>
+#include "../Interfacce/personaggio.h"
+
+class StatisticheMatch: public QWidget{
+    Q_OBJECT
+private:
+    QGridLayout* tot;
+    QGridLayout* stats;
+    QLabel* titolo;
+    QLabel* health;
+    QLabel* baseAttack;
+    QLabel* mana;
+    QLabel* armor;
+
+    QPushButton* cambiaPersonaggio;
+
+    //Personaggio* p;
+
+public:
+    StatisticheMatch(QWidget* parent=0);
+
+    void handleButton();
+    QLayout* statsMostro();
+    QLayout* statsPersonaggio();
+};
+
+#endif // STATISTICHEMATCH_H
