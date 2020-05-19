@@ -1,6 +1,8 @@
 #include "contenitore.h"
 
 
+/*
+
 Contenitore::SmartP::SmartP(const Contenitore::SmartP& s): punt(s.punt){
     if(punt)
         punt->riferimenti++;
@@ -47,57 +49,59 @@ bool Contenitore::SmartP::operator!=(const Contenitore::SmartP &s) const{
     return punt!=s.punt;
 }
 
+*/
 
 
 Personaggio &Contenitore::Iteratore::operator*() const{
-    return *sPunt->info;
+    return *punt->info;
 }
 
 Personaggio *Contenitore::Iteratore::operator->() const{
-    return sPunt->info;
+    return punt->info;
 }
 
 Contenitore::Iteratore &Contenitore::Iteratore::operator++(){
-    /* VECCHIA IMPLEMENTAZIONE
-    if(sPunt->next!=0)
-        sPunt=sPunt->next;
-    return *this;
-    */
-    if(sPunt!=0)
-        sPunt=sPunt->next;
+    if(punt)
+        punt=punt->next;
     return *this;
 }
 
 Contenitore::Iteratore &Contenitore::Iteratore::operator--(){
 //OK
 //aggiunto l'if perchè altrimenti se uso -- su un iteratore che punta a first diventa un ++
-    Iteratore it=parent.begin();
-    if(it.sPunt!=this->sPunt){
-        while(it.sPunt->next!=0 && it.sPunt.punt->next!=this->sPunt){
-            ++it;
-        }
-        sPunt=it.sPunt;
+    /*Iteratore it=parent.begin();
+       if(it.punt!=this->punt){
+           while(it.punt->next!=0 && it.punt->next!=this->punt){
+               ++it;
+           }
+           punt=it.punt;
+       }*/
+    if(punt){
+        if(punt->prev)
+            punt=punt->prev;
     }
     return *this;
 }
 
 bool Contenitore::Iteratore::operator==(const Contenitore::Iteratore & it) const{
-    return sPunt==it.sPunt;
+    return punt==it.punt;
 }
 
 bool Contenitore::Iteratore::operator!=(const Contenitore::Iteratore & it) const{
-    return sPunt!=it.sPunt;
+    return punt!=it.punt;
 }
 
 
 Contenitore::Iteratore &Contenitore::Iteratore::operator=(const Contenitore::Iteratore &it){
-    sPunt=it.sPunt;
-    parent=it.parent;
+    punt=it.punt;
+    //parent=it.parent;
     return *this;
 }
 
 void Contenitore::addNodo(Personaggio *p){
-    first=SmartP(new Nodo(p,first));
+    first=new Nodo(p,first,0);
+    if(first->next)
+        first->next->prev=first;
 }
 
 
@@ -114,45 +118,46 @@ Contenitore::Iteratore Contenitore::deleteNodo(Contenitore::Iteratore & it){
 
     Iteratore it2=it;
     //se esiste l'iteratore svolgo la funzione, altrimenti restituisco l'iteratore
-    if(it.sPunt!=0){
+    if(it.punt!=0){
         //se l'iteratore punta al primo nodo
-        if(it.sPunt==first){
+        if(it.punt==first){
             ++it2;
             //sposto first
-            first=it.sPunt.punt->next;
+            first=it.punt->next;
             //stacco it dalla lista
-            it.sPunt.punt->next=0;
+            it.punt->next=0;
         }
         else{
             --it2;
             //se it non punta all'ultimo elemento della lista
-            if(it.sPunt.punt->next!=0){
+            if(it.punt->next!=0){
                 //sposto il puntatore next del precedente al successivo di it
-                it2.sPunt.punt->next=it.sPunt.punt->next;
+                it2.punt->next=it.punt->next;
                 //stacco it dalla lista
-                it.sPunt.punt->next=0;
+                it.punt->next=0;
                 ++it2;
             }
             //se it punta all'ultimo elemento della lista
             else{
                 //setto il puntatore next del precedente a 0
-                it2.sPunt.punt->next=0;
+                it2.punt->next=0;
             }
         }
         //FUNZIONA MA VA BENE? elimino info, next è già 0
         //delete it.sPunt.punt;
-        delete it.sPunt.punt->info;
+        delete it.punt;
     }
     return it2;
 }
 
-Contenitore::Iteratore Contenitore::begin(){
-    Iteratore it(*this, first);
+Contenitore::Iteratore Contenitore::begin() const{
+    //Iteratore it(*this, first);
+    Iteratore it(first);
     return it;
 }
 
-Contenitore::Iteratore Contenitore::end(){
-    Iteratore it(*this, 0);
+Contenitore::Iteratore Contenitore::end() const{
+    Iteratore it(0);
     return it;
 }
 
@@ -160,7 +165,7 @@ bool Contenitore::vuoto() const{
     return first==0;
 }
 
-Contenitore::Iteratore Contenitore::trovaPersonaggio(QString nome){
+Contenitore::Iteratore Contenitore::trovaPersonaggio(QString nome) const{
     Iteratore it=this->begin();
     bool sent=false;
     while(it!=this->end() && sent==false){
@@ -172,16 +177,7 @@ Contenitore::Iteratore Contenitore::trovaPersonaggio(QString nome){
     return it;
 }
 
-//per test
-Contenitore::SmartP Contenitore::getFirst()
-{
-    return first;
-}
-//per test
-Personaggio* Contenitore::getPersFirst()
-{
-    return first.punt->info;
-}
+
 
 //PER TEST
 std::ostream &operator<<(std::ostream &os, Contenitore c)

@@ -8,9 +8,7 @@
 class Contenitore{
 friend class Iteratore;
 private:
-    class Nodo;
-
-    //sembra OK
+    /*class Nodo;
     class SmartP{
     public:
         Nodo* punt;
@@ -25,44 +23,37 @@ private:
         Nodo* operator->()const;
         bool operator==(const SmartP&)const;
         bool operator!=(const SmartP&)const;
-    };
+    };*/
 
     class Nodo{       
     public:
         Personaggio* info;
-        SmartP next;
-        int riferimenti;
-        Nodo(): info(0), next(0), riferimenti(0) {}
-        //MODIFICA: messo smartp const&
-        Nodo(Personaggio* i, const SmartP& n): info(i), next(n), riferimenti(0) {}
+        Nodo* next;
+        Nodo* prev;
+        Nodo(): info(0), next(0), prev(0) {}
+        Nodo(Personaggio* i, Nodo* n, Nodo*p=0): info(i), next(n), prev(p) {}
         ~Nodo(){
-            /*if(info)
+            if(info)
                 delete info;
-            //modificato
-            //era:
-            //  if(next->punt)
-            //      delete next->punt;
-            //
-            if(next!=0)
-                delete next.punt;*/
+            if(next)
+                delete next;
         }
     };
-    SmartP first;
+    Nodo* first;
 
 public:
     class Iteratore{
     friend class Contenitore;
     private:
-        SmartP sPunt;
-        //Serve per usare begin()
-        Contenitore& parent;
+        Nodo* punt;
+        //Serve per usare op--
+        //Contenitore& parent;
     public:
-        Iteratore(Contenitore& p, SmartP s=0): sPunt(s), parent(p) {}
-        Iteratore(const Iteratore& it): sPunt(it.sPunt), parent(it.parent) {}
-        ~Iteratore(){
-            /*if (sPunt.punt)
-                delete sPunt.punt;*/
-        }
+        //Iteratore(Contenitore& p, Nodo* s=0): punt(s), parent(p) {}
+        //Iteratore(const Iteratore& it, Contenitore& p): punt(it.punt), parent(p) {}
+        Iteratore(Nodo* s=0): punt(s) {}
+        Iteratore(const Iteratore& it): punt(it.punt) {}
+        //IL DISTRUTTORE NON SERVE
         Personaggio& operator*() const; //*p
         Personaggio* operator->() const; //p
         Iteratore& operator++();
@@ -73,20 +64,15 @@ public:
     };
     Contenitore(): first(0) {}
     ~Contenitore(){
-        /*if (first.punt)
-            delete first.punt;*/
     }
     void addNodo(Personaggio*);
     Iteratore deleteNodo(Iteratore&);
-    Iteratore begin();
-    Iteratore end();
+    Iteratore begin() const;
+    Iteratore end() const;
     bool vuoto() const;
     //se non lo trova restituisce un iteratore=Contenitore.end()
-    Iteratore trovaPersonaggio(QString nome);
+    Iteratore trovaPersonaggio(QString nome) const;
 
-    //Per test
-    SmartP getFirst();
-    Personaggio* getPersFirst();
 
 };
 

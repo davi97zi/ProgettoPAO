@@ -63,15 +63,13 @@ int main(int argc, char *argv[]){
     Pers.addNodo(s2);
     Pers.addNodo(s3);
     Pers.addNodo(m);
-    cout<<"ok"<<endl;
 
     //cout<<Pers<<endl;
 
     //Contenitore::Iteratore it(Pers); //QUESTO FUNZIONA
     //Contenitore::Iteratore it2(it); //QUESTO FUNZIONA
-    cout<<endl<<"getfirst: "<<Pers.getPersFirst()<<endl; //stampa l'indirizzo
-    Contenitore::Iteratore it3(Pers, Pers.getFirst()); //FUNZIONA
-    Contenitore::Iteratore it4=Pers.begin();
+    Contenitore::Iteratore it4(Pers.begin());
+    Contenitore::Iteratore it3=Pers.begin();
 
 
     //cout<<it3->getBaseAttack()<<endl;
@@ -82,9 +80,8 @@ int main(int argc, char *argv[]){
 
     cout<<"IT++ "<<it4->getBaseAttack()<<endl;
 
-    ++it4;
-    ++it4;
-
+    //++it4;
+    //++it4;
     //cout<<"IT++ "<<it4->getBaseAttack()<<endl;
 
     //cout<<it4->getBaseAttack()<<endl; //qui it4 punta a 0, bisogna evitare che venga fatto il get->dovrebbe dare seg. fault
