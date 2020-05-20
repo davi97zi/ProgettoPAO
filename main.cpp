@@ -8,6 +8,8 @@
 #include "guaritore.h"
 #include "berserker.h"
 #include "contenitore.h"
+#include "arciere.h"
+#include "paladino.h"
 
 //da togliere poi?
 #include <cstdlib>
@@ -116,6 +118,12 @@ int main(int argc, char *argv[]){
     //cout<<*s2<<endl;
     Contenitore::Iteratore iter=Pers.trovaPersonaggio("aifseiof");
     cout<<iter->getBaseAttack()<<endl;
+
+    Arciere* a=new Arciere("sas", 0);
+    cout<<a->abilita1()<<endl;
+    cout<<a->abilita2()<<endl;
+    cout<<a->abilita3()<<endl;
+
 
     return 0;
 }

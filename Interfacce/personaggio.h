@@ -82,5 +82,9 @@ public:
   //gain=hp guarita, divineIntervention=is a REZ or NOT
   void receiveHealing(unsigned int gain, bool divineIntervention=false);
 
+  virtual unsigned int abilita1();
+  virtual unsigned int abilita2();
+  virtual unsigned int abilita3();
+
 };
 #endif // PERSONAGGIO_H

@@ -15,6 +15,21 @@ bool Artificiere::increaseLevel(unsigned int newExpPoint){//newExpPoint guadagna
   }
 }
 
+unsigned int Artificiere::abilita1()
+{
+    return this->bombardaMaxima();
+}
+
+unsigned int Artificiere::abilita2()
+{
+    return this->rainOfSpells();
+}
+
+unsigned int Artificiere::abilita3()
+{
+    return this->autodistruzione();
+}
+
 unsigned int Artificiere::bombardaMaxima(){
     unsigned int dmg = getBaseAttack() + 10*getLevel() + 2*critico();
     if(isThrowable(getCostoA1()) == true){

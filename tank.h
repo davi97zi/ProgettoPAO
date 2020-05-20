@@ -4,6 +4,11 @@
 #include "Interfacce/defenceInterface.h"
 
 class Tank: public DefenceInterface{
+private:
+    //if tank is up, he gets all the damage (buffArmor == true)
+    bool scudo();
+    unsigned int schiacciasassi() const;
+    unsigned int jackhammer() const;
 protected:
     virtual bool increaseLevel(unsigned int newExpPoint);
 
@@ -13,10 +18,11 @@ public:
     }
     virtual ~Tank() {}
 
-    //if tank is up, he gets all the damage (buffArmor == true)
-    bool scudo();
-    unsigned int schiacciasassi();
-    unsigned int jackhammer();
+
+
+    unsigned int abilita1();
+    unsigned int abilita2();
+    unsigned int abilita3();
 };
 
 #endif // TANK_H

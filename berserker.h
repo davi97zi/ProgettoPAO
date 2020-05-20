@@ -5,6 +5,10 @@
 #include "Interfacce/defenceInterface.h"
 
 class Berserker: public DpsInterface, public DefenceInterface{
+private:
+    bool scudo();
+    unsigned int asciaDiFuoco() const;
+    unsigned int furiaAssassina() const;
 protected:
     virtual bool increaseLevel(unsigned int newExpPoint);
 public:
@@ -16,9 +20,11 @@ public:
             increaseLevel(ex);
     }
     virtual ~Berserker() {}
-    unsigned int attaccoFurioso();
-    unsigned int asciaDiFuoco();
-    unsigned int furiaAssassina();
+
+
+    unsigned int abilita1();
+    unsigned int abilita2();
+    unsigned int abilita3();
 };
 
 #endif // BERSERKER_H

@@ -4,6 +4,10 @@
 #include "Interfacce/dpsInterface.h"
 
 class Arciere: public DpsInterface{
+private:
+    unsigned int frecciaAppuntita() const;
+    unsigned int frecciaInfuocata() const;
+    unsigned int frecciaPesante() const;
 protected:
     virtual bool increaseLevel(unsigned int newExpPoint);
 
@@ -14,9 +18,11 @@ public:
         increaseLevel(ex);
     }
     virtual ~Arciere();
-    unsigned int frecciaAppuntita();
-    unsigned int frecciaInfuocata();
-    unsigned int frecciaPesante();
+
+
+    unsigned int abilita1();
+    unsigned int abilita2();
+    unsigned int abilita3();
 };
 
 //PER TEST

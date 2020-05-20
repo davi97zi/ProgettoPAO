@@ -83,3 +83,18 @@ void Personaggio::receiveHealing(unsigned int gain, bool divineIntervention){//c
         //ERRORE: non è possibile normale guarigione su cadavere || riportare in vita un personaggio già vivo
     }
 }
+
+unsigned int Personaggio::abilita1()
+{
+    return this->getBaseAttack();
+}
+
+unsigned int Personaggio::abilita2()
+{
+    return this->getBaseAttack();
+}
+
+unsigned int Personaggio::abilita3()
+{
+    return this->getBaseAttack();
+}

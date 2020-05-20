@@ -6,6 +6,10 @@
 #include <iostream>
 
 class Soldato: public DpsInterface{
+private:
+    unsigned int pugnoFurtivo() const;
+    unsigned int fendente() const;
+    unsigned int coltellata() const;
 protected:
     virtual bool increaseLevel(unsigned int newExpPoint);
 
@@ -16,9 +20,11 @@ public:
         increaseLevel(ex);
     }
     virtual ~Soldato() {}
-    unsigned int pugnoFurtivo();
-    unsigned int fendente();
-    unsigned int coltellata();
+
+
+    unsigned int abilita1();
+    unsigned int abilita2();
+    unsigned int abilita3();
 };
 
 //PER TEST

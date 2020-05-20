@@ -30,6 +30,21 @@ unsigned int Guaritore::pray(bool use){
     }
 }
 
+unsigned int Guaritore::abilita1()
+{
+    return this->healingWord();
+}
+
+unsigned int Guaritore::abilita2()
+{
+    return this->smite();
+}
+
+unsigned int Guaritore::abilita3()
+{
+    return this->divineIntervention();
+}
+
 unsigned int Guaritore::healingWord(){//usato per guarire se stessi e gli altri
     pray(false);//ad ogni successiva guarigione si guarisce di +
     unsigned int gain=getLevel()+getBlessing();

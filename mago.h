@@ -4,6 +4,10 @@
 #include "Interfacce/magicInterface.h"
 
 class Mago: public MagicInterface{
+private:
+    unsigned int expelliarmus();
+    unsigned int expectoPatronum();
+    unsigned int avadaKedavra();
 protected:
     virtual bool increaseLevel(unsigned int newExpPoint);
 
@@ -21,9 +25,11 @@ public:
     }
     virtual ~Mago() {}
 
-    unsigned int expelliarmus();
-    unsigned int expectoPatronum();
-    unsigned int avadaKedavra();
+
+
+    unsigned int abilita1();
+    unsigned int abilita2();
+    unsigned int abilita3();
 };
 
 //PER TEST

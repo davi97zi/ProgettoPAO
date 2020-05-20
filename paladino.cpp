@@ -1,8 +1,8 @@
 #include "paladino.h"
 
-Paladino::Paladino(unsigned int armr, QString nome, unsigned int ex, unsigned int pr):
-    Personaggio(30, 20, 1, armr, "Paladino", nome, pr),
-    DefenceInterface(armr), HealInterface(){
+Paladino::Paladino(QString nome, unsigned int ex):
+    Personaggio(30, 20, 1, 15, "Paladino", nome, 4),
+    DefenceInterface(30), HealInterface(){
         increaseLevel(ex);
 }
 
@@ -38,6 +38,21 @@ unsigned int Paladino::pray(bool use){
         return smite;
     }
 
+}
+
+unsigned int Paladino::abilita1()
+{
+    return static_cast<unsigned int>(this->shieldOfFaith());
+}
+
+unsigned int Paladino::abilita2()
+{
+    return this->layOfHands();
+}
+
+unsigned int Paladino::abilita3()
+{
+    return this->ultimateSmite();
 }
 
 bool Paladino::shieldOfFaith(){
