@@ -1,9 +1,7 @@
 #include "mainwindow.h"
 #include <QApplication>
 
-<<<<<<< HEAD
 #include "mostro.h"
-=======
 #include "mago.h"
 #include "artificiere.h"
 #include "soldato.h"
@@ -17,7 +15,7 @@
 //da togliere poi?
 #include <cstdlib>
 #include <ctime>
->>>>>>> Contenitore-beta
+
 
 #include <iostream>
 
@@ -28,6 +26,7 @@ int main(int argc, char *argv[]){
     /*MainWindow w;
     w.show();*/
 
+/*
 <<<<<<< HEAD
     Mostro* boss= new Mostro(100, "Vlad", 2);
 
@@ -68,21 +67,7 @@ int main(int argc, char *argv[]){
     }
     //return a.exec();
 =======
-    /*Mago* m = new Mago("aifseiof", 100);
-    cout << m->getCostoA1() << " " << m->getExpPoint() << " " << m->getLevel() << endl;
-
-    Tank* t = new Tank("Malphite", 230);
-    cout << "Danno abilita' 2: " << t->schiacciasassi() << " Armor: " << t->getArmor()<< endl;
-
-    Artificiere* ar = new Artificiere("jjj", 200);
-    cout << ar->getCostoA1() << " " << ar->getExpPoint() << " " << ar->getLevel() << endl;
-
-    Guaritore* g = new Guaritore("fff", 100, 2);
-    cout << g->getArmor() << endl;
-    cout << g->getBaseAttack() << " LIV: " << g->getLevel() << endl;*/
-
-
-
+*/
 
     //NOTA: critico() FUNZIONA MA VA MESSA LA RIGA SEGUENTE NEL MAIN (O IN PARTITA) PER FARLO FUNZIONARE
     srand(static_cast<unsigned int>(time(NULL)));
@@ -169,6 +154,6 @@ int main(int argc, char *argv[]){
     cout<<a->abilita3()<<endl;
 
 
->>>>>>> Contenitore-beta
+
     return 0;
 }
