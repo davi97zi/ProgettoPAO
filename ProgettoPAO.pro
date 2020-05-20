@@ -39,7 +39,10 @@ SOURCES += \
     mostro.cpp \
     paladino.cpp \
     soldato.cpp \
-    tank.cpp
+    tank.cpp \
+    partita.cpp \
+    battaglia.cpp \
+    contenitore.cpp
 
 HEADERS += \
     mainwindow.h \
@@ -56,7 +59,12 @@ HEADERS += \
     mostro.h \
     paladino.h \
     soldato.h \
-    tank.h
+    tank.h \
+    partita.h \
+    battaglia.h \
+    contenitore.h
 
 FORMS += \
-        mainwindow.ui
+        mainwindow.ui \
+    partita.ui \
+    battaglia.ui

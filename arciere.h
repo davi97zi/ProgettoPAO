@@ -4,8 +4,12 @@
 #include "Interfacce/dpsInterface.h"
 
 class Arciere: public DpsInterface{
+private:
+    unsigned int frecciaAppuntita() const;
+    unsigned int frecciaInfuocata() const;
+    unsigned int frecciaPesante() const;
 protected:
-    bool increaseLevel(unsigned int newExpPoint);
+    virtual bool increaseLevel(unsigned int newExpPoint);
 
 public:
     /***Il costruttore richiama in automatico il costruttore standard di DpsInterface, che inizializza
@@ -14,9 +18,14 @@ public:
         increaseLevel(ex);
     }
     virtual ~Arciere();
-    unsigned int frecciaAppuntita();
-    unsigned int frecciaInfuocata();
-    unsigned int frecciaPesante();
+
+
+    unsigned int abilita1();
+    unsigned int abilita2();
+    unsigned int abilita3();
 };
+
+//PER TEST
+std::ostream& operator<<(std::ostream&, const Arciere&);
 
 #endif // ARCIERE_H

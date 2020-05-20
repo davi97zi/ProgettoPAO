@@ -5,20 +5,26 @@
 #include "Interfacce/defenceInterface.h"
 
 class Berserker: public DpsInterface, public DefenceInterface{
+private:
+    bool scudo();
+    unsigned int asciaDiFuoco() const;
+    unsigned int furiaAssassina() const;
 protected:
-    bool increaseLevel(unsigned int newExpPoint);
+    virtual bool increaseLevel(unsigned int newExpPoint);
 public:
     /***Il costruttore richiama in automatico il costruttore standard di DpsInterface, che inizializza
     ProbCritico sempre a 20, valutare se togliere il parametro in dps***/
     //max serve per inizializzare maxarmor di defenceinterface
-    Berserker(QString nome, unsigned int ex, unsigned int max)
-      : Personaggio (120, 70, 1, 50, "Berserker", nome, 5), DpsInterface(10), DefenceInterface(max){
+    Berserker(QString nome, unsigned int ex)
+      : Personaggio (120, 70, 1, 50, "Berserker", nome, 5), DpsInterface(10), DefenceInterface(50){
             increaseLevel(ex);
     }
     virtual ~Berserker() {}
-    unsigned int attaccoFurioso();
-    unsigned int asciaDiFuoco();
-    unsigned int furiaAssassina();
+
+
+    unsigned int abilita1();
+    unsigned int abilita2();
+    unsigned int abilita3();
 };
 
 #endif // BERSERKER_H

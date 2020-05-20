@@ -12,14 +12,38 @@ bool Berserker::increaseLevel(unsigned int newExpPoint){//newExpPoint guadagnati
         else{
             return false;
         }
-    }
-
-unsigned int Berserker::attaccoFurioso(){
-    return 2*getBaseAttack()*critico()+getLevel();
 }
-unsigned int Berserker::asciaDiFuoco(){
+
+unsigned int Berserker::abilita1(){
+    return static_cast<unsigned int>(this->scudo());
+}
+
+unsigned int Berserker::abilita2(){
+    return this->asciaDiFuoco();
+}
+
+unsigned int Berserker::abilita3(){
+    return this->furiaAssassina();
+}
+
+
+
+
+bool Berserker::scudo(){
+    if(getTurno()!=0){
+        buffArmor();
+        decrementaTurni();
+        return true;
+    } else{
+        //incrementaTurni() ?
+        setMaxArmor(getArmor());
+        return false;
+    }
+}
+
+unsigned int Berserker::asciaDiFuoco() const{
     return getBaseAttack()*critico()+getLevel()*2;
 }
-unsigned int Berserker::furiaAssassina(){
+unsigned int Berserker::furiaAssassina() const{
     return 3*getBaseAttack()*critico()+getLevel();
 }

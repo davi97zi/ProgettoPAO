@@ -2,6 +2,8 @@
 #define PERSONAGGIO_H
 #include <QApplication>
 
+
+
 class Personaggio{
 private:
     unsigned int maxHealth;
@@ -58,6 +60,7 @@ public:
 
   virtual ~Personaggio() = default;
 
+
   QString getTipoPersonaggio()const;
   QString getNome()const;
   unsigned int getPrezzo() const;
@@ -79,6 +82,10 @@ public:
 
   //gain=hp guarita, divineIntervention=is a REZ or NOT
   void receiveHealing(unsigned int gain, bool divineIntervention=false);
+
+  virtual unsigned int abilita1();
+  virtual unsigned int abilita2();
+  virtual unsigned int abilita3();
 
 };
 #endif // PERSONAGGIO_H

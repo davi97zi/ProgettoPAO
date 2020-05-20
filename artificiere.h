@@ -5,6 +5,10 @@
 #include "Interfacce/magicInterface.h"
 
 class Artificiere : public DpsInterface, public MagicInterface{
+private:
+    unsigned int bombardaMaxima();
+    unsigned int rainOfSpells();
+    unsigned int autodistruzione();
 protected:
     virtual bool increaseLevel(unsigned int newExpPoint);
 
@@ -16,9 +20,11 @@ public:
         setCostoA3(130);
     }
     virtual ~Artificiere() {}
-    unsigned int bombardaMaxima();
-    unsigned int rainOfSpells();
-    unsigned int autodistruzione();
+
+
+    unsigned int abilita1();
+    unsigned int abilita2();
+    unsigned int abilita3();
 };
 
 #endif // ARTIFICIERE_H

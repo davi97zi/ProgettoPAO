@@ -12,10 +12,25 @@ bool Tank::increaseLevel(unsigned int newExpPoint){
         return false;
 }
 
-unsigned int Tank::schiacciasassi(){
+unsigned int Tank::abilita1()
+{
+    return static_cast<unsigned int>(this->scudo());
+}
+
+unsigned int Tank::abilita2()
+{
+    return this->schiacciasassi();
+}
+
+unsigned int Tank::abilita3()
+{
+    return this->jackhammer();
+}
+
+unsigned int Tank::schiacciasassi() const{
     return (getBaseAttack() + 2*(getMaxHealth()-static_cast<unsigned int>(getHealth()))); //danni in base alla vita mancante: meno vita (health) + danni
 }
-unsigned int Tank::jackhammer(){
+unsigned int Tank::jackhammer() const{
     return (getBaseAttack() + 2*(getArmor())); //danni in base all'armor: +armor (base, no MaxArmor) + danni
 }
 

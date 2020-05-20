@@ -14,6 +14,21 @@ bool Mago::increaseLevel(unsigned int newExpPoint){//newExpPoint guadagnati dall
   }
 }
 
+unsigned int Mago::abilita1()
+{
+    return this->expelliarmus();
+}
+
+unsigned int Mago::abilita2()
+{
+    return this->expectoPatronum();
+}
+
+unsigned int Mago::abilita3()
+{
+    return this->avadaKedavra();
+}
+
 //ogni abilità ha un parametro m che indica il mana necessario per lanciarla o è meglio metterlo come paramentro interno alla funzione?
 unsigned int Mago::expelliarmus(){ //abilità1, sempre disponibile
     unsigned int dmg = getBaseAttack() + 10*getLevel();
@@ -43,3 +58,8 @@ unsigned int Mago::avadaKedavra(){	//abilità speciale, costa 3 turni, uccide in
         return 0;
 }
 
+//PER TEST
+std::ostream &operator<<(std::ostream &os, const Mago &m)
+{
+    return os<<"arm= "<<m.getArmor()<<" bAtt= "<<m.getBaseAttack()<<" Exp= "<<m.getExpPoint()<<" lvl= "<<m.getLevel();
+}
