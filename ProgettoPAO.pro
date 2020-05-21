@@ -43,7 +43,7 @@ SOURCES += \
     guaritore.cpp \
     mago.cpp \
     main.cpp \
-    mainwindow.cpp \
+    Gui/mainwindow.cpp \
     paladino.cpp \
     partita.cpp \
     soldato.cpp \
@@ -72,7 +72,7 @@ HEADERS += \
     contenitore.h \
     guaritore.h \
     mago.h \
-    mainwindow.h \
+    Gui/mainwindow.h \
     paladino.h \
     partita.h \
     soldato.h \

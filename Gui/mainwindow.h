@@ -1,17 +1,25 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QMainWindow>
+#include <QWidget>
+#include <QHBoxLayout>
+#include <QPushButton>
+#include <QSpacerItem>
 
-class MainWindow : public QMainWindow
+class MainWindow : public QWidget
 {
     Q_OBJECT
+private:
+    QWidget* firstWindow;
+    QPushButton* gioca;
+    QPushButton* storico;
+    QSpacerItem* spacer;
+    QVBoxLayout* verticalLayout1;
 
 public:
-    explicit MainWindow(QWidget *parent = 0);
-    ~MainWindow();
+    MainWindow(QWidget *parent = 0);
 
-    virtual void handleButton();
+    void handleButton();
 };
 
 #endif // MAINWINDOW_H
