@@ -1,5 +1,6 @@
-#include "mainwindow.h"
+//#include "Gui/mainwindow.h"
 #include <QApplication>
+#include "Gui/negozio_widget.h"
 
 #include "mostro.h"
 
@@ -8,9 +9,18 @@
 using namespace std;
 
 int main(int argc, char *argv[]){
-    /*QApplication a(argc, argv);
+
+    QApplication a(argc, argv);
+        Negozio_widget w;
+        w.show();
+    return a.exec();
+}
+
+/*
+//what i found inside:
+    / *QApplication a(argc, argv);
     MainWindow w;
-    w.show();*/
+    w.show();* /
 
     Mostro* boss= new Mostro(100, "Vlad", 2);
 
@@ -51,4 +61,4 @@ int main(int argc, char *argv[]){
     }
     //return a.exec();
     return 0;
-}
+*/

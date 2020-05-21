@@ -53,8 +53,8 @@ SOURCES += \
     Gui/info_match.cpp \
     Gui/abilita_personaggio_match.cpp \
     Gui/match.cpp \
-    negozio_widget.cpp \
-    negozio_personaggio.cpp
+    Gui/negozio_widget.cpp \
+    Gui/negozio_personaggio.cpp
 
 HEADERS += \
     mainwindow.h \
@@ -85,8 +85,8 @@ HEADERS += \
     Gui/info_match.h \
     Gui/abilita_personaggio_match.h \
     Gui/match.h \
-    negozio_widget.h \
-    negozio_personaggio.h
+    Gui/negozio_widget.h \
+    Gui/negozio_personaggio.h
 
 FORMS += \
         Gui/mainwindow.ui \
