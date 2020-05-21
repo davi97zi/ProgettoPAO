@@ -4,9 +4,6 @@
 #include "../mostro.h"
 
 InfoMatch::InfoMatch(QWidget* parent): QWidget(parent){
-    //da rimuovere
-    Personaggio* p;
-    Mostro* p;
 
     //da sistemare col controller
     personaggio = new QLabel(p->getNome());

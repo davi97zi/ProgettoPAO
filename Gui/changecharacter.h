@@ -2,7 +2,7 @@
 #define CHANGECHARACTER_H
 
 #include <QObject>
-#include <mainwindow.h>
+#include <QWidget>
 
 class ChangeCharacter: public QWidget{
     Q_OBJECT

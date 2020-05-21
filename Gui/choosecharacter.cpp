@@ -4,9 +4,11 @@
 chooseCharacter::chooseCharacter(QWidget *parent) :
     QWidget(parent)
 {
-}
+    window = new QWidget();
 
-chooseCharacter::~chooseCharacter()
-{
-    delete this;
+    titolo = new QLabel("Scegli il personaggio");
+    titolo->setAlignment(Qt::AlignTop);
+
+    //contenitore
+
 }
