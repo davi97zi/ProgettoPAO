@@ -12,6 +12,8 @@ StatisticheMatch::StatisticheMatch(QWidget* parent): QWidget(parent) {
     stats->setHorizontalSpacing(6);
 }
 
+//sistemare funzioni con controller
+
 QLayout* StatisticheMatch::statsMostro(){
     titolo = new QLabel("STATISTICHE");
     titolo->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
@@ -29,6 +31,7 @@ QLayout* StatisticheMatch::statsMostro(){
     mana->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
 
     stats->addLayout(statsMostro(), 3, 2);
+    return stats;
 }
 
 QLayout* StatisticheMatch::statsPersonaggio(){
@@ -72,6 +75,7 @@ QLayout* StatisticheMatch::statsPersonaggio(){
     stats->addWidget(cambiaPersonaggio);
 
     stats->addLayout(statsPersonaggio(), 4, 2);
+    return stats;
 }
 
 void StatisticheMatch::handleButton(){

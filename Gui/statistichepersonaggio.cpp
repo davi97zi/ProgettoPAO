@@ -22,23 +22,3 @@ StatistichePersonaggio::StatistichePersonaggio(QWidget* parent, const QString& n
     statistiche->setLayout(vertical);
     //statistiche->show();
 }
-
-//se il nome/tipo/livello/prezzo deve essere preso dal file
-//QString* getNome() const {return nome;}
-
-/*
-void StatistichePersonaggio::setLabelNome(const QString& n){
-    nome = new QLabel(n);
-}
-
-void StatistichePersonaggio::setLabelTipologia(const QString& n){
-    tipologia = new QLabel(n);
-}
-
-void StatistichePersonaggio::setLabelLivello(const QString& n){
-    livello = new QLabel(n);
-}
-
-void StatistichePersonaggio::setLabelPrezzo(const QString& n){
-    prezzo = new QLabel(n);
-}*/

@@ -2,10 +2,7 @@
 #include "ui_choosefirstcharacter.h"
 #include "match.h"
 
-ChooseFirstCharacter::ChooseFirstCharacter(QWidget* parent):
-    QWidget(parent)
-{
-
+ChooseFirstCharacter::ChooseFirstCharacter(QWidget* parent): QWidget(parent){
      chooseCharacterWindow = new QWidget();
 
      verticalLayout1 = new QVBoxLayout();
@@ -31,6 +28,8 @@ ChooseFirstCharacter::ChooseFirstCharacter(QWidget* parent):
      chooseCharacterWindow->setLayout(verticalLayout1);
      chooseCharacterWindow->show();
 }
+
+//I primi 3 personaggi sono sempre uguali
 
 QVBoxLayout* ChooseFirstCharacter::personaggio1(){
     QVBoxLayout* verticalLayout = new QVBoxLayout;
@@ -80,7 +79,7 @@ QVBoxLayout* ChooseFirstCharacter::personaggio3(){
 void ChooseFirstCharacter::handleButton(){
     QPushButton* button = dynamic_cast<QPushButton*>(sender());
     if(button->objectName() == "Scegli"){
-        //salvare info personaggio nel container
+        //salvare personaggio nel container e di conseguenza nel file
         Match* m;
         m->show();
         chooseCharacterWindow->close();

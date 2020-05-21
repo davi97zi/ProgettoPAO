@@ -5,17 +5,19 @@
 #include <QTableWidget>
 #include <QLabel>
 #include <QVBoxLayout>
+#include <QPushButton>
 
 class Storico: public QWidget{
     Q_OBJECT
 private slots:
-    void rowSelected(int nRow, int nCol);
+    void handleButton();
 private:
     QWidget* windowStorico;
     QVBoxLayout* vertical;
     QLabel* titolo;
-    QLabel* info;
     QTableWidget* table;
+    QPushButton* moreInfo;
+
     int getFileRows();
     QDate* getDate();
 public:

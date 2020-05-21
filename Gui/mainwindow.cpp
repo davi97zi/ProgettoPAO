@@ -38,5 +38,6 @@ void MainWindow::handleButton(){
         Storico* s;
         s->show();
     }
+    //in ogni caso chiudo la finestra
     firstWindow->close();
 }

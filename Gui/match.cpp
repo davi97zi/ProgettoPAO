@@ -1,7 +1,7 @@
 #include "match.h"
 
 Match::Match(QWidget* parent): QWidget(parent){
-    QWidget* window = new QWidget();
+    window = new QWidget();
 
     contenitore = new QVBoxLayout();
 
@@ -20,6 +20,7 @@ Match::Match(QWidget* parent): QWidget(parent){
 
     QLabel* img = new QLabel("Qui ci va un immagine del mostro");
 
+    //da ricontrolloare: io qui rimetto il numero di righe e colonne che ho pero gia messo nelle classi interne
     layoutMostro->addLayout(stats->statsMostro(),3,2);
     layoutMostro->addWidget(img);
     layoutMostro->addLayout(info->setLayoutMostro(), 2, 1);

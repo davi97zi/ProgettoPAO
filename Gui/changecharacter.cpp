@@ -1,48 +1,53 @@
 #include "changecharacter.h"
 #include "match.h"
 
-#include <QGridLayout>
-#include <QLabel>
-#include <QPushButton>
 #include <QSizePolicy>
 
 ChangeCharacter::ChangeCharacter(QWidget* parent):
     QWidget(parent)
 {
 
-     QWidget* changeCharacterWindow = new QWidget();
+     changeCharacterWindow = new QWidget();
 
      //il grid è il contenitore piu esterno
-     QGridLayout* gridLayout1 = new QGridLayout(changeCharacterWindow);
+     gridLayout1 = new QGridLayout(changeCharacterWindow);
 
      //titolo della window
-     QLabel* label = new QLabel("Cambia il personaggio", dynamic_cast<QWidget*>(gridLayout1));
-     label->setAlignment(Qt::AlignTop);
-     label->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
+     titolo = new QLabel("Cambia il personaggio", dynamic_cast<QWidget*>(gridLayout1));
+     titolo->setAlignment(Qt::AlignTop);
+     titolo->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
      //-------------------------------------------------
 
      //vertical1 esterno
-     QVBoxLayout* vl1 = new QVBoxLayout();
+     vlEx = new QVBoxLayout();
 
-     /*QVBoxLayout* vl1interno = new QVBoxLayout();
-     QVBoxLayout* vl2interno = new QVBoxLayout();
-     QVBoxLayout* vl3interno = new QVBoxLayout();
-     QVBoxLayout* vl4interno = new QVBoxLayout();
-     QVBoxLayout* vl5interno = new QVBoxLayout();*/
+     //creo un QVBoxLayout per ogni personaggio all'interno del contenitore
+     QVBoxLayout* v = new QVBoxLayout();
+
+     //mi serve dopo per definire il numero di righe
+     int i=0;
+
+     //scorro il contenitore
+     for(){
+         labelNome = new QLabel("Nome: " + contenitore->personaggio->getNome()); //something like that
+         labelTipo = new QLabel("Tipo: " + contenitore->personaggio->getTipo()); //something like that
+         scegli = new QPushButton("Scegli");
+         v->addWidget(labelNome);
+         v->addWidget(labelTipo);
+         v->addWidget(scegli);
+         vlEx->addLayout(v);
+     }
+
+     gridLayout1->addWidget(titolo);
+     gridLayout1->addLayout(vlEx, i, 2); //qui utilizzo 'i' del for
 
      //-------------------------------------------------
-
-     QLabel* label1 = new QLabel("Nome");
-     QLabel* label2 = new QLabel("Tipologia");
-     QPushButton* scegli = new QPushButton("Scegli");
 
      connect(scegli, SIGNAL (released()),this, SLOT (handleButton()));
 
      //-------------------------------------------------
 
-     gridLayout1->addWidget(label);
-
-     changeCharacterWindow->setLayout(vl1);
+     changeCharacterWindow->setLayout(vlEx);
      changeCharacterWindow->show();
 }
 
@@ -54,5 +59,7 @@ void ChangeCharacter::handleButton(){
         //torna nella schermata della partita
         Match* m;
         m->show();
+
+        changeCharacterWindow->close();
     }
 }

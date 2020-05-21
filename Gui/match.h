@@ -12,6 +12,7 @@
 class Match: public QWidget{
     Q_OBJECT
 private:
+    QWidget* window;
     QVBoxLayout* contenitore;
     QGridLayout* layoutMostro;
     QGridLayout* layoutPersonaggio;
