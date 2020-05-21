@@ -52,7 +52,9 @@ SOURCES += \
     Gui/statistichematch.cpp \
     Gui/info_match.cpp \
     Gui/abilita_personaggio_match.cpp \
-    Gui/match.cpp
+    Gui/match.cpp \
+    negozio_widget.cpp \
+    negozio_personaggio.cpp
 
 HEADERS += \
     mainwindow.h \
@@ -82,7 +84,9 @@ HEADERS += \
     Gui/statistichematch.h \
     Gui/info_match.h \
     Gui/abilita_personaggio_match.h \
-    Gui/match.h
+    Gui/match.h \
+    negozio_widget.h \
+    negozio_personaggio.h
 
 FORMS += \
         Gui/mainwindow.ui \
