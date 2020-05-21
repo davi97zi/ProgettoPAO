@@ -6,8 +6,8 @@ Match::Match(QWidget* parent): QWidget(parent){
     contenitore = new QVBoxLayout();
 
     //gestite dal controller
-    turno = new QLabel("Turno: " + getTurno());
-    coins = new QLabel("Monete: " + getMonete());
+    turno = new QLabel("Turno: " + QString::number(getTurno()));
+    coins = new QLabel("Monete: " + QString::number(getMonete()));
     turno->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
     coins->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
 
