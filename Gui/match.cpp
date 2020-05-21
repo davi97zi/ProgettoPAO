@@ -18,7 +18,11 @@ Match::Match(QWidget* parent): QWidget(parent){
     StatisticheMatch* stats = nullptr;
     AbilitaPersonaggioMatch* abilita = nullptr;
 
-    QLabel* img = new QLabel("Qui ci va un immagine del mostro");
+    QImage* myImage;
+    myImage->load("immagine.png"); //path immagine
+
+    QLabel* img;
+    img->setPixmap(QPixmap::fromImage(*myImage));
 
     //da ricontrolloare: io qui rimetto il numero di righe e colonne che ho pero gia messo nelle classi interne
     layoutMostro->addLayout(stats->statsMostro(),3,2);
