@@ -18,21 +18,27 @@ Match::Match(QWidget* parent): QWidget(parent){
     StatisticheMatch* stats = nullptr;
     AbilitaPersonaggioMatch* abilita = nullptr;
 
+    //Immagine del mostro
+
+    QVBoxLayout* imageVertical = new QVBoxLayout();
+
     QImage* myImage;
     myImage->load("immagine.png"); //path immagine
 
     QLabel* img;
     img->setPixmap(QPixmap::fromImage(*myImage));
+    //img->resize();
+    //img->show();
 
-    //da ricontrolloare: io qui rimetto il numero di righe e colonne che ho pero gia messo nelle classi interne
-    layoutMostro->addLayout(stats->statsMostro(),3,2);
-    layoutMostro->addWidget(img);
+    imageVertical->addWidget(img);
+
+    layoutMostro->addLayout(stats->statsMostro(),1,1);//1,1 perche il numero effettivo righe e colonne si trova in statisticheMatch
+    layoutMostro->addLayout(imageVertical, 1, 1);
     layoutMostro->addLayout(info->setLayoutMostro(), 2, 1);
 
-    //da ricontrolloare: io qui rimetto il numero di righe e colonne che ho pero gia messo nelle classi interne
-    layoutPersonaggio->addLayout(info->setLayoutPersonaggio(), 2 ,1);
-    layoutPersonaggio->addLayout(dynamic_cast<QLayout*>(abilita), 3, 2);
-    layoutPersonaggio->addLayout(stats->statsPersonaggio(), 4, 2);
+    layoutPersonaggio->addLayout(info->setLayoutPersonaggio(), 2,1);
+    layoutPersonaggio->addLayout(dynamic_cast<QLayout*>(abilita), 1,1);
+    layoutPersonaggio->addLayout(stats->statsPersonaggio(), 1, 1); //1,1 perche il numero effettivo righe e colonne si trova in statisticheMatch
 
     contenitore->addWidget(turno);
     contenitore->addWidget(coins);
