@@ -1,5 +1,7 @@
 #include "negozio_widget.h"
 #include "QHBoxLayout"
+#include "QVBoxLayout"
+
 Negozio_widget::Negozio_widget(QWidget *parent) : QWidget(parent){
     //per popolare dovrei -> recuperare il LIVELLO/BATTAGLIA
 
@@ -10,13 +12,23 @@ Negozio_widget::Negozio_widget(QWidget *parent) : QWidget(parent){
     setSecondo(2, "nome2", "tipo2", 1, 1);
     setTerzo(3, "nome3", "tipo3", 1, 2);
 
-    //add to layout
-    QHBoxLayout * lay= new QHBoxLayout();
-    lay->addWidget(primo);
-    lay->addWidget(secondo);
-    lay->addWidget(terzo);
+    //set titolo in qlabel NB to do on the WINDOW AS WELL!
+    QLabel * titolo= new QLabel("Taverna");
+    //descrivi la pagina
+    QLabel * descrizione= new QLabel("Ben arrivato alla taverna, qui puoi assoldare avventurieri per il tuo team. "
+                                     "\nGuardati attorno e scegli un compagno di avventure");
+    //add to layout for the 3 personaggi
+    QHBoxLayout * personaggioLay= new QHBoxLayout();
+    personaggioLay->addWidget(primo);
+    personaggioLay->addWidget(secondo);
+    personaggioLay->addWidget(terzo);
 
-    //imposta il layout
+    //add to the total layout
+    QVBoxLayout * lay= new QVBoxLayout();
+    lay->addWidget(titolo);
+    lay->addWidget(descrizione);
+    lay->addLayout(personaggioLay);
+    //imposta il layout principale
     setLayout(lay);
 }
 
