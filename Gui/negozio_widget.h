@@ -4,12 +4,13 @@
 #include <QWidget>
 #include "negozio_personaggio.h"
 #include <QDebug>
-
+#include <QPushButton>
 class Negozio_widget : public QWidget{
     Q_OBJECT
 
 private:
     Negozio_personaggio * primo, * secondo, * terzo;
+    QPushButton * prosegui;
 public:
     explicit Negozio_widget(QWidget *parent = nullptr);
     void setPrimo(int i, QString n, QString t, int l, int p);

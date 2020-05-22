@@ -12,11 +12,16 @@ Negozio_widget::Negozio_widget(QWidget *parent) : QWidget(parent){
     setSecondo(2, "nome2", "tipo2", 1, 1);
     setTerzo(3, "nome3", "tipo3", 1, 2);
 
+    //bottone di proseguimento-> premi per lasciare la taverna
+    prosegui= new QPushButton("prosegui");
     //set titolo in qlabel NB to do on the WINDOW AS WELL!
     QLabel * titolo= new QLabel("Taverna");
     //descrivi la pagina
     QLabel * descrizione= new QLabel("Ben arrivato alla taverna, qui puoi assoldare avventurieri per il tuo team. "
                                      "\nGuardati attorno e scegli un compagno di avventure");
+    //
+
+
     //set cssNames
     titolo->setObjectName("titolo");
     descrizione->setObjectName("descrizione");
@@ -36,8 +41,9 @@ Negozio_widget::Negozio_widget(QWidget *parent) : QWidget(parent){
     //add to the total layout
     QVBoxLayout * lay= new QVBoxLayout();
     lay->addWidget(titolo, 0, Qt::AlignTop | Qt::AlignHCenter);
-    lay->addWidget(descrizione);
+    lay->addWidget(descrizione, 0, Qt::AlignCenter);
     lay->addLayout(personaggioLay);
+    lay->addWidget(prosegui, 0, Qt::AlignCenter);
 
     //imposta il layout principale
     setLayout(lay);
