@@ -40,7 +40,9 @@ SOURCES += \
     mago.cpp \
     paladino.cpp \
     soldato.cpp \
-    tank.cpp
+    tank.cpp \
+    Gui/negozio_personaggio.cpp \
+    Gui/negozio_widget.cpp
 
 HEADERS += \
     mainwindow.h \
@@ -62,7 +64,9 @@ HEADERS += \
     storico.h \
     xmlitem.h \
     dungeon.h \
-    dungeonItem.h
+    dungeonItem.h \
+    Gui/negozio_personaggio.h \
+    Gui/negozio_widget.h
 
 FORMS += \
         mainwindow.ui

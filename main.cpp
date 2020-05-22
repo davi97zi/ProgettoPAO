@@ -5,12 +5,16 @@
 #include "storico.h"
 #include "dungeon.h"
 
+#include "Gui/negozio_widget.h"
+
+
+
 using namespace std;
 
 int main(int argc, char *argv[]){
-    /*QApplication a(argc, argv);
-    MainWindow w;
-    w.show();*/
+    QApplication a(argc, argv);
+    Negozio_widget w;
+    w.show();
 
 /*
     //lettura da XML e stampa dei dati OK
@@ -22,7 +26,7 @@ int main(int argc, char *argv[]){
     XmlItem Taako=Fandolin.ingaggia("Taako Taaco", 200);
 
     Fandolin.stampaTutti();
-*/
+
 
     //lettura da XML e stampa dei dati OK
     Storico storico;
@@ -36,10 +40,10 @@ int main(int argc, char *argv[]){
 
     storico.stampaStorico();
 
-/*
+
     Dungeon direDices;
     qDebug() << "you are in the dungeon, inside are: ";
     direDices.stampaTutti();
 */
-    return 0;
+    return a.exec();
 }
