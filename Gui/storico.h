@@ -21,7 +21,7 @@ private:
     int getFileRows();
     QDate* getDate();
 public:
-    Storico(QWidget* parent);
+    Storico(QWidget* parent=0);
 };
 
 #endif // STORICO_H

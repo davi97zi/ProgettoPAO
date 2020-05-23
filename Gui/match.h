@@ -20,7 +20,7 @@ private:
     QLabel* coins;
 
 public:
-    Match(QWidget* parent);
+    Match(QWidget* parent=0);
 };
 
 #endif // MATCH_H

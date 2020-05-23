@@ -5,7 +5,7 @@
 #include <QStandardItemModel>
 
 Storico::Storico(QWidget* parent): QWidget(parent){
-    windowStorico = new QWidget();
+    //windowStorico = new QWidget();
 
     vertical = new QVBoxLayout();
 
@@ -14,7 +14,7 @@ Storico::Storico(QWidget* parent): QWidget(parent){
     titolo->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
 
     table = new QTableWidget(this);
-    table->setRowCount(getFileRows()); //numero di righe prese dal file = numero partite giocate
+    table->setRowCount(6); //numero di righe prese dal file = numero partite giocate
     table->setColumnCount(6);
     table->setShowGrid(true);
 
@@ -32,20 +32,21 @@ Storico::Storico(QWidget* parent): QWidget(parent){
     moreInfo->setParent(table);
     moreInfo->setVisible(true);
 
+    /*
     //Meglio fare una funzione?
     //add items to table -> serve la lunghezza del file (in base al numero di partite) -> getFileRows()
     for(int i=0; i<getFileRows(); i++){
         //insert row
         table->insertRow(i);
         //nella posizione 0 dovrebbe esserci l'id generato in automatico
-        table->setItem(i, 1, new QTableWidgetItem(getDate()->toString()));
-        table->setItem(i, 2, new QTableWidgetItem());//getLivello dal file -> toString())) dentro il tablewidgetitem
-        table->setItem(i, 3, new QTableWidgetItem());//getNumPersonaggi dal file QString::number(getNumpersonaggi))) dentro il tablewidgetitem
-        table->setItem(i, 4, new QTableWidgetItem());//getMonete dal file QString::number(getMonete))) dentro il tablewidgetitem
-        table->setItem(i, 5, new QTableWidgetItem());//getRisultato dal file -> toString())) dentro il tablewidgetitem
-        table->setCellWidget(i, 6, dynamic_cast<QWidget*>(moreInfo));
+        table->setItem(i, 0, new QTableWidgetItem(getDate()->toString()));
+        table->setItem(i, 1, new QTableWidgetItem());//getLivello dal file -> toString())) dentro il tablewidgetitem
+        table->setItem(i, 2, new QTableWidgetItem());//getNumPersonaggi dal file QString::number(getNumpersonaggi))) dentro il tablewidgetitem
+        table->setItem(i, 3, new QTableWidgetItem());//getMonete dal file QString::number(getMonete))) dentro il tablewidgetitem
+        table->setItem(i, 4, new QTableWidgetItem());//getRisultato dal file -> toString())) dentro il tablewidgetitem
+        table->setCellWidget(i, 5, moreInfo);
         //bisogna associare il btn all'id della partita corrispondente?
-    }
+    }*/
 
     //resize colums to contents
     table->resizeColumnsToContents();
@@ -55,8 +56,8 @@ Storico::Storico(QWidget* parent): QWidget(parent){
     vertical->addWidget(titolo);
     vertical->addWidget(table);
 
-    windowStorico->setLayout(vertical);
-    windowStorico->show();
+    setLayout(vertical);
+    //windowStorico->show();
 }
 
 //ritorna la data odierna
@@ -81,20 +82,20 @@ void Storico::handleButton(){
         msgBox->setEscapeButton(QMessageBox::No);
 
         int ret = msgBox->exec();
-
+        /*
         switch (ret) {
           case QMessageBox::Yes:
               // Yes was clicked -> si crea il btn Show Details che se cliccato mostra piu info nello stesso QMessageBox
               //qua bisogna prendersi le info dal file
 
-            /* The detailed text property is always interpreted as plain text.
+            * The detailed text property is always interpreted as plain text.
              * The main text and informative text properties can be either plain text or rich text.
              * These strings are interpreted according to the setting of the text format property. The default setting is auto-text.
              * Note that for some plain text strings containing XML meta-characters, the auto-text rich text detection test may fail
              * causing your plain text string to be interpreted incorrectly as rich text.
              * In these rare cases, use Qt::convertFromPlainText() to convert your plain text string to a visually equivalent rich text string,
              * or set the text format property explicitly with setTextFormat().
-             */
+             *
               msgBox->setDetailedText("Turni giocati: " + turni +
                                    "Monete guadagnate: " + monete +
                                    "Personaggi comprati: " + personaggio);
@@ -106,6 +107,8 @@ void Storico::handleButton(){
           default:
               // should never be reached
               break;
+              }
+                  */
         }
     }
-}
+

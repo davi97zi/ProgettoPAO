@@ -2,7 +2,7 @@
 
 #include "../Interfacce/personaggio.h"
 #include "../mostro.h"
-
+/*
 InfoMatch::InfoMatch(QWidget* parent): QWidget(parent){
 
     //da sistemare col controller
@@ -24,3 +24,4 @@ QLayout* InfoMatch::setLayoutMostro(){
     vertical.addWidget(mostro);
     vertical.addWidget(livelloMostro);
 }
+*/

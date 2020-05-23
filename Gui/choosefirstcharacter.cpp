@@ -3,14 +3,14 @@
 #include "match.h"
 
 ChooseFirstCharacter::ChooseFirstCharacter(QWidget* parent): QWidget(parent){
-     chooseCharacterWindow = new QWidget();
+     //chooseCharacterWindow = new QWidget();
 
      verticalLayout1 = new QVBoxLayout();
-     titolo = new QLabel("Scegli il tuo primo personaggio", chooseCharacterWindow);
+     titolo = new QLabel("Scegli il tuo primo personaggio");
 
      QHBoxLayout* horizontalLayout1 = new QHBoxLayout;     
 
-     scegli = new QPushButton("Scegli");
+
      spacer = new QSpacerItem(40, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
 
      horizontalLayout1->addLayout(personaggio1());
@@ -25,8 +25,8 @@ ChooseFirstCharacter::ChooseFirstCharacter(QWidget* parent): QWidget(parent){
      //connessione buttons -> gestiti da handleButton() (virtual)
      connect(scegli, SIGNAL (released()),this, SLOT (handleButton()));
 
-     chooseCharacterWindow->setLayout(verticalLayout1);
-     chooseCharacterWindow->show();
+     setLayout(verticalLayout1);
+     //chooseCharacterWindow->show();
 }
 
 //I primi 3 personaggi sono sempre uguali
@@ -36,7 +36,7 @@ QVBoxLayout* ChooseFirstCharacter::personaggio1(){
 
     nome = new QLabel("Nome: Yasuo");
     tipo = new QLabel("Tipo: Soldato");
-
+    scegli = new QPushButton("Scegli");
 
     verticalLayout->addWidget(nome,0,Qt::AlignTop);
     verticalLayout->addWidget(tipo,0,Qt::AlignCenter);
@@ -52,7 +52,7 @@ QVBoxLayout* ChooseFirstCharacter::personaggio2(){
     nome = new QLabel("Nome: Nami");
     tipo = new QLabel("Tipo: Guaritore");
 
-
+    scegli = new QPushButton("Scegli");
     verticalLayout->addWidget(nome,0,Qt::AlignTop);
     verticalLayout->addWidget(tipo,0,Qt::AlignCenter);
     verticalLayout->addWidget(scegli,0,Qt::AlignBottom);
@@ -66,7 +66,7 @@ QVBoxLayout* ChooseFirstCharacter::personaggio3(){
 
     nome = new QLabel("Nome: Malphite");
     tipo = new QLabel("Tipo: Tank");
-
+    scegli = new QPushButton("Scegli");
 
     verticalLayout->addWidget(nome,0,Qt::AlignTop);
     verticalLayout->addWidget(tipo,0,Qt::AlignCenter);

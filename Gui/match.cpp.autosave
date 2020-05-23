@@ -1,7 +1,7 @@
 #include "match.h"
 
 Match::Match(QWidget* parent): QWidget(parent){
-    window = new QWidget();
+   // window = new QWidget();
 
     contenitore = new QVBoxLayout();
 
@@ -45,6 +45,6 @@ Match::Match(QWidget* parent): QWidget(parent){
     contenitore->addLayout(layoutMostro);
     contenitore->addLayout(layoutPersonaggio);
 
-    window->setLayout(contenitore);
-    window->show();
+    setLayout(contenitore);
+    //window->show();
 }

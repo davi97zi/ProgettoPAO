@@ -24,9 +24,6 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += \
-    main.cpp \
-    mainwindow.cpp \
-    Gui/statistichepersonaggio.cpp \
     Interfacce/defenceInterface.cpp \
     Interfacce/dpsInterface.cpp \
     Interfacce/healInterface.cpp \
@@ -37,28 +34,21 @@ SOURCES += \
     battaglia.cpp \
     berserker.cpp \
     Gui/changecharacter.cpp \
-    Gui/choosecharacter.cpp \
     Gui/choosefirstcharacter.cpp \
-    contenitore.cpp \
     guaritore.cpp \
     mago.cpp \
     main.cpp \
     Gui/mainwindow.cpp \
     paladino.cpp \
-    partita.cpp \
     soldato.cpp \
     Gui/storico.cpp \
     tank.cpp \
     Gui/statistichematch.cpp \
     Gui/info_match.cpp \
     Gui/abilita_personaggio_match.cpp \
-    Gui/match.cpp \
-    Gui/negozio_widget.cpp \
-    Gui/negozio_personaggio.cpp
+    Gui/match.cpp
 
 HEADERS += \
-    mainwindow.h \
-    Gui/statistichepersonaggio.h \
     Interfacce/defenceInterface.h \
     Interfacce/dpsInterface.h \
     Interfacce/healInterface.h \
@@ -69,14 +59,11 @@ HEADERS += \
     battaglia.h \
     berserker.h \
     Gui/changecharacter.h \
-    Gui/choosecharacter.h \
     Gui/choosefirstcharacter.h \
-    contenitore.h \
     guaritore.h \
     mago.h \
     Gui/mainwindow.h \
     paladino.h \
-    partita.h \
     soldato.h \
     Gui/storico.h \
     tank.h \
@@ -84,13 +71,10 @@ HEADERS += \
     Gui/statistichematch.h \
     Gui/info_match.h \
     Gui/abilita_personaggio_match.h \
-    Gui/match.h \
-    Gui/negozio_widget.h \
-    Gui/negozio_personaggio.h
+    Gui/match.h
 
 FORMS += \
         Gui/mainwindow.ui \
-    Gui/partita.ui \
     Gui/storico.ui \
     Gui/chooseFirstcharacter.ui \
     Gui/changecharacter.ui \

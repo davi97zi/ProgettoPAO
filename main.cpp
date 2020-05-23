@@ -1,18 +1,23 @@
 //#include "Gui/mainwindow.h"
 #include <QApplication>
-#include "Gui/negozio_widget.h"
-
 #include "mostro.h"
-
+#include "Gui/mainwindow.h"
+#include "Gui/storico.h"
+#include "Gui/abilita_personaggio_match.h"
+#include "Gui/changecharacter.h"
+#include "Gui/choosefirstcharacter.h"
 #include <iostream>
+#include "Gui/statistichepersonaggio.h"
 
 using namespace std;
 
 int main(int argc, char *argv[]){
 
     QApplication a(argc, argv);
-        Negozio_widget w;
-        w.show();
+        /*Negozio_widget w;
+        w.show();*/
+    StatistichePersonaggio m("ci", "mago", "1e3", "dada");
+    m.show();
     return a.exec();
 }
 

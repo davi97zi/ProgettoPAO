@@ -37,6 +37,7 @@ AbilitaPersonaggioMatch::AbilitaPersonaggioMatch(QWidget* parent): QWidget(paren
     abilita->addWidget(abilita3);
 
     abilitaEsterno->addLayout(abilita,3,2); //rows: 3, colums: 2
+    setLayout(abilitaEsterno);
 }
 
 //funzione gestita dal controller
