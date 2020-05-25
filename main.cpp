@@ -4,10 +4,12 @@
 #include "Gui/mainwindow.h"
 #include "Gui/storico.h"
 #include "Gui/abilita_personaggio_match.h"
+#include "Gui/statistichematchpersonaggio.h"
 #include "Gui/changecharacter.h"
 #include "Gui/choosefirstcharacter.h"
+#include "Gui/statistichematchmostro.h"
+#include "Gui/match.h"
 #include <iostream>
-#include "Gui/statistichepersonaggio.h"
 
 using namespace std;
 
@@ -16,7 +18,7 @@ int main(int argc, char *argv[]){
     QApplication a(argc, argv);
         /*Negozio_widget w;
         w.show();*/
-    StatistichePersonaggio m("ci", "mago", "1e3", "dada");
+    Storico m;
     m.show();
     return a.exec();
 }

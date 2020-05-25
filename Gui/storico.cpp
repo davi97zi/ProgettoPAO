@@ -14,8 +14,8 @@ Storico::Storico(QWidget* parent): QWidget(parent){
     titolo->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
 
     table = new QTableWidget(this);
-    table->setRowCount(6); //numero di righe prese dal file = numero partite giocate
-    table->setColumnCount(6);
+    //table->setRowCount(5); //numero di righe prese dal file = numero partite giocate
+    table->setColumnCount(7);
     table->setShowGrid(true);
 
     //si possono selezionare solo le righe -> probabilmente inutile
@@ -24,29 +24,24 @@ Storico::Storico(QWidget* parent): QWidget(parent){
 
     //header table
     QStringList tableHeader;
-    tableHeader<< "Data" << "Livello" << "#Personaggi" << "Monete" << "Risultato" << "Altro";
+    tableHeader<< "Data" << "Ora" << "Livello" << "#Personaggi" << "Monete" << "Risultato" << "Altro";
     table->setHorizontalHeaderLabels(tableHeader);
 
     //btn per ottenere piu informazioni riguardo al game scelto
     moreInfo = new QPushButton("More info");
-    moreInfo->setParent(table);
-    moreInfo->setVisible(true);
 
-    /*
-    //Meglio fare una funzione?
-    //add items to table -> serve la lunghezza del file (in base al numero di partite) -> getFileRows()
-    for(int i=0; i<getFileRows(); i++){
+    // IL BOTTONE VIENE STAMPATO SOLO NELL'ULTIMA RIGA
+    for(int i=0; i<5; i++){
         //insert row
         table->insertRow(i);
-        //nella posizione 0 dovrebbe esserci l'id generato in automatico
-        table->setItem(i, 0, new QTableWidgetItem(getDate()->toString()));
-        table->setItem(i, 1, new QTableWidgetItem());//getLivello dal file -> toString())) dentro il tablewidgetitem
-        table->setItem(i, 2, new QTableWidgetItem());//getNumPersonaggi dal file QString::number(getNumpersonaggi))) dentro il tablewidgetitem
-        table->setItem(i, 3, new QTableWidgetItem());//getMonete dal file QString::number(getMonete))) dentro il tablewidgetitem
-        table->setItem(i, 4, new QTableWidgetItem());//getRisultato dal file -> toString())) dentro il tablewidgetitem
-        table->setCellWidget(i, 5, moreInfo);
-        //bisogna associare il btn all'id della partita corrispondente?
-    }*/
+        table->setItem(i, 0, new QTableWidgetItem(getDate()));
+        table->setItem(i, 1, new QTableWidgetItem(getTime().toString()));
+        table->setItem(i, 2, new QTableWidgetItem());//getLivello dal file -> toString())) dentro il tablewidgetitem
+        table->setItem(i, 3, new QTableWidgetItem());//getNumPersonaggi dal file QString::number(getNumpersonaggi))) dentro il tablewidgetitem
+        table->setItem(i, 4, new QTableWidgetItem());//getMonete dal file QString::number(getMonete))) dentro il tablewidgetitem
+        table->setItem(i, 5, new QTableWidgetItem());//getRisultato dal file -> toString())) dentro il tablewidgetitem
+        table->setCellWidget(i, 6, moreInfo);
+    }
 
     //resize colums to contents
     table->resizeColumnsToContents();
@@ -61,9 +56,15 @@ Storico::Storico(QWidget* parent): QWidget(parent){
 }
 
 //ritorna la data odierna
-QDate* Storico::getDate(){
-    QDate* today = new QDate(QDate::currentDate());
-    return today;
+QString Storico::getDate(){
+    QDate today = QDate::currentDate();
+    QString todayToString = today.toString("yyyy/MM/dd");
+    return todayToString;
+}
+
+QTime Storico::getTime(){
+    QTime time = QTime::currentTime();
+    return time;
 }
 
 //ritorna il numero di righe prese dal file

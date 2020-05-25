@@ -12,14 +12,14 @@ private:
     QLabel* mostro;
     QLabel* livelloPersonaggio;
     QLabel* livelloMostro;
-    QVBoxLayout vertical;
+    QVBoxLayout* vertical;
 
 public:
     InfoMatch(QWidget* parent);
 
-    QLayout* setLayoutPersonaggio();
+    QVBoxLayout* setLayoutPersonaggio();
 
-    QLayout* setLayoutMostro();
+    QVBoxLayout* setLayoutMostro();
 };
 
 #endif // INFO_MATCH_H

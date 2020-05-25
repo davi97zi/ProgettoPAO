@@ -6,31 +6,44 @@
 #include "changecharacter.h"
 
 StatisticheMatch::StatisticheMatch(QWidget* parent): QWidget(parent) {
-    stats = new QGridLayout();
+    //stats = new QGridLayout();
 
     stats->setVerticalSpacing(6);
     stats->setHorizontalSpacing(6);
+
+    //stats->addLayout(statsMostro(),1,1);
+    //stats->addLayout(statsPersonaggio(),1,1);
+    //setLayout(stats);
 }
 
 //sistemare funzioni con controller
-/*
-QLayout* StatisticheMatch::statsMostro(){
+
+QGridLayout* StatisticheMatch::statsMostro(){
+    stats = new QGridLayout();
+
     titolo = new QLabel("STATISTICHE");
     titolo->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
 
-    health = new QLabel("Health: " + getHealth());
+    health = new QLabel("Health: " + QString::number(100));
     health->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
 
-    baseAttack = new QLabel("BaseAttack: " + getBaseAttack());
+    baseAttack = new QLabel("BaseAttack: " + QString::number(16));
     baseAttack->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
 
-    armor = new QLabel("Armor: " + getArmor());
+    armor = new QLabel("Armor: " + QString::number(20));
     armor->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
 
-    mana = new QLabel("Mana: 0");
+    mana = new QLabel("Mana: " + QString::number(0));
     mana->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
 
-    stats->addLayout(statsMostro(), 3, 2);
+    stats->addWidget(titolo, 0, Qt::AlignCenter);
+    stats->addWidget(health, 0, Qt::AlignLeft);
+    stats->addWidget(baseAttack, 0, Qt::AlignRight);
+    stats->addWidget(armor, 0, Qt::AlignLeft);
+    stats->addWidget(mana, 0, Qt::AlignRight);
+
+    setLayout(stats);
+
     return stats;
 }
 
@@ -38,16 +51,16 @@ QLayout* StatisticheMatch::statsPersonaggio(){
     titolo = new QLabel("STATISTICHE");
     titolo->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
 
-    health = new QLabel("Health: " + getHealth());
+    health = new QLabel("Health: " + QString::number(100));
     health->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
 
-    baseAttack = new QLabel("BaseAttack: " + getBaseAttack());
+    baseAttack = new QLabel("BaseAttack: " + QString::number(16));
     baseAttack->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
 
-    armor = new QLabel("Armor: " + getArmor());
+    armor = new QLabel("Armor: " + QString::number(20));
     armor->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
 
-    //controller
+    /*controller
     if(p->getTipoPersonaggio() == "Mago"){
         Mago* m;
         auto pMana = QString::number(m->getMana());
@@ -59,7 +72,9 @@ QLayout* StatisticheMatch::statsPersonaggio(){
 
         mana = new QLabel("Mana: " + pMana);
     } else
-        mana = new QLabel("Mana: 0");
+        mana = new QLabel("Mana: 0");*/
+    mana = new QLabel("Mana: " + QString::number(10));
+    mana->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
 
 
     cambiaPersonaggio = new QPushButton("Cambia personaggio");
@@ -74,7 +89,7 @@ QLayout* StatisticheMatch::statsPersonaggio(){
     stats->addWidget(mana);
     stats->addWidget(cambiaPersonaggio);
 
-    stats->addLayout(statsPersonaggio(), 4, 2);
+    //stats->addLayout(statsPersonaggio(), 4, 2);
     return stats;
 }
 
@@ -85,6 +100,5 @@ void StatisticheMatch::handleButton(){
             cc->show();
         }
 }
-*/
 
 //FARE DUE WIDGET DIFFERENTI

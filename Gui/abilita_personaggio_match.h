@@ -16,7 +16,6 @@ private:
     QPushButton* abilita3;
 
     QGridLayout* abilita;
-    QGridLayout* abilitaEsterno; //contiene QGridLayout abilita
 
 public:
     AbilitaPersonaggioMatch(QWidget* parent=0);

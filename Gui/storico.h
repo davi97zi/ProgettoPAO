@@ -19,7 +19,8 @@ private:
     QPushButton* moreInfo;
 
     int getFileRows();
-    QDate* getDate();
+    QString getDate();
+    QTime getTime();
 public:
     Storico(QWidget* parent=0);
 };

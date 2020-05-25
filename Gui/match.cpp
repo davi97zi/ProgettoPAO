@@ -1,50 +1,28 @@
 #include "match.h"
+#include "statistichematchmostro.h"
+#include "statistichematchpersonaggio.h"
 
 Match::Match(QWidget* parent): QWidget(parent){
-    window = new QWidget();
-
     contenitore = new QVBoxLayout();
 
     //gestite dal controller
-    //turno = new QLabel("Turno: " + QString::number(getTurno()));
-    //coins = new QLabel("Monete: " + QString::number(getMonete()));
+    turno = new QLabel("Turno: " + QString::number(1));
+    turno->setStyleSheet("QLabel{border-radius: 25px; font: bold 14px;}");
+    coins = new QLabel("Monete: " + QString::number(10));
+    coins->setStyleSheet("QLabel{border-radius: 25px; color: blue;}");
     turno->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
     coins->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
 
     layoutMostro = new QGridLayout();
     layoutPersonaggio = new QGridLayout();
 
-    InfoMatch* info = nullptr;
-    StatisticheMatch* stats = nullptr;
-    AbilitaPersonaggioMatch* abilita = nullptr;
+    StatisticheMatchPersonaggio* statsP = new StatisticheMatchPersonaggio;
+    StatisticheMatchMostro* statsM = new StatisticheMatchMostro;
 
-    //Immagine del mostro
+    contenitore->addWidget(turno, 0, Qt::AlignCenter);
+    contenitore->addWidget(coins, 0, Qt::AlignCenter);
+    contenitore->addWidget(statsM);
+    contenitore->addWidget(statsP);
 
-    QVBoxLayout* imageVertical = new QVBoxLayout();
-    /*
-    QImage* myImage;
-    myImage->load("immagine.png"); //path immagine
-
-    QLabel* img;
-    img->setPixmap(QPixmap::fromImage(*myImage));
-    //img->resize();
-    //img->show();
-
-    imageVertical->addWidget(img);
-
-    layoutMostro->addLayout(stats->statsMostro(),1,1);//1,1 perche il numero effettivo righe e colonne si trova in statisticheMatch
-    layoutMostro->addLayout(imageVertical, 1, 1);
-    layoutMostro->addLayout(info->setLayoutMostro(), 2, 1);
-
-    layoutPersonaggio->addLayout(info->setLayoutPersonaggio(), 2,1);
-    layoutPersonaggio->addLayout(dynamic_cast<QLayout*>(abilita), 1,1);
-    layoutPersonaggio->addLayout(stats->statsPersonaggio(), 1, 1); //1,1 perche il numero effettivo righe e colonne si trova in statisticheMatch
-*/
-    contenitore->addWidget(turno);
-    contenitore->addWidget(coins);
-    contenitore->addLayout(layoutMostro);
-    contenitore->addLayout(layoutPersonaggio);
-
-    window->setLayout(contenitore);
-    window->show();
+    setLayout(contenitore);
 }

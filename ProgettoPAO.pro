@@ -43,10 +43,11 @@ SOURCES += \
     soldato.cpp \
     Gui/storico.cpp \
     tank.cpp \
-    Gui/statistichematch.cpp \
     Gui/info_match.cpp \
     Gui/abilita_personaggio_match.cpp \
-    Gui/match.cpp
+    Gui/match.cpp \
+    Gui/statistichematchmostro.cpp \
+    Gui/statistichematchpersonaggio.cpp
 
 HEADERS += \
     Interfacce/defenceInterface.h \
@@ -68,10 +69,11 @@ HEADERS += \
     Gui/storico.h \
     tank.h \
     ui_mainwindow.h \
-    Gui/statistichematch.h \
     Gui/info_match.h \
     Gui/abilita_personaggio_match.h \
-    Gui/match.h
+    Gui/match.h \
+    Gui/statistichematchmostro.h \
+    Gui/statistichematchpersonaggio.h
 
 FORMS += \
         Gui/mainwindow.ui \

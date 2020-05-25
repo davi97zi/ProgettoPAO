@@ -7,7 +7,7 @@
 
 #include "abilita_personaggio_match.h"
 #include "info_match.h"
-#include "statistichematch.h"
+#include "statistichematchmostro.h"
 
 class Match: public QWidget{
     Q_OBJECT

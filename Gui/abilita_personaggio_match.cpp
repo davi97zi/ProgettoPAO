@@ -1,17 +1,13 @@
 #include "abilita_personaggio_match.h"
 
 AbilitaPersonaggioMatch::AbilitaPersonaggioMatch(QWidget* parent): QWidget(parent){
-    titolo = new QLabel("ABILITÀ");
-    titolo->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed); //horizontal: preferred, vertical: fixed
-    titolo->setAlignment(Qt::AlignCenter);
-
-    abilitaEsterno = new QGridLayout();
-    abilitaEsterno->setVerticalSpacing(6);
-    abilitaEsterno->setHorizontalSpacing(6);
-
     abilita = new QGridLayout();
     abilita->setVerticalSpacing(6);
     abilita->setHorizontalSpacing(6);
+
+    titolo = new QLabel("ABILITÀ");
+    titolo->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed); //horizontal: preferred, vertical: fixed
+    titolo->setAlignment(Qt::AlignCenter);
 
     baseAttack = new QPushButton("BaseAttack");
     baseAttack->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
@@ -31,13 +27,12 @@ AbilitaPersonaggioMatch::AbilitaPersonaggioMatch(QWidget* parent): QWidget(paren
     connect(abilita3, SIGNAL (released()),this, SLOT (handleButton()));
 
     abilita->addWidget(titolo);//prima riga
-    abilita->addWidget(baseAttack);
-    abilita->addWidget(abilita1);
-    abilita->addWidget(abilita2);
-    abilita->addWidget(abilita3);
+    abilita->addWidget(baseAttack, 1, 0, Qt::AlignLeft);
+    abilita->addWidget(abilita1, 1, 1, Qt::AlignRight);
+    abilita->addWidget(abilita2, 2, 0, Qt::AlignLeft);
+    abilita->addWidget(abilita3, 2, 1, Qt::AlignRight);
 
-    abilitaEsterno->addLayout(abilita,3,2); //rows: 3, colums: 2
-    setLayout(abilitaEsterno);
+    setLayout(abilita);
 }
 
 //funzione gestita dal controller

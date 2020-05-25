@@ -2,26 +2,30 @@
 
 #include "../Interfacce/personaggio.h"
 #include "../mostro.h"
-/*
+
 InfoMatch::InfoMatch(QWidget* parent): QWidget(parent){
 
-    //da sistemare col controller
-    personaggio = new QLabel(p->getNome());
-    livelloPersonaggio = new QLabel(QString::number(p->getLevel()));
-
-    mostro = new QLabel(m->getNome());
-    livelloMostro = new QLabel(QString::number(m->getLevel()));
 }
 
 //info del personaggio
-QLayout* InfoMatch::setLayoutPersonaggio(){
-    vertical.addWidget(personaggio);
-    vertical.addWidget(livelloPersonaggio);
+QVBoxLayout* InfoMatch::setLayoutPersonaggio(){
+    personaggio = new QLabel("Personaggio: ciao");
+    livelloPersonaggio = new QLabel("Livello:" + QString::number(2));
+
+    vertical->addWidget(personaggio);
+    vertical->addWidget(livelloPersonaggio);
+
+    return vertical;
 }
 
 //info del mostro
-QLayout* InfoMatch::setLayoutMostro(){
-    vertical.addWidget(mostro);
-    vertical.addWidget(livelloMostro);
+QVBoxLayout* InfoMatch::setLayoutMostro(){
+    mostro = new QLabel("Mostro: ciadaadado");
+    livelloMostro = new QLabel("Livello:" + QString::number(4));
+
+    vertical->addWidget(mostro);
+    vertical->addWidget(livelloMostro);
+
+    return vertical;
 }
-*/
+
