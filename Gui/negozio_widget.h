@@ -10,6 +10,7 @@ class Negozio_widget : public QWidget{
 
 private:
     Negozio_personaggio * primo, * secondo, * terzo;
+    QLabel * soldi;
     QPushButton * prosegui;
 public:
     explicit Negozio_widget(QWidget *parent = nullptr);

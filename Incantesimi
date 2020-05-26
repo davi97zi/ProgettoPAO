@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<spells>
+    <tipo nome="arciere">
+        <!--abilità 0= attacco base-->
+        <abilità num="1">
+            <nome>freccia appuntita</nome> <!--mmm might not be necessary, the num & tipo might be enoug-->
+            <descrizione></descrizione> <!--idk what to put in here tho, just a flavour description? the formula? the result damage?-->
+        <abilità>
+        <abilità num="2">
+            <nome>freccia infuocata</nome>
+            <descrizione></descrizione>
+        <abilità>
+        <abilità num="3">
+            <nome>freccia pesante</nome>
+            <descrizione></descrizione>
+        <abilità>
+    <\tipo>
+</spells>
