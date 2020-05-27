@@ -4,6 +4,7 @@
 #include "taverna.h"
 #include "storico.h"
 #include "dungeon.h"
+#include "incantesimo.h"
 
 #include "Gui/negozio_widget.h"
 
@@ -12,10 +13,18 @@
 using namespace std;
 
 int main(int argc, char *argv[]){
+    Incantesimo i("arciere", 1);
+    qDebug() << i.getNome();
+    qDebug() << i.getString();
+    return 0;
+
+/*
+    //gui negozio funziona e il sistema dei figli elimina tutto quello che deve
     QApplication a(argc, argv);
     Negozio_widget w;
     w.show();
-
+    return a.exec();
+*/
 /*
     //lettura da XML e stampa dei dati OK
     Taverna Fandolin;
@@ -45,5 +54,4 @@ int main(int argc, char *argv[]){
     qDebug() << "you are in the dungeon, inside are: ";
     direDices.stampaTutti();
 */
-    return a.exec();
 }

@@ -66,7 +66,8 @@ HEADERS += \
     dungeon.h \
     dungeonItem.h \
     Gui/negozio_personaggio.h \
-    Gui/negozio_widget.h
+    Gui/negozio_widget.h \
+    incantesimo.h
 
 FORMS += \
         mainwindow.ui
