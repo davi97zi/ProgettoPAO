@@ -47,7 +47,9 @@ SOURCES += \
     Gui/abilita_personaggio_match.cpp \
     Gui/match.cpp \
     Gui/statistichematchmostro.cpp \
-    Gui/statistichematchpersonaggio.cpp
+    Gui/statistichematchpersonaggio.cpp \
+    Gui/negozio_personaggio.cpp \
+    Gui/negozio_widget.cpp
 
 HEADERS += \
     Interfacce/defenceInterface.h \
@@ -73,7 +75,9 @@ HEADERS += \
     Gui/abilita_personaggio_match.h \
     Gui/match.h \
     Gui/statistichematchmostro.h \
-    Gui/statistichematchpersonaggio.h
+    Gui/statistichematchpersonaggio.h \
+    Gui/negozio_personaggio.h \
+    Gui/negozio_widget.h
 
 FORMS += \
         Gui/mainwindow.ui \
