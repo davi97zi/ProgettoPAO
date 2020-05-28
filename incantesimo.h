@@ -8,7 +8,7 @@
 class Incantesimo{
 private:
     QString nome, descrizione; // nome potrebbe essere usato x ritornare il valore da visualizzare sul bottone a video
-    QDomElement findOnXml(const QDomElement root, QString tipo, int num){
+    QDomElement findOnXml(const QDomElement& root, QString tipo, int num){
         //scorri i tipi fino a trovare il tuo
         QDomElement elementTipo= root.firstChild().toElement();
         bool foundType= false;
@@ -59,7 +59,7 @@ public:
             document.setContent(&file);
             //trova il primo figlio (contiene all else)
             QDomElement rootElement= document.documentElement();
-            qDebug() << "foundType the " << rootElement.tagName();
+            qDebug() << "found the " << rootElement.tagName();
 
             //trova il nodo rilevante usando il tipo e il num dell'abilita
             QDomElement incantesimoMaker= findOnXml(rootElement, tipo, num);
@@ -70,7 +70,7 @@ public:
             file.close();
         }
         else{//segnalo errore
-            qDebug() << "you could not find the tavern, you are lost in the forest, may the gods have mercy on your soul";
+            qDebug() << "you got amnesia and forgot all your abilities";
         }
     }
 

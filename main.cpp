@@ -13,7 +13,7 @@
 using namespace std;
 
 int main(int argc, char *argv[]){
-    Incantesimo i("arciere", 1);
+    Incantesimo i("berseker", 3);
     qDebug() << i.getNome();
     qDebug() << i.getString();
     return 0;
