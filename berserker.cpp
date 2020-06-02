@@ -15,7 +15,7 @@ bool Berserker::increaseLevel(unsigned int newExpPoint){//newExpPoint guadagnati
 }
 
 unsigned int Berserker::abilita1(){
-    return static_cast<unsigned int>(this->scudo());
+    return static_cast<unsigned int>(this->colpoStordente());
 }
 
 unsigned int Berserker::abilita2(){
@@ -29,15 +29,14 @@ unsigned int Berserker::abilita3(){
 
 
 
-bool Berserker::scudo(){
+bool Berserker::colpoStordente(){
     if(getTurno()!=0){
-        buffArmor();
         decrementaTurni();
-        return true;
-    } else{
-        //incrementaTurni() ?
-        setMaxArmor(getArmor());
         return false;
+    } else{
+        incrementaTurni();
+        setMaxArmor(getArmor());
+        return true;
     }
 }
 
