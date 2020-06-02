@@ -3,6 +3,11 @@
 #include <QAbstractItemView>
 #include <QDateTime>
 #include <QStandardItemModel>
+#include <QDebug>
+
+#include "../xml/storicoModello.h"
+
+
 
 Storico::Storico(QWidget* parent): QWidget(parent){
     //windowStorico = new QWidget();
@@ -10,47 +15,46 @@ Storico::Storico(QWidget* parent): QWidget(parent){
     vertical = new QVBoxLayout();
 
     titolo = new QLabel("Storico");
+    titolo->setObjectName("titolo");
+
+    titolo->setStyleSheet("QLabel#titolo{padding: 0.5em; margin: 0.5em;}");
+
     titolo->setAlignment(Qt::AlignTop);
-    titolo->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
+    titolo->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Fixed);
 
     table = new QTableWidget(this);
     //table->setRowCount(5); //numero di righe prese dal file = numero partite giocate
-    table->setColumnCount(7);
+    table->setColumnCount(6);
     table->setShowGrid(true);
 
+
     //si possono selezionare solo le righe -> probabilmente inutile
-    table->setSelectionMode(QAbstractItemView::SingleSelection);
-    table->setSelectionBehavior(QAbstractItemView::SelectRows);
+    //table->setSelectionMode(QAbstractItemView::SingleSelection);
+    //table->setSelectionBehavior(QAbstractItemView::SelectRows);
 
     //header table
     QStringList tableHeader;
-    tableHeader<< "Data" << "Ora" << "Livello" << "#Personaggi" << "Monete" << "Risultato" << "Altro";
+    tableHeader<< "Data" << "Livello" << "#Personaggi" << "Monete" << "Risultato" << "Altro";
     table->setHorizontalHeaderLabels(tableHeader);
 
-    //btn per ottenere piu informazioni riguardo al game scelto
-    moreInfo = new QPushButton("More info");
-
+    //table->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+    //table->resize(1000, 1000);
     // IL BOTTONE VIENE STAMPATO SOLO NELL'ULTIMA RIGA
-    for(int i=0; i<5; i++){
-        //insert row
-        table->insertRow(i);
-        table->setItem(i, 0, new QTableWidgetItem(getDate()));
-        table->setItem(i, 1, new QTableWidgetItem(getTime().toString()));
-        table->setItem(i, 2, new QTableWidgetItem());//getLivello dal file -> toString())) dentro il tablewidgetitem
-        table->setItem(i, 3, new QTableWidgetItem());//getNumPersonaggi dal file QString::number(getNumpersonaggi))) dentro il tablewidgetitem
-        table->setItem(i, 4, new QTableWidgetItem());//getMonete dal file QString::number(getMonete))) dentro il tablewidgetitem
-        table->setItem(i, 5, new QTableWidgetItem());//getRisultato dal file -> toString())) dentro il tablewidgetitem
-        table->setCellWidget(i, 6, moreInfo);
-    }
 
-    //resize colums to contents
-    table->resizeColumnsToContents();
+    indietro= new QPushButton("indietro");
+    indietro->setObjectName("indietro");
+    indietro->resize(165, 165);
 
-    connect(moreInfo, SIGNAL (released()),this, SLOT (handleButton()));
+    //tornare al main
+    connect(indietro, SIGNAL (released()), this, SIGNAL (returnToMain()));
 
-    vertical->addWidget(titolo);
+    vertical->addWidget(titolo, 0, Qt::AlignCenter);
+
+    vertical->addWidget(indietro, 0, Qt::AlignLeft);
+
     vertical->addWidget(table);
 
+    //vertical->setSizeConstraint(QLayout::SetFixedSize);
     setLayout(vertical);
     //windowStorico->show();
 }
@@ -67,49 +71,32 @@ QTime Storico::getTime(){
     return time;
 }
 
-//ritorna il numero di righe prese dal file
-int Storico::getFileRows(){
+void Storico::addRow(const StoricoModello::StoricoModelloItem & row){
+    int i= row.StoricoModello::StoricoModelloItem::getId();
+    qDebug() << "HEYHEYHEY" <<i;
+    table->insertRow(i);
+    table->setItem(i, 0, new QTableWidgetItem(row.StoricoModello::StoricoModelloItem::getData()));
+    table->setItem(i, 1, new QTableWidgetItem(row.StoricoModello::StoricoModelloItem::getBattaglia()));//getLivello dal file -> toString())) dentro il tablewidgetitem
+    table->setItem(i, 2, new QTableWidgetItem(row.StoricoModello::StoricoModelloItem::getSizeSquadra()));//getNumPersonaggi dal file QString::number(getNumpersonaggi))) dentro il tablewidgetitem
+    table->setItem(i, 3, new QTableWidgetItem(row.StoricoModello::StoricoModelloItem::getOro()));//getMonete dal file QString::number(getMonete))) dentro il tablewidgetitem
+    table->setItem(i, 4, new QTableWidgetItem(row.StoricoModello::StoricoModelloItem::getVittoria()));//getRisultato dal file -> toString())) dentro il tablewidgetitem
+    //btn per ottenere piu informazioni riguardo al game scelto
+    QPushButton * moreInfo = new QPushButton("More info");
+    moreInfo-> setObjectName(QString::number(i));
+    connect(moreInfo, SIGNAL (released()),this, SLOT (handleButton()));
+    table->setCellWidget(i, 5, moreInfo);
+
+    //resize colums to contents
+    table->resizeColumnsToContents();
 
 }
 
+//slots
 void Storico::handleButton(){
     QPushButton* button = dynamic_cast<QPushButton*>(sender()); //QPushButton* button = (QPushButton*)sender();
-    if(button->objectName() == "moreInfo"){
-        QMessageBox* msgBox = new QMessageBox(this);
-        msgBox->setText("You selected a specific game.");
-        msgBox->setInformativeText("Do you want to see more informations about the game you clicked?");
-        msgBox->setStandardButtons(QMessageBox::Yes | QMessageBox::No);
-        msgBox->setDefaultButton(QMessageBox::Yes);
-        msgBox->setEscapeButton(QMessageBox::No);
-
-        int ret = msgBox->exec();
-        /*
-        switch (ret) {
-          case QMessageBox::Yes:
-              // Yes was clicked -> si crea il btn Show Details che se cliccato mostra piu info nello stesso QMessageBox
-              //qua bisogna prendersi le info dal file
-
-            * The detailed text property is always interpreted as plain text.
-             * The main text and informative text properties can be either plain text or rich text.
-             * These strings are interpreted according to the setting of the text format property. The default setting is auto-text.
-             * Note that for some plain text strings containing XML meta-characters, the auto-text rich text detection test may fail
-             * causing your plain text string to be interpreted incorrectly as rich text.
-             * In these rare cases, use Qt::convertFromPlainText() to convert your plain text string to a visually equivalent rich text string,
-             * or set the text format property explicitly with setTextFormat().
-             *
-              msgBox->setDetailedText("Turni giocati: " + turni +
-                                   "Monete guadagnate: " + monete +
-                                   "Personaggi comprati: " + personaggio);
-              break;
-          case QMessageBox::No:
-             // No was clicked
-              msgBox->close();
-              break;
-          default:
-              // should never be reached
-              break;
-              }
-                  */
-        }
-    }
+    int row = button->objectName().toInt();
+    qDebug() << row;
+    //controller: aprimi questa riga
+    //emit SegnaleDaDefinire(i);// arriva al controller
+}
 

@@ -5,6 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
+QT       += xml
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -25,7 +26,6 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp \
     Interfacce/defenceInterface.cpp \
     Interfacce/dpsInterface.cpp \
     Interfacce/healInterface.cpp \
@@ -42,10 +42,21 @@ SOURCES += \
     tank.cpp \
     partita.cpp \
     battaglia.cpp \
-    contenitore.cpp
+    contenitore.cpp \
+    Gui/abilita_personaggio_match.cpp \
+    Gui/changecharacter.cpp \
+    Gui/choosefirstcharacter.cpp \
+    Gui/info_match.cpp \
+    Gui/mainwindow.cpp \
+    Gui/match.cpp \
+    Gui/negozio_personaggio.cpp \
+    Gui/negozio_widget.cpp \
+    Gui/statistichematchmostro.cpp \
+    Gui/statistichematchpersonaggio.cpp \
+    Gui/storico.cpp \
+    Controller/controller.cpp
 
 HEADERS += \
-    mainwindow.h \
     Interfacce/defenceInterface.h \
     Interfacce/dpsInterface.h \
     Interfacce/healInterface.h \
@@ -62,9 +73,23 @@ HEADERS += \
     tank.h \
     partita.h \
     battaglia.h \
-    contenitore.h
+    contenitore.h \
+    Gui/abilita_personaggio_match.h \
+    Gui/changecharacter.h \
+    Gui/choosefirstcharacter.h \
+    Gui/info_match.h \
+    Gui/mainwindow.h \
+    Gui/match.h \
+    Gui/negozio_personaggio.h \
+    Gui/negozio_widget.h \
+    Gui/statistichematchmostro.h \
+    Gui/statistichematchpersonaggio.h \
+    Gui/storico.h \
+    Controller/controller.h \
+    xml/storicoModello.h \
+    xml/xmlitem.h \
 
-FORMS += \
-        mainwindow.ui \
-    partita.ui \
-    battaglia.ui
+RESOURCES += \
+    xmlresources.qrc
+
+

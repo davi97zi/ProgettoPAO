@@ -1,33 +1,32 @@
 #include "mainwindow.h"
 #include <QApplication>
 
-#include "mostro.h"
-#include "mago.h"
-#include "artificiere.h"
-#include "soldato.h"
-#include "tank.h"
-#include "guaritore.h"
-#include "berserker.h"
-#include "contenitore.h"
-#include "arciere.h"
-#include "paladino.h"
-
 //da togliere poi?
 #include <cstdlib>
 #include <ctime>
 
+#include "Controller/controller.h"
 
 #include <iostream>
 
 using namespace std;
 
 int main(int argc, char *argv[]){
-    //QApplication a(argc, argv);
-    /*MainWindow w;
-    w.show();*/
+    //NOTA: critico() FUNZIONA MA VA MESSA LA RIGA SEGUENTE NEL MAIN (O IN PARTITA) PER FARLO FUNZIONARE
+    //KEEP HERE??
+    //srand(static_cast<unsigned int>(time(NULL)));
+    QApplication a(argc, argv);
+
+    Controller C;
+
+    return a.exec();
+}
 
 /*
-<<<<<<< HEAD
+ * //QApplication a(argc, argv);
+    /*MainWindow w;
+    w.show();
+
     Mostro* boss= new Mostro(100, "Vlad", 2);
 
     cout << "prepare to meet the " << boss->getLevel() << " " << boss->getTipoPersonaggio().QString::toStdString() << " "<< boss->getNome().QString::toStdString() << "\nNOW FIGHT!!!\n";
@@ -67,14 +66,6 @@ int main(int argc, char *argv[]){
     }
     //return a.exec();
 =======
-*/
-
-    //NOTA: critico() FUNZIONA MA VA MESSA LA RIGA SEGUENTE NEL MAIN (O IN PARTITA) PER FARLO FUNZIONARE
-    srand(static_cast<unsigned int>(time(NULL)));
-
-
-
-
 
     Soldato* s=new Soldato("ss1", 115);
     cout<<"s=> "<<s->getBaseAttack()<<' '<<s->getLevel()<<' '<<s->getExpPoint()<<endl;
@@ -152,8 +143,4 @@ int main(int argc, char *argv[]){
     cout<<a->abilita1()<<endl;
     cout<<a->abilita2()<<endl;
     cout<<a->abilita3()<<endl;
-
-
-
-    return 0;
-}
+*/
