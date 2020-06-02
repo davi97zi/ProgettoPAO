@@ -174,6 +174,8 @@ Contenitore::Iteratore Contenitore::trovaPersonaggio(QString nome) const{
         else
             ++it;
     }
+    if(it.punt==0)
+        throw 0;
     return it;
 }
 

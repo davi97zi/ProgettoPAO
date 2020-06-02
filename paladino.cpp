@@ -57,6 +57,8 @@ unsigned int Paladino::abilita3()
 
 bool Paladino::shieldOfFaith(){
     pray(false);
+    /*if(buffArmor()==false)
+        throw 0;*/
     return buffArmor();
 }
 

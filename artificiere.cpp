@@ -15,8 +15,7 @@ bool Artificiere::increaseLevel(unsigned int newExpPoint){//newExpPoint guadagna
   }
 }
 
-unsigned int Artificiere::abilita1()
-{
+unsigned int Artificiere::abilita1(){
     return this->bombardaMaxima();
 }
 
@@ -36,7 +35,8 @@ unsigned int Artificiere::bombardaMaxima(){
         setMana(getCostoA1());
         return dmg;
     } else
-        return 0;
+        throw 0;
+        //return 0;
 }
 
 unsigned int Artificiere::rainOfSpells(){
@@ -45,7 +45,8 @@ unsigned int Artificiere::rainOfSpells(){
         setMana(getCostoA2());
         return dmg;
     } else
-        return 0;
+        throw 0;
+        //return 0;
 }
 
 unsigned int Artificiere::autodistruzione(){ //shotta ma ti uccide
@@ -55,6 +56,7 @@ unsigned int Artificiere::autodistruzione(){ //shotta ma ti uccide
         receiveDamage(dmg);
         return dmg;
     } else
-        return 0;
+        throw 0;
+        //return 0;
 }
 
