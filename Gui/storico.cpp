@@ -4,10 +4,9 @@
 #include <QDateTime>
 #include <QStandardItemModel>
 #include <QDebug>
+#include "xml/xmlitem.h"
 
 #include "../xml/storicoModello.h"
-
-
 
 Storico::Storico(QWidget* parent): QWidget(parent){
     //windowStorico = new QWidget();
@@ -46,7 +45,7 @@ Storico::Storico(QWidget* parent): QWidget(parent){
     indietro->resize(165, 165);
 
     //tornare al main
-    connect(indietro, SIGNAL (released()), this, SIGNAL (returnToMain()));
+    connect(indietro, SIGNAL (released()), this, SLOT (returnToMain()));
 
     vertical->addWidget(titolo, 0, Qt::AlignCenter);
 
@@ -73,7 +72,7 @@ QTime Storico::getTime(){
 
 void Storico::addRow(const StoricoModello::StoricoModelloItem & row){
     int i= row.StoricoModello::StoricoModelloItem::getId();
-    qDebug() << "HEYHEYHEY" <<i;
+    qDebug() << "HEYHEYHEY" << i;
     table->insertRow(i);
     table->setItem(i, 0, new QTableWidgetItem(row.StoricoModello::StoricoModelloItem::getData()));
     table->setItem(i, 1, new QTableWidgetItem(row.StoricoModello::StoricoModelloItem::getBattaglia()));//getLivello dal file -> toString())) dentro il tablewidgetitem
@@ -82,21 +81,26 @@ void Storico::addRow(const StoricoModello::StoricoModelloItem & row){
     table->setItem(i, 4, new QTableWidgetItem(row.StoricoModello::StoricoModelloItem::getVittoria()));//getRisultato dal file -> toString())) dentro il tablewidgetitem
     //btn per ottenere piu informazioni riguardo al game scelto
     QPushButton * moreInfo = new QPushButton("More info");
-    moreInfo-> setObjectName(QString::number(i));
+    moreInfo->setObjectName(QString::number(i));
     connect(moreInfo, SIGNAL (released()),this, SLOT (handleButton()));
     table->setCellWidget(i, 5, moreInfo);
 
     //resize colums to contents
     table->resizeColumnsToContents();
-
 }
 
 //slots
 void Storico::handleButton(){
     QPushButton* button = dynamic_cast<QPushButton*>(sender()); //QPushButton* button = (QPushButton*)sender();
     int row = button->objectName().toInt();
-    qDebug() << row;
+    qDebug() << button->objectName() << " " << row;
+    emit showRowInfo(row);
     //controller: aprimi questa riga
     //emit SegnaleDaDefinire(i);// arriva al controller
+}
+
+void Storico::returnToMain(){
+    qDebug() << "Im returnToMain";
+    emit signalReturnToMain();
 }
 

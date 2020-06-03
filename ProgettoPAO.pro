@@ -54,7 +54,8 @@ SOURCES += \
     Gui/statistichematchmostro.cpp \
     Gui/statistichematchpersonaggio.cpp \
     Gui/storico.cpp \
-    Controller/controller.cpp
+    Controller/controller.cpp \
+    Gui/scegliapplicativo.cpp
 
 HEADERS += \
     Interfacce/defenceInterface.h \
@@ -88,6 +89,7 @@ HEADERS += \
     Controller/controller.h \
     xml/storicoModello.h \
     xml/xmlitem.h \
+    Gui/scegliapplicativo.h
 
 RESOURCES += \
     xmlresources.qrc

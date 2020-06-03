@@ -24,7 +24,7 @@ int main(int argc, char *argv[]){
 
 /*
  * //QApplication a(argc, argv);
-    /*MainWindow w;
+    MainWindow w;
     w.show();
 
     Mostro* boss= new Mostro(100, "Vlad", 2);
@@ -65,7 +65,6 @@ int main(int argc, char *argv[]){
         cout << "in a chest you find: " << chest[0] << " exp and " <<chest[1] << "coins!\n";
     }
     //return a.exec();
-=======
 
     Soldato* s=new Soldato("ss1", 115);
     cout<<"s=> "<<s->getBaseAttack()<<' '<<s->getLevel()<<' '<<s->getExpPoint()<<endl;

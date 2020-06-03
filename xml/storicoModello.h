@@ -22,8 +22,9 @@ public:
         std::vector<XmlItem> squadra; //estrai Item da Negozio CAN I USE VECTOR????
     public:
         StoricoModelloItem(unsigned int i,QString d, bool v, int b, int o, std::vector<XmlItem> s):id(i), data(d), vittoria(v), battaglia(b), oro(o), squadra(s){}
+        /*
         //fun stampa partita
-        /*void stampaStoricoModelloItem()const{
+        void stampaStoricoModelloItem()const{
             qDebug() << "id: " << id;
             qDebug() << "partita giocata il: " << data;
             qDebug() << "risultato: " << (vittoria? "Vittoria": "Sconfitta");
@@ -36,7 +37,7 @@ public:
         }*/
 
         //getters:
-        int getId() const{ return id;}
+        unsigned int getId() const{ return id;}
         QString getData() const{ return data;}
         QString getVittoria() const{ return (vittoria? "Vittoria" : "Sconfitta");}
         QString getBattaglia() const{ return QString::number(battaglia);}
@@ -81,11 +82,11 @@ public:
         }
     }*/
 
-    StoricoModelloItem getPartita(int i)const{
+    StoricoModelloItem getPartita(unsigned int i)const{
         return StoricoModelloPartite[i];
     }
 
-    int getSize()const{
+    unsigned int getSize()const{
         return StoricoModelloPartite.size();
     }
 /*
@@ -113,11 +114,11 @@ public:
             file.close();
             //confronta il numero di elementi presenti tra i 2
 
-            int lastElementId= rootElement.lastChildElement().attribute("id").toInt(), StoricoModelloSize=StoricoModelloPartite.size();
+            unsigned int lastElementId= rootElement.lastChildElement().attribute("id").toInt(), StoricoModelloSize=StoricoModelloPartite.size();
             qDebug() << lastElementId << " " <<StoricoModelloSize;
 
             if(lastElementId!=StoricoModelloSize){//esiste elementi da inserire in xml
-                for(int i=lastElementId; i<StoricoModelloSize; i++){
+                for(unsigned int i=lastElementId; i<StoricoModelloSize; i++){
                     StoricoModelloItem s= StoricoModelloPartite[i];
                     //crea nuovo elemento
                     QDomElement newChild= document.createElement("partita");
@@ -210,9 +211,9 @@ private:
 
         //entra in primo figlio (partita)
         QDomElement partita=root.firstChild().toElement();
-        idPart=partita.attribute("id").toInt();
 
         while(!partita.isNull()){//leggi tutte le partite
+            idPart=partita.attribute("id").toInt();
             QDomElement charPart=partita.firstChild().toElement();// entro in primo figlio (data)
             while(!charPart.isNull()){//leggo le caratteristiche della partita
                 if(charPart.tagName()=="data"){

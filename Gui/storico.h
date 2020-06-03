@@ -6,6 +6,7 @@
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QPushButton>
+#include "mainwindow.h"
 
 #include "../xml/storicoModello.h"
 
@@ -28,6 +29,10 @@ public:
     void addRow(const StoricoModello::StoricoModelloItem&);
 
 signals:
+    void signalReturnToMain();
+    void showRowInfo(int);
+
+public slots:
     void returnToMain();
 };
 

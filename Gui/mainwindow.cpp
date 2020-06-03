@@ -5,36 +5,21 @@
 #include "choosefirstcharacter.h"
 #include "QDebug"
 
-MainWindow::MainWindow(QWidget *parent) :
+MainWindow::MainWindow(QWidget* central, QWidget *parent) : firstWindow(central),
     QMainWindow(parent) //corretto?
 {
-    //container della prima finestra
-    firstWindow = new QWidget();
+    resize(500,500);
 
-    gioca = new QPushButton("Gioca", this);
-    gioca->setObjectName("gioca");
-    storico = new QPushButton("Storico", this);
-    storico->setObjectName("storico");
-    spacer = new QSpacerItem(40, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
-
-    verticalLayout1 = new QVBoxLayout;
-    verticalLayout1->addWidget(gioca);
-    verticalLayout1->addItem(spacer);
-    verticalLayout1->addWidget(storico);
-
-
-    connect(gioca, SIGNAL (released()),this, SLOT (handleButton()));
-    connect(storico, SIGNAL (released()),this, SLOT (handleButton()));
-
-
-
-    firstWindow->setLayout(verticalLayout1);
+    connect(this, SIGNAL (signalReturnToMain()), this, SLOT (remakeMain()));
 
     setCentralWidget(firstWindow);
-
-    resize(1000, 1000);//da modificare?
 }
 
+void MainWindow::resetCentralWidget(){
+    setCentralWidget(new ScegliApplicativo);
+}
+
+/*
 void MainWindow::handleButton(){
     QPushButton* button = dynamic_cast<QPushButton*>(sender());
     if(button->objectName()=="gioca"){
@@ -42,7 +27,7 @@ void MainWindow::handleButton(){
         //ChooseFirstCharacter* cfc= new ChooseFirstCharacter();
         //firstWindow= cfc;
         //setCentralWidget(firstWindow);
-        emit signalBottone("gioca");
+        //emit signalBottone("gioca");
         //cfc->show();
     } else if(button->objectName()=="storico"){
         //vai alla schermata storico
@@ -59,11 +44,11 @@ void MainWindow::handleButton(){
     }
     //in ogni caso chiudo la finestra
     //firstWindow->close();
-}
+}*/
 
-void MainWindow::remakeMain(){
+/*void MainWindow::remakeMain(){
     //firstWindow->close();
     qDebug() << "I GOT HERE????";
     //riporta a vecchia finestra principale vedremo come dopo
 
-}
+}*/

@@ -1,8 +1,9 @@
 #include "controller.h"
 #include <QDebug>
 
-#include "../gui/choosefirstcharacter.h"
-#include "../gui/storico.h"
+#include "../Gui/choosefirstcharacter.h"
+#include "../Gui/storico.h"
+#include "xml/storicoModello.h"
 
 
 /*StoricoModello::StoricoModelloItem Controller::getStoricoRow(int i){
@@ -13,11 +14,13 @@ Controller::Controller(QObject *parent) : QObject(parent){
     //crea la finestra
     mw= new MainWindow();//serve this?
 
+    remakeMain();
+
     //mostra finestra
     mw->show();
 
     //reagisce al click di un bottone: storico o partita?
-    connect(mw, SIGNAL (signalBottone(QString)),this, SLOT (slotQualeBottone(QString)));
+    //DA METTERE FORSE IN SCEGLIAPPLICATIVO ??????
 
 }
 
@@ -38,17 +41,36 @@ void Controller::slotQualeBottone(QString str){
 
         //vai alla schermata storico
         Storico* storicoGui= new Storico();
+
+        //return alla scegliApplicativo
+        connect(storicoGui, SIGNAL (signalReturnToMain()), this, SLOT (remakeMain()));
+
         // ????
         //connect(mw, SIGNAL (returnToMain()),this, SLOT (remakeMain()));
         //???
         //2) inserisci i dati nella gui
         //per ogni riga della tabella passa: data, battaglia, #personaggi, monete e risultato
-        for(int i =0; i < (sMod->getSize()); i++){
+        for(int i=0; i < sMod->getSize(); i++){
             storicoGui->addRow(sMod->getPartita(i));
         }
+
+        connect(storicoGui, SIGNAL (showRowInfo(int)), this, SLOT (stampaRowInfo(int)));
 
         //mostra lo storico completo
         mw->setCentralWidget(storicoGui);
 
     }
+}
+void Controller::remakeMain(){
+    //firstWindow->close();
+    qDebug() << "Controller::remakeMain()";
+    mw->resetCentralWidget();
+    connect(mw->centralWidget(), SIGNAL (signalBottone(QString)),this, SLOT (slotQualeBottone(QString)));
+}
+
+void Controller::stampaRowInfo(int i){
+    StoricoModello::StoricoModelloItem partita = sMod->getPartita(i);
+    qDebug() << partita.getSizeSquadra();
+    for(int k=0; k<partita.getSizeSquadra(); k++)
+        partita.getAvv(k).stampaItem();
 }

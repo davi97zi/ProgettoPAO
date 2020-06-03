@@ -6,26 +6,25 @@
 #include <QHBoxLayout>
 #include <QPushButton>
 #include <QSpacerItem>
+#include "scegliapplicativo.h"
 
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
 private:
     QWidget* firstWindow;
-    QPushButton* gioca;
-    QPushButton* storico;
-    QSpacerItem* spacer;
-    QVBoxLayout* verticalLayout1;
 
 public:
-    MainWindow(QWidget *parent = 0);
+    MainWindow(QWidget* central=new ScegliApplicativo, QWidget *parent = 0);
+
+    void resetCentralWidget();
 
 public slots:
-    void handleButton();
-    void remakeMain();
-
+    //void handleButton();
+    //void remakeMain();
+/*
 signals:
-    void signalBottone(QString);
+    void signalBottone(QString);*/
 
 };
 

@@ -1,6 +1,7 @@
 #ifndef XMLITEM_H
 #define XMLITEM_H
 #include <QString>
+#include <QDebug>
 
 class XmlItem{
     //dati per la costruzione

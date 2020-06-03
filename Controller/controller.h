@@ -17,11 +17,10 @@ private:
 public:
     explicit Controller(QObject *parent = nullptr);
 
-signals:
-    //signalBottone(QString);
-
 public slots:
     void slotQualeBottone(QString);
+    void remakeMain();
+    void stampaRowInfo(int);
 };
 
 #endif // CONTROLLER_H
