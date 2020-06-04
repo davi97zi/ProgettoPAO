@@ -6,9 +6,11 @@
 #include <ctime>
 
 #include "Controller/controller.h"
-
+#include "Gui/infopersonaggiostorico.h"
+#include "Gui/infopartitastorico.h"
 #include <iostream>
 
+#include "xml/storicoModello.h"
 using namespace std;
 
 int main(int argc, char *argv[]){

@@ -14,32 +14,19 @@ class XmlItem{
 
 public:
   //base
-    XmlItem(){}
+    XmlItem();
   //costruttore devo passare ALL the data
-  XmlItem(QString n, QString t, int l, int p): nome(n), tipo(t), livello(l), prezzo(p){}
+  XmlItem(QString n, QString t, int l, int p);
 
   //fun stampa
-  void stampaItem()const{
-      qDebug() << "avventuriero: " << nome;
-      qDebug() << "classe: " << tipo;
-      qDebug() << "livello: " << livello;
-      qDebug() <<"paga richiesta: " << prezzo;
-  }
+  void stampaItem()const;
 
-  QString getNome() const{
-      return nome;
-  }
+  QString getNome() const;
 
-  QString getTipo() const{
-      return tipo;
-  }
+  QString getTipo() const;
 
-  int getLivello() const{
-      return livello;
-  }
+  int getLivello() const;
 
-  int getPrezzo() const{
-      return prezzo;
-  }
+  int getPrezzo() const;
 };
 #endif // XMLITEM_H

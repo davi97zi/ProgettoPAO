@@ -4,7 +4,7 @@
 #include "../Gui/choosefirstcharacter.h"
 #include "../Gui/storico.h"
 #include "xml/storicoModello.h"
-
+#include "../Gui/infopartitastorico.h"
 
 /*StoricoModello::StoricoModelloItem Controller::getStoricoRow(int i){
     return s->getPartita(i);
@@ -69,8 +69,14 @@ void Controller::remakeMain(){
 }
 
 void Controller::stampaRowInfo(int i){
-    StoricoModello::StoricoModelloItem partita = sMod->getPartita(i);
-    qDebug() << partita.getSizeSquadra();
-    for(int k=0; k<partita.getSizeSquadra(); k++)
-        partita.getAvv(k).stampaItem();
+    StoricoModello::StoricoModelloItem partitaMod = sMod->getPartita(i);
+    InfoPartitaStorico * partitaGui= new InfoPartitaStorico;
+    qDebug() << "size squadra: " << partitaMod.getSizeSquadra();
+    for(int k=0; k<partitaMod.getSizeSquadra(); k++){
+        QString nome= partitaMod.getAvv(k).getNome(),
+                tipo= partitaMod.getAvv(k).getTipo(),
+                livello= QString::number(partitaMod.getAvv(k).getLivello());
+        partitaGui->addPersonaggio(nome, tipo, livello, k+1);
+    }
+    partitaGui->show();
 }

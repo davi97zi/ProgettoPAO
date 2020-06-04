@@ -32,10 +32,12 @@
   <battaglia>3</battaglia>
   <oro>15</oro>
   <squadra>
-   <nome>scales</nome>
-   <tipo>paladino</tipo>
-   <livello>5</livello>
-   <prezzo>3</prezzo>
+   <avventuriero>
+     <nome>scales</nome>
+     <tipo>paladino</tipo>
+     <livello>5</livello>
+     <prezzo>3</prezzo>
+   </avventuriero>
   </squadra>
  </partita>
 </storico>
