@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dungeon>
+    <boss id="1">
+        <nome>Brainie the zombie</nome>
+        <livello>1</livello>
+        <exp>120</exp>
+        <oro>2</oro>
+        <descrizione>Brainie è uno zombie affamato di cervelli!</descrizione>
+    </boss>
+    <boss id="2">
+        <nome>Vlad the vampire</nome>
+        <livello>2</livello>
+        <exp>200</exp>
+        <oro>3</oro>
+        <descrizione>Vlad è un vampiro assetato disangue!</descrizione>
+    </boss>
+    <boss id="3">
+        <nome>Ainz the lich</nome>
+        <livello>3</livello>
+        <exp>200</exp>
+        <oro>3</oro>
+        <descrizione>Ainz è un lich che vuole le tue ossa!</descrizione>
+    </boss>
+    <boss id="4">
+        <nome>Tim the mimic</nome>
+        <livello>4</livello>
+        <exp>200</exp>
+        <oro>4</oro>
+        <descrizione>Tim è un mimic che vuole il tuo bottino!</descrizione>
+    </boss>
+    <boss id="5">
+        <nome>Satan the demon</nome>
+        <livello>5</livello>
+        <exp>200</exp>
+        <oro>100</oro>
+        <descrizione>Satan è un demone che vuole la tua anima!</descrizione>
+    </boss>
+</dungeon>

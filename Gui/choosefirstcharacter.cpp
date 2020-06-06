@@ -17,7 +17,7 @@ ChooseFirstCharacter::ChooseFirstCharacter(QWidget* parent): QWidget(parent){
      horizontalLayout1->addLayout(personaggio2());
      horizontalLayout1->addLayout(personaggio3());
 
-     verticalLayout1->addWidget(titolo,0, Qt::AlignTop);
+     verticalLayout1->addWidget(titolo,0, Qt::AlignCenter);
      verticalLayout1->addLayout(horizontalLayout1);
 
      //gridLayout1->addLayout(verticalLayout1);

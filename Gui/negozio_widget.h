@@ -5,6 +5,8 @@
 #include "negozio_personaggio.h"
 #include <QDebug>
 #include <QPushButton>
+#include "xml/xmlitem.h"
+
 class Negozio_widget : public QWidget{
     Q_OBJECT
 
@@ -13,14 +15,14 @@ private:
     QLabel * soldi;
     QPushButton * prosegui;
 public:
-    explicit Negozio_widget(QWidget *parent = nullptr);
-    void setPrimo(int i, QString n, QString t, int l, int p);
-    void setSecondo(int i, QString n, QString t, int l, int p);
-    void setTerzo(int i, QString n, QString t, int l, int p);
+    explicit Negozio_widget(std::vector<XmlItem> assoldabili ,bool inizio= false, QWidget *parent = nullptr);
+    void setPersonaggioNegozio(int quale, QString n, QString t, int l, int p);
     ~Negozio_widget(){qDebug() << "widget eliminato";}
 signals:
-
+    void personaggioAcquistato(int);
 public slots:
+    void stampaDaNegozio(int);
+
 };
 
 #endif // NEGOZIO_WIDGET_H

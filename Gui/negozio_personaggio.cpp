@@ -5,7 +5,7 @@
 //verosimile che controller si occupi di passare questi dati? y, in this way? idk we will see
 Negozio_personaggio::Negozio_personaggio(int i, QString n, QString t, int l, int p, QWidget *parent) : QWidget(parent){
     //salva l'id
-    id= i;
+    //id= i;
 
     //popola i label
     nome= new QLabel(n);
@@ -15,6 +15,11 @@ Negozio_personaggio::Negozio_personaggio(int i, QString n, QString t, int l, int
 
     //crea il bottone
     assolda= new QPushButton("Assolda");
+    //gli dò un objName
+    assolda->setObjectName(QString::number(i));
+
+    //conect: quale bottone ho cliccato?= quale personaggio ho scelto
+    connect(assolda, SIGNAL(released()), this, SLOT(comunicaPersonaggio()));
 
     //crea il groupbox
     QGroupBox * scheda= new QGroupBox("Personaggio");
@@ -37,5 +42,10 @@ Negozio_personaggio::Negozio_personaggio(int i, QString n, QString t, int l, int
     setLayout(lay);
     //qui andranno i connect x far funzionare il tutto
 
+}
 
+void Negozio_personaggio::comunicaPersonaggio(){
+    qDebug() << "1) è partito il comunicaPersonaggio() da Negozio_personaggio";
+    QPushButton* button = dynamic_cast<QPushButton*>(sender());
+    emit personaggioAcquistato(button->objectName().toInt());
 }

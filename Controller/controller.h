@@ -21,6 +21,7 @@ public slots:
     void slotQualeBottone(QString);
     void remakeMain();
     void stampaRowInfo(int);
+    void creaPersonaggio(int);
 };
 
 #endif // CONTROLLER_H

@@ -1,9 +1,10 @@
 #include "controller.h"
 #include <QDebug>
 
-#include "../Gui/choosefirstcharacter.h"
+#include "../Gui/negozio_widget.h"
 #include "../Gui/storico.h"
 #include "xml/storicoModello.h"
+#include "xml/taverna.h"
 #include "../Gui/infopartitastorico.h"
 
 /*StoricoModello::StoricoModelloItem Controller::getStoricoRow(int i){
@@ -11,6 +12,10 @@
 }*/
 
 Controller::Controller(QObject *parent) : QObject(parent){
+    //evitiamo segmentation fault
+    pMod=nullptr;
+    sMod= nullptr;
+
     //crea la finestra
     mw= new MainWindow();//serve this?
 
@@ -28,8 +33,18 @@ void Controller::slotQualeBottone(QString str){
     //qDebug() << s;
 
     if(str=="gioca"){
-        ChooseFirstCharacter* cfc= new ChooseFirstCharacter();
-        mw->setCentralWidget(cfc);
+        //creo taverna e trovo personaggi di liv 1
+        Taverna fandolin;
+        std::vector<XmlItem> assoldabili= fandolin.trovaTuttiLivello(1);
+
+        //creo il negozio x scegliere primo personaggio (inizio= true)
+        Negozio_widget * negozio= new Negozio_widget(assoldabili, true);
+        mw->setCentralWidget(negozio);
+
+        //creo connect clicco uno degli scegli: voglio sapere quale
+        connect(mw->centralWidget(), SIGNAL(personaggioAcquistato(int)), this, SLOT(creaPersonaggio(int)));
+
+
 
     }
     else{
@@ -45,9 +60,6 @@ void Controller::slotQualeBottone(QString str){
         //return alla scegliApplicativo
         connect(storicoGui, SIGNAL (signalReturnToMain()), this, SLOT (remakeMain()));
 
-        // ????
-        //connect(mw, SIGNAL (returnToMain()),this, SLOT (remakeMain()));
-        //???
         //2) inserisci i dati nella gui
         //per ogni riga della tabella passa: data, battaglia, #personaggi, monete e risultato
         for(int i=0; i < sMod->getSize(); i++){
@@ -79,4 +91,8 @@ void Controller::stampaRowInfo(int i){
         partitaGui->addPersonaggio(nome, tipo, livello, k+1);
     }
     partitaGui->show();
+}
+
+void Controller::creaPersonaggio(int i){
+    qDebug() << "3)voglio inserire " << i << " nel mio party";
 }

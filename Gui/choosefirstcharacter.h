@@ -8,6 +8,7 @@
 #include <QGridLayout>
 #include <QSizePolicy>
 
+
 class ChooseFirstCharacter: public QWidget{
     Q_OBJECT
 private:

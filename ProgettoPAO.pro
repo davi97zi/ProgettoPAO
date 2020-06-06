@@ -95,9 +95,14 @@ HEADERS += \
     xml/xmlitem.h \
     Gui/scegliapplicativo.h \
     Gui/infopersonaggiostorico.h \
-    Gui/infopartitastorico.h
+    Gui/infopartitastorico.h \
+    xml/dungeon.h \
+    xml/dungeonItem.h \
+    xml/incantesimo.h \
+    xml/taverna.h
 
 RESOURCES += \
     xmlresources.qrc
+
 
 
