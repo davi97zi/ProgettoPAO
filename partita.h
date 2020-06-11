@@ -3,6 +3,8 @@
 
 #include "contenitore.h"
 #include "mostro.h"
+#include <iostream>
+#include <QDebug>
 class Partita{
 private:
     Contenitore squadra;
@@ -14,32 +16,15 @@ private:
     unsigned int battaglia;
     //turno?
 
-    //(1)
-    void incrementaLvl(unsigned int exp){
-        for(Contenitore::Iteratore it= squadra.begin(); it!=squadra.end(); ++it){
-            it->increaseLevel(exp);
-        }
-    }
+    void incrementaLvl(unsigned int);
 
-    //(2)
-    void ottieniBottino(unsigned int bottino){
-        oro+=bottino;
-    }
+    void ottieniBottino(unsigned int);
 
     //funzione chiamata DA compraPersonaggio
-    void pagaAvventuriero(unsigned int paga){
-        oro-=paga;
-    }
+    void pagaAvventuriero(unsigned int);
 
-    void seppellisci(){
-        for(Contenitore::Iteratore it=squadra.begin(); it!=squadra.end(); ++it){
-            if(it->getDeathState()){
-                it=squadra.deleteNodo(it);
-                --it;
-                //salva i dati per lo storico return QDomElement???
-            }
-        }
-    }
+    void seppellisci();
+
 public:
 
     Partita(Personaggio* p): squadra(), personaggioInUso(), m(new Mostro()), oro(0), battaglia(1){
@@ -49,25 +34,15 @@ public:
 
 
     //parametro = attacco del giocatore ricevuto dal controller
-    void attaccaMostro(int i){
-        m->receiveDamage(i);
-    }
+    void attaccaMostro(int);
 
-    void guarisciTutti(int i){
-        for(Contenitore::Iteratore it=squadra.begin(); it!=squadra.end(); ++it){
-            it->receiveHealing(i);
-        }
-    }
+    void guarisciTutti(int);
 
-    void resuscita(int i){
-        for(Contenitore::Iteratore it=squadra.begin(); it!=squadra.end(); ++it){
-            it->receiveHealing(i, true);
-        }
-    }
+    void resuscita(int);
 
-    void attaccaPersonaggio(int i){
-        personaggioInUso->receiveDamage(i);
-    }
+    void aggiungiPersonaggio(Personaggio*);
+
+    void attaccaPersonaggio(int);
 
     /*void cambiaPersonaggio(QString nome){
         if(trovaPersonaggio(nome)->getDeathState()){
@@ -79,6 +54,7 @@ public:
 
     }*/
 
+    //MANCA DEFINIZIONE
     void cambiaMostro(){
         //funzione trova il mostro successivo dal file xml in base a battaglia
     }
@@ -91,51 +67,17 @@ f2: dice se ha vinto la BATTAGLIA
 f3: dice se la battaglia è in corso o è finita?
 */
     //f3 true= tutti morti, false= battaglia in corso
-    bool battagliaTerminata(){
-        bool squadraSconfitta=true;
-        for(Contenitore::Iteratore i= squadra.begin(); i!=squadra.end() && !squadraSconfitta; ++i){
-            if(!i->getDeathState()){
-                squadraSconfitta=false;
-            }
-        }
-        return squadraSconfitta;
-    }
-
+    bool battagliaTerminata();
 
     //f2
-    bool fineBattaglia(){
-        bool termine= battagliaTerminata();
-        if(termine){
-            return true;
-        }
-        else{
-            if(m->getDeathState()){//true= morto, false= vivo
-                //elimina personaggi morti
-                seppellisci();
-                //aumenta livello personaggi (1)
-                incrementaLvl(m->giveUpExp());
-                //ottieni oro (2)
-                ottieniBottino(m->giveUpCoins());
-                //vai al negozio tramite controller
-                return true;
-            }
-            else{
-                return false;
-            }
-        }
-    }
+    bool fineBattaglia();
 
-    bool finePartita(){
-        if(battaglia==5 && fineBattaglia()){
-            return true;
-            //controller richiama QDialog hai vinto: OK -> manda a main window
-            //inserisci dati nello storico
-        }
-        else{
-            return false;
-            //controller richiama QDialog hai perso: OK -> manda a main window
-            //inserisci dati nello storico
-        }
+    bool finePartita();
+
+    //PER TEST: da togliere
+    void stampaSquadra() const{
+        qDebug()<<"stampaSQQ";
+        std::cout<<squadra;
     }
 
 };

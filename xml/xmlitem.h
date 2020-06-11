@@ -2,6 +2,15 @@
 #define XMLITEM_H
 #include <QString>
 #include <QDebug>
+#include "../Interfacce/personaggio.h"
+#include "../arciere.h"
+#include "../artificiere.h"
+#include "../berserker.h"
+#include "../guaritore.h"
+#include "../mago.h"
+#include "../paladino.h"
+#include "../soldato.h"
+#include "../tank.h"
 
 class XmlItem{
     //dati per la costruzione
@@ -11,6 +20,7 @@ class XmlItem{
 
     //dati per il display
     int prezzo;
+    int convertToInt() const;
 
 public:
   //base
@@ -25,8 +35,12 @@ public:
 
   QString getTipo() const;
 
-  int getLivello() const;
+  unsigned int getLivello() const;
 
   int getPrezzo() const;
+
+
+
+  Personaggio* convertiInPersonaggio() const;
 };
 #endif // XMLITEM_H

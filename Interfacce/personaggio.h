@@ -16,7 +16,7 @@ private:
     bool dead;
     const QString tipoPersonaggio;// dovrebbe essere static? idk
     const QString nome;
-    const unsigned int prezzo;
+    unsigned int prezzo; //dovrebbe essere const
 
 protected:
     void increaseMaxHealth(unsigned int addVal);
@@ -38,7 +38,7 @@ protected:
     void kill();
 
 public:
-  Personaggio();
+    Personaggio(){}
   //Personaggio(QString t= "tipo", QString n="nome", unsigned int p=1): tipoPersonaggio(t), nome(n), prezzo(p) {}
   Personaggio(unsigned int mh,
               unsigned int ba,

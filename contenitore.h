@@ -3,6 +3,7 @@
 #include "Interfacce/personaggio.h"
 //per test
 #include <iostream>
+#include <QDebug>
 
 
 class Contenitore{

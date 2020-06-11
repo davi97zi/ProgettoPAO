@@ -45,7 +45,6 @@ void Controller::slotQualeBottone(QString str){
         connect(mw->centralWidget(), SIGNAL(personaggioAcquistato(int)), this, SLOT(creaPersonaggio(int)));
 
 
-
     }
     else{
         //storico
@@ -95,4 +94,14 @@ void Controller::stampaRowInfo(int i){
 
 void Controller::creaPersonaggio(int i){
     qDebug() << "3)voglio inserire " << i << " nel mio party";
+    //Queste 2 righe potrebbero dover andare in partita
+    Taverna fandolin;
+
+    std::vector<XmlItem> assoldabili= fandolin.trovaTuttiLivello(1);//bisogna sistemare per i livelli
+    XmlItem base=assoldabili[i];
+    if(pMod==0)
+        pMod=new Partita(base.convertiInPersonaggio());
+    else
+        pMod->aggiungiPersonaggio(base.convertiInPersonaggio());
+    pMod->stampaSquadra();
 }

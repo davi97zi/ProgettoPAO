@@ -99,9 +99,14 @@ Contenitore::Iteratore &Contenitore::Iteratore::operator=(const Contenitore::Ite
 }
 
 void Contenitore::addNodo(Personaggio *p){
-    first=new Nodo(p,first,0);
-    if(first->next)
+    qDebug()<<"entra in addnodo";
+    Nodo* n=new Nodo(p,first,0);
+    first=n;
+    if(first->next){
+        qDebug()<<"entra nell'if";
         first->next->prev=first;
+    }
+    qDebug()<<"esce da addnodo";
 }
 
 
@@ -187,7 +192,8 @@ std::ostream &operator<<(std::ostream &os, Contenitore c)
     int a=1;
     //NON posso usare il cout dei personaggi perchè non si può accedere ad sPunt dall'iteratore
     for(Contenitore::Iteratore it=c.begin(); it!=c.end(); ++it){
-        os<<"personaggio "<<a<<"= Arm: "<<it->getArmor()<<" lvl: "<<it->getLevel()<<" ";
+        //os<<"personaggio "<<a<<"= Arm: "<<it->getArmor()<<" lvl: "<<it->getLevel()<<" ";
+        os<<"personaggio "<<a<<"= Nome: " <<(it->getNome()).toStdString()<<" ";
         a++;
     }
     return os;
