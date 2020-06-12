@@ -8,6 +8,7 @@
 
 #include "xmlitem.h"
 #include "dungeonItem.h"
+#include "../mostro.h"
 
 
 class Dungeon{
@@ -79,15 +80,17 @@ public:
         }
     }
 
-    void stampaTutti()const{
+    /*void stampaTutti()const{
         for(auto it= v.begin(); it!=v.end(); it++){
             it->stampaDungeonItem();
         }
-    }
+    }*/
 
     //trova il mostro da combattere alla i-esima battaglia
-    DungeonItem challengeMonster(int i){
-        return v[i];
+    Mostro* challengeMonster(int i){
+        DungeonItem di = v[i];
+        Mostro* m = new Mostro(di.getExp(), di.getNome(), di.getOro());
+        return m;
     }
 };
 

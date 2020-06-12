@@ -59,7 +59,8 @@ SOURCES += \
     xml/storicomodello.cpp \
     Gui/infopersonaggiostorico.cpp \
     Gui/infopartitastorico.cpp \
-    xml/xmlitem.cpp
+    xml/xmlitem.cpp \
+    xml/dungeonitem.cpp
 
 HEADERS += \
     Interfacce/defenceInterface.h \

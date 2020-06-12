@@ -39,8 +39,6 @@ public:
 
   int getPrezzo() const;
 
-
-
   Personaggio* convertiInPersonaggio() const;
 };
 #endif // XMLITEM_H

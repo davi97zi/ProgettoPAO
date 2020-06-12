@@ -1,14 +1,13 @@
 #include "match.h"
-#include "statistichematchmostro.h"
-#include "statistichematchpersonaggio.h"
 
-Match::Match(QWidget* parent): QWidget(parent){
+
+Match::Match(StatisticheMatchMostro* smm, StatisticheMatchPersonaggio* smp, int t, int m, QWidget* parent): QWidget(parent){
     contenitore = new QVBoxLayout();
 
     //gestite dal controller
-    turno = new QLabel("Turno: " + QString::number(1));
+    turno = new QLabel("Turno: " + QString::number(t));
     turno->setStyleSheet("QLabel{border-radius: 25px; font: bold 14px;}");
-    coins = new QLabel("Monete: " + QString::number(10));
+    coins = new QLabel("Monete: " + QString::number(m));
     coins->setStyleSheet("QLabel{border-radius: 25px; color: blue;}");
     turno->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
     coins->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
@@ -16,9 +15,8 @@ Match::Match(QWidget* parent): QWidget(parent){
     layoutMostro = new QGridLayout();
     layoutPersonaggio = new QGridLayout();
 
-    StatisticheMatchPersonaggio* statsP = new StatisticheMatchPersonaggio;
-    StatisticheMatchMostro* statsM = new StatisticheMatchMostro;
-
+    StatisticheMatchPersonaggio* statsP(smp);
+    StatisticheMatchMostro* statsM(smm);
     contenitore->addWidget(turno, 0, Qt::AlignCenter);
     contenitore->addWidget(coins, 0, Qt::AlignCenter);
     contenitore->addWidget(statsM);
@@ -26,3 +24,4 @@ Match::Match(QWidget* parent): QWidget(parent){
 
     setLayout(contenitore);
 }
+

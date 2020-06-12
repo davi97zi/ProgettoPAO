@@ -8,6 +8,7 @@
 #include "abilita_personaggio_match.h"
 #include "info_match.h"
 #include "statistichematchmostro.h"
+#include "statistichematchpersonaggio.h"
 
 class Match: public QWidget{
     Q_OBJECT
@@ -20,7 +21,7 @@ private:
     QLabel* coins;
 
 public:
-    Match(QWidget* parent=0);
+    Match(StatisticheMatchMostro* smm, StatisticheMatchPersonaggio* smp, int t, int m, QWidget* parent=0);
 };
 
 #endif // MATCH_H

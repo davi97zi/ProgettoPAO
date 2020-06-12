@@ -14,8 +14,9 @@ public:
     //costruttore potrebbe assegnare un X+30 come exp
     //-> X permette di determinare il livello (e sarà quindi <100 * #battaglia>);
     //->30*getLevel() per determinare quanti numeri exp vengono passati come bottino
-    //mHp,bAtk,exp,arm, type, nm, prz
-    Mostro(unsigned int ex, QString n, unsigned int p): Personaggio(500, 10, ex, 10, "mostro", n, p){
+    //mHp,bAtk,exp,arm, type, nome, prz
+    //p = oro che da
+    Mostro(unsigned int ex, QString n, unsigned int p): Personaggio(500, 10, ex, 10, "Mostro", n, p){
         increaseLevel(0);
     }
 

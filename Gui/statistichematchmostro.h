@@ -17,7 +17,9 @@ private:
     QLabel* titolo;
     QLabel* health;
     QLabel* baseAttack;
-    QLabel* mana;
+    QLabel* nomeMostro;
+    QLabel* livelloMostro;
+    //QLabel* mana;
     QLabel* armor;
 
     //QPushButton* cambiaPersonaggio;
@@ -25,7 +27,13 @@ private:
     //Personaggio* p;
 
 public:
-    StatisticheMatchMostro(QWidget* parent=0);
+    StatisticheMatchMostro(int h, int ba, int a, QString n, int l, QWidget* parent=0);
+
+    /*void setHealth(int);
+    void setBaseAttack(int);
+    void setArmor(int);
+    void setNome(QString);
+    void setNome(QString);*/
 
    // void handleButton();
 };

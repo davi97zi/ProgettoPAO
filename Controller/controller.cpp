@@ -6,6 +6,10 @@
 #include "xml/storicoModello.h"
 #include "xml/taverna.h"
 #include "../Gui/infopartitastorico.h"
+#include "../Gui/match.h"
+#include "../xml/dungeon.h"
+#include "../Gui/statistichematchmostro.h"
+#include "../Gui/statistichematchpersonaggio.h"
 
 /*StoricoModello::StoricoModelloItem Controller::getStoricoRow(int i){
     return s->getPartita(i);
@@ -92,6 +96,15 @@ void Controller::stampaRowInfo(int i){
     partitaGui->show();
 }
 
+void Controller::creaMatch(){
+    StatisticheMatchMostro* smm = new StatisticheMatchMostro(pMod->getHealthMostro(), pMod->getBAMostro(), pMod->getArmorMostro(), pMod->getNomeMostro(), pMod->getLivelloMostro());
+    StatisticheMatchPersonaggio* smp = new StatisticheMatchPersonaggio(pMod->getHealthPersonaggio(), pMod->getBAPersonaggio(), pMod->getArmorPersonaggio(), pMod->getNomePersonaggio(), pMod->getLivelloPersonaggio(), pMod->getManaPersonaggio());
+    Match* m = new Match(smm, smp, pMod->getTurno(), pMod->getMonete());
+    mw->setCentralWidget(m);
+
+    //getMostro();
+}
+
 void Controller::creaPersonaggio(int i){
     qDebug() << "3)voglio inserire " << i << " nel mio party";
     //Queste 2 righe potrebbero dover andare in partita
@@ -103,5 +116,14 @@ void Controller::creaPersonaggio(int i){
         pMod=new Partita(base.convertiInPersonaggio());
     else
         pMod->aggiungiPersonaggio(base.convertiInPersonaggio());
-    pMod->stampaSquadra();
+
+    creaMatch();
+    //pMod->stampaSquadra();
 }
+
+void Controller::getMostro(int i){
+    Dungeon mostro;
+    mostro.challengeMonster(i);
+    pMod->cambiaMostro();
+}
+

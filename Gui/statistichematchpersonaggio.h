@@ -24,7 +24,7 @@ private:
     //Personaggio* p;
 
 public:
-    StatisticheMatchPersonaggio(QWidget* parent=0);
+    StatisticheMatchPersonaggio(int h, int ba, int a, QString n, int l, int m, QWidget* parent=0);
     QGridLayout* getAbilities();
     void handleButton();
 };

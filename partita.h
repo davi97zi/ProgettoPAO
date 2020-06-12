@@ -55,11 +55,23 @@ public:
     }*/
 
     //MANCA DEFINIZIONE
-    void cambiaMostro(){
-        //funzione trova il mostro successivo dal file xml in base a battaglia
-    }
+    void cambiaMostro();
 
+    int getHealthMostro();
+    int getBAMostro();
+    int getArmorMostro();
+    int getLivelloMostro();
+    QString getNomeMostro();
 
+    int getHealthPersonaggio();
+    int getBAPersonaggio();
+    int getArmorPersonaggio();
+    int getLivelloPersonaggio();
+    int getManaPersonaggio();
+    QString getNomePersonaggio();
+
+    int getTurno();
+    int getMonete();
 
 /*
 f1: dice se ha vinto la PARTITA

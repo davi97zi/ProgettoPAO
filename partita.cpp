@@ -1,5 +1,6 @@
 #include "partita.h"
-
+#include "../xml/dungeon.h"
+#include "../Interfacce/magicInterface.h"
 
 void Partita::incrementaLvl(unsigned int exp)
 {
@@ -51,6 +52,12 @@ void Partita::attaccaPersonaggio(int i){
     personaggioInUso->receiveDamage(i);
 }
 
+void Partita::cambiaMostro(){
+    Dungeon d;
+    d.challengeMonster(battaglia);
+}
+
+
 bool Partita::battagliaTerminata(){
     bool squadraSconfitta=true;
     for(Contenitore::Iteratore i= squadra.begin(); i!=squadra.end() && !squadraSconfitta; ++i){
@@ -94,4 +101,61 @@ bool Partita::finePartita(){
         //controller richiama QDialog hai perso: OK -> manda a main window
         //inserisci dati nello storico
     }
+}
+
+int Partita::getHealthMostro(){
+    return m->getHealth();
+}
+
+int Partita::getBAMostro(){
+    return m->getBaseAttack();
+}
+
+int Partita::getArmorMostro(){
+    return m->getArmor();
+}
+
+int Partita::getLivelloMostro(){
+    return m->getLevel();
+}
+
+QString Partita::getNomeMostro(){
+    return m->getNome();
+}
+
+int Partita::getHealthPersonaggio(){
+    return personaggioInUso->getHealth();
+}
+
+int Partita::getBAPersonaggio(){
+    return personaggioInUso->getBaseAttack();
+}
+
+int Partita::getArmorPersonaggio(){
+    return personaggioInUso->getArmor();
+}
+
+int Partita::getLivelloPersonaggio(){
+    return personaggioInUso->getLevel();
+}
+
+int Partita::getManaPersonaggio(){
+    Personaggio* p2 = &(*personaggioInUso);
+    MagicInterface* p = dynamic_cast<MagicInterface*>(p2);
+    if(!p)
+        return 0;
+    else
+        return p->getMana();
+}
+
+QString Partita::getNomePersonaggio(){
+    return personaggioInUso->getNome();
+}
+
+int Partita::getTurno(){
+    return battaglia;
+}
+
+int Partita::getMonete(){
+    return oro;
 }

@@ -6,7 +6,7 @@
 
 #include "changecharacter.h"
 
-StatisticheMatchPersonaggio::StatisticheMatchPersonaggio(QWidget* parent): QWidget(parent) {
+StatisticheMatchPersonaggio::StatisticheMatchPersonaggio(int h, int ba, int a, QString n, int l, int m, QWidget* parent): QWidget(parent) {
     tot = new QHBoxLayout;
 
     info = new QGridLayout();
@@ -16,16 +16,16 @@ StatisticheMatchPersonaggio::StatisticheMatchPersonaggio(QWidget* parent): QWidg
     titolo = new QLabel("STATISTICHE");
     titolo->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
 
-    health = new QLabel("Health: " + QString::number(100));
+    health = new QLabel("Health: " + QString::number(h));
     health->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
 
-    baseAttack = new QLabel("BaseAttack: " + QString::number(16));
+    baseAttack = new QLabel("BaseAttack: " + QString::number(ba));
     baseAttack->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
 
-    armor = new QLabel("Armor: " + QString::number(20));
+    armor = new QLabel("Armor: " + QString::number(a));
     armor->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
 
-    mana = new QLabel("Mana: " + QString::number(0));
+    mana = new QLabel("Mana: " + QString::number(m));
     mana->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
 
     cambiaPersonaggio = new QPushButton("Cambia personaggio");
@@ -41,8 +41,8 @@ StatisticheMatchPersonaggio::StatisticheMatchPersonaggio(QWidget* parent): QWidg
     stats->addWidget(mana, 2, 1, Qt::AlignRight);
     stats->addWidget(cambiaPersonaggio, 3, 0, 1, 2, Qt::AlignCenter);
 
-    QLabel* personaggio = new QLabel("Personaggio: MagoNero");
-    QLabel* livelloP = new QLabel("Livello:" + QString::number(4));
+    QLabel* personaggio = new QLabel("Personaggio: " + n);
+    QLabel* livelloP = new QLabel("Livello: " + QString::number(l));
 
     info->addWidget(personaggio, 0, 0, Qt::AlignCenter);
     info->addWidget(livelloP , 1, 0, Qt::AlignCenter);

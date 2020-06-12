@@ -17,6 +17,9 @@ private:
 public:
     explicit Controller(QObject *parent = nullptr);
 
+    void creaMatch();
+    void getMostro(int);
+
 public slots:
     void slotQualeBottone(QString);
     void remakeMain();
