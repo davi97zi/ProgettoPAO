@@ -26,7 +26,13 @@ private:
 public:
     StatisticheMatchPersonaggio(int h, int ba, int a, QString n, int l, int m, QWidget* parent=0);
     QGridLayout* getAbilities();
+
+public slots:
     void handleButton();
+
+signals:
+    void eseguiAbilita(QString);
+    void cambiaPersonaggioBtn();
 };
 
 #endif // STATISTICHEMATCHPERSONAGGIO_H

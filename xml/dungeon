@@ -3,14 +3,14 @@
     <boss id="1">
         <nome>Brainie the zombie</nome>
         <livello>1</livello>
-        <exp>120</exp>
+        <exp>100</exp>
         <oro>2</oro>
         <descrizione>Brainie è uno zombie affamato di cervelli!</descrizione>
     </boss>
     <boss id="2">
         <nome>Vlad the vampire</nome>
         <livello>2</livello>
-        <exp>200</exp>
+        <exp>206</exp>
         <oro>3</oro>
         <descrizione>Vlad è un vampiro assetato disangue!</descrizione>
     </boss>

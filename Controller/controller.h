@@ -25,6 +25,10 @@ public slots:
     void remakeMain();
     void stampaRowInfo(int);
     void creaPersonaggio(int);
+    void getAction(QString);
+
+signals:
+    void updatedHPMostro(int);
 };
 
 #endif // CONTROLLER_H

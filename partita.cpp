@@ -52,9 +52,9 @@ void Partita::attaccaPersonaggio(int i){
     personaggioInUso->receiveDamage(i);
 }
 
-void Partita::cambiaMostro(){
-    Dungeon d;
-    d.challengeMonster(battaglia);
+
+void Partita::cambiaMostro(Mostro* m2){
+    m = m2;
 }
 
 
@@ -119,6 +119,10 @@ int Partita::getLivelloMostro(){
     return m->getLevel();
 }
 
+int Partita::getExpMostro(){
+    return m->getExpPoint();
+}
+
 QString Partita::getNomeMostro(){
     return m->getNome();
 }
@@ -158,4 +162,16 @@ int Partita::getTurno(){
 
 int Partita::getMonete(){
     return oro;
+}
+
+int Partita::getAbilita1() const{
+    return personaggioInUso->abilita1();
+}
+
+int Partita::getAbilita2() const{
+    return personaggioInUso->abilita2();
+}
+
+int Partita::getAbilita3() const{
+    return personaggioInUso->abilita3();
 }

@@ -29,7 +29,7 @@ protected:
     //NB aggiunta per effettivamente andare a toccare exp
     void setExp(unsigned int ex);
 
-    virtual unsigned int reducedDamageWithArmor(unsigned int damage) const;
+    virtual int reducedDamageWithArmor(int damage) const;
 
     //proposta da healIntef
     //per riportare in vita un personaggio, va chiamato DURANTE UNA BATTAGLIA
@@ -75,7 +75,7 @@ public:
   //proposta da healInterf->per modificare i campi specifici delle interfaccie deve essere virtuale! && potrebbe ritornare se è avvenuto o no un cambio lvl wt a BOOL
   virtual bool increaseLevel(unsigned int newExpPoint);
 
-  void receiveDamage(unsigned int damage);
+  void receiveDamage(int damage);
 
   //proposte da healInterf
   bool getDeathState()const;
@@ -83,9 +83,9 @@ public:
   //gain=hp guarita, divineIntervention=is a REZ or NOT
   void receiveHealing(unsigned int gain, bool divineIntervention=false);
 
-  virtual unsigned int abilita1();
-  virtual unsigned int abilita2();
-  virtual unsigned int abilita3();
+  virtual int abilita1();
+  virtual int abilita2();
+  virtual int abilita3();
 
 };
 #endif // PERSONAGGIO_H

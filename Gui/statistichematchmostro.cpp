@@ -5,14 +5,14 @@
 
 #include "changecharacter.h"
 
-StatisticheMatchMostro::StatisticheMatchMostro(int h, int ba, int a, QString n, int l, QWidget* parent): QWidget(parent) {
+StatisticheMatchMostro::StatisticheMatchMostro(int h, int ba, int a, QString n, int l, int exp, QWidget* parent): QWidget(parent) {
     tot = new QHBoxLayout;
 
     info = new QGridLayout();
 
-    img = new QHBoxLayout();
+    ex = new QHBoxLayout();
 
-    QLabel* acaso = new QLabel("Qui ci va un immagine");
+    experience = new QLabel("Experience: " +  QString::number(exp));
 
     stats = new QGridLayout();
 
@@ -36,27 +36,18 @@ StatisticheMatchMostro::StatisticheMatchMostro(int h, int ba, int a, QString n, 
     nomeMostro = new QLabel("Mostro: " + n);
     livelloMostro = new QLabel("Livello: " + QString::number(l));
 
-    img->addWidget(acaso, 0, Qt::AlignCenter);
+    ex->addWidget(experience, 0, Qt::AlignCenter);
 
     info->addWidget(nomeMostro, 0, 0, Qt::AlignCenter);
     info->addWidget(livelloMostro , 1, 0, Qt::AlignCenter);
 
     tot->addLayout(stats);
-    tot->addLayout(img);
+    tot->addLayout(ex);
     tot->addLayout(info);
 
     setLayout(tot);
 }
 
-//Immagine del mostro
-/*
-QVBoxLayout* imageVertical = new QVBoxLayout();
-QImage* myImage;
-myImage->load("immagine.png"); //path immagine
-
-QLabel* img;
-img->setPixmap(QPixmap::fromImage(*myImage));
-//img->resize();
-//img->show();
-
-imageVertical->addWidget(img);*/
+void StatisticheMatchMostro::setHealth(int h){
+    health->setText("Health: " + QString::number(h));
+}

@@ -12,19 +12,19 @@ bool Tank::increaseLevel(unsigned int newExpPoint){
         return false;
 }
 
-unsigned int Tank::abilita1()
+int Tank::abilita1()
 {
-    return static_cast<unsigned int>(this->scudo());
+    return static_cast<int>(this->scudo())*(-1);
 }
 
-unsigned int Tank::abilita2()
+int Tank::abilita2()
 {
-    return this->schiacciasassi();
+    return static_cast<int>(this->schiacciasassi())*(-1);
 }
 
-unsigned int Tank::abilita3()
+int Tank::abilita3()
 {
-    return this->jackhammer();
+    return static_cast<int>(this->jackhammer())*(-1);
 }
 
 unsigned int Tank::schiacciasassi() const{

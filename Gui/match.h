@@ -20,8 +20,17 @@ private:
     QLabel* turno;
     QLabel* coins;
 
+    StatisticheMatchPersonaggio* statsP;
+    StatisticheMatchMostro* statsM;
+
 public:
     Match(StatisticheMatchMostro* smm, StatisticheMatchPersonaggio* smp, int t, int m, QWidget* parent=0);
+
+public slots:
+    void sendAction(QString);
+
+signals:
+    void eseguiAbilitaP(QString);
 };
 
 #endif // MATCH_H

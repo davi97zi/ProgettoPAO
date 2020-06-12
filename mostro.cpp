@@ -14,7 +14,7 @@ bool Mostro::increaseLevel(unsigned int ex){
 //LOOT! functions
 unsigned int Mostro::giveUpExp()const{
     if(Personaggio::getDeathState())
-        return getExpPoint()+ 100*getLevel(); //? i guess
+        return getExpPoint(); //? i guess
     else
         return 0;
 }

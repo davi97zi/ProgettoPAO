@@ -1,4 +1,5 @@
 #include "match.h"
+#include <QDebug>
 
 
 Match::Match(StatisticheMatchMostro* smm, StatisticheMatchPersonaggio* smp, int t, int m, QWidget* parent): QWidget(parent){
@@ -15,8 +16,11 @@ Match::Match(StatisticheMatchMostro* smm, StatisticheMatchPersonaggio* smp, int 
     layoutMostro = new QGridLayout();
     layoutPersonaggio = new QGridLayout();
 
-    StatisticheMatchPersonaggio* statsP(smp);
-    StatisticheMatchMostro* statsM(smm);
+    statsP = smp;
+    statsM = smm;
+
+    connect(statsP, SIGNAL(eseguiAbilita(QString)), this, SLOT(sendAction(QString)));
+
     contenitore->addWidget(turno, 0, Qt::AlignCenter);
     contenitore->addWidget(coins, 0, Qt::AlignCenter);
     contenitore->addWidget(statsM);
@@ -25,3 +29,6 @@ Match::Match(StatisticheMatchMostro* smm, StatisticheMatchPersonaggio* smp, int 
     setLayout(contenitore);
 }
 
+void Match::sendAction(QString a){
+    emit eseguiAbilitaP(a);
+}

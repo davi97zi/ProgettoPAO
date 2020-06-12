@@ -30,19 +30,19 @@ unsigned int Guaritore::pray(bool use){
     }
 }
 
-unsigned int Guaritore::abilita1()
+int Guaritore::abilita1()
 {
-    return this->healingWord();
+    return static_cast<int>(this->healingWord())*(-1);
 }
 
-unsigned int Guaritore::abilita2()
+int Guaritore::abilita2()
 {
-    return this->smite();
+    return static_cast<int>(this->smite())*(-1);
 }
 
-unsigned int Guaritore::abilita3()
+int Guaritore::abilita3()
 {
-    return this->divineIntervention();
+    return static_cast<int>(this->divineIntervention())*(-1);
 }
 
 unsigned int Guaritore::healingWord(){//usato per guarire se stessi e gli altri

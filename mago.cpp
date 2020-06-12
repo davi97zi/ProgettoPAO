@@ -14,19 +14,19 @@ bool Mago::increaseLevel(unsigned int newExpPoint){//newExpPoint guadagnati dall
   }
 }
 
-unsigned int Mago::abilita1()
+int Mago::abilita1()
 {
-    return this->expelliarmus();
+    return static_cast<int>(this->expelliarmus())*(-1);
 }
 
-unsigned int Mago::abilita2()
+int Mago::abilita2()
 {
-    return this->expectoPatronum();
+    return static_cast<int>(this->expectoPatronum())*(-1);
 }
 
-unsigned int Mago::abilita3()
+int Mago::abilita3()
 {
-    return this->avadaKedavra();
+    return static_cast<int>(this->avadaKedavra())*(-1);
 }
 
 //ogni abilità ha un parametro m che indica il mana necessario per lanciarla o è meglio metterlo come paramentro interno alla funzione?

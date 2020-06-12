@@ -13,19 +13,19 @@ bool Soldato::increaseLevel(unsigned int newExpPoint){
     }
 }
 
-unsigned int Soldato::abilita1()
+int Soldato::abilita1()
 {
-    return this->pugnoFurtivo();
+    return static_cast<int>(this->pugnoFurtivo())*(-1);
 }
 
-unsigned int Soldato::abilita2()
+int Soldato::abilita2()
 {
-    return this->fendente();
+    return static_cast<int>(this->fendente())*(-1);
 }
 
-unsigned int Soldato::abilita3()
+int Soldato::abilita3()
 {
-    return this->coltellata();
+    return static_cast<int>(this->coltellata())*(-1);
 }
 
 //IL fatto di impedire di usare un metodo per un tot di turni si fa con la GUI

@@ -15,18 +15,18 @@ bool Artificiere::increaseLevel(unsigned int newExpPoint){//newExpPoint guadagna
   }
 }
 
-unsigned int Artificiere::abilita1(){
-    return this->bombardaMaxima();
+int Artificiere::abilita1(){
+    return static_cast<int>(this->bombardaMaxima())*(-1);
 }
 
-unsigned int Artificiere::abilita2()
+int Artificiere::abilita2()
 {
-    return this->rainOfSpells();
+    return static_cast<int>(this->rainOfSpells())*(-1);
 }
 
-unsigned int Artificiere::abilita3()
+int Artificiere::abilita3()
 {
-    return this->autodistruzione();
+    return static_cast<int>(this->autodistruzione())*(-1);
 }
 
 unsigned int Artificiere::bombardaMaxima(){

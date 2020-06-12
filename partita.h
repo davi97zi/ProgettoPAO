@@ -55,12 +55,13 @@ public:
     }*/
 
     //MANCA DEFINIZIONE
-    void cambiaMostro();
+    void cambiaMostro(Mostro*);
 
     int getHealthMostro();
     int getBAMostro();
     int getArmorMostro();
     int getLivelloMostro();
+    int getExpMostro();
     QString getNomeMostro();
 
     int getHealthPersonaggio();
@@ -69,6 +70,10 @@ public:
     int getLivelloPersonaggio();
     int getManaPersonaggio();
     QString getNomePersonaggio();
+
+    int getAbilita1() const;
+    int getAbilita2() const;
+    int getAbilita3() const;
 
     int getTurno();
     int getMonete();

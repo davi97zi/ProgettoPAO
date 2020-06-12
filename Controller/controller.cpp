@@ -97,12 +97,17 @@ void Controller::stampaRowInfo(int i){
 }
 
 void Controller::creaMatch(){
-    StatisticheMatchMostro* smm = new StatisticheMatchMostro(pMod->getHealthMostro(), pMod->getBAMostro(), pMod->getArmorMostro(), pMod->getNomeMostro(), pMod->getLivelloMostro());
+    StatisticheMatchMostro* smm = new StatisticheMatchMostro(pMod->getHealthMostro(), pMod->getBAMostro(), pMod->getArmorMostro(), pMod->getNomeMostro(), pMod->getLivelloMostro(), pMod->getExpMostro());
     StatisticheMatchPersonaggio* smp = new StatisticheMatchPersonaggio(pMod->getHealthPersonaggio(), pMod->getBAPersonaggio(), pMod->getArmorPersonaggio(), pMod->getNomePersonaggio(), pMod->getLivelloPersonaggio(), pMod->getManaPersonaggio());
     Match* m = new Match(smm, smp, pMod->getTurno(), pMod->getMonete());
     mw->setCentralWidget(m);
+    qDebug() << "Controller::creaMatch entra";
+    //prende bottone cliccato sezione abilita personaggio
+    connect(mw->centralWidget(), SIGNAL(eseguiAbilitaP(QString)), this, SLOT(getAction(QString)));
 
-    //getMostro();
+    //manda a match il danno al mostro
+    connect(this, SIGNAL(updatedHPMostro(int)), smm, SLOT(setHealth(int)));
+    qDebug() << "Controller::creaMatch esce";
 }
 
 void Controller::creaPersonaggio(int i){
@@ -117,13 +122,31 @@ void Controller::creaPersonaggio(int i){
     else
         pMod->aggiungiPersonaggio(base.convertiInPersonaggio());
 
+    getMostro(pMod->getTurno()-1);
     creaMatch();
-    //pMod->stampaSquadra();
 }
 
 void Controller::getMostro(int i){
     Dungeon mostro;
-    mostro.challengeMonster(i);
-    pMod->cambiaMostro();
+    pMod->cambiaMostro(mostro.challengeMonster(i));
 }
 
+//personaggio action (da match window)
+void Controller::getAction(QString a){
+    if(a == "baseAttack"){
+        int baPersonaggio = pMod->getBAPersonaggio()*(-1);
+        pMod->attaccaMostro(baPersonaggio);
+        //aggiungere QDialog
+        qDebug() << "Controller::getAction" << "Vita: " << pMod->getHealthMostro() << "Danno: " << baPersonaggio;
+        emit updatedHPMostro(pMod->getHealthMostro());
+    } else if (a == "abilita1"){
+        int abilita1Personaggio = pMod->getAbilita1();
+    } else if (a == "abilita2"){
+        int abilita2Personaggio = pMod->getAbilita2();
+    } else {
+        int abilita3Personaggio = pMod->getAbilita3();
+    }
+}
+
+//se abilita fa danni (danno > 0) -> danno normale
+//altrimenti richiama funzione particolare che fa quello che deve fare

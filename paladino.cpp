@@ -40,19 +40,19 @@ unsigned int Paladino::pray(bool use){
 
 }
 
-unsigned int Paladino::abilita1()
+int Paladino::abilita1()
 {
-    return static_cast<unsigned int>(this->shieldOfFaith());
+    return static_cast<int>(this->shieldOfFaith())*(-1);
 }
 
-unsigned int Paladino::abilita2()
+int Paladino::abilita2()
 {
-    return this->layOfHands();
+    return static_cast<int>(this->layOfHands())*(-1);
 }
 
-unsigned int Paladino::abilita3()
+int Paladino::abilita3()
 {
-    return this->ultimateSmite();
+    return static_cast<int>(this->ultimateSmite())*(-1);
 }
 
 bool Paladino::shieldOfFaith(){

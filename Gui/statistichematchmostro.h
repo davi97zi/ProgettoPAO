@@ -13,7 +13,8 @@ private:
     QHBoxLayout* tot;
     QGridLayout* stats;
     QGridLayout* info;
-    QHBoxLayout* img;
+    QHBoxLayout* ex;
+    QLabel* experience;
     QLabel* titolo;
     QLabel* health;
     QLabel* baseAttack;
@@ -27,10 +28,11 @@ private:
     //Personaggio* p;
 
 public:
-    StatisticheMatchMostro(int h, int ba, int a, QString n, int l, QWidget* parent=0);
+    StatisticheMatchMostro(int h, int ba, int a, QString n, int l, int exp, QWidget* parent=0);
 
-    /*void setHealth(int);
-    void setBaseAttack(int);
+public slots:
+    void setHealth(int);
+    /*void setBaseAttack(int);
     void setArmor(int);
     void setNome(QString);
     void setNome(QString);*/

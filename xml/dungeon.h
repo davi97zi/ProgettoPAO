@@ -62,7 +62,7 @@ public:
     //costruttore: usa QXml per recuperare i dati dalla risorsa
     Dungeon(){
         //apri file in lettura
-        QFile file("dungeon");
+        QFile file("xml/dungeon");
         //apro in lettura
         if(file.open(QIODevice::ReadOnly)){
             //carica il file in un QDomDoc
@@ -89,7 +89,7 @@ public:
     //trova il mostro da combattere alla i-esima battaglia
     Mostro* challengeMonster(int i){
         DungeonItem di = v[i];
-        Mostro* m = new Mostro(di.getExp(), di.getNome(), di.getOro());
+        Mostro* m = new Mostro((di.getLivello()-1)*100, di.getNome(), di.getOro(), di.getExp());
         return m;
     }
 };

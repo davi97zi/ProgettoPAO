@@ -25,9 +25,9 @@ public:
 
 
 
-    unsigned int abilita1() override;
-    unsigned int abilita2() override;
-    unsigned int abilita3() override;
+    int abilita1() override;
+    int abilita2() override;
+    int abilita3() override;
 };
 
 #endif // PALADINO_H

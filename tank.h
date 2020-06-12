@@ -20,9 +20,9 @@ public:
 
 
 
-    unsigned int abilita1();
-    unsigned int abilita2();
-    unsigned int abilita3();
+    int abilita1();
+    int abilita2();
+    int abilita3();
 };
 
 #endif // TANK_H

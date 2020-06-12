@@ -14,16 +14,16 @@ bool Berserker::increaseLevel(unsigned int newExpPoint){//newExpPoint guadagnati
         }
 }
 
-unsigned int Berserker::abilita1(){
-    return static_cast<unsigned int>(this->colpoStordente());
+int Berserker::abilita1(){
+    return static_cast<int>(this->colpoStordente())*(-1);
 }
 
-unsigned int Berserker::abilita2(){
-    return this->asciaDiFuoco();
+int Berserker::abilita2(){
+    return static_cast<int>(this->asciaDiFuoco())*(-1);
 }
 
-unsigned int Berserker::abilita3(){
-    return this->furiaAssassina();
+int Berserker::abilita3(){
+    return static_cast<int>(this->furiaAssassina())*(-1);
 }
 
 

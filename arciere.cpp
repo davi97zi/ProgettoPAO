@@ -2,19 +2,19 @@
 
 Arciere::~Arciere() {}
 
-unsigned int Arciere::abilita1()
+int Arciere::abilita1()
 {
-    return this->frecciaAppuntita();
+    return static_cast<int>(this->frecciaAppuntita())*(-1);
 }
 
-unsigned int Arciere::abilita2()
+int Arciere::abilita2()
 {
-    return this->frecciaInfuocata();
+    return static_cast<int>(this->frecciaInfuocata())*(-1);
 }
 
-unsigned int Arciere::abilita3()
+int Arciere::abilita3()
 {
-    return this->frecciaPesante();
+    return static_cast<int>(this->frecciaPesante())*(-1);
 }
 
 bool Arciere::increaseLevel(unsigned int newExpPoint){//newExpPoint guadagnati dalla vittoria della battaglia

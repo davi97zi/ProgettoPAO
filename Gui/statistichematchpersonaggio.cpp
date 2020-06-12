@@ -3,6 +3,7 @@
 #include "artificiere.h"
 #include "abilita_personaggio_match.h"
 #include <QSizePolicy>
+#include <QDebug>
 
 #include "changecharacter.h"
 
@@ -32,6 +33,7 @@ StatisticheMatchPersonaggio::StatisticheMatchPersonaggio(int h, int ba, int a, Q
     cambiaPersonaggio->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
     cambiaPersonaggio->setStyleSheet("QPushButton{border-style: outset; border-width: 1px;border-radius: 10px;border-color: black; min-width: 10em;padding: 6px;}"
                                      "QPushButton:pressed {background-color: beige; border-style: inset;}");
+    cambiaPersonaggio->setObjectName("cambiaPersonaggio");
     connect(cambiaPersonaggio, SIGNAL (released()),this, SLOT (handleButton()));
 
     stats->addWidget(titolo, 0, 0, 1, 2, Qt::AlignCenter);
@@ -78,15 +80,19 @@ QGridLayout* StatisticheMatchPersonaggio::getAbilities(){
 
     QPushButton* baseAttackBtn = new QPushButton("BaseAttack");
     baseAttackBtn->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+    baseAttackBtn->setObjectName("baseAttack");
 
     QPushButton* abilita1 = new QPushButton("Abilità1");
     abilita1->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+    abilita1->setObjectName("abilita1");
 
     QPushButton* abilita2 = new QPushButton("Abilità2");
     abilita2->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+    abilita2->setObjectName("abilita2");
 
     QPushButton* abilita3 = new QPushButton("Abilità3");
     abilita3->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
+    abilita3->setObjectName("abilita3");
 
     connect(baseAttackBtn, SIGNAL (released()),this, SLOT (handleButton()));
     connect(abilita1, SIGNAL (released()),this, SLOT (handleButton()));
@@ -103,9 +109,9 @@ QGridLayout* StatisticheMatchPersonaggio::getAbilities(){
 }
 
 void StatisticheMatchPersonaggio::handleButton(){
-QPushButton* button = dynamic_cast<QPushButton*>(sender()); //QPushButton* button = (QPushButton*)sender();
-    if(button->objectName() == "cambiaPersonaggio"){
-        ChangeCharacter* cc;
-        cc->show();
-    }
+    QPushButton* button = dynamic_cast<QPushButton*>(sender()); //QPushButton* button = (QPushButton*)sender();
+    if(button->objectName() != "cambiaPersonaggio"){
+        emit eseguiAbilita("baseAttack");
+    }else
+        emit cambiaPersonaggioBtn();
 }

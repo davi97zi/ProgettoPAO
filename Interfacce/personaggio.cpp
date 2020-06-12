@@ -33,8 +33,8 @@ void Personaggio::setExp(unsigned int ex){
 }
 
 
-unsigned int Personaggio::reducedDamageWithArmor(unsigned int damage) const{ //restituisce il danno ridotto dall'armatura (in defence interface usa maxarmor, invece che armor)
-    return damage - (damage*armor)/100;
+int Personaggio::reducedDamageWithArmor(int damage) const{ //restituisce il danno ridotto dall'armatura (in defence interface usa maxarmor, invece che armor)
+    return damage - (((damage*static_cast<int>(armor)))*(-1))/100;
 }
 
 //proposta da healIntef
@@ -63,13 +63,14 @@ bool Personaggio::increaseLevel(unsigned int newExpPoint){//newExpPoint guadagna
         setLevel((newExpPoint+getExpPoint())/100);
         setExp((newExpPoint+getExpPoint())%100);
         return true;
+    }else{
+        setExp(newExpPoint);
+        return false;
     }
-    setExp(newExpPoint);
-    return false;
 }
 
-void Personaggio::receiveDamage(unsigned int damage){//utilizza SetHealth e ReducedDamageWithArmor -> varia in base al personaggio; per diminuire HP (hp=hp-damage) tramite setHP
-    int dmg= (-1)*static_cast<int>(reducedDamageWithArmor(damage));
+void Personaggio::receiveDamage(int damage){//utilizza SetHealth e ReducedDamageWithArmor -> varia in base al personaggio; per diminuire HP (hp=hp-damage) tramite setHP
+    int dmg= reducedDamageWithArmor(damage);
     setHealth(dmg);
 }
 
@@ -88,17 +89,17 @@ void Personaggio::receiveHealing(unsigned int gain, bool divineIntervention){//c
     }
 }
 
-unsigned int Personaggio::abilita1()
+int Personaggio::abilita1()
 {
-    return this->getBaseAttack();
+    return 0;
 }
 
-unsigned int Personaggio::abilita2()
+int Personaggio::abilita2()
 {
-    return this->getBaseAttack();
+    return 0;
 }
 
-unsigned int Personaggio::abilita3()
+int Personaggio::abilita3()
 {
-    return this->getBaseAttack();
+    return 0;
 }
