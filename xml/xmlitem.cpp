@@ -1,5 +1,8 @@
 #include "xmlitem.h"
 
+XmlItem::XmlItem(){}
+
+XmlItem::XmlItem(QString n, QString t, int l, int p): nome(n), tipo(t), livello(l), prezzo(p){}
 
 int XmlItem::convertToInt() const{
     if(getTipo()=="Arciere")
@@ -20,10 +23,6 @@ int XmlItem::convertToInt() const{
         return 7;
 }
 
-XmlItem::XmlItem(){}
-
-XmlItem::XmlItem(QString n, QString t, int l, int p): nome(n), tipo(t), livello(l), prezzo(p){}
-
 void XmlItem::stampaItem() const{
     qDebug() << "avventuriero: " << nome;
     qDebug() << "classe: " << tipo;
@@ -40,7 +39,7 @@ QString XmlItem::getTipo() const{
 }
 
 unsigned int XmlItem::getLivello() const{
-    return livello;
+    return static_cast<unsigned int>(livello);
 }
 
 int XmlItem::getPrezzo() const{

@@ -1,6 +1,6 @@
 #include "partita.h"
-#include "../xml/dungeon.h"
-#include "../Interfacce/magicInterface.h"
+#include "xml/dungeon.h"
+#include "Interfacce/magicInterface.h"
 
 void Partita::incrementaLvl(unsigned int exp)
 {
@@ -33,13 +33,13 @@ void Partita::attaccaMostro(int i){
 
 void Partita::guarisciTutti(int i){
     for(Contenitore::Iteratore it=squadra.begin(); it!=squadra.end(); ++it){
-        it->receiveHealing(i);
+        it->receiveHealing(static_cast<unsigned int>(i));
     }
 }
 
 void Partita::resuscita(int i){
     for(Contenitore::Iteratore it=squadra.begin(); it!=squadra.end(); ++it){
-        it->receiveHealing(i, true);
+        it->receiveHealing(static_cast<unsigned int>(i), true);
     }
 }
 
@@ -121,65 +121,65 @@ void Partita::resetArmor()
 }
 
 
-int Partita::getHealthMostro(){
+int Partita::getHealthMostro() const{
     return m->getHealth();
 }
 
-int Partita::getBAMostro(){
-    return m->getBaseAttack();
+int Partita::getBAMostro() const{
+    return static_cast<int>(m->getBaseAttack());
 }
 
-int Partita::getArmorMostro(){
-    return m->getArmor();
+int Partita::getArmorMostro() const{
+    return static_cast<int>(m->getArmor());
 }
 
-int Partita::getLivelloMostro(){
-    return m->getLevel();
+int Partita::getLivelloMostro() const{
+    return static_cast<int>(m->getLevel());
 }
 
-int Partita::getExpMostro(){
-    return m->getExpPoint();
+int Partita::getExpMostro() const{
+    return static_cast<int>(m->getExpPoint());
 }
 
-QString Partita::getNomeMostro(){
+QString Partita::getNomeMostro() const{
     return m->getNome();
 }
 
-int Partita::getHealthPersonaggio(){
+int Partita::getHealthPersonaggio() const{
     return personaggioInUso->getHealth();
 }
 
-int Partita::getBAPersonaggio(){
-    return personaggioInUso->getBaseAttack();
+int Partita::getBAPersonaggio() const{
+    return static_cast<int>(personaggioInUso->getBaseAttack());
 }
 
-int Partita::getArmorPersonaggio(){
-    return personaggioInUso->getArmor();
+int Partita::getArmorPersonaggio() const{
+    return static_cast<int>(personaggioInUso->getArmor());
 }
 
-int Partita::getLivelloPersonaggio(){
-    return personaggioInUso->getLevel();
+int Partita::getLivelloPersonaggio() const{
+    return static_cast<int>(personaggioInUso->getLevel());
 }
 
-int Partita::getManaPersonaggio(){
+int Partita::getManaPersonaggio() const{
     Personaggio* p2 = &(*personaggioInUso);
     MagicInterface* p = dynamic_cast<MagicInterface*>(p2);
     if(!p)
         return 0;
     else
-        return p->getMana();
+        return static_cast<int>(p->getMana());
 }
 
-QString Partita::getNomePersonaggio(){
+QString Partita::getNomePersonaggio() const{
     return personaggioInUso->getNome();
 }
 
-int Partita::getRound(){
-    return battaglia;
+int Partita::getRound() const{
+    return static_cast<int>(battaglia);
 }
 
-int Partita::getMonete(){
-    return oro;
+int Partita::getMonete() const{
+    return static_cast<int>(oro);
 }
 
 int Partita::getAbilita1() const{

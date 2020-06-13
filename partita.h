@@ -57,26 +57,26 @@ public:
     //MANCA DEFINIZIONE
     void cambiaMostro(Mostro*);
 
-    int getHealthMostro();
-    int getBAMostro();
-    int getArmorMostro();
-    int getLivelloMostro();
-    int getExpMostro();
-    QString getNomeMostro();
+    int getHealthMostro() const;
+    int getBAMostro() const;
+    int getArmorMostro() const;
+    int getLivelloMostro() const;
+    int getExpMostro() const;
+    QString getNomeMostro() const;
 
-    int getHealthPersonaggio();
-    int getBAPersonaggio();
-    int getArmorPersonaggio();
-    int getLivelloPersonaggio();
-    int getManaPersonaggio();
-    QString getNomePersonaggio();
+    int getHealthPersonaggio() const;
+    int getBAPersonaggio() const;
+    int getArmorPersonaggio() const;
+    int getLivelloPersonaggio() const;
+    int getManaPersonaggio() const;
+    QString getNomePersonaggio() const;
 
     int getAbilita1() const;
     int getAbilita2() const;
     int getAbilita3() const;
 
-    int getRound();
-    int getMonete();
+    int getRound() const;
+    int getMonete() const;
 
 /*
 f1: dice se ha vinto la PARTITA

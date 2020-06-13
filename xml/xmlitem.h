@@ -24,7 +24,7 @@ class XmlItem{
 
 public:
   //base
-    XmlItem();
+   XmlItem();
   //costruttore devo passare ALL the data
   XmlItem(QString n, QString t, int l, int p);
 
