@@ -133,7 +133,7 @@ void Controller::stampaRowInfo(int i){
 void Controller::creaMatch(){
     StatisticheMatchMostro* smm = new StatisticheMatchMostro(pMod->getHealthMostro(), pMod->getBAMostro(), pMod->getArmorMostro(), pMod->getNomeMostro(), pMod->getLivelloMostro(), pMod->getExpMostro());
     StatisticheMatchPersonaggio* smp = new StatisticheMatchPersonaggio(pMod->getHealthPersonaggio(), pMod->getBAPersonaggio(), pMod->getArmorPersonaggio(), pMod->getNomePersonaggio(), pMod->getLivelloPersonaggio(), pMod->getManaPersonaggio());
-    Match* m = new Match(smm, smp, pMod->getTurno(), pMod->getMonete());
+    Match* m = new Match(smm, smp, pMod->getRound(), pMod->getMonete());
     mw->setCentralWidget(m);
     qDebug() << "Controller::creaMatch entra";
     //prende bottone cliccato sezione abilita personaggio
@@ -163,7 +163,7 @@ void Controller::creaPersonaggio(int i){
     else
         pMod->aggiungiPersonaggio(base.convertiInPersonaggio());
 
-    getMostro(pMod->getTurno()-1);
+    getMostro(pMod->getRound()-1);
     creaMatch();
 }
 
@@ -173,7 +173,7 @@ void Controller::getMostro(int i){
 }
 
 //personaggio action (da match window)
-void Controller::getAction(QString a){
+void Controller::getAction(QString a) try{
     if(a == "baseAttack"){
         int baPersonaggio = pMod->getBAPersonaggio()*(-1);
         pMod->attaccaMostro(baPersonaggio);
@@ -193,8 +193,19 @@ void Controller::getAction(QString a){
     else {
         qDebug() << a;
         int abilita3Personaggio = pMod->getAbilita3();
+        if(pMod->getTurnoA3()!=0){
+            pMod->setTurniA3(-1);
+            if(pMod->getTurnoA3()==0){
+                pMod->resetArmor();
+                emit updatedArmPersonaggio(pMod->getArmorPersonaggio());
+            }
+        }else{
         eseguiAbilita(abilita3Personaggio, true);
+        pMod->setTurniA3(3);
+        }
     }
+//mago dice che fa meno danno di quello effettivo
+}catch(int){
 
 }
 

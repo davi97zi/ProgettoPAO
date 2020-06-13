@@ -6,7 +6,6 @@
 
 class Berserker: public DpsInterface, public DefenceInterface{
 private:
-    bool colpoStordente();
     unsigned int asciaDiFuoco() const;
     unsigned int furiaAssassina() const;
 protected:

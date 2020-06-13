@@ -75,7 +75,7 @@ public:
     int getAbilita2() const;
     int getAbilita3() const;
 
-    int getTurno();
+    int getRound();
     int getMonete();
 
 /*
@@ -90,6 +90,10 @@ f3: dice se la battaglia è in corso o è finita?
     bool fineBattaglia();
 
     bool finePartita();
+
+    short int getTurnoA3() const;
+    void setTurniA3(int);
+    void resetArmor();
 
     //PER TEST: da togliere
     void stampaSquadra() const{

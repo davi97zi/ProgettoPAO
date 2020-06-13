@@ -2,7 +2,7 @@
 
 Paladino::Paladino(QString nome, unsigned int ex):
     Personaggio(30, 20, 1, 15, "Paladino", nome, 4),
-    DefenceInterface(30), HealInterface(){
+    DefenceInterface(15), HealInterface(){
         increaseLevel(ex);
 }
 
@@ -18,13 +18,8 @@ bool Paladino::increaseLevel(unsigned int newExpPoint){
         return false;
 }
 
-bool Paladino::buffArmor(){
-    if(getTurni()!=0)
-        return false;
-    else{
-        setArmor(getArmor()+getBlessing()*getLevel());
-        return true;
-    }
+void Paladino::buffArmor(){
+    setArmor(getArmor()+getBlessing()*getLevel());
 }
 
 unsigned int Paladino::pray(bool use){
@@ -55,11 +50,10 @@ int Paladino::abilita3()
     return static_cast<int>(this->ultimateSmite())*(-1);
 }
 
-bool Paladino::shieldOfFaith(){
+unsigned int Paladino::shieldOfFaith(){
     pray(false);
-    /*if(buffArmor()==false)
-        throw 0;*/
-    return buffArmor();
+    buffArmor();
+    return 1;
 }
 
 //per ottenere blessing & guarire

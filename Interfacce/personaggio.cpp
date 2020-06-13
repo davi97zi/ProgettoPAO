@@ -63,6 +63,15 @@ unsigned int Personaggio::getLevel() const{return level;}
 unsigned int Personaggio::getExpPoint() const{return expPoint;}
 unsigned int Personaggio::getArmor() const{return armor;}
 
+short Personaggio::getTurniAbilita3() const{
+    return turniAbilita3;
+}
+
+void Personaggio::setTurniAbilita3(int a){
+    turniAbilita3=turniAbilita3+a;
+}
+
+
 bool Personaggio::increaseLevel(unsigned int newExpPoint){//newExpPoint guadagnati dalla vittoria della battaglia
     if(newExpPoint + getExpPoint() >= 100){
         setLevel((newExpPoint+getExpPoint())/100);

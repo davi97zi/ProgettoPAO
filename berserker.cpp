@@ -15,7 +15,7 @@ bool Berserker::increaseLevel(unsigned int newExpPoint){//newExpPoint guadagnati
 }
 
 int Berserker::abilita1(){
-    return static_cast<int>(this->colpoStordente())*(-1);
+    return static_cast<int>(this->furiaAssassina())*(-1);
 }
 
 int Berserker::abilita2(){
@@ -23,22 +23,11 @@ int Berserker::abilita2(){
 }
 
 int Berserker::abilita3(){
-    return static_cast<int>(this->furiaAssassina())*(-1);
+    buffArmor();
+    return 1;
 }
 
 
-
-
-bool Berserker::colpoStordente(){
-    if(getTurno()!=0){
-        decrementaTurni();
-        return false;
-    } else{
-        incrementaTurni();
-        setArmor(getArmor());
-        return true;
-    }
-}
 
 unsigned int Berserker::asciaDiFuoco() const{
     return getBaseAttack()*critico()+getLevel()*2;

@@ -103,6 +103,24 @@ bool Partita::finePartita(){
     }
 }
 
+short Partita::getTurnoA3() const
+{
+    return personaggioInUso->getTurniAbilita3();
+}
+
+void Partita::setTurniA3(int a)
+{
+    personaggioInUso->setTurniAbilita3(a);
+}
+
+void Partita::resetArmor()
+{
+    qDebug()<<"entra da resetArmor";
+    dynamic_cast<DefenceInterface*>(&(*personaggioInUso))->setDefaultArmor();
+    qDebug()<<"esce da resetArmor";
+}
+
+
 int Partita::getHealthMostro(){
     return m->getHealth();
 }
@@ -156,7 +174,7 @@ QString Partita::getNomePersonaggio(){
     return personaggioInUso->getNome();
 }
 
-int Partita::getTurno(){
+int Partita::getRound(){
     return battaglia;
 }
 
