@@ -99,7 +99,7 @@ void Controller::slotQualeBottone(QString str){
 
         //2) inserisci i dati nella gui
         //per ogni riga della tabella passa: data, battaglia, #personaggi, monete e risultato
-        for(int i=0; i < sMod->getSize(); i++){
+        for(unsigned int i=0; i < sMod->getSize(); i++){
             storicoGui->addRow(sMod->getPartita(i));
         }
 
@@ -117,7 +117,7 @@ void Controller::remakeMain(){
     connect(mw->centralWidget(), SIGNAL (signalBottone(QString)),this, SLOT (slotQualeBottone(QString)));
 }
 
-void Controller::stampaRowInfo(int i){
+void Controller::stampaRowInfo(unsigned int i){
     StoricoModello::StoricoModelloItem partitaMod = sMod->getPartita(i);
     InfoPartitaStorico * partitaGui= new InfoPartitaStorico;
     qDebug() << "size squadra: " << partitaMod.getSizeSquadra();
@@ -151,7 +151,7 @@ void Controller::creaMatch(){
     qDebug() << "Controller::creaMatch esce";
 }
 
-void Controller::creaPersonaggio(int i){
+void Controller::creaPersonaggio(unsigned int i){
     qDebug() << "3)voglio inserire " << i << " nel mio party";
     //Queste 2 righe potrebbero dover andare in partita
     Taverna fandolin;

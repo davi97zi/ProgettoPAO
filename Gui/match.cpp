@@ -1,5 +1,6 @@
 #include "match.h"
 #include <QDebug>
+#include <QGroupBox>
 
 
 Match::Match(StatisticheMatchMostro* smm, StatisticheMatchPersonaggio* smp, int t, int m, QWidget* parent): QWidget(parent){
@@ -16,6 +17,10 @@ Match::Match(StatisticheMatchMostro* smm, StatisticheMatchPersonaggio* smp, int 
     layoutMostro = new QGridLayout();
     layoutPersonaggio = new QGridLayout();
 
+    /* AGGIUNGERE CONTORNO CONTENITORE PERSONAGGIO E MOSTRO (separati)
+    QGroupBox* contornoPersonaggio= new QGroupBox();
+    QGroupBox* contornoMostro= new QGroupBox();
+    */
     statsP = smp;
     statsM = smm;
 

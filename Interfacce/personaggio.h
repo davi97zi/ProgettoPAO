@@ -7,7 +7,7 @@
 class Personaggio{
 private:
     unsigned int maxHealth;
-    int health;
+    unsigned int health;
     unsigned int baseAttack;
     unsigned int level;
     unsigned int expPoint;
@@ -17,7 +17,7 @@ private:
     const QString tipoPersonaggio;// dovrebbe essere static? idk
     const QString nome;
     unsigned int prezzo; //dovrebbe essere const
-    short int turniAbilita3;
+    int turniAbilita3;
 
 protected:
     void increaseMaxHealth(unsigned int addVal);
@@ -50,7 +50,7 @@ public:
               QString n,
               unsigned int p):
                  maxHealth(mh),
-                 health(static_cast<int>(mh)),
+                 health(mh),
                  baseAttack(ba),
                  level(1),
                  expPoint(exp),
@@ -68,14 +68,14 @@ public:
   QString getNome()const;
   unsigned int getPrezzo() const;
 
-  int getHealth() const;
+  unsigned int getHealth() const;
   unsigned int getMaxHealth() const;
   unsigned int getBaseAttack() const;
   unsigned int getLevel() const;
   unsigned int getExpPoint() const;
   unsigned int getArmor() const;
 
-  short int getTurniAbilita3() const;
+  int getTurniAbilita3() const;
   void setTurniAbilita3(int);
 
   //proposta da healInterf->per modificare i campi specifici delle interfaccie deve essere virtuale! && potrebbe ritornare se è avvenuto o no un cambio lvl wt a BOOL

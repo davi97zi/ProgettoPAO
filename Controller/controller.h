@@ -19,13 +19,13 @@ public:
     explicit Controller(QObject *parent = nullptr);
 
     void creaMatch();
-    void getMostro(int);
+    void getMostro(int); //should be const?
 
 public slots:
     void slotQualeBottone(QString);
     void remakeMain();
-    void stampaRowInfo(int);
-    void creaPersonaggio(int);
+    void stampaRowInfo(unsigned int);
+    void creaPersonaggio(unsigned int);
     void getAction(QString);
 
 signals:

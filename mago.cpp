@@ -40,7 +40,7 @@ unsigned int Mago::expelliarmus(){ //abilità1, sempre disponibile
         //return 0;
 }
 
-unsigned int Mago::expectoPatronum(){ //abilità2, costa 2 turni, fa danni e guarisce il mago
+unsigned int Mago::expectoPatronum(){ //abilità2, fa danni e guarisce il mago
     unsigned int dmg = getBaseAttack() + 18*getLevel();
     if(isThrowable(getCostoA2()) == true){
         receiveHealing(5*getLevel(), false); //guarisce il mago

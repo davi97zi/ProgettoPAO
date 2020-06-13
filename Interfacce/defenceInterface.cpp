@@ -7,7 +7,7 @@ unsigned int DefenceInterface::reducedDamageWithArmor(unsigned int damage) const
 }
 
 void DefenceInterface::increaseArmor(unsigned int valAdd){
-    setArmor(valAdd);
+    setArmor(static_cast<int>(valAdd));
 }
 
 
@@ -28,11 +28,11 @@ void DefenceInterface::increaseArmor(unsigned int valAdd){
 
 
 void DefenceInterface::buffArmor(){
-    setArmor(15*getLevel());
+    setArmor(15*static_cast<int>(getLevel()));
 }
 
 void DefenceInterface::setDefaultArmor()
 {
-    int subVal= maxArmor-getArmor();
-    setArmor(subVal);
+    unsigned int subVal= maxArmor-getArmor();
+    setArmor(static_cast<int>(subVal));
 }

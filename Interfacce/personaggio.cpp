@@ -2,7 +2,7 @@
 
 void Personaggio::increaseMaxHealth(unsigned int addVal){
     maxHealth+= addVal;
-    health=static_cast<int>(maxHealth);
+    health=maxHealth;
 } //usato da increaselevel, RESETTA ANCHE HEALTH AL MAX VALUE
 
 void Personaggio::increaseArmor(unsigned int addVal){
@@ -19,7 +19,7 @@ void Personaggio::setLevel(unsigned int newLevel){
 
 void Personaggio::setHealth(int damage){//proposta da healInterf:(int+)= guarigione; (int-)=colpo subito; 0=Dead==true
     health=health + damage;
-    if(static_cast<int>(maxHealth)< health){ //NB correzione funzione per evitare OVERHEALING
+    if(maxHealth< health){ //NB correzione funzione per evitare OVERHEALING
         health=maxHealth;
     }
     if(health<=0){
@@ -34,7 +34,7 @@ void Personaggio::setExp(unsigned int ex){
 
 void Personaggio::setArmor(int arm)
 {
-    armor+=arm;
+    armor+=static_cast<unsigned int>(arm);
 }
 
 
@@ -56,14 +56,14 @@ QString Personaggio::getTipoPersonaggio() const{ return tipoPersonaggio;}
 QString Personaggio::getNome() const{ return nome;}
 unsigned int Personaggio::getPrezzo() const{return prezzo;}
 
-int Personaggio::getHealth() const{return health;}
+unsigned int Personaggio::getHealth() const{return health;}
 unsigned int Personaggio::getMaxHealth() const{return maxHealth;}
 unsigned int Personaggio::getBaseAttack() const{return baseAttack;}
 unsigned int Personaggio::getLevel() const{return level;}
 unsigned int Personaggio::getExpPoint() const{return expPoint;}
 unsigned int Personaggio::getArmor() const{return armor;}
 
-short Personaggio::getTurniAbilita3() const{
+int Personaggio::getTurniAbilita3() const{
     return turniAbilita3;
 }
 
