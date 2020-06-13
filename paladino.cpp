@@ -11,7 +11,7 @@ bool Paladino::increaseLevel(unsigned int newExpPoint){
         increaseArmor(2*getLevel());
         increaseAttack(4+getLevel());
         increaseMaxHealth(5+(getLevel()*2));
-        setMaxArmor(getArmor());//nb manca un setmaxarmorrrrr
+        setArmor(getArmor());//nb manca un setmaxarmorrrrr
         increaseBlessing();//chiama reset con NEWLevel, in entrambi i casi riporta a "zero" il blessing per la prossima BATTAGLIA
         return true;
     } else
@@ -22,7 +22,7 @@ bool Paladino::buffArmor(){
     if(getTurni()!=0)
         return false;
     else{
-        setMaxArmor(getArmor()+getBlessing()*getLevel());
+        setArmor(getArmor()+getBlessing()*getLevel());
         return true;
     }
 }
@@ -42,12 +42,12 @@ unsigned int Paladino::pray(bool use){
 
 int Paladino::abilita1()
 {
-    return static_cast<int>(this->shieldOfFaith())*(-1);
+    return static_cast<int>(this->shieldOfFaith());
 }
 
 int Paladino::abilita2()
 {
-    return static_cast<int>(this->layOfHands())*(-1);
+    return static_cast<int>(this->layOfHands());
 }
 
 int Paladino::abilita3()
@@ -65,7 +65,7 @@ bool Paladino::shieldOfFaith(){
 //per ottenere blessing & guarire
 unsigned int Paladino::layOfHands(){
     pray(false);
-    unsigned int gain=getMaxArmor()+getBlessing()+getLevel();
+    unsigned int gain=getArmor()+getBlessing()+getLevel();
     receiveHealing(gain);
     return gain;
 }

@@ -4,7 +4,7 @@ bool Tank::increaseLevel(unsigned int newExpPoint){
     if(Personaggio::increaseLevel(newExpPoint) == true){
         increaseMaxHealth(20*getLevel());
         increaseArmor(10*getLevel());
-        increaseMaxArmor(15*getLevel());
+        //increaseArmor(15*getLevel());
         increaseAttack(5*getLevel());
         return true;
     }
@@ -12,19 +12,17 @@ bool Tank::increaseLevel(unsigned int newExpPoint){
         return false;
 }
 
-int Tank::abilita1()
-{
-    return static_cast<int>(this->scudo())*(-1);
-}
-
-int Tank::abilita2()
-{
+int Tank::abilita1(){
     return static_cast<int>(this->schiacciasassi())*(-1);
 }
 
-int Tank::abilita3()
-{
+int Tank::abilita2(){
     return static_cast<int>(this->jackhammer())*(-1);
+
+}
+
+int Tank::abilita3(){
+    return static_cast<int>(this->scudo());
 }
 
 unsigned int Tank::schiacciasassi() const{
@@ -41,7 +39,7 @@ bool Tank::scudo(){
         return true;
     } else{
         //incrementaTurni() ?
-        setMaxArmor(getArmor());
+        setArmor(getArmor());
         return false;
     }
 }

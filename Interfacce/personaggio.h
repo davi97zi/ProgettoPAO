@@ -28,6 +28,7 @@ protected:
 
     //NB aggiunta per effettivamente andare a toccare exp
     void setExp(unsigned int ex);
+    virtual void setArmor(int arm);
 
     virtual int reducedDamageWithArmor(int damage) const;
 

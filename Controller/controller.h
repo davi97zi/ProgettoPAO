@@ -14,6 +14,7 @@ private:
     Partita * pMod;
     StoricoModello * sMod;
 
+    void eseguiAbilita(int, bool);
 public:
     explicit Controller(QObject *parent = nullptr);
 
@@ -29,6 +30,8 @@ public slots:
 
 signals:
     void updatedHPMostro(int);
+    void updatedArmPersonaggio(int);
+    void updatedHealthPersonaggio(int);
 };
 
 #endif // CONTROLLER_H

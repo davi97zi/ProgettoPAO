@@ -15,9 +15,43 @@
     return s->getPartita(i);
 }*/
 
+void Controller::eseguiAbilita(int abilita, bool terza){
+    if(abilita<0){ //è un attacco
+        qDebug() << "è un attacco, danno: " << abilita;
+        pMod->attaccaMostro(abilita);
+        emit updatedHPMostro(pMod->getHealthMostro());
+    }
+    else{//è una guarigione o un buff
+        if(abilita==0){//buff fallito?
+            //throw ("errore buff fallito");    ???
+            qDebug() << "errore buff fallito";
+        }
+        else if(abilita==1){
+            qDebug() << "è un buff";
+            emit updatedArmPersonaggio(pMod->getArmorPersonaggio());
+        }
+        else{//guarigione
+            if(!terza){
+                qDebug() << "è una guarigione";
+                pMod->guarisciTutti(abilita);
+
+            }
+            else{
+                qDebug() << "è un miracolo";
+                pMod->resuscita(abilita);
+                //qdialog: "hai resuscitato i tuoi morti!"
+            }
+            emit updatedHealthPersonaggio(pMod->getHealthPersonaggio());
+        }
+
+    }
+    //fine turno giocatore
+    //inizia turno computer
+}
+
 Controller::Controller(QObject *parent) : QObject(parent){
     //evitiamo segmentation fault
-    pMod=nullptr;
+    pMod= nullptr;
     sMod= nullptr;
 
     //crea la finestra
@@ -107,6 +141,13 @@ void Controller::creaMatch(){
 
     //manda a match il danno al mostro
     connect(this, SIGNAL(updatedHPMostro(int)), smm, SLOT(setHealth(int)));
+
+    //manda a match il cambiamento di armor (pers)
+    connect(this, SIGNAL(updatedArmPersonaggio(int)), smp, SLOT(setArmor(int)));
+
+    //manda a match il cambiamento di vita (pers)
+    connect(this, SIGNAL(updatedHealthPersonaggio(int)), smp, SLOT(setHealth(int)));
+
     qDebug() << "Controller::creaMatch esce";
 }
 
@@ -139,14 +180,24 @@ void Controller::getAction(QString a){
         //aggiungere QDialog
         qDebug() << "Controller::getAction" << "Vita: " << pMod->getHealthMostro() << "Danno: " << baPersonaggio;
         emit updatedHPMostro(pMod->getHealthMostro());
-    } else if (a == "abilita1"){
-        int abilita1Personaggio = pMod->getAbilita1();
-    } else if (a == "abilita2"){
-        int abilita2Personaggio = pMod->getAbilita2();
-    } else {
-        int abilita3Personaggio = pMod->getAbilita3();
     }
+    else if (a == "abilita1"){
+        int abilita1Personaggio = pMod->getAbilita1();
+        eseguiAbilita(abilita1Personaggio, false);
+    }
+    else if (a == "abilita2"){
+        qDebug() << a;
+        int abilita2Personaggio = pMod->getAbilita2();
+        eseguiAbilita(abilita2Personaggio, false);
+    }
+    else {
+        qDebug() << a;
+        int abilita3Personaggio = pMod->getAbilita3();
+        eseguiAbilita(abilita3Personaggio, true);
+    }
+
 }
+
 
 //se abilita fa danni (danno > 0) -> danno normale
 //altrimenti richiama funzione particolare che fa quello che deve fare

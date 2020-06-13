@@ -32,7 +32,7 @@ unsigned int Guaritore::pray(bool use){
 
 int Guaritore::abilita1()
 {
-    return static_cast<int>(this->healingWord())*(-1);
+    return static_cast<int>(this->healingWord());
 }
 
 int Guaritore::abilita2()
@@ -42,7 +42,7 @@ int Guaritore::abilita2()
 
 int Guaritore::abilita3()
 {
-    return static_cast<int>(this->divineIntervention())*(-1);
+    return static_cast<int>(this->divineIntervention());
 }
 
 unsigned int Guaritore::healingWord(){//usato per guarire se stessi e gli altri

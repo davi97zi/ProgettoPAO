@@ -20,7 +20,10 @@ private:
     QLabel* armor;
 
     QPushButton* cambiaPersonaggio;
-
+    QPushButton* baseAttackBtn;
+    QPushButton* abilita1;
+    QPushButton* abilita2;
+    QPushButton* abilita3;
     //Personaggio* p;
 
 public:
@@ -29,7 +32,8 @@ public:
 
 public slots:
     void handleButton();
-
+    void setArmor(int);
+    void setHealth(int);
 signals:
     void eseguiAbilita(QString);
     void cambiaPersonaggioBtn();

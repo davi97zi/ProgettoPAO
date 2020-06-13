@@ -78,19 +78,19 @@ QGridLayout* StatisticheMatchPersonaggio::getAbilities(){
     titolo = new QLabel("ABILITÀ");
     titolo->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
 
-    QPushButton* baseAttackBtn = new QPushButton("BaseAttack");
+    baseAttackBtn = new QPushButton("BaseAttack");
     baseAttackBtn->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
     baseAttackBtn->setObjectName("baseAttack");
 
-    QPushButton* abilita1 = new QPushButton("Abilità1");
+    abilita1 = new QPushButton("Abilità1");
     abilita1->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
     abilita1->setObjectName("abilita1");
 
-    QPushButton* abilita2 = new QPushButton("Abilità2");
+    abilita2 = new QPushButton("Abilità2");
     abilita2->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
     abilita2->setObjectName("abilita2");
 
-    QPushButton* abilita3 = new QPushButton("Abilità3");
+    abilita3 = new QPushButton("Abilità3");
     abilita3->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
     abilita3->setObjectName("abilita3");
 
@@ -111,7 +111,18 @@ QGridLayout* StatisticheMatchPersonaggio::getAbilities(){
 void StatisticheMatchPersonaggio::handleButton(){
     QPushButton* button = dynamic_cast<QPushButton*>(sender()); //QPushButton* button = (QPushButton*)sender();
     if(button->objectName() != "cambiaPersonaggio"){
-        emit eseguiAbilita("baseAttack");
+        emit eseguiAbilita(button->objectName());
     }else
         emit cambiaPersonaggioBtn();
 }
+
+void StatisticheMatchPersonaggio::setArmor(int arm){
+    armor->setText("Armor: " + QString::number(arm));
+}
+
+void StatisticheMatchPersonaggio::setHealth(int hp){
+    health->setText("Health: " + QString::number(hp));
+}
+
+
+

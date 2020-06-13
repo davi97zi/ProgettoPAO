@@ -35,7 +35,7 @@ bool Berserker::colpoStordente(){
         return false;
     } else{
         incrementaTurni();
-        setMaxArmor(getArmor());
+        setArmor(getArmor());
         return true;
     }
 }

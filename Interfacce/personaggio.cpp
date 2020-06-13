@@ -32,6 +32,11 @@ void Personaggio::setExp(unsigned int ex){
     expPoint+=ex;
 }
 
+void Personaggio::setArmor(int arm)
+{
+    armor+=arm;
+}
+
 
 int Personaggio::reducedDamageWithArmor(int damage) const{ //restituisce il danno ridotto dall'armatura (in defence interface usa maxarmor, invece che armor)
     return damage - (((damage*static_cast<int>(armor)))*(-1))/100;
