@@ -178,6 +178,11 @@ int Partita::getRound() const{
     return static_cast<int>(battaglia);
 }
 
+void Partita::setRound()
+{
+    battaglia++;
+}
+
 int Partita::getMonete() const{
     return static_cast<int>(oro);
 }

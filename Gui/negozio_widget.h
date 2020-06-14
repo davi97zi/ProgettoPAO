@@ -14,8 +14,9 @@ private:
     Negozio_personaggio * primo, * secondo, * terzo;
     QLabel * soldi;
     QPushButton * prosegui;
+    int monete;
 public:
-    explicit Negozio_widget(std::vector<XmlItem> assoldabili ,bool inizio= false, QWidget *parent = nullptr);
+    explicit Negozio_widget(std::vector<XmlItem> assoldabili , int m, bool inizio= false,  QWidget *parent = nullptr);
     void setPersonaggioNegozio(int quale, QString n, QString t, int l, int p);
     ~Negozio_widget(){qDebug() << "widget eliminato";}
 signals:

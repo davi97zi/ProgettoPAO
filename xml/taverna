@@ -18,7 +18,6 @@
         <livello>1</livello>
         <prezzo>0</prezzo>
     </avventuriero>
-
     <avventuriero id="3">
         <nome>tom</nome>
         <tipo>Tank</tipo>

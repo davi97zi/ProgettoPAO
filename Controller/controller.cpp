@@ -76,7 +76,11 @@ void Controller::slotQualeBottone(QString str){
         std::vector<XmlItem> assoldabili= fandolin.trovaTuttiLivello(1);
 
         //creo il negozio x scegliere primo personaggio (inizio= true)
+<<<<<<< Updated upstream
         Negozio_widget * negozio= new Negozio_widget(assoldabili, true);
+=======
+        Negozio_widget* negozio= new Negozio_widget(assoldabili, 0, true);
+>>>>>>> Stashed changes
         mw->setCentralWidget(negozio);
 
         //creo connect clicco uno degli scegli: voglio sapere quale
@@ -160,7 +164,14 @@ void Controller::creaPersonaggio(unsigned int i){
     XmlItem base=assoldabili[i];
     if(pMod==0)
         pMod=new Partita(base.convertiInPersonaggio());
+<<<<<<< Updated upstream
     else
+=======
+    }else{
+        qDebug()<<pMod->getRound();
+        assoldabili= taverna.trovaTuttiLivello(pMod->getRound());
+        base=assoldabili[i];
+>>>>>>> Stashed changes
         pMod->aggiungiPersonaggio(base.convertiInPersonaggio());
 
     getMostro(pMod->getRound()-1);
@@ -193,6 +204,7 @@ void Controller::getAction(QString a) try{
     else {
         qDebug() << a;
         int abilita3Personaggio = pMod->getAbilita3();
+<<<<<<< Updated upstream
         if(pMod->getTurnoA3()!=0){
             pMod->setTurniA3(-1);
             if(pMod->getTurnoA3()==0){
@@ -202,10 +214,79 @@ void Controller::getAction(QString a) try{
         }else{
         eseguiAbilita(abilita3Personaggio, true);
         pMod->setTurniA3(3);
+=======
+        if(pMod->getTurnoA3()!=0)
+            throw 2;
+        else{
+            emit updatedArmPersonaggio(pMod->getArmorPersonaggio());
+            eseguiAbilita(abilita3Personaggio, true);
+            pMod->setTurniA3(3);
         }
     }
+    monsterAttack();
+    endRoundActions();
+}catch(int x){
+    switch(x){
+        case 0: ;
+        case 1: ;
+        case 2: ;
+    }
+}
+
+void Controller::monsterAttack(){
+    int r = rand()%4;
+    int attacco = 0;
+    switch(r){
+        case 0: attacco = pMod->getBAMostro()*(-1); break;
+        case 1: attacco = pMod->getAbilitaM1(); break;
+        case 2: attacco = pMod->getAbilitaM2(); break;
+        case 3: attacco = pMod->getAbilitaM3(); break;
+    }
+    qDebug() << "randon number: " << r << " Attacco del mostro: " << attacco;
+    pMod->attaccaPersonaggio(attacco);
+    emit updatedHealthPersonaggio(pMod->getHealthPersonaggio());
+}
+
+//controlla se il mostro è morto
+void Controller::endRoundActions(){
+    bool fineRound = pMod->fineRound();
+    qDebug() << "fineRound = " << fineRound;
+    qDebug() << "squadraSconfitta = " << pMod->squadraSconfitta();
+    if(fineRound && pMod->squadraSconfitta() == false){
+        QMessageBox* winner = new QMessageBox(mw);
+        winner->setObjectName("winner");
+        winner->setInformativeText("HAI VINTO");
+        winner->setDetailedText("I tuoi personaggi hanno guadagnato: \n" +
+                                QString::number(pMod->getMonete()) + " monete \n" +
+                                QString::number(pMod->getExpMostro()) + " esperienza.");
+        winner->show();
+        int ret = winner->exec();
+
+        switch (ret) {
+          case QMessageBox::Ok:
+                //apertura vista negozio
+                pMod->setRound();
+                creaNuovoNegozio();
+
+                //delete del mostro
+                pMod->deleteMostro();
+
+                break;
+>>>>>>> Stashed changes
+        }
+    }
+<<<<<<< Updated upstream
 //mago dice che fa meno danno di quello effettivo
 }catch(int){
+=======
+}
+
+void Controller::creaNuovoNegozio(){
+    Taverna taverna;
+    std::vector<XmlItem> assoldabili= taverna.trovaTuttiLivello(pMod->getRound());
+    Negozio_widget* newNegozio = new Negozio_widget(assoldabili, pMod->getMonete(), false, mw);
+    mw->setCentralWidget(newNegozio);
+>>>>>>> Stashed changes
 
 }
 

@@ -76,6 +76,7 @@ public:
     int getAbilita3() const;
 
     int getRound() const;
+    void setRound();
     int getMonete() const;
 
 /*
