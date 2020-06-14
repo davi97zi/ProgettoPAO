@@ -194,6 +194,11 @@ int Partita::getRound() const{
     return battaglia;
 }
 
+void Partita::setRound()
+{
+    battaglia++;
+}
+
 int Partita::getMonete() const{
     return oro;
 }

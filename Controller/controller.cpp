@@ -80,7 +80,7 @@ void Controller::slotQualeBottone(QString str){
         std::vector<XmlItem> assoldabili= taverna.trovaTuttiLivello(1);
 
         //creo il negozio x scegliere primo personaggio (inizio= true)
-        Negozio_widget* negozio= new Negozio_widget(assoldabili, true);
+        Negozio_widget* negozio= new Negozio_widget(assoldabili, 0, true);
         mw->setCentralWidget(negozio);
 
         //creo connect clicco uno degli scegli: voglio sapere quale
@@ -252,6 +252,7 @@ void Controller::endRoundActions(){
         switch (ret) {
           case QMessageBox::Ok:
                 //apertura vista negozio
+                pMod->setRound();
                 creaNuovoNegozio();
 
                 //delete del mostro
@@ -273,7 +274,7 @@ void Controller::endRoundActions(){
 void Controller::creaNuovoNegozio(){
     Taverna taverna;
     std::vector<XmlItem> assoldabili= taverna.trovaTuttiLivello(pMod->getRound());
-    Negozio_widget* newNegozio = new Negozio_widget(assoldabili, false, mw);
+    Negozio_widget* newNegozio = new Negozio_widget(assoldabili, pMod->getMonete(), false, mw);
     mw->setCentralWidget(newNegozio);
 
     connect(newNegozio, SIGNAL(personaggioAcquistato(int)), this, SLOT(creaPersonaggio(int)));

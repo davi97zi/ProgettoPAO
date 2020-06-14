@@ -82,6 +82,7 @@ public:
     int getAbilitaM3() const;
 
     int getRound() const;
+    void setRound();
     int getMonete() const;
 
 /*

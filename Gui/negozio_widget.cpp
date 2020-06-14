@@ -2,7 +2,7 @@
 #include "QHBoxLayout"
 #include "QVBoxLayout"
 
-Negozio_widget::Negozio_widget(std::vector<XmlItem> assoldabili, bool inizio, QWidget *parent) : QWidget(parent){
+Negozio_widget::Negozio_widget(std::vector<XmlItem> assoldabili, int m, bool inizio, QWidget *parent) : QWidget(parent), monete(m){
     //per popolare dovrei -> recuperare il LIVELLO/BATTAGLIA
 
     //chiedere al controller-> dammi i tre personaggi che posso scegliere in base al livello in cui sono
@@ -21,15 +21,16 @@ Negozio_widget::Negozio_widget(std::vector<XmlItem> assoldabili, bool inizio, QW
     connect(secondo, SIGNAL(personaggioAcquistato(int)), this, SLOT(stampaDaNegozio(int)));
     connect(terzo, SIGNAL(personaggioAcquistato(int)), this, SLOT(stampaDaNegozio(int)));
 
-    connect(prosegui, SIGNAL(released()), this, SLOT(proseguiMatch()));
+
 
     //chiedere al controller-> quanti soldi we got? VA AGGIORNATO DOPO UN ACQUISTO! (tramite segnale dal controller)
-    int value= 10;
+
     //creo indicazione dei soldi posseduti
-    soldi= new QLabel(QString::number(value)+" soldi disponibili");
+    soldi= new QLabel(QString::number(m)+" soldi disponibili");
 
     //bottone di proseguimento-> premi per lasciare la taverna
     prosegui= new QPushButton("prosegui");
+    connect(prosegui, SIGNAL(released()), this, SLOT(proseguiMatch()));
     //set titolo in qlabel NB to do on the WINDOW AS WELL!
     QLabel * titolo= new QLabel("Taverna");
     //descrivi la pagina
