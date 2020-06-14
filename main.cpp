@@ -17,7 +17,7 @@ using namespace std;
 int main(int argc, char *argv[]){
     //NOTA: critico() FUNZIONA MA VA MESSA LA RIGA SEGUENTE NEL MAIN (O IN PARTITA) PER FARLO FUNZIONARE
     //KEEP HERE??
-    //srand(static_cast<unsigned int>(time(NULL)));
+    srand(static_cast<unsigned int>(time(NULL)));
     QApplication a(argc, argv);
 
 

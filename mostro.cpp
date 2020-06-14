@@ -39,6 +39,22 @@ unsigned int * Mostro::giveUpLoot()const{
     }
 }
 
+
+int Mostro::abilita1()
+{
+    return static_cast<int>(this->attaccoSemplice())*(-1);
+}
+
+int Mostro::abilita2()
+{
+    return static_cast<int>(this->morsoVampirico())*(-1);
+}
+
+int Mostro::abilita3()
+{
+    return static_cast<int>(this->attaccoPotente())*(-1);
+}
+
 //abilità
 unsigned int Mostro::attaccoSemplice(){
     unsigned int x= getBaseAttack()*2*(getLevel()); // NB evitare le divisioni! al lvl 1 possono voler dire che si fanno 0 danni!

@@ -124,5 +124,8 @@ void StatisticheMatchPersonaggio::setHealth(int hp){
     health->setText("Health: " + QString::number(hp));
 }
 
+void StatisticheMatchPersonaggio::setMana(int m){
+    mana->setText("Mana: " + QString::number(m));
+}
 
 

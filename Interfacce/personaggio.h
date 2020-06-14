@@ -1,8 +1,7 @@
 #ifndef PERSONAGGIO_H
 #define PERSONAGGIO_H
-#include <QApplication>
 
-
+#include <QString>
 
 class Personaggio{
 private:

@@ -34,6 +34,8 @@ public slots:
     void handleButton();
     void setArmor(int);
     void setHealth(int);
+    void setMana(int);
+
 signals:
     void eseguiAbilita(QString);
     void cambiaPersonaggioBtn();

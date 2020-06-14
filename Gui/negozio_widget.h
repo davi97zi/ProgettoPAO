@@ -20,8 +20,11 @@ public:
     ~Negozio_widget(){qDebug() << "widget eliminato";}
 signals:
     void personaggioAcquistato(int);
+    void newMatch();
+
 public slots:
     void stampaDaNegozio(int);
+    void proseguiMatch();
 
 };
 

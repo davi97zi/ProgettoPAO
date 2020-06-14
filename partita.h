@@ -44,6 +44,8 @@ public:
 
     void attaccaPersonaggio(int);
 
+    void deleteMostro();
+
     /*void cambiaPersonaggio(QString nome){
         if(trovaPersonaggio(nome)->getDeathState()){
             personaggioInUso= trovaPersonaggio(nome); // contenitore::iteratore & trovaPersonaggio(QString) const in CONTENITORE!
@@ -57,26 +59,30 @@ public:
     //MANCA DEFINIZIONE
     void cambiaMostro(Mostro*);
 
-    int getHealthMostro();
-    int getBAMostro();
-    int getArmorMostro();
-    int getLivelloMostro();
-    int getExpMostro();
-    QString getNomeMostro();
+    int getHealthMostro() const;
+    int getBAMostro() const;
+    int getArmorMostro() const;
+    int getLivelloMostro() const;
+    int getExpMostro() const;
+    QString getNomeMostro() const;
 
-    int getHealthPersonaggio();
-    int getBAPersonaggio();
-    int getArmorPersonaggio();
-    int getLivelloPersonaggio();
-    int getManaPersonaggio();
-    QString getNomePersonaggio();
+    int getHealthPersonaggio() const;
+    int getBAPersonaggio() const;
+    int getArmorPersonaggio() const;
+    int getLivelloPersonaggio() const;
+    int getManaPersonaggio() const;
+    QString getNomePersonaggio() const;
 
     int getAbilita1() const;
     int getAbilita2() const;
     int getAbilita3() const;
 
-    int getRound();
-    int getMonete();
+    int getAbilitaM1() const;
+    int getAbilitaM2() const;
+    int getAbilitaM3() const;
+
+    int getRound() const;
+    int getMonete() const;
 
 /*
 f1: dice se ha vinto la PARTITA
@@ -84,22 +90,24 @@ f2: dice se ha vinto la BATTAGLIA
 f3: dice se la battaglia è in corso o è finita?
 */
     //f3 true= tutti morti, false= battaglia in corso
-    bool battagliaTerminata();
+    bool squadraSconfitta();
 
     //f2
-    bool fineBattaglia();
+    bool fineRound();
 
     bool finePartita();
 
     short int getTurnoA3() const;
     void setTurniA3(int);
-    void resetArmor();
+    //void resetArmor();
 
     //PER TEST: da togliere
     void stampaSquadra() const{
         qDebug()<<"stampaSQQ";
         std::cout<<squadra;
     }
+
+    void gestioneTurniAbilita3();
 
 };
 

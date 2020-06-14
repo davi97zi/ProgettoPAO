@@ -21,6 +21,7 @@ Negozio_widget::Negozio_widget(std::vector<XmlItem> assoldabili, bool inizio, QW
     connect(secondo, SIGNAL(personaggioAcquistato(int)), this, SLOT(stampaDaNegozio(int)));
     connect(terzo, SIGNAL(personaggioAcquistato(int)), this, SLOT(stampaDaNegozio(int)));
 
+    connect(prosegui, SIGNAL(released()), this, SLOT(proseguiMatch()));
 
     //chiedere al controller-> quanti soldi we got? VA AGGIORNATO DOPO UN ACQUISTO! (tramite segnale dal controller)
     int value= 10;
@@ -84,4 +85,8 @@ void Negozio_widget::setPersonaggioNegozio(int quale, QString n, QString t, int 
 void Negozio_widget::stampaDaNegozio(int i){
     qDebug() << "2) negozio ha ricevuto " << i;
     emit personaggioAcquistato(i);
+}
+
+void Negozio_widget::proseguiMatch(){
+    emit newMatch();
 }

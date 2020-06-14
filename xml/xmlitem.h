@@ -1,7 +1,6 @@
 #ifndef XMLITEM_H
 #define XMLITEM_H
-#include <QString>
-#include <QDebug>
+
 #include "../Interfacce/personaggio.h"
 #include "../arciere.h"
 #include "../artificiere.h"
@@ -11,6 +10,9 @@
 #include "../paladino.h"
 #include "../soldato.h"
 #include "../tank.h"
+
+#include <QString>
+#include <QDebug>
 
 class XmlItem{
     //dati per la costruzione

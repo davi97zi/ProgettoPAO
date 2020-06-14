@@ -60,7 +60,10 @@ SOURCES += \
     Gui/infopersonaggiostorico.cpp \
     Gui/infopartitastorico.cpp \
     xml/xmlitem.cpp \
-    xml/dungeonitem.cpp
+    xml/dungeonitem.cpp \
+    xml/dungeon.cpp \
+    xml/incantesimo.cpp \
+    xml/taverna.cpp
 
 HEADERS += \
     Interfacce/defenceInterface.h \
@@ -97,10 +100,10 @@ HEADERS += \
     Gui/scegliapplicativo.h \
     Gui/infopersonaggiostorico.h \
     Gui/infopartitastorico.h \
-    xml/dungeon.h \
     xml/dungeonItem.h \
     xml/incantesimo.h \
-    xml/taverna.h
+    xml/taverna.h \
+    xml/dungeon.h
 
 RESOURCES += \
     xmlresources.qrc

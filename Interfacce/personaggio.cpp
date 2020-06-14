@@ -39,7 +39,7 @@ void Personaggio::setArmor(int arm)
 
 
 int Personaggio::reducedDamageWithArmor(int damage) const{ //restituisce il danno ridotto dall'armatura (in defence interface usa maxarmor, invece che armor)
-    return damage - (((damage*static_cast<int>(armor)))*(-1))/100;
+    return damage - (damage*static_cast<int>(armor))/100;
 }
 
 //proposta da healIntef

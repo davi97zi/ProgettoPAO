@@ -20,6 +20,9 @@ public:
 
     void creaMatch();
     void getMostro(int);
+    void monsterAttack();
+    void endRoundActions();
+    void creaNuovoNegozio();
 
 public slots:
     void slotQualeBottone(QString);
@@ -27,11 +30,14 @@ public slots:
     void stampaRowInfo(int);
     void creaPersonaggio(int);
     void getAction(QString);
+    void createNewMatch();
 
 signals:
     void updatedHPMostro(int);
     void updatedArmPersonaggio(int);
     void updatedHealthPersonaggio(int);
+    void updatedManaPersonaggio(int);
+    void newMatch();
 };
 
 #endif // CONTROLLER_H
