@@ -167,13 +167,25 @@ void Controller::creaPersonaggio(int i){
         assoldabili= taverna.trovaTuttiLivello(1);
         base=assoldabili[i];
         pMod=new Partita(base.convertiInPersonaggio());
+        getMostro(pMod->getRound()-1);
+        creaMatch();
     }else{
         assoldabili= taverna.trovaTuttiLivello(pMod->getRound());
         base=assoldabili[i];
-        pMod->aggiungiPersonaggio(base.convertiInPersonaggio());
+        if(base.getPrezzo() > pMod->getMonete()){
+            //DA INSERIRE IN UN CATCH
+            QMessageBox* error = new QMessageBox(mw);
+            error->setObjectName("error");
+            error->setInformativeText("Non hai monete a sufficienza per comprare questo personaggio.");
+            error->setDetailedText("Hai bisogno di " + QString::number((base.getPrezzo() - pMod->getMonete())) + " monete in piu per acquistarlo.");
+            error->show();
+        } else{
+            pMod->aggiungiPersonaggio(base.convertiInPersonaggio());
+            getMostro(pMod->getRound()-1);
+            pMod->setMonete(base.getPrezzo());
+            creaMatch();
+        }
     }
-    getMostro(pMod->getRound()-1);
-    creaMatch();
 }
 
 void Controller::getMostro(int i){
@@ -261,8 +273,38 @@ void Controller::endRoundActions(){
         }
         //scelta del nuovo personaggio viene creato il nuovo mostro
     }else if(fineRound && pMod->squadraSconfitta() == true){
-        //ha vinto il mostro
-        //QDialog "HAI PERSO"
+        QMessageBox* loser = new QMessageBox(mw);
+        loser->setObjectName("loser");
+        loser->setInformativeText("HAI PERSO");
+        loser->setDetailedText("Il mostro di livello " + QString::number(pMod->getLivelloMostro()) + " ti ha sconfitto.");
+        loser->show();
+        int ret = loser->exec();
+
+        switch (ret) {
+          case QMessageBox::Ok:
+                //invio dei dati al file xml
+                sMod = new StoricoModello();
+
+                XmlItem* p;
+                StoricoModello::StoricoModelloItem* partita = new StoricoModello::StoricoModelloItem(QDateTime::currentDateTime().toString(), false, pMod->getRound(), pMod->getMonete());
+
+                for(auto it=pMod->getSquadra().begin(); it!=pMod->getSquadra().end(); ++it){
+                    p = new XmlItem(it->getNome(), it->getTipoPersonaggio(), it->getLevel(), it->getPrezzo());
+                    partita->addItemToSquadra(*p);
+                }
+
+                sMod->addPartita(*partita);
+                sMod->stampaStoricoModello();
+                sMod->saveStoricoModello();
+
+                //apertura first window
+                mw->resetCentralWidget();
+
+                //delete della partita
+                delete pMod;
+
+                break;
+        }
         //passaggio dei dati allo storico dei dati della partita persa
         //rimandare alla schermata iniziale "firstWindow"
     }else{ //fineRound == false
@@ -285,12 +327,7 @@ void Controller::creaNuovoNegozio(){
 void Controller::createNewMatch(){
     Dungeon* d = new Dungeon();
     pMod->cambiaMostro(d->challengeMonster(pMod->getRound()));
-    qDebug() << "Round: " << pMod->getRound();
-    qDebug() << "Mostro: " << pMod->getNomeMostro();
-    StatisticheMatchMostro* smm = new StatisticheMatchMostro(pMod->getHealthMostro(), pMod->getBAMostro(), pMod->getArmorMostro(), pMod->getNomeMostro(), pMod->getLivelloMostro(), pMod->getExpMostro());
-    StatisticheMatchPersonaggio* smp = new StatisticheMatchPersonaggio(pMod->getHealthPersonaggio(), pMod->getBAPersonaggio(), pMod->getArmorPersonaggio(), pMod->getNomePersonaggio(), pMod->getLivelloPersonaggio(), pMod->getManaPersonaggio());
-    Match* newMatch = new Match(smm, smp, pMod->getRound(), pMod->getMonete());
-    mw->setCentralWidget(newMatch);
+    creaMatch();
 }
 
 

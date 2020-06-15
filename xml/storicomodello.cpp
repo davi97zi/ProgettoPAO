@@ -27,14 +27,21 @@ void StoricoModello::stampaStoricoModello() const{
     }
 }
 
-StoricoModello::StoricoModelloItem StoricoModello::getPartita(unsigned int i)const{return StoricoModelloPartite[i];}
+StoricoModello::StoricoModelloItem StoricoModello::getPartita(unsigned int i)const{
+    return StoricoModelloPartite[i];
+}
 
 unsigned int StoricoModello::getSize()const{
     return StoricoModelloPartite.size();
 }
 
-void StoricoModello::addPartita(QString d, bool v, int b, int o, std::vector<XmlItem> s){
-    StoricoModelloPartite.push_back(StoricoModelloItem(StoricoModelloPartite.size()+1, d, v, b, o, s));
+void StoricoModello::addPartita(StoricoModelloItem item){
+    item.setId(QString::number((StoricoModelloPartite.size()+1)));
+    StoricoModelloPartite.push_back(item);
+}
+
+void StoricoModello::StoricoModelloItem::addItemToSquadra(XmlItem& item){
+    squadra.push_back(item);
 }
 
 void StoricoModello::saveStoricoModello()const{
@@ -50,7 +57,7 @@ void StoricoModello::saveStoricoModello()const{
         //confronta il numero di elementi presenti tra i 2
 
         unsigned int lastElementId= rootElement.lastChildElement().attribute("id").toInt(), StoricoModelloSize=StoricoModelloPartite.size();
-        qDebug() << lastElementId << " " <<StoricoModelloSize;
+        qDebug() << "Ultimo elemento: " << lastElementId << " Partite da aggiungere: " <<StoricoModelloSize;
 
         if(lastElementId!=StoricoModelloSize){//esiste elementi da inserire in xml
             for(unsigned int i=lastElementId; i<StoricoModelloSize; i++){
@@ -87,6 +94,7 @@ void StoricoModello::saveStoricoModello()const{
                 //aggiungi a root
                 rootElement.appendChild(newChild);
             }
+            qDebug() << "siamo arrivati prima del write";
             //apri file in write
             QFile fileR("xml/storico");
             if(fileR.open(QIODevice::WriteOnly | QIODevice::Text)){
@@ -215,6 +223,9 @@ void StoricoModello::addSquadra(QDomDocument &document, StoricoModello::StoricoM
     }
 }
 
+StoricoModello::StoricoModelloItem::StoricoModelloItem(QString d, bool v, int b, int o)
+    :data(d), vittoria(v), battaglia(b), oro(o){}
+
 StoricoModello::StoricoModelloItem::StoricoModelloItem(unsigned int i, QString d, bool v, int b, int o, std::vector<XmlItem> s)
     :id(i), data(d), vittoria(v), battaglia(b), oro(o), squadra(s){}
 
@@ -246,7 +257,10 @@ XmlItem StoricoModello::StoricoModelloItem::getAvv(int i) const{ qDebug() << "sq
 
 void StoricoModello::StoricoModelloItem::setId(QString s){ id= s.QString::toInt();}
 
-void StoricoModello::StoricoModelloItem::setData(QString s){ data=s.QString::toInt();}
+void StoricoModello::StoricoModelloItem::setData(){
+    QDate today = QDate::currentDate();
+    data = today.toString("yyyy/MM/dd");
+}
 
 void StoricoModello::StoricoModelloItem::setVittoria(QString s){ vittoria=(s=="Vittoria"? true: false);}
 

@@ -21,9 +21,6 @@ private:
     QTableWidget* table;
     //QPushButton* moreInfo;
     QPushButton* indietro;
-    int getFileRows();
-    QString getDate();
-    QTime getTime();
 public:
     Storico(QWidget* parent=0);
     void addRow(const StoricoModello::StoricoModelloItem&);

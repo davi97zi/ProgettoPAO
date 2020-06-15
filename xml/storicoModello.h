@@ -21,6 +21,8 @@ public:
         int oro;
         std::vector<XmlItem> squadra; //estrai Item da Negozio CAN I USE VECTOR????
     public:
+        StoricoModelloItem(){}
+        StoricoModelloItem(QString d, bool v, int b, int o);
         StoricoModelloItem(unsigned int i,QString d, bool v, int b, int o, std::vector<XmlItem> s);
 
         //fun stampa partita
@@ -36,12 +38,14 @@ public:
         XmlItem getAvv(int i)const;
 
         void setId(QString s);
-        void setData(QString s);
+        void setData();
         void setVittoria(QString s);
         void setBattaglia(QString s);
         void setOro(QString s);
         //void setSizeSquadra(QString s){ ;}
         //void setAvv(XmlItem){ ;} // 1 sec
+
+        void addItemToSquadra(XmlItem &);
     };
 
     StoricoModello();
@@ -60,7 +64,7 @@ public:
 
     //1 salva in vectorQString data; NB not gonna be a std::vector in the true one
     //QString d, bool v, int b, int o, std::vector<XmlItem> s
-    void addPartita(QString d, bool v, int b, int o, std::vector<XmlItem> s);
+    void addPartita(StoricoModelloItem);
 
     void saveStoricoModello()const;
 

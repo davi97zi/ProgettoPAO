@@ -45,7 +45,6 @@ SOURCES += \
     contenitore.cpp \
     Gui/abilita_personaggio_match.cpp \
     Gui/changecharacter.cpp \
-    Gui/choosefirstcharacter.cpp \
     Gui/info_match.cpp \
     Gui/mainwindow.cpp \
     Gui/match.cpp \
@@ -85,7 +84,6 @@ HEADERS += \
     contenitore.h \
     Gui/abilita_personaggio_match.h \
     Gui/changecharacter.h \
-    Gui/choosefirstcharacter.h \
     Gui/info_match.h \
     Gui/mainwindow.h \
     Gui/match.h \

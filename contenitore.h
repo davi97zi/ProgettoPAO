@@ -34,6 +34,7 @@ private:
         Nodo(): info(0), next(0), prev(0) {}
         Nodo(Personaggio* i, Nodo* n, Nodo*p=0): info(i), next(n), prev(p) {}
         ~Nodo(){
+            qDebug() << "Nodi eliminati";
             if(info)
                 delete info;
             if(next)
@@ -65,6 +66,8 @@ public:
     };
     Contenitore(): first(0) {}
     ~Contenitore(){
+        qDebug() << "Contenitore eliminato";
+        delete first;
     }
     void addNodo(Personaggio*);
     Iteratore deleteNodo(Iteratore&);

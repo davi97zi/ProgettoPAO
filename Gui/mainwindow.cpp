@@ -2,7 +2,6 @@
 #include "ui_mainwindow.h"
 
 #include "storico.h"
-#include "choosefirstcharacter.h"
 #include "QDebug"
 
 MainWindow::MainWindow(QWidget* central, QWidget *parent) : firstWindow(central),

@@ -32,6 +32,9 @@ public:
         personaggioInUso=squadra.begin();
     }
 
+    ~Partita(){
+        delete m;
+    }
 
     //parametro = attacco del giocatore ricevuto dal controller
     void attaccaMostro(int);
@@ -45,6 +48,8 @@ public:
     void attaccaPersonaggio(int);
 
     void deleteMostro();
+
+    Contenitore getSquadra();
 
     /*void cambiaPersonaggio(QString nome){
         if(trovaPersonaggio(nome)->getDeathState()){
@@ -84,6 +89,7 @@ public:
     int getRound() const;
     void setRound();
     int getMonete() const;
+    void setMonete(int);
 
 /*
 f1: dice se ha vinto la PARTITA

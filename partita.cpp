@@ -48,6 +48,10 @@ void Partita::aggiungiPersonaggio(Personaggio *p){
     //stampaSquadra();
 }
 
+Contenitore Partita::getSquadra(){
+    return squadra;
+}
+
 //attacco del mostro
 void Partita::attaccaPersonaggio(int i){
     personaggioInUso->receiveDamage(i);
@@ -61,11 +65,11 @@ void Partita::cambiaMostro(Mostro* m2){
 //tutta la squadra è morta -> ritorna true se tutta la squadra è stata sconfitta (il mostro ha vinto), else altrimenti (c'è qualche personaggio ancora vivo)
 bool Partita::squadraSconfitta(){
     bool squadraSconfitta=false;
-    for(Contenitore::Iteratore i= squadra.begin(); i!=squadra.end() && squadraSconfitta; ++i){
+    for(Contenitore::Iteratore i= squadra.begin(); i!=squadra.end() && !squadraSconfitta; ++i){
         qDebug() << "death state personaggio: " << i->getDeathState();
-        if(!i->getDeathState()){
+        if(!i->getDeathState())
             squadraSconfitta=false;
-        }else
+        else
             squadraSconfitta=true;
     }
     return squadraSconfitta;
@@ -201,6 +205,10 @@ void Partita::setRound()
 
 int Partita::getMonete() const{
     return oro;
+}
+
+void Partita::setMonete(int m){
+    oro = oro - m;
 }
 
 int Partita::getAbilita1() const{

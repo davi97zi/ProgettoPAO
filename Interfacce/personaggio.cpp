@@ -1,4 +1,5 @@
 #include "personaggio.h"
+#include <QDebug>
 
 void Personaggio::increaseMaxHealth(unsigned int addVal){
     maxHealth+= addVal;
@@ -24,6 +25,7 @@ void Personaggio::setHealth(int damage){//proposta da healInterf:(int+)= guarigi
     }
     if(health<=0){
         kill();
+        qDebug() << "setHealth::KILL = " << getDeathState();
         health=0;
     }
 }

@@ -58,21 +58,9 @@ Storico::Storico(QWidget* parent): QWidget(parent){
     //windowStorico->show();
 }
 
-//ritorna la data odierna
-QString Storico::getDate(){
-    QDate today = QDate::currentDate();
-    QString todayToString = today.toString("yyyy/MM/dd");
-    return todayToString;
-}
-
-QTime Storico::getTime(){
-    QTime time = QTime::currentTime();
-    return time;
-}
-
 void Storico::addRow(const StoricoModello::StoricoModelloItem & row){
     int i= row.StoricoModello::StoricoModelloItem::getId();
-    qDebug() << "HEYHEYHEY" << i;
+    qDebug() << "PersonaggioRow" << i;
     table->insertRow(i);
     table->setItem(i, 0, new QTableWidgetItem(row.StoricoModello::StoricoModelloItem::getData()));
     table->setItem(i, 1, new QTableWidgetItem(row.StoricoModello::StoricoModelloItem::getBattaglia()));//getLivello dal file -> toString())) dentro il tablewidgetitem
