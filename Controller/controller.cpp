@@ -298,7 +298,7 @@ void Controller::endRoundActions(){
                 sMod->saveStoricoModello();
 
                 //apertura first window
-                mw->resetCentralWidget();
+                remakeMain();
 
                 //delete della partita
                 delete pMod;

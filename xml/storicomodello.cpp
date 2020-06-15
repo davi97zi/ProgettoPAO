@@ -94,13 +94,14 @@ void StoricoModello::saveStoricoModello()const{
                 //aggiungi a root
                 rootElement.appendChild(newChild);
             }
+            QDomElement lastPartita = rootElement.firstChildElement();
             qDebug() << "siamo arrivati prima del write";
             //apri file in write
             QFile fileR("xml/storico");
             if(fileR.open(QIODevice::WriteOnly | QIODevice::Text)){
                 QTextStream stream(&fileR);
                 //sovrascrivi...tutto i guesssssssss
-                stream << document.toString();
+                stream << lastPartita;
                 fileR.close();
                 qDebug() << "Writing is done";
             }
@@ -218,6 +219,7 @@ void StoricoModello::aggiungiAvventurieroInXml(QDomDocument &doc, QDomElement &r
 }
 
 void StoricoModello::addSquadra(QDomDocument &document, StoricoModello::StoricoModelloItem s, QDomElement &newSquadra) const{
+    qDebug() << "Size squadra: " << s.getSizeSquadra();
     for(int i= 0; i<s.getSizeSquadra(); i++){
         aggiungiAvventurieroInXml(document, newSquadra, s.getAvv(i));
     }
