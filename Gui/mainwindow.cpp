@@ -7,7 +7,7 @@
 MainWindow::MainWindow(QWidget* central, QWidget *parent) : firstWindow(central),
     QMainWindow(parent) //corretto?
 {
-    resize(500,500);
+    resize(500,350);
 
     connect(this, SIGNAL (signalReturnToMain()), this, SLOT (remakeMain()));
 

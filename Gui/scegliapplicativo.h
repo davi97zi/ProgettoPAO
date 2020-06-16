@@ -5,6 +5,7 @@
 #include <QHBoxLayout>
 #include <QPushButton>
 #include <QSpacerItem>
+#include <QLabel>
 
 class ScegliApplicativo : public QWidget
 {
@@ -12,6 +13,7 @@ class ScegliApplicativo : public QWidget
 private:
     QPushButton* gioca;
     QPushButton* storico;
+    QLabel* titolo;
     QSpacerItem* spacer;
     QVBoxLayout* verticalLayout1;
 

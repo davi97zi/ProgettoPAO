@@ -50,4 +50,5 @@ StatisticheMatchMostro::StatisticheMatchMostro(int h, int ba, int a, QString n, 
 
 void StatisticheMatchMostro::setHealth(int h){
     health->setText("Health: " + QString::number(h));
+    health->setStyleSheet("QLabel{color: red}");
 }

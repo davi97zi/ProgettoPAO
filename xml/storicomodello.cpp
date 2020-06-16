@@ -108,20 +108,14 @@ void StoricoModello::saveStoricoModello()const{
                 rootElement.appendChild(newChild);
             }
 
-            qDebug() << "siamo arrivati prima del write";
-
             //apri file in write
             QFile fileR("xml/storico");
-            if(fileR.open(QIODevice::WriteOnly)){
-                QTextStream stream(&fileR);
-                stream << document;
-                fileR.close();
-                qDebug() << "Writing is done";
-            }
-            else{
-                qDebug() << "error could not open file to write";
-            }
-        }//else= do notting, all is fine
+            fileR.open(QIODevice::WriteOnly | QIODevice::Text);
+            QTextStream stream(&fileR);
+            stream << document;
+            fileR.close();
+            qDebug() << "Writing is done";
+        }
     }
     else{
         qDebug() << "error could not open to read file";

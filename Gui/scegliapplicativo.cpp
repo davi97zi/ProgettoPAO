@@ -3,24 +3,34 @@
 
 ScegliApplicativo::ScegliApplicativo(QWidget *parent) : QWidget(parent)
 {
-    gioca = new QPushButton("Gioca", this);
+    titolo = new QLabel("LIBERTY GAME");
+    titolo->setStyleSheet("QLabel{font-size: 20px; font-weight: bold;padding: 0.5em; margin: 0.5em;}");
+    titolo->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Fixed);
+
+    gioca = new QPushButton("Gioca");
     gioca->setObjectName("gioca");
-    storico = new QPushButton("Storico", this);
+    gioca->setSizePolicy(QSizePolicy::Ignored);
+    gioca->setStyleSheet("QPushButton{border-style: outset; border-width: 1px;border-color: black; min-width: 10em;padding: 6px;}"
+                         "QPushButton:pressed {background-color: beige; border-style: inset;}");
+
+    storico = new QPushButton("Storico");
     storico->setObjectName("storico");
-    spacer = new QSpacerItem(40, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+    storico->setSizePolicy(QSizePolicy::Ignored);
+    storico->setStyleSheet("QPushButton{border-style: outset; border-width: 1px;border-color: black; min-width: 10em;padding: 6px;}"
+                         "QPushButton:pressed {background-color: beige; border-style: inset;}");
+
+    //spacer = new QSpacerItem(40, 20, QSizePolicy::Minimum, QSizePolicy::Minimum);
 
     verticalLayout1 = new QVBoxLayout;
-    verticalLayout1->addWidget(gioca);
-    verticalLayout1->addItem(spacer);
-    verticalLayout1->addWidget(storico);
-
+    verticalLayout1->addWidget(titolo, 0, Qt::AlignCenter);
+    verticalLayout1->addWidget(gioca, 0, Qt::AlignCenter);
+    //verticalLayout1->addItem(spacer);
+    verticalLayout1->addWidget(storico, 0, Qt::AlignCenter);
 
     connect(gioca, SIGNAL (released()),this, SLOT (handleButton()));
     connect(storico, SIGNAL (released()),this, SLOT (handleButton()));
 
     setLayout(verticalLayout1);
-
-    resize(1000, 1000);//da modificare?
 }
 
 void ScegliApplicativo::handleButton(){

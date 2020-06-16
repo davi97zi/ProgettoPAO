@@ -4,6 +4,7 @@
 #include "abilita_personaggio_match.h"
 #include <QSizePolicy>
 #include <QDebug>
+#include <QToolButton>
 
 #include "changecharacter.h"
 
@@ -99,6 +100,8 @@ QGridLayout* StatisticheMatchPersonaggio::getAbilities(){
     connect(abilita2, SIGNAL (released()),this, SLOT (handleButton()));
     connect(abilita3, SIGNAL (released()),this, SLOT (handleButton()));
 
+    connect(baseAttackBtn, SIGNAL(hovered()), this, SLOT(do_something_when_button_hovered()) );
+
     abilita->addWidget(titolo, 0 , 0, 1, 2, Qt::AlignCenter);//prima riga
     abilita->addWidget(baseAttackBtn, 1, 0, Qt::AlignLeft);
     abilita->addWidget(abilita1, 1, 1, Qt::AlignRight);
@@ -122,6 +125,7 @@ void StatisticheMatchPersonaggio::setArmor(int arm){
 
 void StatisticheMatchPersonaggio::setHealth(int hp){
     health->setText("Health: " + QString::number(hp));
+    health->setStyleSheet("QLabel{color: red}");
 }
 
 void StatisticheMatchPersonaggio::setMana(int m){

@@ -1,3 +1,213 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <storico>
+ <partita id="0">
+  <data>Tue Jun 16 22:21:04 2020</data>
+  <stato>Sconfitta</stato>
+  <battaglia>1</battaglia>
+  <oro>0</oro>
+  <squadra>
+   <avventuriero>
+    <nome>Magnus Burnsides</nome>
+    <tipo>Tank</tipo>
+    <livello>1</livello>
+    <prezzo>0</prezzo>
+   </avventuriero>
+  </squadra>
+ </partita>
+ <partita id="0">
+  <data>Tue Jun 16 22:21:04 2020</data>
+  <stato>Sconfitta</stato>
+  <battaglia>1</battaglia>
+  <oro>0</oro>
+  <squadra>
+   <avventuriero>
+    <nome>Magnus Burnsides</nome>
+    <tipo>Tank</tipo>
+    <livello>1</livello>
+    <prezzo>0</prezzo>
+   </avventuriero>
+  </squadra>
+ </partita>
+ <partita id="1">
+  <data>Tue Jun 16 23:06:16 2020</data>
+  <stato>Sconfitta</stato>
+  <battaglia>1</battaglia>
+  <oro>0</oro>
+  <squadra>
+   <avventuriero>
+    <nome>Merle Hightower Highchurch</nome>
+    <tipo>Guaritore</tipo>
+    <livello>1</livello>
+    <prezzo>0</prezzo>
+   </avventuriero>
+  </squadra>
+ </partita>
+ <partita id="1">
+  <data>Tue Jun 16 22:21:04 2020</data>
+  <stato>Sconfitta</stato>
+  <battaglia>1</battaglia>
+  <oro>0</oro>
+  <squadra>
+   <avventuriero>
+    <nome>Magnus Burnsides</nome>
+    <tipo>Tank</tipo>
+    <livello>1</livello>
+    <prezzo>0</prezzo>
+   </avventuriero>
+  </squadra>
+ </partita>
+ <partita id="2">
+  <data>Tue Jun 16 23:06:16 2020</data>
+  <stato>Sconfitta</stato>
+  <battaglia>1</battaglia>
+  <oro>0</oro>
+  <squadra>
+   <avventuriero>
+    <nome>Merle Hightower Highchurch</nome>
+    <tipo>Guaritore</tipo>
+    <livello>1</livello>
+    <prezzo>0</prezzo>
+   </avventuriero>
+  </squadra>
+ </partita>
+ <partita id="3">
+  <data>Tue Jun 16 23:11:52 2020</data>
+  <stato>Sconfitta</stato>
+  <battaglia>1</battaglia>
+  <oro>0</oro>
+  <squadra>
+   <avventuriero>
+    <nome>Magnus Burnsides</nome>
+    <tipo>Tank</tipo>
+    <livello>1</livello>
+    <prezzo>0</prezzo>
+   </avventuriero>
+  </squadra>
+ </partita>
+ <partita id="3">
+  <data>Tue Jun 16 22:21:04 2020</data>
+  <stato>Sconfitta</stato>
+  <battaglia>1</battaglia>
+  <oro>0</oro>
+  <squadra>
+   <avventuriero>
+    <nome>Magnus Burnsides</nome>
+    <tipo>Tank</tipo>
+    <livello>1</livello>
+    <prezzo>0</prezzo>
+   </avventuriero>
+  </squadra>
+ </partita>
+ <partita id="4">
+  <data>Tue Jun 16 23:06:16 2020</data>
+  <stato>Sconfitta</stato>
+  <battaglia>1</battaglia>
+  <oro>0</oro>
+  <squadra>
+   <avventuriero>
+    <nome>Merle Hightower Highchurch</nome>
+    <tipo>Guaritore</tipo>
+    <livello>1</livello>
+    <prezzo>0</prezzo>
+   </avventuriero>
+  </squadra>
+ </partita>
+ <partita id="5">
+  <data>Tue Jun 16 23:11:52 2020</data>
+  <stato>Sconfitta</stato>
+  <battaglia>1</battaglia>
+  <oro>0</oro>
+  <squadra>
+   <avventuriero>
+    <nome>Magnus Burnsides</nome>
+    <tipo>Tank</tipo>
+    <livello>1</livello>
+    <prezzo>0</prezzo>
+   </avventuriero>
+  </squadra>
+ </partita>
+ <partita id="6">
+  <data>Tue Jun 16 23:29:11 2020</data>
+  <stato>Sconfitta</stato>
+  <battaglia>1</battaglia>
+  <oro>0</oro>
+  <squadra>
+   <avventuriero>
+    <nome>Magnus Burnsides</nome>
+    <tipo>Tank</tipo>
+    <livello>1</livello>
+    <prezzo>0</prezzo>
+   </avventuriero>
+  </squadra>
+ </partita>
+ <partita id="6">
+  <data>Tue Jun 16 22:21:04 2020</data>
+  <stato>Sconfitta</stato>
+  <battaglia>1</battaglia>
+  <oro>0</oro>
+  <squadra>
+   <avventuriero>
+    <nome>Magnus Burnsides</nome>
+    <tipo>Tank</tipo>
+    <livello>1</livello>
+    <prezzo>0</prezzo>
+   </avventuriero>
+  </squadra>
+ </partita>
+ <partita id="7">
+  <data>Tue Jun 16 23:06:16 2020</data>
+  <stato>Sconfitta</stato>
+  <battaglia>1</battaglia>
+  <oro>0</oro>
+  <squadra>
+   <avventuriero>
+    <nome>Merle Hightower Highchurch</nome>
+    <tipo>Guaritore</tipo>
+    <livello>1</livello>
+    <prezzo>0</prezzo>
+   </avventuriero>
+  </squadra>
+ </partita>
+ <partita id="8">
+  <data>Tue Jun 16 23:11:52 2020</data>
+  <stato>Sconfitta</stato>
+  <battaglia>1</battaglia>
+  <oro>0</oro>
+  <squadra>
+   <avventuriero>
+    <nome>Magnus Burnsides</nome>
+    <tipo>Tank</tipo>
+    <livello>1</livello>
+    <prezzo>0</prezzo>
+   </avventuriero>
+  </squadra>
+ </partita>
+ <partita id="9">
+  <data>Tue Jun 16 23:29:11 2020</data>
+  <stato>Sconfitta</stato>
+  <battaglia>1</battaglia>
+  <oro>0</oro>
+  <squadra>
+   <avventuriero>
+    <nome>Magnus Burnsides</nome>
+    <tipo>Tank</tipo>
+    <livello>1</livello>
+    <prezzo>0</prezzo>
+   </avventuriero>
+  </squadra>
+ </partita>
+ <partita id="10">
+  <data>Tue Jun 16 23:33:17 2020</data>
+  <stato>Sconfitta</stato>
+  <battaglia>1</battaglia>
+  <oro>0</oro>
+  <squadra>
+   <avventuriero>
+    <nome>Magnus Burnsides</nome>
+    <tipo>Tank</tipo>
+    <livello>1</livello>
+    <prezzo>0</prezzo>
+   </avventuriero>
+  </squadra>
+ </partita>
 </storico>

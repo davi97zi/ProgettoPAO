@@ -18,7 +18,7 @@ Storico::Storico(QWidget* parent): QWidget(parent){
     titolo = new QLabel("Storico");
     titolo->setObjectName("titolo");
 
-    titolo->setStyleSheet("QLabel#titolo{padding: 0.5em; margin: 0.5em;}");
+    titolo->setStyleSheet("QLabel#titolo{font-size: 20px; font-weight: bold; padding: 0.5em; margin: 0.5em;}");
 
     titolo->setAlignment(Qt::AlignTop);
     titolo->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Fixed);

@@ -144,6 +144,7 @@ void Controller::creaMatch(){
     qDebug() << "Controller::creaMatch entra";
     //prende bottone cliccato sezione abilita personaggio
     connect(mw->centralWidget(), SIGNAL(eseguiAbilitaP(QString)), this, SLOT(getAction(QString)));
+    connect(mw->centralWidget(), SIGNAL(buttonHovered(QString)), this, SLOT(do_something_when_button_hovered(QString)));
 
     //manda a match il danno al mostro
     connect(this, SIGNAL(updatedHPMostro(int)), smm, SLOT(setHealth(int)));
@@ -336,7 +337,6 @@ void Controller::createNewMatch(){
     pMod->cambiaMostro(d->challengeMonster(pMod->getRound()));
     creaMatch();
 }
-
 
 //se abilita fa danni (danno > 0) -> danno normale
 //altrimenti richiama funzione particolare che fa quello che deve fare
