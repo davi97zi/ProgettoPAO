@@ -45,7 +45,7 @@ public:
         //void setSizeSquadra(QString s){ ;}
         //void setAvv(XmlItem){ ;} // 1 sec
 
-        void addItemToSquadra(XmlItem &);
+        void addItemToSquadra(const XmlItem &);
     };
 
     StoricoModello();
@@ -64,7 +64,7 @@ public:
 
     //1 salva in vectorQString data; NB not gonna be a std::vector in the true one
     //QString d, bool v, int b, int o, std::vector<XmlItem> s
-    void addPartita(StoricoModelloItem);
+    void addPartita( StoricoModelloItem& );
 
     void saveStoricoModello()const;
 

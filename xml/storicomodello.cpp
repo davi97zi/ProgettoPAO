@@ -12,6 +12,7 @@ StoricoModello::StoricoModello(){
         readTheArchive(rootElement);
 
         qDebug()<< "creato lo StoricoModello";
+        stampaStoricoModello();
 
         //close file
         file.close();
@@ -28,6 +29,8 @@ void StoricoModello::stampaStoricoModello() const{
 }
 
 StoricoModello::StoricoModelloItem StoricoModello::getPartita(unsigned int i)const{
+    //qDebug() << "QUESTA è LA PARTITA " << i << " TROVO I VALORI:";
+    //StoricoModelloPartite[i].stampaStoricoModelloItem();
     return StoricoModelloPartite[i];
 }
 
@@ -35,33 +38,42 @@ unsigned int StoricoModello::getSize()const{
     return StoricoModelloPartite.size();
 }
 
-void StoricoModello::addPartita(StoricoModelloItem item){
+void StoricoModello::addPartita(StoricoModelloItem &item){
     item.setId(QString::number((StoricoModelloPartite.size()+1)));
     StoricoModelloPartite.push_back(item);
 }
 
-void StoricoModello::StoricoModelloItem::addItemToSquadra(XmlItem& item){
+void StoricoModello::StoricoModelloItem::addItemToSquadra(const XmlItem & item){
     squadra.push_back(item);
 }
 
 void StoricoModello::saveStoricoModello()const{
     //apri il file in READ
+    qDebug() << "SONO IN SALVA STORICO, SALVATEMI!!!!!!!!!!!!!!!!!!!!!!!!!";
     QFile file("xml/storico");
     if(file.open(QIODevice::ReadOnly)){
         //carica l'xml già presente
         QDomDocument document;
         document.setContent(&file);
+        //tagname storico
         QDomElement rootElement= document.documentElement();
+        qDebug() << "SONO IN " << rootElement.tagName()<< " SALVATEMI!!!!!!!!!!!!!!!!!!!!!!!!!";
+
         //chiudi il file in READ
         file.close();
         //confronta il numero di elementi presenti tra i 2
 
+        qDebug() << "Sto cercando " <<rootElement.lastChildElement().tagName()<< " SALVATEMI!!!!!!!!!!!!!!!!!!!!!!!!!";
+
         unsigned int lastElementId= rootElement.lastChildElement().attribute("id").toInt(), StoricoModelloSize=StoricoModelloPartite.size();
-        qDebug() << "Ultimo elemento: " << lastElementId << " Partite da aggiungere: " <<StoricoModelloSize;
+        qDebug() << "Ultimo elemento: " << lastElementId << " Partite da aggiungere: " <<(StoricoModelloSize-lastElementId);
 
         if(lastElementId!=StoricoModelloSize){//esiste elementi da inserire in xml
             for(unsigned int i=lastElementId; i<StoricoModelloSize; i++){
                 StoricoModelloItem s= StoricoModelloPartite[i];
+                qDebug() << "this is the one to be SAVED\n<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<";
+                s.stampaStoricoModelloItem();
+                qDebug() << ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>";
                 //crea nuovo elemento
                 QDomElement newChild= document.createElement("partita");
                 //assegna id
@@ -81,6 +93,7 @@ void StoricoModello::saveStoricoModello()const{
 
                 QDomElement newSquadra= document.createElement("squadra");
 
+                qDebug() << "SONO IN " << rootElement.tagName()<< " SALVATEMI!!!!!!!!!!!!!!!!!!!!!!!!!";
                 //inserisci gli avventurieri, something
                 addSquadra(document, s, newSquadra); //RITORNA
 
@@ -94,14 +107,13 @@ void StoricoModello::saveStoricoModello()const{
                 //aggiungi a root
                 rootElement.appendChild(newChild);
             }
-            QDomElement lastPartita = rootElement.firstChildElement();
             qDebug() << "siamo arrivati prima del write";
             //apri file in write
             QFile fileR("xml/storico");
             if(fileR.open(QIODevice::WriteOnly | QIODevice::Text)){
                 QTextStream stream(&fileR);
                 //sovrascrivi...tutto i guesssssssss
-                stream << lastPartita;
+                stream << document;
                 fileR.close();
                 qDebug() << "Writing is done";
             }
@@ -216,13 +228,18 @@ void StoricoModello::aggiungiAvventurieroInXml(QDomDocument &doc, QDomElement &r
     root.appendChild(newLivello);
     root.appendChild(newPrezzo);
 
+    qDebug() << "SONO IN avventurieroXML " << root.text()<< " SALVATEMI!!!!!!!!!!!!!!!!!!!!!!!!!";
 }
 
 void StoricoModello::addSquadra(QDomDocument &document, StoricoModello::StoricoModelloItem s, QDomElement &newSquadra) const{
+    qDebug() << "SONO IN " << newSquadra.tagName()<< " SALVATEMI!!!!!!!!!!!!!!!!!!!!!!!!!";
     qDebug() << "Size squadra: " << s.getSizeSquadra();
     for(int i= 0; i<s.getSizeSquadra(); i++){
-        aggiungiAvventurieroInXml(document, newSquadra, s.getAvv(i));
+        QDomElement adv=document.createElement("avventuriero");
+        aggiungiAvventurieroInXml(document, adv, s.getAvv(i));
+        newSquadra.appendChild(adv);
     }
+    qDebug() << "SONO IN squadraXML" << newSquadra.text()<< " SALVATEMI!!!!!!!!!!!!!!!!!!!!!!!!!";
 }
 
 StoricoModello::StoricoModelloItem::StoricoModelloItem(QString d, bool v, int b, int o)
@@ -255,7 +272,7 @@ QString StoricoModello::StoricoModelloItem::getOro() const{ return QString::numb
 
 int StoricoModello::StoricoModelloItem::getSizeSquadra() const{ return squadra.size();}
 
-XmlItem StoricoModello::StoricoModelloItem::getAvv(int i) const{ qDebug() << "squadra[" << i <<"] :" << squadra[i].getNome();return squadra[i];}
+XmlItem StoricoModello::StoricoModelloItem::getAvv(int i) const{ qDebug() << "squadra[" << i <<"] :" << squadra[i].getNome(); return squadra[i];}
 
 void StoricoModello::StoricoModelloItem::setId(QString s){ id= s.QString::toInt();}
 

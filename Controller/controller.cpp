@@ -285,12 +285,15 @@ void Controller::endRoundActions(){
                 //invio dei dati al file xml
                 sMod = new StoricoModello();
 
-                XmlItem* p;
+                XmlItem p;
                 StoricoModello::StoricoModelloItem* partita = new StoricoModello::StoricoModelloItem(QDateTime::currentDateTime().toString(), false, pMod->getRound(), pMod->getMonete());
 
-                for(auto it=pMod->getSquadra().begin(); it!=pMod->getSquadra().end(); ++it){
-                    p = new XmlItem(it->getNome(), it->getTipoPersonaggio(), it->getLevel(), it->getPrezzo());
-                    partita->addItemToSquadra(*p);
+                for(auto it=pMod->getSquadra().begin(); it!=pMod->getSquadra().end(); ++it){ 
+                    qDebug() << "I AM GOD SBGUOBGUIADPBGUIVQW GIOAVUIOGWBVYIOGVYIORG\n" << it->getNome() <<" " << it->getTipoPersonaggio() <<" " << it->getLevel() <<" " << it->getPrezzo();
+                    p = XmlItem(it->getNome(), it->getTipoPersonaggio(), it->getLevel(), it->getPrezzo());
+                    p.stampaItem();
+                    partita->addItemToSquadra(p);
+                    partita->stampaStoricoModelloItem();
                 }
 
                 sMod->addPartita(*partita);
@@ -301,7 +304,7 @@ void Controller::endRoundActions(){
                 remakeMain();
 
                 //delete della partita
-                delete pMod;
+                //delete pMod;
 
                 break;
         }

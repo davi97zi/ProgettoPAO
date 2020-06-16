@@ -103,8 +103,7 @@ HEADERS += \
     xml/taverna.h \
     xml/dungeon.h
 
-RESOURCES += \
-    xmlresources.qrc
+RESOURCES +=
 
 
 

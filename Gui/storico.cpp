@@ -6,6 +6,8 @@
 #include <QDebug>
 #include "xml/xmlitem.h"
 
+//#include "storicorow.h"
+
 #include "../xml/storicoModello.h"
 
 Storico::Storico(QWidget* parent): QWidget(parent){
@@ -21,6 +23,7 @@ Storico::Storico(QWidget* parent): QWidget(parent){
     titolo->setAlignment(Qt::AlignTop);
     titolo->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Fixed);
 
+    //sostituisco la table
     table = new QTableWidget(this);
     //table->setRowCount(5); //numero di righe prese dal file = numero partite giocate
     table->setColumnCount(6);
@@ -39,6 +42,7 @@ Storico::Storico(QWidget* parent): QWidget(parent){
     //table->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
     //table->resize(1000, 1000);
     // IL BOTTONE VIENE STAMPATO SOLO NELL'ULTIMA RIGA
+
 
     indietro= new QPushButton("indietro");
     indietro->setObjectName("indietro");
@@ -60,11 +64,19 @@ Storico::Storico(QWidget* parent): QWidget(parent){
 
 void Storico::addRow(const StoricoModello::StoricoModelloItem & row){
     int i= row.StoricoModello::StoricoModelloItem::getId();
-    qDebug() << "PersonaggioRow" << i;
+    qDebug() << "PersonaggioRow" << i << " rowcount " << QString::number(table->rowCount());
+    //row.stampaStoricoModelloItem();
+    //qDebug() << row.StoricoModello::StoricoModelloItem::getData();
+    //qDebug() << row.StoricoModello::StoricoModelloItem::getBattaglia();
+    //qDebug() << row.StoricoModello::StoricoModelloItem::getSizeSquadra();
+    //qDebug() << row.StoricoModello::StoricoModelloItem::getOro();
+    //qDebug() << row.StoricoModello::StoricoModelloItem::getVittoria();
+    //qDebug() << "PersonaggioRow" << i << " DONE";
+
     table->insertRow(i);
     table->setItem(i, 0, new QTableWidgetItem(row.StoricoModello::StoricoModelloItem::getData()));
     table->setItem(i, 1, new QTableWidgetItem(row.StoricoModello::StoricoModelloItem::getBattaglia()));//getLivello dal file -> toString())) dentro il tablewidgetitem
-    table->setItem(i, 2, new QTableWidgetItem(row.StoricoModello::StoricoModelloItem::getSizeSquadra()));//getNumPersonaggi dal file QString::number(getNumpersonaggi))) dentro il tablewidgetitem
+    table->setItem(i, 2, new QTableWidgetItem(QString::number(row.StoricoModello::StoricoModelloItem::getSizeSquadra())));//getNumPersonaggi dal file QString::number(getNumpersonaggi))) dentro il tablewidgetitem
     table->setItem(i, 3, new QTableWidgetItem(row.StoricoModello::StoricoModelloItem::getOro()));//getMonete dal file QString::number(getMonete))) dentro il tablewidgetitem
     table->setItem(i, 4, new QTableWidgetItem(row.StoricoModello::StoricoModelloItem::getVittoria()));//getRisultato dal file -> toString())) dentro il tablewidgetitem
     //btn per ottenere piu informazioni riguardo al game scelto
@@ -75,6 +87,7 @@ void Storico::addRow(const StoricoModello::StoricoModelloItem & row){
 
     //resize colums to contents
     table->resizeColumnsToContents();
+
 }
 
 //slots

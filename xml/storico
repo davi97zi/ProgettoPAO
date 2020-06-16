@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <storico>
- <partita id="1">
+ <partita id="0">
   <data>14/05/2020</data>
   <stato>vittoria</stato>
   <battaglia>5</battaglia>
@@ -26,16 +26,18 @@
    </avventuriero>
   </squadra>
  </partita>
- <partita id="2">
+ <partita id="1">
   <data>lun mag 18 20:06:48 2020</data>
   <stato>sconfitta</stato>
   <battaglia>3</battaglia>
   <oro>15</oro>
   <squadra>
-   <nome>scales</nome>
-   <tipo>paladino</tipo>
-   <livello>5</livello>
-   <prezzo>3</prezzo>
+   <avventuriero>
+    <nome>scales</nome>
+    <tipo>paladino</tipo>
+    <livello>5</livello>
+    <prezzo>3</prezzo>
+   </avventuriero>
   </squadra>
  </partita>
 </storico>
