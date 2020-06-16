@@ -65,10 +65,11 @@ public:
         Iteratore& operator=(const Iteratore&);
     };
     Contenitore(): first(0) {}
+    /*
     ~Contenitore(){
         qDebug() << "Contenitore eliminato";
         delete first;
-    }
+    }*/
     void addNodo(Personaggio*);
     Iteratore deleteNodo(Iteratore&);
     Iteratore begin() const;

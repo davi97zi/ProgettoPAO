@@ -75,10 +75,10 @@ void Storico::addRow(const StoricoModello::StoricoModelloItem & row){
 
     table->insertRow(i);
     table->setItem(i, 0, new QTableWidgetItem(row.StoricoModello::StoricoModelloItem::getData()));
-    table->setItem(i, 1, new QTableWidgetItem(row.StoricoModello::StoricoModelloItem::getBattaglia()));//getLivello dal file -> toString())) dentro il tablewidgetitem
-    table->setItem(i, 2, new QTableWidgetItem(QString::number(row.StoricoModello::StoricoModelloItem::getSizeSquadra())));//getNumPersonaggi dal file QString::number(getNumpersonaggi))) dentro il tablewidgetitem
-    table->setItem(i, 3, new QTableWidgetItem(row.StoricoModello::StoricoModelloItem::getOro()));//getMonete dal file QString::number(getMonete))) dentro il tablewidgetitem
-    table->setItem(i, 4, new QTableWidgetItem(row.StoricoModello::StoricoModelloItem::getVittoria()));//getRisultato dal file -> toString())) dentro il tablewidgetitem
+    table->setItem(i, 1, new QTableWidgetItem(row.StoricoModello::StoricoModelloItem::getBattaglia()));
+    table->setItem(i, 2, new QTableWidgetItem(QString::number(row.StoricoModello::StoricoModelloItem::getSizeSquadra())));
+    table->setItem(i, 3, new QTableWidgetItem(row.StoricoModello::StoricoModelloItem::getOro()));
+    table->setItem(i, 4, new QTableWidgetItem(row.StoricoModello::StoricoModelloItem::getVittoria()));
     //btn per ottenere piu informazioni riguardo al game scelto
     QPushButton * moreInfo = new QPushButton("More info");
     moreInfo->setObjectName(QString::number(i));

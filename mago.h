@@ -17,7 +17,7 @@ public:
             increaseLevel(ex);
     }*/
 
-    Mago(QString nome, unsigned int ex): Personaggio(40,20,1,15,"Mago",nome,1), MagicInterface(100){
+    Mago(QString nome, unsigned int ex): Personaggio(40,20,1,15,"Mago",nome,0), MagicInterface(100){
         increaseLevel(ex);
         setCostoA1(50);
         setCostoA2(80);

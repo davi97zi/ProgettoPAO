@@ -37,7 +37,7 @@ public:
         int getSizeSquadra() const;
         XmlItem getAvv(int i)const;
 
-        void setId(QString s);
+        void setId(unsigned int s);
         void setData();
         void setVittoria(QString s);
         void setBattaglia(QString s);

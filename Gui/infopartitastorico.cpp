@@ -2,7 +2,7 @@
 #include "infopersonaggiostorico.h"
 
 InfoPartitaStorico::InfoPartitaStorico(QWidget *parent) : QWidget(parent){
-    QLabel * titolo = new QLabel("info su partita");
+    QLabel * titolo = new QLabel("Info su partita");
     lay= new QVBoxLayout();
     lay->addWidget(titolo, 0, Qt::AlignCenter);
     setLayout(lay);

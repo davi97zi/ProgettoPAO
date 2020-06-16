@@ -115,6 +115,10 @@ void Controller::slotQualeBottone(QString str){
 void Controller::remakeMain(){
     //firstWindow->close();
     qDebug() << "Controller::remakeMain()";
+    if(pMod){
+        delete pMod;
+        pMod=0;
+    }
     mw->resetCentralWidget();
     connect(mw->centralWidget(), SIGNAL (signalBottone(QString)),this, SLOT (slotQualeBottone(QString)));
 }
@@ -289,22 +293,22 @@ void Controller::endRoundActions(){
                 StoricoModello::StoricoModelloItem* partita = new StoricoModello::StoricoModelloItem(QDateTime::currentDateTime().toString(), false, pMod->getRound(), pMod->getMonete());
 
                 for(auto it=pMod->getSquadra().begin(); it!=pMod->getSquadra().end(); ++it){ 
-                    qDebug() << "I AM GOD SBGUOBGUIADPBGUIVQW GIOAVUIOGWBVYIOGVYIORG\n" << it->getNome() <<" " << it->getTipoPersonaggio() <<" " << it->getLevel() <<" " << it->getPrezzo();
+                    qDebug() << "Controller::endRoundActions(): passaggio dei parametri al nuovo xmlitem \n" << it->getNome() <<" " << it->getTipoPersonaggio() <<" " << it->getLevel() <<" " << it->getPrezzo();
                     p = XmlItem(it->getNome(), it->getTipoPersonaggio(), it->getLevel(), it->getPrezzo());
-                    p.stampaItem();
+                    qDebug() << "p.stampaItem() --------------------";
+                    p.stampaItem(); //ok
+                    qDebug() << "-------------------------";
                     partita->addItemToSquadra(p);
+                    qDebug() << "partita->stampaStoricoModelloItem() -------------------- ";
                     partita->stampaStoricoModelloItem();
                 }
 
                 sMod->addPartita(*partita);
-                sMod->stampaStoricoModello();
+                //sMod->stampaStoricoModello();
                 sMod->saveStoricoModello();
 
                 //apertura first window
                 remakeMain();
-
-                //delete della partita
-                //delete pMod;
 
                 break;
         }

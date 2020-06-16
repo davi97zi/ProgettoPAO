@@ -28,7 +28,7 @@ void XmlItem::stampaItem() const{
     qDebug() << "avventuriero: " << nome;
     qDebug() << "classe: " << tipo;
     qDebug() << "livello: " << livello;
-    qDebug() <<"paga richiesta: " << prezzo;
+    qDebug() << "paga richiesta: " << prezzo;
 }
 
 QString XmlItem::getNome() const{
