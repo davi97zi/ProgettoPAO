@@ -21,7 +21,7 @@ unsigned int Mostro::giveUpExp()const{
 
 unsigned int Mostro::giveUpCoins()const{
     if(Personaggio::getDeathState())
-        return getPrezzo()*getLevel();
+        return getPrezzo();
     else
         return 0;
 }

@@ -1,64 +1,45 @@
 #include "changecharacter.h"
-#include "match.h"
+#include <QVBoxLayout>
+#include <QGroupBox>
+#include <QDebug>
 
-#include <QSizePolicy>
-
-ChangeCharacter::ChangeCharacter(QWidget* parent):
-    QWidget(parent)
-{
-
-    // changeCharacterWindow = new QWidget();
-
-    QVBoxLayout* vE = new QVBoxLayout;
-
-     //il grid è il contenitore piu esterno
-     gridLayout1 = new QGridLayout();
-
-     //titolo della window
-     titolo = new QLabel("Cambia il personaggio");
-     titolo->setAlignment(Qt::AlignTop);
-     titolo->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
-     //-------------------------------------------------
-
-     //vertical1 esterno
-     vlEx = new QVBoxLayout();
-
-     //creo un QVBoxLayout per ogni personaggio all'interno del contenitore
-     QVBoxLayout* v = new QVBoxLayout();
-
-     for(int i=0; i<3; i++){
-         labelNome = new QLabel("Nome: " + QString::number(i)); //something like that
-         labelTipo = new QLabel("Tipo: " + QString::number(i)); //something like that
-         scegli = new QPushButton("Scegli");
-         v->addWidget(labelNome);
-         v->addWidget(labelTipo);
-         v->addWidget(scegli);
-         vlEx->addLayout(v);
-     }
-
-
-     vE->addWidget(titolo, 0 , Qt::AlignCenter);
-     vE->addLayout(vlEx); //qui utilizzo 'i' del for
-
-     //-------------------------------------------------
-
-     connect(scegli, SIGNAL (released()),this, SLOT (handleButton()));
-
-     //-------------------------------------------------
-
-     setLayout(vE);
-    // changeCharacterWindow->show();
+//verosimile che controller si occupi di passare questi dati? y, in this way? idk we will see
+ChangeCharacter::ChangeCharacter(Contenitore squadra, QWidget *parent) : QWidget(parent){
+    QVBoxLayout * lay= new QVBoxLayout();
+    lay->addWidget(addLayoutPersonaggio(squadra));
+    setLayout(lay);
 }
 
 void ChangeCharacter::handleButton(){
-    QPushButton* button = dynamic_cast<QPushButton*>(sender()); //QPushButton* button = (QPushButton*)sender();
-    if(button->objectName() == "scegli"){   //ritorna in match, ed aggiunge il personaggio al container
-        //aggiungi il personaggio al container
+    qDebug() << "1) è partito il comunicaPersonaggio() da Negozio_personaggio";
+    QPushButton* button = dynamic_cast<QPushButton*>(sender());
+    emit assoldaBtn(button->objectName());
+}
 
-        //torna nella schermata della partita
-        Match* m;
-        m->show();
+QGroupBox* ChangeCharacter::addLayoutPersonaggio(Contenitore c){
+    int i=0;
+    QGroupBox * scheda= new QGroupBox("Personaggio");
+    QVBoxLayout * groupLay= new QVBoxLayout();
+    for(auto it=c.begin(); it!=c.end(); ++it){
+        nome= new QLabel(it->getNome());
+        tipo= new QLabel(it->getTipoPersonaggio());
+        livello= new QLabel(QString::number(it->getLevel()));
+        health= new QLabel(QString::number(it->getHealth()));
+        assolda= new QPushButton("Scegli");
+        //gli dò un objName
+        assolda->setObjectName(QString::number(i));
+        //conect: quale bottone ho cliccato?= quale personaggio ho scelto
+        connect(assolda, SIGNAL(released()), this, SLOT(handleButton()));
+        i++;
 
-        changeCharacterWindow->close();
+        groupLay->addWidget(nome, 0, Qt::AlignCenter);
+        groupLay->addWidget(tipo, 0, Qt::AlignCenter);
+        groupLay->addWidget(health, 0, Qt::AlignCenter);
+        groupLay->addWidget(livello, 0, Qt::AlignCenter);
+        groupLay->addWidget(assolda, 0, Qt::AlignCenter);
+
+        groupLay->addStretch(1);
     }
+    scheda->setLayout(groupLay);
+    return scheda;
 }

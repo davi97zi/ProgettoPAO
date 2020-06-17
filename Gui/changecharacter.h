@@ -6,22 +6,29 @@
 #include <QLabel>
 #include <QGridLayout>
 #include <QPushButton>
+#include <QGroupBox>
+#include "contenitore.h"
+
 
 class ChangeCharacter: public QWidget{
     Q_OBJECT
 private:
-    QWidget* changeCharacterWindow;
-    QGridLayout* gridLayout1;
-    QLabel* titolo;
-    QVBoxLayout* vlEx;
-    QLabel* labelNome;
-    QLabel* labelTipo;
-    QPushButton* scegli;
+    QLabel * nome;
+    QLabel * tipo;
+    QLabel * livello;
+    QLabel * health;
+    QPushButton * assolda;
 
 public:
-    ChangeCharacter(QWidget* parent=0);
-
+    ChangeCharacter(){}
+    ChangeCharacter(Contenitore squadra, QWidget *parent);
+    QGroupBox* addLayoutPersonaggio(Contenitore);
+public slots:
     void handleButton();
+
+
+signals:
+    void assoldaBtn(QString);
 };
 
 #endif // CHANGECHARACTER_H

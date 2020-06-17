@@ -44,8 +44,8 @@ StatisticheMatchPersonaggio::StatisticheMatchPersonaggio(int h, int ba, int a, Q
     stats->addWidget(mana, 2, 1, Qt::AlignRight);
     stats->addWidget(cambiaPersonaggio, 3, 0, 1, 2, Qt::AlignCenter);
 
-    QLabel* personaggio = new QLabel("Personaggio: " + n);
-    QLabel* livelloP = new QLabel("Livello: " + QString::number(l));
+    personaggio = new QLabel("Personaggio: " + n);
+    livelloP = new QLabel("Livello: " + QString::number(l));
 
     info->addWidget(personaggio, 0, 0, Qt::AlignCenter);
     info->addWidget(livelloP , 1, 0, Qt::AlignCenter);
@@ -100,8 +100,6 @@ QGridLayout* StatisticheMatchPersonaggio::getAbilities(){
     connect(abilita2, SIGNAL (released()),this, SLOT (handleButton()));
     connect(abilita3, SIGNAL (released()),this, SLOT (handleButton()));
 
-    connect(baseAttackBtn, SIGNAL(hovered()), this, SLOT(do_something_when_button_hovered()) );
-
     abilita->addWidget(titolo, 0 , 0, 1, 2, Qt::AlignCenter);//prima riga
     abilita->addWidget(baseAttackBtn, 1, 0, Qt::AlignLeft);
     abilita->addWidget(abilita1, 1, 1, Qt::AlignRight);
@@ -113,10 +111,11 @@ QGridLayout* StatisticheMatchPersonaggio::getAbilities(){
 
 void StatisticheMatchPersonaggio::handleButton(){
     QPushButton* button = dynamic_cast<QPushButton*>(sender()); //QPushButton* button = (QPushButton*)sender();
+    qDebug() << button->objectName();
     if(button->objectName() != "cambiaPersonaggio"){
         emit eseguiAbilita(button->objectName());
     }else
-        emit cambiaPersonaggioBtn();
+        emit cambiaPersonaggioBtn(button->objectName());
 }
 
 void StatisticheMatchPersonaggio::setArmor(int arm){
@@ -132,4 +131,15 @@ void StatisticheMatchPersonaggio::setMana(int m){
     mana->setText("Mana: " + QString::number(m));
 }
 
+void StatisticheMatchPersonaggio::setNome(QString n){
+    personaggio->setText("Personaggio: " + n);
+}
+
+void StatisticheMatchPersonaggio::setLivello(int l){
+    livelloP->setText("Livello: " + QString::number(l));
+}
+
+void StatisticheMatchPersonaggio::setBa(int ba){
+    baseAttack->setText("BaseAttack: " + QString::number(ba));
+}
 

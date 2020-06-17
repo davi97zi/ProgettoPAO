@@ -7,10 +7,11 @@
 #include "../xml/storicoModello.h"
 #include "../Gui/infopartitastorico.h"
 #include "../Gui/match.h"
+#include "../Gui/changecharacter.h"
 #include "../xml/taverna.h"
 #include "../xml/dungeon.h"
 #include "../Gui/statistichematchmostro.h"
-#include "../Gui/statistichematchpersonaggio.h"
+
 
 /*StoricoModello::StoricoModelloItem Controller::getStoricoRow(int i){
     return s->getPartita(i);
@@ -55,7 +56,7 @@ Controller::Controller(QObject *parent) : QObject(parent){
     //evitiamo segmentation fault
     pMod= nullptr;
     sMod= nullptr;
-
+    smp = nullptr;
     //crea la finestra
     mw= new MainWindow();//serve this?
 
@@ -138,13 +139,17 @@ void Controller::stampaRowInfo(int i){
 
 void Controller::creaMatch(){
     StatisticheMatchMostro* smm = new StatisticheMatchMostro(pMod->getHealthMostro(), pMod->getBAMostro(), pMod->getArmorMostro(), pMod->getNomeMostro(), pMod->getLivelloMostro(), pMod->getExpMostro());
-    StatisticheMatchPersonaggio* smp = new StatisticheMatchPersonaggio(pMod->getHealthPersonaggio(), pMod->getBAPersonaggio(), pMod->getArmorPersonaggio(), pMod->getNomePersonaggio(), pMod->getLivelloPersonaggio(), pMod->getManaPersonaggio());
+    smp = new StatisticheMatchPersonaggio(pMod->getHealthPersonaggio(), pMod->getBAPersonaggio(), pMod->getArmorPersonaggio(), pMod->getNomePersonaggio(), pMod->getLivelloPersonaggio(), pMod->getManaPersonaggio());
     Match* m = new Match(smm, smp, pMod->getRound(), pMod->getMonete());
+    qDebug() << "Controller::creaMatch() -> monete " << pMod->getMonete();
     mw->setCentralWidget(m);
     qDebug() << "Controller::creaMatch entra";
     //prende bottone cliccato sezione abilita personaggio
     connect(mw->centralWidget(), SIGNAL(eseguiAbilitaP(QString)), this, SLOT(getAction(QString)));
-    connect(mw->centralWidget(), SIGNAL(buttonHovered(QString)), this, SLOT(do_something_when_button_hovered(QString)));
+
+    connect(mw->centralWidget(), SIGNAL(cambiaPersonaggioBtn(QString)), this, SLOT(getAction(QString)));
+
+    connect(this, SIGNAL(assoldaBtn(QString)), this, SLOT(cambiaPersonaggioController(QString)));
 
     //manda a match il danno al mostro
     connect(this, SIGNAL(updatedHPMostro(int)), smm, SLOT(setHealth(int)));
@@ -215,6 +220,9 @@ void Controller::getAction(QString a) try{
         qDebug() << a;
         int abilita2Personaggio = pMod->getAbilita2();
         eseguiAbilita(abilita2Personaggio, false);
+    } else if (a == "cambiaPersonaggio"){
+        qDebug() << "Controller::getAction: " << a;
+        setVistaCambiaPersonaggio();
     }
     else {
         qDebug() << a;
@@ -237,6 +245,11 @@ void Controller::getAction(QString a) try{
     }
 }
 
+void Controller::setVistaCambiaPersonaggio(){
+    ChangeCharacter* cc = new ChangeCharacter(pMod->getSquadra(), mw->centralWidget());
+    mw->setCentralWidget(cc);
+}
+
 void Controller::monsterAttack(){
     int r = rand()%4;
     int attacco = 0;
@@ -257,11 +270,12 @@ void Controller::endRoundActions(){
     qDebug() << "fineRound = " << fineRound;
     qDebug() << "squadraSconfitta = " << pMod->squadraSconfitta();
     if(fineRound && pMod->squadraSconfitta() == false){
+        //qDebug() << pMod->getMoneteMostro();
         QMessageBox* winner = new QMessageBox(mw);
         winner->setObjectName("winner");
         winner->setInformativeText("HAI VINTO");
         winner->setDetailedText("I tuoi personaggi hanno guadagnato: \n" +
-                                QString::number(pMod->getMonete()) + " monete \n" +
+                                QString::number(pMod->getMoneteMostro()) + " monete \n" +
                                 QString::number(pMod->getExpMostro()) + " esperienza.");
         winner->show();
         int ret = winner->exec();
@@ -270,6 +284,9 @@ void Controller::endRoundActions(){
           case QMessageBox::Ok:
                 //apertura vista negozio
                 pMod->setRound();
+                qDebug() << pMod->getMonete();
+                //pMod->setMonete(pMod->getMoneteMostro());
+                qDebug() << pMod->getMonete();
                 creaNuovoNegozio();
 
                 //delete del mostro
@@ -324,6 +341,7 @@ void Controller::endRoundActions(){
 void Controller::creaNuovoNegozio(){
     Taverna taverna;
     std::vector<XmlItem> assoldabili= taverna.trovaTuttiLivello(pMod->getRound());
+    qDebug() << "Controller::creaNuovoNegozio() -> monete" << pMod->getMonete();
     Negozio_widget* newNegozio = new Negozio_widget(assoldabili, pMod->getMonete(), false, mw);
     mw->setCentralWidget(newNegozio);
 
@@ -336,6 +354,31 @@ void Controller::createNewMatch(){
     Dungeon* d = new Dungeon();
     pMod->cambiaMostro(d->challengeMonster(pMod->getRound()));
     creaMatch();
+}
+
+void Controller::cambiaPersonaggioController(QString s){
+    int id = s.toInt();
+    int cont = 0;
+    Contenitore::Iteratore i;
+    for(i=pMod->getSquadra().begin(); i!=pMod->getSquadra().end() && id != cont; ++i){
+        cont++;
+    }
+    pMod->cambiaPersonaggio(i->getNome());
+    aggiornaDatiPersonaggio();
+}
+
+void Controller::aggiornaDatiPersonaggio(){
+    smp->setNome(pMod->getNomePersonaggio());
+    smp->setArmor(pMod->getArmorPersonaggio());
+    smp->setBa(pMod->getBAPersonaggio());
+    smp->setHealth(pMod->getHealthPersonaggio());
+    smp->setMana(pMod->getManaPersonaggio());
+    smp->setLivello(pMod->getLivelloPersonaggio());
+
+    StatisticheMatchMostro* smm = new StatisticheMatchMostro(pMod->getHealthMostro(), pMod->getBAMostro(), pMod->getArmorMostro(), pMod->getNomeMostro(), pMod->getLivelloMostro(), pMod->getExpMostro());
+    Match* m = new Match(smm, smp, pMod->getRound(), pMod->getMonete());
+
+    mw->setCentralWidget(m);
 }
 
 //se abilita fa danni (danno > 0) -> danno normale

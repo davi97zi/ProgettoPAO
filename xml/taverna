@@ -36,5 +36,22 @@
         <livello>2</livello>
         <prezzo>3</prezzo>
     </avventuriero>
-
+    <avventuriero id="6">
+        <nome>tommy</nome>
+        <tipo>Tank</tipo>
+        <livello>3</livello>
+        <prezzo>3</prezzo>
+    </avventuriero>
+    <avventuriero id="7">
+        <nome>jerryone</nome>
+        <tipo>Mago</tipo>
+        <livello>3</livello>
+        <prezzo>3</prezzo>
+    </avventuriero>
+    <avventuriero id="8">
+        <nome>dikdik</nome>
+        <tipo>Guaritore</tipo>
+        <livello>3</livello>
+        <prezzo>6</prezzo>
+    </avventuriero>
 </taverna>

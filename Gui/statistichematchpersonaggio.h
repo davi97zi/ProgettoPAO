@@ -18,6 +18,8 @@ private:
     QLabel* baseAttack;
     QLabel* mana;
     QLabel* armor;
+    QLabel* personaggio;
+    QLabel* livelloP;
 
     QPushButton* cambiaPersonaggio;
     QPushButton* baseAttackBtn;
@@ -27,18 +29,21 @@ private:
     //Personaggio* p;
 
 public:
+    StatisticheMatchPersonaggio(){}
     StatisticheMatchPersonaggio(int h, int ba, int a, QString n, int l, int m, QWidget* parent=0);
     QGridLayout* getAbilities();
 
 public slots:
     void handleButton();
+    void setBa(int);
     void setArmor(int);
     void setHealth(int);
     void setMana(int);
-
+    void setNome(QString n);
+    void setLivello(int);
 signals:
     void eseguiAbilita(QString);
-    void cambiaPersonaggioBtn();
+    void cambiaPersonaggioBtn(QString);
 };
 
 #endif // STATISTICHEMATCHPERSONAGGIO_H

@@ -70,6 +70,7 @@ public:
     int getLivelloMostro() const;
     int getExpMostro() const;
     QString getNomeMostro() const;
+    int getMoneteMostro() const;
 
     int getHealthPersonaggio() const;
     int getBAPersonaggio() const;
@@ -90,6 +91,8 @@ public:
     void setRound();
     int getMonete() const;
     void setMonete(int);
+
+    void cambiaPersonaggio(QString s);
 
 /*
 f1: dice se ha vinto la PARTITA

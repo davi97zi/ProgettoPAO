@@ -62,6 +62,12 @@ void Partita::cambiaMostro(Mostro* m2){
     m = m2;
 }
 
+void Partita::cambiaPersonaggio(QString s){
+    Contenitore::Iteratore i;
+    i = squadra.trovaPersonaggio(s);
+    personaggioInUso = i;
+}
+
 //tutta la squadra è morta -> ritorna true se tutta la squadra è stata sconfitta (il mostro ha vinto), else altrimenti (c'è qualche personaggio ancora vivo)
 bool Partita::squadraSconfitta(){
     bool squadraSconfitta=false;
@@ -159,6 +165,10 @@ int Partita::getLivelloMostro() const{
 
 int Partita::getExpMostro() const{
     return m->getExpPoint();
+}
+
+int Partita::getMoneteMostro() const{
+    return m->getPrezzo();
 }
 
 QString Partita::getNomeMostro() const{
