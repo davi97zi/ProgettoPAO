@@ -145,11 +145,13 @@ void Controller::creaMatch(){
     mw->setCentralWidget(m);
     qDebug() << "Controller::creaMatch entra";
     //prende bottone cliccato sezione abilita personaggio
+    //avendo smp si può usare direttamente eseguiAbilità di statisticheMatchPersonaggio
     connect(mw->centralWidget(), SIGNAL(eseguiAbilitaP(QString)), this, SLOT(getAction(QString)));
 
-    connect(mw->centralWidget(), SIGNAL(cambiaPersonaggioBtn(QString)), this, SLOT(getAction(QString)));
+    connect(smp, SIGNAL(cambiaPersonaggioBtn(QString)), this, SLOT(getAction(QString)));
 
-    connect(this, SIGNAL(assoldaBtn(QString)), this, SLOT(cambiaPersonaggioController(QString)));
+//HO SPOSTATO QUESTA CONNECT IN setVistaCambiaPersonaggio(), ALTRIMENTI SERVE UN PUNTATORE A cc IN CONTROLLER
+    //connect(mw->centralWidget(), SIGNAL(assoldaBtn(QString)), this, SLOT(cambiaPersonaggioController(QString)));
 
     //manda a match il danno al mostro
     connect(this, SIGNAL(updatedHPMostro(int)), smm, SLOT(setHealth(int)));
@@ -205,6 +207,7 @@ void Controller::getMostro(int i){
 
 //personaggio action (da match window)
 void Controller::getAction(QString a) try{
+    qDebug()<<"entra in getAction";
     if(a == "baseAttack"){
         int baPersonaggio = pMod->getBAPersonaggio()*(-1);
         pMod->attaccaMostro(baPersonaggio);
@@ -223,6 +226,7 @@ void Controller::getAction(QString a) try{
     } else if (a == "cambiaPersonaggio"){
         qDebug() << "Controller::getAction: " << a;
         setVistaCambiaPersonaggio();
+        throw 7; //7=cambia personaggio: non voglio che prosegua il round
     }
     else {
         qDebug() << a;
@@ -239,15 +243,14 @@ void Controller::getAction(QString a) try{
     endRoundActions();
 }catch(int x){
     switch(x){
-        case 0: ;
-        case 1: ;
-        case 2: ;
+        case 7: qDebug()<<"throw 7"; break; //per il cambio personaggio: così non prosegue il turno
     }
 }
 
 void Controller::setVistaCambiaPersonaggio(){
     ChangeCharacter* cc = new ChangeCharacter(pMod->getSquadra(), mw->centralWidget());
     mw->setCentralWidget(cc);
+    connect(mw->centralWidget(), SIGNAL(assoldaBtn(QString)), this, SLOT(cambiaPersonaggioController(QString)));
 }
 
 void Controller::monsterAttack(){
@@ -259,7 +262,7 @@ void Controller::monsterAttack(){
         case 2: attacco = pMod->getAbilitaM2(); break;
         case 3: attacco = pMod->getAbilitaM3(); break;
     }
-    qDebug() << "randon number: " << r << " Attacco del mostro: " << attacco;
+    qDebug() << "random number: " << r << " Attacco del mostro: " << attacco;
     pMod->attaccaPersonaggio(attacco);
     emit updatedHealthPersonaggio(pMod->getHealthPersonaggio());
 }
@@ -357,26 +360,36 @@ void Controller::createNewMatch(){
 }
 
 void Controller::cambiaPersonaggioController(QString s){
+    qDebug()<<"entra in Controller::cambiaPersonaggioController";
     int id = s.toInt();
+    qDebug()<<"(1) QUI NON CRASHA";
     int cont = 0;
+    qDebug()<<"(2) QUI NON CRASHA";
     Contenitore::Iteratore i;
+    qDebug()<<"(3) QUI NON CRASHA";
     for(i=pMod->getSquadra().begin(); i!=pMod->getSquadra().end() && id != cont; ++i){
         cont++;
     }
+    qDebug()<<"(4) QUI NON CRASHA";
     pMod->cambiaPersonaggio(i->getNome());
-    aggiornaDatiPersonaggio();
+    qDebug()<<"(5) QUI NON CRASHA";
+    //aggiornaDatiPersonaggio();
+    creaMatch();
 }
 
 void Controller::aggiornaDatiPersonaggio(){
+    qDebug()<<"entra in Controller::aggiornaDatiPersonaggio";
     smp->setNome(pMod->getNomePersonaggio());
     smp->setArmor(pMod->getArmorPersonaggio());
     smp->setBa(pMod->getBAPersonaggio());
     smp->setHealth(pMod->getHealthPersonaggio());
     smp->setMana(pMod->getManaPersonaggio());
     smp->setLivello(pMod->getLivelloPersonaggio());
-
+    qDebug()<<"setta tutto";
     StatisticheMatchMostro* smm = new StatisticheMatchMostro(pMod->getHealthMostro(), pMod->getBAMostro(), pMod->getArmorMostro(), pMod->getNomeMostro(), pMod->getLivelloMostro(), pMod->getExpMostro());
+    qDebug()<<"crea smm";
     Match* m = new Match(smm, smp, pMod->getRound(), pMod->getMonete());
+    qDebug()<<"crea m";
 
     mw->setCentralWidget(m);
 }

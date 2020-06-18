@@ -9,13 +9,13 @@ ScegliApplicativo::ScegliApplicativo(QWidget *parent) : QWidget(parent)
 
     gioca = new QPushButton("Gioca");
     gioca->setObjectName("gioca");
-    gioca->setSizePolicy(QSizePolicy::Ignored);
+    gioca->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
     gioca->setStyleSheet("QPushButton{border-style: outset; border-width: 1px;border-color: black; min-width: 10em;padding: 6px;}"
                          "QPushButton:pressed {background-color: beige; border-style: inset;}");
 
     storico = new QPushButton("Storico");
     storico->setObjectName("storico");
-    storico->setSizePolicy(QSizePolicy::Ignored);
+    storico->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
     storico->setStyleSheet("QPushButton{border-style: outset; border-width: 1px;border-color: black; min-width: 10em;padding: 6px;}"
                          "QPushButton:pressed {background-color: beige; border-style: inset;}");
 

@@ -11,8 +11,10 @@ ChangeCharacter::ChangeCharacter(Contenitore squadra, QWidget *parent) : QWidget
 }
 
 void ChangeCharacter::handleButton(){
-    qDebug() << "1) è partito il comunicaPersonaggio() da Negozio_personaggio";
+    //QPushButton* button = dynamic_cast<QPushButton*>(sender());
+    qDebug() << "1) è partito l'assoldaBtn da changecharacter";
     QPushButton* button = dynamic_cast<QPushButton*>(sender());
+    qDebug()<< button->objectName();
     emit assoldaBtn(button->objectName());
 }
 

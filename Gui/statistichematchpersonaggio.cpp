@@ -114,8 +114,10 @@ void StatisticheMatchPersonaggio::handleButton(){
     qDebug() << button->objectName();
     if(button->objectName() != "cambiaPersonaggio"){
         emit eseguiAbilita(button->objectName());
-    }else
+    }else{
         emit cambiaPersonaggioBtn(button->objectName());
+        qDebug()<<"entra nell'else di handle button";
+    }
 }
 
 void StatisticheMatchPersonaggio::setArmor(int arm){
