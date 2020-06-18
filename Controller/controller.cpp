@@ -242,7 +242,10 @@ void Controller::getAction(QString a) try{
     monsterAttack();
     endRoundActions();
 }catch(int x){
-    switch(x){
+    switch(x){ //MESSAGGI CHE SPIEGANO L'INTERRUZIONE!! QMessageBox??
+        case 2: qDebug()<<"throw 2"; break; //per quando non sono passati 3 turni per l'abilità 3
+        case 3: qDebug()<<"throw 3"; break; //per il guaritore (abilità 3)
+        case 5: qDebug()<<"throw 5"; break; //per quando non c'è abbastanza mana
         case 7: qDebug()<<"throw 7"; break; //per il cambio personaggio: così non prosegue il turno
     }
 }

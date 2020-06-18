@@ -62,6 +62,7 @@ unsigned int Guaritore::divineIntervention(){//USATO PER RIPORTARE IN VITA UN PE
     }
     else{
         //error, cant use cause no holy(juice) water
-        return 0;
+        throw 3;
+        //return 0;
     }
 }

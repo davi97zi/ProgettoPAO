@@ -36,8 +36,7 @@ unsigned int Mago::expelliarmus(){ //abilità1, sempre disponibile
         setMana(getCostoA1()); //aggiorno il mana
         return dmg;
     } else
-        throw 0;
-        //return 0;
+        throw 5;
 }
 
 unsigned int Mago::expectoPatronum(){ //abilità2, costa 2 turni, fa danni e guarisce il mago
@@ -47,8 +46,7 @@ unsigned int Mago::expectoPatronum(){ //abilità2, costa 2 turni, fa danni e gua
         setMana(getCostoA2());
         return dmg;
     } else
-        throw 0;
-        //return 0;
+        throw 5;
 }
 
 unsigned int Mago::avadaKedavra(){	//abilità speciale, costa 3 turni, uccide in un colpo solo il nemico
@@ -57,8 +55,7 @@ unsigned int Mago::avadaKedavra(){	//abilità speciale, costa 3 turni, uccide in
         setMana(getCostoA3());
         return dmg;
     } else
-        throw 0;
-        //return 0;
+        throw 5;
 }
 
 //PER TEST

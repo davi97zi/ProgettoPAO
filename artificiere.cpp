@@ -35,8 +35,7 @@ unsigned int Artificiere::bombardaMaxima(){
         setMana(getCostoA1());
         return dmg;
     } else
-        throw 0;
-        //return 0;
+        throw 5;
 }
 
 unsigned int Artificiere::rainOfSpells(){
@@ -45,8 +44,7 @@ unsigned int Artificiere::rainOfSpells(){
         setMana(getCostoA2());
         return dmg;
     } else
-        throw 0;
-        //return 0;
+        throw 5;
 }
 
 unsigned int Artificiere::autodistruzione(){ //shotta ma ti uccide
@@ -56,7 +54,6 @@ unsigned int Artificiere::autodistruzione(){ //shotta ma ti uccide
         receiveDamage(dmg);
         return dmg;
     } else
-        throw 0;
-        //return 0;
+        throw 5;
 }
 
