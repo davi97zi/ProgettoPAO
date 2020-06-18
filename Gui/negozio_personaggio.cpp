@@ -1,6 +1,5 @@
 #include "negozio_personaggio.h"
-#include <QVBoxLayout>
-#include <QGroupBox>
+
 
 //verosimile che controller si occupi di passare questi dati? y, in this way? idk we will see
 Negozio_personaggio::Negozio_personaggio(int i, QString n, QString t, int l, int p, QWidget *parent) : QWidget(parent){

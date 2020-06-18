@@ -2,10 +2,21 @@
 #define CONTROLLER_H
 
 #include <QObject>
-#include "Gui/mainwindow.h"
+#include <QMessageBox>
+#include <QDebug>
+#include "../gui/main_window.h"
+#include "../gui/negozio_widget.h"
+#include "../gui/storico.h"
+#include "../gui/info_partita_storico.h"
+#include "../gui/match.h"
+#include "../gui/change_character.h"
+#include "../gui/statistiche_match_personaggio.h"
+#include "../gui/statistiche_match_mostro.h"
+#include "../xml/storico_modello.h"
+#include "../xml/taverna.h"
+#include "../xml/dungeon.h"
 #include "../partita.h"
-#include "../xml/storicoModello.h"
-#include "../Gui/statistichematchpersonaggio.h"
+
 
 class Controller : public QObject{
     Q_OBJECT
@@ -17,6 +28,7 @@ private:
     StatisticheMatchPersonaggio* smp;
 
     void eseguiAbilita(int, bool);
+
 public:
     explicit Controller(QObject *parent = nullptr);
 

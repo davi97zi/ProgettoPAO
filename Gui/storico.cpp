@@ -1,14 +1,7 @@
 #include "storico.h"
-#include <QMessageBox>
-#include <QAbstractItemView>
-#include <QDateTime>
-#include <QStandardItemModel>
-#include <QDebug>
-#include "xml/xmlitem.h"
-
 //#include "storicorow.h"
+#include <QDebug>
 
-#include "../xml/storicoModello.h"
 
 Storico::Storico(QWidget* parent): QWidget(parent){
     //windowStorico = new QWidget();

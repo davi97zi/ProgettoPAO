@@ -1,6 +1,5 @@
 #include "partita.h"
-#include "../xml/dungeon.h"
-#include "../Interfacce/magicInterface.h"
+
 
 void Partita::incrementaLvl(unsigned int exp)
 {

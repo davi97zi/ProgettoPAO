@@ -1,8 +1,5 @@
 #include "info_match.h"
 
-#include "../Interfacce/personaggio.h"
-#include "../mostro.h"
-
 InfoMatch::InfoMatch(QWidget* parent): QWidget(parent){
 
 }

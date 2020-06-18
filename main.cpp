@@ -1,17 +1,15 @@
-#include "mainwindow.h"
+//#include "gui/main_window.h"
 #include <QApplication>
+#include "controller/controller.h"
+#include "gui/info_personaggio_storico.h"
+#include "gui/info_partita_storico.h"
+#include "xml/storico_modello.h"
+#include "contenitore.h"
 
 //da togliere poi?
 #include <cstdlib>
 #include <ctime>
-
-#include "Controller/controller.h"
-#include "Gui/infopersonaggiostorico.h"
-#include "Gui/infopartitastorico.h"
-#include "contenitore.h"
 #include <iostream>
-
-#include "xml/storicoModello.h"
 using namespace std;
 
 int main(int argc, char *argv[]){

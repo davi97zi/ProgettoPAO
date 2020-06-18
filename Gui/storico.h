@@ -6,14 +6,21 @@
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QPushButton>
-#include "mainwindow.h"
+#include <QMessageBox>
+#include <QAbstractItemView>
+#include <QDateTime>
+#include <QStandardItemModel>
+#include "../xml/storico_modello.h"
+#include "../xml/xml_item.h"
+//#include "main_window.h"
 
-#include "../xml/storicoModello.h"
 
 class Storico: public QWidget{
     Q_OBJECT
+
 private slots:
     void handleButton();
+
 private:
     QWidget* windowStorico;
     QVBoxLayout* vertical;
@@ -21,6 +28,7 @@ private:
     QTableWidget* table;
     //QPushButton* moreInfo;
     QPushButton* indietro;
+
 public:
     Storico(QWidget* parent=0);
     void addRow(const StoricoModello::StoricoModelloItem&);

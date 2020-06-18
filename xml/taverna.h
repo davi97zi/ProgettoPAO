@@ -2,13 +2,12 @@
 #define TAVERNA_H
 
 #include <vector> //TEMP!
-#include <QDebug>
 #include <QFile>
 #include <QtXml>
+#include "xml_item.h"
+#include "../interfacce/personaggio.h"
 
-#include "xmlitem.h"
-
-#include "Interfacce/personaggio.h"
+#include <QDebug>
 
 class Taverna{
 private:

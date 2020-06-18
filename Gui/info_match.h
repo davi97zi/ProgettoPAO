@@ -4,6 +4,8 @@
 #include <QWidget>
 #include <QLabel>
 #include <QVBoxLayout>
+#include "../interfacce/personaggio.h"
+#include "../personaggi/mostro.h"
 
 class InfoMatch: public QWidget{
     Q_OBJECT
@@ -16,9 +18,7 @@ private:
 
 public:
     InfoMatch(QWidget* parent);
-
     QVBoxLayout* setLayoutPersonaggio();
-
     QVBoxLayout* setLayoutMostro();
 };
 

@@ -1,6 +1,8 @@
 #ifndef CONTENITORE_H
 #define CONTENITORE_H
-#include "Interfacce/personaggio.h"
+
+#include "interfacce/personaggio.h"
+
 //per test
 #include <iostream>
 #include <QDebug>

@@ -4,14 +4,14 @@
 #include <QWidget>
 #include <QLabel>
 #include <QVBoxLayout>
-
 #include "abilita_personaggio_match.h"
 #include "info_match.h"
-#include "statistichematchmostro.h"
-#include "statistichematchpersonaggio.h"
+#include "statistiche_match_mostro.h"
+#include "statistiche_match_personaggio.h"
 
 class Match: public QWidget{
     Q_OBJECT
+
 private:
     QWidget* window;
     QVBoxLayout* contenitore;

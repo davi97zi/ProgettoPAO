@@ -14,12 +14,10 @@ private:
     QPushButton* abilita1;
     QPushButton* abilita2;
     QPushButton* abilita3;
-
     QGridLayout* abilita;
 
 public:
     AbilitaPersonaggioMatch(QWidget* parent=0);
-
     void handleButton();
 };
 

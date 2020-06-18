@@ -26,82 +26,80 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     main.cpp \
-    Interfacce/defenceInterface.cpp \
-    Interfacce/dpsInterface.cpp \
-    Interfacce/healInterface.cpp \
-    Interfacce/magicInterface.cpp \
-    Interfacce/personaggio.cpp \
-    arciere.cpp \
-    artificiere.cpp \
-    berserker.cpp \
-    guaritore.cpp \
-    mago.cpp \
-    mostro.cpp \
-    paladino.cpp \
-    soldato.cpp \
-    tank.cpp \
+    interfacce/personaggio.cpp \
+    personaggi/arciere.cpp \
+    personaggi/artificiere.cpp \
+    personaggi/berserker.cpp \
+    personaggi/guaritore.cpp \
+    personaggi/mago.cpp \
+    personaggi/mostro.cpp \
+    personaggi/paladino.cpp \
+    personaggi/soldato.cpp \
+    personaggi/tank.cpp \
     partita.cpp \
-    battaglia.cpp \
     contenitore.cpp \
-    Gui/abilita_personaggio_match.cpp \
-    Gui/changecharacter.cpp \
-    Gui/info_match.cpp \
-    Gui/mainwindow.cpp \
-    Gui/match.cpp \
-    Gui/negozio_personaggio.cpp \
-    Gui/negozio_widget.cpp \
-    Gui/statistichematchmostro.cpp \
-    Gui/statistichematchpersonaggio.cpp \
-    Gui/storico.cpp \
-    Controller/controller.cpp \
-    Gui/scegliapplicativo.cpp \
-    xml/storicomodello.cpp \
-    Gui/infopersonaggiostorico.cpp \
-    Gui/infopartitastorico.cpp \
-    xml/xmlitem.cpp \
-    xml/dungeonitem.cpp \
+    gui/abilita_personaggio_match.cpp \
+    gui/info_match.cpp \
+    gui/match.cpp \
+    gui/negozio_personaggio.cpp \
+    gui/negozio_widget.cpp \
+    gui/storico.cpp \
+    controller/controller.cpp \
     xml/dungeon.cpp \
     xml/incantesimo.cpp \
-    xml/taverna.cpp
+    xml/taverna.cpp \
+    gui/change_character.cpp \
+    gui/info_partita_storico.cpp \
+    gui/info_personaggio_storico.cpp \
+    gui/main_window.cpp \
+    gui/scegli_applicativo.cpp \
+    gui/statistiche_match_mostro.cpp \
+    gui/statistiche_match_personaggio.cpp \
+    interfacce/defence_interface.cpp \
+    interfacce/dps_interface.cpp \
+    interfacce/heal_interface.cpp \
+    interfacce/magic_interface.cpp \
+    xml/dungeon_item.cpp \
+    xml/storico_modello.cpp \
+    xml/xml_item.cpp
 
 HEADERS += \
-    Interfacce/defenceInterface.h \
-    Interfacce/dpsInterface.h \
-    Interfacce/healInterface.h \
-    Interfacce/magicInterface.h \
-    Interfacce/personaggio.h \
-    arciere.h \
-    artificiere.h \
-    berserker.h \
-    guaritore.h \
-    mago.h \
-    mostro.h \
-    paladino.h \
-    soldato.h \
-    tank.h \
+    interfacce/personaggio.h \
+    personaggi/arciere.h \
+    personaggi/artificiere.h \
+    personaggi/berserker.h \
+    personaggi/guaritore.h \
+    personaggi/mago.h \
+    personaggi/mostro.h \
+    personaggi/paladino.h \
+    personaggi/soldato.h \
+    personaggi/tank.h \
     partita.h \
-    battaglia.h \
     contenitore.h \
-    Gui/abilita_personaggio_match.h \
-    Gui/changecharacter.h \
-    Gui/info_match.h \
-    Gui/mainwindow.h \
-    Gui/match.h \
-    Gui/negozio_personaggio.h \
-    Gui/negozio_widget.h \
-    Gui/statistichematchmostro.h \
-    Gui/statistichematchpersonaggio.h \
-    Gui/storico.h \
-    Controller/controller.h \
-    xml/storicoModello.h \
-    xml/xmlitem.h \
-    Gui/scegliapplicativo.h \
-    Gui/infopersonaggiostorico.h \
-    Gui/infopartitastorico.h \
-    xml/dungeonItem.h \
+    gui/abilita_personaggio_match.h \
+    gui/info_match.h \
+    gui/match.h \
+    gui/negozio_personaggio.h \
+    gui/negozio_widget.h \
+    gui/storico.h \
+    controller/controller.h \
     xml/incantesimo.h \
     xml/taverna.h \
-    xml/dungeon.h
+    xml/dungeon.h \
+    gui/change_character.h \
+    gui/info_partita_storico.h \
+    gui/info_personaggio_storico.h \
+    gui/main_window.h \
+    gui/scegli_applicativo.h \
+    gui/statistiche_match_mostro.h \
+    gui/statistiche_match_personaggio.h \
+    interfacce/defence_interface.h \
+    interfacce/dps_interface.h \
+    interfacce/heal_interface.h \
+    interfacce/magic_interface.h \
+    xml/dungeon_item.h \
+    xml/storico_modello.h \
+    xml/xml_item.h
 
 RESOURCES +=
 

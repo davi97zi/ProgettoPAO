@@ -1,6 +1,5 @@
 #include "negozio_widget.h"
-#include "QHBoxLayout"
-#include "QVBoxLayout"
+#include <QDebug>
 
 Negozio_widget::Negozio_widget(std::vector<XmlItem> assoldabili, int m, bool inizio, QWidget *parent) : QWidget(parent), monete(m){
     //per popolare dovrei -> recuperare il LIVELLO/BATTAGLIA

@@ -4,6 +4,9 @@
 #include <QWidget>
 #include <QLabel>
 #include <QPushButton>
+#include <QVBoxLayout>
+#include <QGroupBox>
+
 #include <QDebug>
 
 class Negozio_personaggio : public QWidget
@@ -23,6 +26,7 @@ public:
     Negozio_personaggio(){}
     explicit Negozio_personaggio(int i, QString n, QString t, int l, int p, QWidget *parent = nullptr);
     ~Negozio_personaggio(){qDebug() << "personaggio eliminato";}
+
 signals:
     void personaggioAcquistato(int);
 

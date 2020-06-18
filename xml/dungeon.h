@@ -1,14 +1,14 @@
 #ifndef DUNGEON_H
 #define DUNGEON_H
 
-#include "xmlitem.h"
-#include "dungeonItem.h"
-#include "../mostro.h"
-
-
-#include <QDebug>
 #include <QFile>
 #include <QtXml>
+#include "../personaggi/mostro.h"
+#include "xml_item.h"
+#include "dungeon_item.h"
+
+#include <QDebug>
+
 
 
 class Dungeon{

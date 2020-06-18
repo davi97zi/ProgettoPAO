@@ -1,17 +1,4 @@
 #include "controller.h"
-#include <QDebug>
-#include <QMessageBox>
-
-#include "../Gui/negozio_widget.h"
-#include "../Gui/storico.h"
-#include "../xml/storicoModello.h"
-#include "../Gui/infopartitastorico.h"
-#include "../Gui/match.h"
-#include "../Gui/changecharacter.h"
-#include "../xml/taverna.h"
-#include "../xml/dungeon.h"
-#include "../Gui/statistichematchmostro.h"
-
 
 /*StoricoModello::StoricoModelloItem Controller::getStoricoRow(int i){
     return s->getPartita(i);

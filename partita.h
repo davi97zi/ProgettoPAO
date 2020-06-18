@@ -1,10 +1,14 @@
 #ifndef PARTITA_H
 #define PARTITA_H
 
+#include "personaggi/mostro.h"
+#include "xml/dungeon.h"
+#include "interfacce/magic_interface.h"
 #include "contenitore.h"
-#include "mostro.h"
+
 #include <iostream>
 #include <QDebug>
+
 class Partita{
 private:
     Contenitore squadra;
