@@ -54,4 +54,40 @@
         <livello>3</livello>
         <prezzo>6</prezzo>
     </avventuriero>
+    <avventuriero id="9">
+        <nome>Magnus Burnsides</nome>
+        <tipo>Tank</tipo>
+        <livello>4</livello>
+        <prezzo>2</prezzo>
+    </avventuriero>
+    <avventuriero id="10">
+        <nome>Taako Taaco</nome>
+        <tipo>Mago</tipo>
+        <livello>4</livello>
+        <prezzo>0</prezzo>
+    </avventuriero>
+    <avventuriero id="11">
+        <nome>Merle Hightower Highchurch</nome>
+        <tipo>Guaritore</tipo>
+        <livello>4</livello>
+        <prezzo>0</prezzo>
+    </avventuriero>
+    <avventuriero id="12">
+        <nome>tom</nome>
+        <tipo>Tank</tipo>
+        <livello>5</livello>
+        <prezzo>1</prezzo>
+    </avventuriero>
+    <avventuriero id="13">
+        <nome>jerry</nome>
+        <tipo>Mago</tipo>
+        <livello>5</livello>
+        <prezzo>3</prezzo>
+    </avventuriero>
+    <avventuriero id="14">
+        <nome>dik</nome>
+        <tipo>Guaritore</tipo>
+        <livello>5</livello>
+        <prezzo>3</prezzo>
+    </avventuriero>
 </taverna>

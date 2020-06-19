@@ -21,7 +21,7 @@ public:
         increaseLevel(ex);
         setCostoA1(50);
         setCostoA2(80);
-        setCostoA3(110);
+        setCostoA3(100);
     }
     virtual ~Mago() {}
 

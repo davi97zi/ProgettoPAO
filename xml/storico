@@ -1,21 +1,77 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <storico>
  <partita id="0">
-  <data>gio giu 18 22:14:16 2020</data>
-  <stato>Sconfitta</stato>
-  <battaglia>2</battaglia>
-  <oro>1</oro>
+  <data>ven giu 19 11:45:39 2020</data>
+  <stato>Vittoria</stato>
+  <battaglia>5</battaglia>
+  <oro>105</oro>
   <squadra>
    <avventuriero>
     <nome>tom</nome>
     <tipo>Tank</tipo>
-    <livello>2</livello>
+    <livello>7</livello>
     <prezzo>0</prezzo>
    </avventuriero>
    <avventuriero>
     <nome>Magnus Burnsides</nome>
     <tipo>Tank</tipo>
-    <livello>2</livello>
+    <livello>8</livello>
+    <prezzo>0</prezzo>
+   </avventuriero>
+   <avventuriero>
+    <nome>tommy</nome>
+    <tipo>Tank</tipo>
+    <livello>9</livello>
+    <prezzo>0</prezzo>
+   </avventuriero>
+   <avventuriero>
+    <nome>tom</nome>
+    <tipo>Tank</tipo>
+    <livello>10</livello>
+    <prezzo>0</prezzo>
+   </avventuriero>
+   <avventuriero>
+    <nome>Magnus Burnsides</nome>
+    <tipo>Tank</tipo>
+    <livello>10</livello>
+    <prezzo>0</prezzo>
+   </avventuriero>
+  </squadra>
+ </partita>
+ <partita id="1">
+  <data>ven giu 19 11:49:56 2020</data>
+  <stato>Vittoria</stato>
+  <battaglia>5</battaglia>
+  <oro>105</oro>
+  <squadra>
+   <avventuriero>
+    <nome>tom</nome>
+    <tipo>Tank</tipo>
+    <livello>7</livello>
+    <prezzo>0</prezzo>
+   </avventuriero>
+   <avventuriero>
+    <nome>Magnus Burnsides</nome>
+    <tipo>Tank</tipo>
+    <livello>8</livello>
+    <prezzo>0</prezzo>
+   </avventuriero>
+   <avventuriero>
+    <nome>tommy</nome>
+    <tipo>Tank</tipo>
+    <livello>9</livello>
+    <prezzo>0</prezzo>
+   </avventuriero>
+   <avventuriero>
+    <nome>tom</nome>
+    <tipo>Tank</tipo>
+    <livello>10</livello>
+    <prezzo>0</prezzo>
+   </avventuriero>
+   <avventuriero>
+    <nome>Magnus Burnsides</nome>
+    <tipo>Tank</tipo>
+    <livello>10</livello>
     <prezzo>0</prezzo>
    </avventuriero>
   </squadra>

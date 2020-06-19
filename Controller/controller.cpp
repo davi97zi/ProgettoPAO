@@ -262,11 +262,11 @@ void Controller::endRoundActions(){
     bool fineRound = pMod->fineRound();
     qDebug() << "fineRound = " << fineRound;
     qDebug() << "squadraSconfitta = " << pMod->squadraSconfitta();
-    if(fineRound && pMod->squadraSconfitta() == false){
+    if(fineRound && pMod->squadraSconfitta() == false && pMod->getRound()!=5){
         //qDebug() << pMod->getMoneteMostro();
         QMessageBox* winner = new QMessageBox(mw);
         winner->setObjectName("winner");
-        winner->setInformativeText("HAI VINTO");
+        winner->setInformativeText("HAI VINTO IL ROUND");
         winner->setDetailedText("I tuoi personaggi hanno guadagnato: \n" +
                                 QString::number(pMod->getMoneteMostro()) + " monete \n" +
                                 QString::number(pMod->getExpMostro()) + " esperienza.");
@@ -303,7 +303,7 @@ void Controller::endRoundActions(){
                 XmlItem p;
                 StoricoModello::StoricoModelloItem* partita = new StoricoModello::StoricoModelloItem(QDateTime::currentDateTime().toString(), false, pMod->getRound(), pMod->getMonete());
 
-                for(auto it=pMod->getSquadra().begin(); it!=pMod->getSquadra().end(); ++it){ 
+                for(auto it=pMod->getSquadra().begin(); it!=pMod->getSquadra().end(); ++it){
                     qDebug() << "Controller::endRoundActions(): passaggio dei parametri al nuovo xmlitem \n" << it->getNome() <<" " << it->getTipoPersonaggio() <<" " << it->getLevel() <<" " << it->getPrezzo();
                     p = XmlItem(it->getNome(), it->getTipoPersonaggio(), it->getLevel(), it->getPrezzo());
                     qDebug() << "p.stampaItem() --------------------";
@@ -322,10 +322,46 @@ void Controller::endRoundActions(){
                 remakeMain();
 
                 break;
+            }
+        }else if(fineRound && pMod->squadraSconfitta() == false && pMod->getRound()==5){
+            QMessageBox* winner = new QMessageBox(mw);
+            winner->setObjectName("winner");
+            winner->setInformativeText("HAI VINTO LA PARTITA");
+            winner->setDetailedText("Finirai negli annali (guarda lo storico) \n");
+            winner->show();
+            int ret = winner->exec();
+
+            switch (ret) {
+              case QMessageBox::Ok:
+                sMod = new StoricoModello();
+
+                XmlItem p;
+                StoricoModello::StoricoModelloItem* partita = new StoricoModello::StoricoModelloItem(QDateTime::currentDateTime().toString(), true, pMod->getRound(), pMod->getMonete());
+
+                for(auto it=pMod->getSquadra().begin(); it!=pMod->getSquadra().end(); ++it){
+                    qDebug() << "Controller::endRoundActions(): passaggio dei parametri al nuovo xmlitem \n" << it->getNome() <<" " << it->getTipoPersonaggio() <<" " << it->getLevel() <<" " << it->getPrezzo();
+                    p = XmlItem(it->getNome(), it->getTipoPersonaggio(), it->getLevel(), it->getPrezzo());
+                    qDebug() << "p.stampaItem() --------------------";
+                    p.stampaItem(); //ok
+                    qDebug() << "-------------------------";
+                    partita->addItemToSquadra(p);
+                    qDebug() << "partita->stampaStoricoModelloItem() -------------------- ";
+                    partita->stampaStoricoModelloItem();
+                }
+
+                sMod->addPartita(*partita);
+                //sMod->stampaStoricoModello();
+                sMod->saveStoricoModello();
+
+                //apertura first window
+                remakeMain();
+
+                break;
+            }
         }
         //passaggio dei dati allo storico dei dati della partita persa
         //rimandare alla schermata iniziale "firstWindow"
-    }else{ //fineRound == false
+    else{ //fineRound == false
         //controllo sui turni (per le abilità)
         pMod->gestioneTurniAbilita3();
     }

@@ -51,75 +51,123 @@ void StoricoModello::saveStoricoModello()const{
     //apri il file in READ
     qDebug() << "StoricoModello::saveStoricoModello()";
     QFile file("xml/storico");
+    QDomElement rootElement;
+    QDomDocument document;
     if(file.open(QIODevice::ReadOnly)){
         //carica l'xml già presente
-        QDomDocument document;
         document.setContent(&file);
         //tagname storico
-        QDomElement rootElement= document.documentElement();
+        rootElement= document.documentElement();
         qDebug() << "rootElement: " << rootElement.tagName();
 
         //chiudi il file in READ
         file.close();
-        //confronta il numero di elementi presenti tra i 2
+    }else{
+        qDebug() << "error could not open to read file";
+    }
 
-        qDebug() << "Sto cercando " << rootElement.lastChildElement().tagName();
+    //confronta il numero di elementi presenti tra i 2
 
-        unsigned int lastElementId= rootElement.lastChildElement().attribute("id").toInt(), StoricoModelloSize=StoricoModelloPartite.size();
-        qDebug() << "Ultimo elemento: " << lastElementId << " Partite da aggiungere: " <<(StoricoModelloSize-lastElementId);
+    qDebug() << "Sto cercando " << rootElement.lastChildElement().tagName();
 
-        if(lastElementId!=StoricoModelloSize){//esiste elementi da inserire in xml
-            for(unsigned int i=lastElementId; i<StoricoModelloSize; i++){
-                StoricoModelloItem s= StoricoModelloPartite[i];
-                qDebug() << "this is the one to be SAVED\n<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<";
-                s.stampaStoricoModelloItem();
-                qDebug() << ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>";
-                //crea nuovo elemento
-                QDomElement newChild= document.createElement("partita");
-                //assegna id
-                newChild.setAttribute("id", i);
-                //crea gli elementi caratteristiche e popolali
-                QDomElement newData= document.createElement("data");
-                newData.appendChild( document.createTextNode(s.getData()));
+    unsigned int StoricoModelloSize=StoricoModelloPartite.size();
+    unsigned int xmlSize= rootElement.childNodes().size();
+    if(xmlSize==0){
+        //inserisco il primo elemento nel file
+        for(unsigned int i=0; i<StoricoModelloSize; i++){
+            StoricoModelloItem s= StoricoModelloPartite[i];
+            qDebug() << "this is the one to be SAVED\n<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<";
+            s.stampaStoricoModelloItem();
+            qDebug() << ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>";
+            //crea nuovo elemento
+            QDomElement newChild= document.createElement("partita");
+            //assegna id
+            newChild.setAttribute("id", i);
+            //crea gli elementi caratteristiche e popolali
+            QDomElement newData= document.createElement("data");
+            newData.appendChild( document.createTextNode(s.getData()));
 
-                QDomElement newStato= document.createElement("stato");
-                newStato.appendChild( document.createTextNode(s.getVittoria()));
+            QDomElement newStato= document.createElement("stato");
+            newStato.appendChild( document.createTextNode(s.getVittoria()));
 
-                QDomElement newBattaglia= document.createElement("battaglia");
-                newBattaglia.appendChild( document.createTextNode(s.getBattaglia()));
+            QDomElement newBattaglia= document.createElement("battaglia");
+            newBattaglia.appendChild( document.createTextNode(s.getBattaglia()));
 
-                QDomElement newOro= document.createElement("oro");
-                newOro.appendChild(document.createTextNode(s.getOro()));
+            QDomElement newOro= document.createElement("oro");
+            newOro.appendChild(document.createTextNode(s.getOro()));
 
-                QDomElement newSquadra= document.createElement("squadra");
+            QDomElement newSquadra= document.createElement("squadra");
 
-                qDebug() << "rootElement: " << rootElement.tagName();
-                //inserisci gli avventurieri, something
-                addSquadra(document, s, newSquadra); //RITORNA
+            qDebug() << "rootElement: " << rootElement.tagName();
+            //inserisci gli avventurieri, something
+            addSquadra(document, s, newSquadra); //RITORNA
 
-                //assembla i pezzi
-                newChild.appendChild(newData);
-                newChild.appendChild(newStato);
-                newChild.appendChild(newBattaglia);
-                newChild.appendChild(newOro);
-                newChild.appendChild(newSquadra);
+            //assembla i pezzi
+            newChild.appendChild(newData);
+            newChild.appendChild(newStato);
+            newChild.appendChild(newBattaglia);
+            newChild.appendChild(newOro);
+            newChild.appendChild(newSquadra);
 
-                //aggiungi a root
-                rootElement.appendChild(newChild);
-            }
-
-            //apri file in write
-            QFile fileR("xml/storico");
-            fileR.open(QIODevice::WriteOnly | QIODevice::Text);
-            QTextStream stream(&fileR);
-            stream << document;
-            fileR.close();
-            qDebug() << "Writing is done";
+            //aggiungi a root
+            rootElement.appendChild(newChild);
         }
     }
     else{
-        qDebug() << "error could not open to read file";
+        unsigned int lastElementId= rootElement.lastChildElement().attribute("id").toInt();
+        //aggiungi il prossimo elemento
+        for(unsigned int i=lastElementId+1; i<StoricoModelloSize; i++){
+            StoricoModelloItem s= StoricoModelloPartite[i];
+            qDebug() << "this is the one to be SAVED\n<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<";
+            s.stampaStoricoModelloItem();
+            qDebug() << ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>";
+            //crea nuovo elemento
+            QDomElement newChild= document.createElement("partita");
+            //assegna id
+            newChild.setAttribute("id", i);
+            //crea gli elementi caratteristiche e popolali
+            QDomElement newData= document.createElement("data");
+            newData.appendChild( document.createTextNode(s.getData()));
+
+            QDomElement newStato= document.createElement("stato");
+            newStato.appendChild( document.createTextNode(s.getVittoria()));
+
+            QDomElement newBattaglia= document.createElement("battaglia");
+            newBattaglia.appendChild( document.createTextNode(s.getBattaglia()));
+
+            QDomElement newOro= document.createElement("oro");
+            newOro.appendChild(document.createTextNode(s.getOro()));
+
+            QDomElement newSquadra= document.createElement("squadra");
+
+            qDebug() << "rootElement: " << rootElement.tagName();
+            //inserisci gli avventurieri, something
+            addSquadra(document, s, newSquadra); //RITORNA
+
+            //assembla i pezzi
+            newChild.appendChild(newData);
+            newChild.appendChild(newStato);
+            newChild.appendChild(newBattaglia);
+            newChild.appendChild(newOro);
+            newChild.appendChild(newSquadra);
+
+            //aggiungi a root
+            rootElement.appendChild(newChild);
+        }
     }
+    //qDebug() << "Ultimo elemento: " << lastElementId << " Partite da aggiungere: " <<(StoricoModelloSize-lastElementId);
+    //apri file in write
+    QFile fileR("xml/storico");
+    if(fileR.open(QIODevice::WriteOnly | QIODevice::Text)){
+        QTextStream stream(&fileR);
+        qDebug() << document.toString();
+        stream << document;
+        fileR.close();
+            qDebug() << "Writing is done";
+
+        }else{
+        qDebug() << "error could not open to read file";
+        }
 }
 
 XmlItem StoricoModello::readTheAdventurer(const QDomElement &adventurer){//NB! REFACTOR!!! +++ SIMILE A FUN PRESENTE IN TAVERNA.H
@@ -168,7 +216,7 @@ void StoricoModello::readTheArchive(QDomElement & root){
                 dataPart= charPart.firstChild().toText().data();
             }
             if(charPart.tagName()=="stato"){
-                if(charPart.firstChild().toText().data()=="vittoria")
+                if(charPart.firstChild().toText().data()=="Vittoria")
                     statoPart= true;
                 else
                     statoPart=false;
@@ -246,7 +294,7 @@ StoricoModello::StoricoModelloItem::StoricoModelloItem(unsigned int i, QString d
 void StoricoModello::StoricoModelloItem::stampaStoricoModelloItem() const{
     qDebug() << "id: " << id;
     qDebug() << "partita giocata il: " << data;
-    qDebug() << "risultato: " << (vittoria? "Vittoria": "Sconfitta");
+    qDebug() << "risultato: " << getVittoria();//
     qDebug() << "profondità del dungeon raggiunto; " << battaglia;
     qDebug() << "oro guadagnato: " << oro;
     qDebug() <<"Squadra: " << squadra.size();
