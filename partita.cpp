@@ -245,6 +245,7 @@ void Partita::gestioneTurniAbilita3(){
     for(Contenitore::Iteratore i= squadra.begin(); i!=squadra.end(); ++i){
         if(i->getTurniAbilita3() != 0)
             i->setTurniAbilita3(-1);
+        qDebug()<<i->getNome()<<"turni A3 mancanti: "<<i->getTurniAbilita3();
         DefenceInterface* df = dynamic_cast<DefenceInterface*>(&*i);
         if(df && i->getTurniAbilita3() == 0)
             df->setDefaultArmor();

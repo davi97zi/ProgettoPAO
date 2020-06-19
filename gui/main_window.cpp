@@ -6,9 +6,6 @@ MainWindow::MainWindow(QWidget* central, QWidget *parent) : firstWindow(central)
     QMainWindow(parent)
 {
     resize(500,350);
-
-    connect(this, SIGNAL (signalReturnToMain()), this, SLOT (remakeMain()));
-
     setCentralWidget(firstWindow);
 }
 

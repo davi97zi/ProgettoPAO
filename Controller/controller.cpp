@@ -229,8 +229,8 @@ void Controller::getAction(QString a) try{
             pMod->setTurniA3(3);
         }
     }
+    qDebug()<<pMod->getNomePersonaggio()<<"turni A3 mancanti: "<<pMod->getTurnoA3();
     monsterAttack();
-
     endRoundActions();
 }catch(int x){
     QMessageBox* error = new QMessageBox(mw);
@@ -259,8 +259,14 @@ void Controller::getAction(QString a) try{
             }
         }
             break;
-        case 5: qDebug()<<"throw 5"; break; //per quando non c'è abbastanza mana
-        case 7: qDebug()<<"throw 7"; setVistaCambiaPersonaggio();break; //per il cambio personaggio: così non prosegue il turno
+        case 5: {
+            qDebug()<<"throw 5: non abbastanza mana";
+            error->setObjectName("error");
+            error->setInformativeText("Non hai abbastanza mana.");
+            error->show();
+        }
+            break; //per quando non c'è abbastanza mana
+        case 7: qDebug()<<"throw 7"; setVistaCambiaPersonaggio(); break; //per il cambio personaggio: così non prosegue il turno
     }
 }
 
@@ -293,8 +299,6 @@ void Controller::endRoundActions(){
     qDebug() << "squadraSconfitta = " << pMod->squadraSconfitta();
 
     if(fineRound && pMod->squadraSconfitta() == false && pMod->getRound()!=5){
-
-        //qDebug() << pMod->getMoneteMostro();
         QMessageBox* winner = new QMessageBox(mw);
         winner->setObjectName("winner");
         winner->setInformativeText("HAI VINTO IL ROUND");
@@ -303,7 +307,7 @@ void Controller::endRoundActions(){
                                 QString::number(pMod->getExpMostro()) + " esperienza.");
         winner->show();
         int ret = winner->exec();
-
+        pMod->gestioneTurniAbilita3();
         switch (ret) {
           case QMessageBox::Ok:
                 //apertura vista negozio
@@ -419,35 +423,12 @@ void Controller::createNewMatch(){
 void Controller::cambiaPersonaggioController(QString s){
     qDebug()<<"entra in Controller::cambiaPersonaggioController";
     int id = s.toInt();
-    qDebug()<<"(1) QUI NON CRASHA";
     int cont = 0;
-    qDebug()<<"(2) QUI NON CRASHA";
     Contenitore::Iteratore i;
-    qDebug()<<"(3) QUI NON CRASHA";
     for(i=pMod->getSquadra().begin(); i!=pMod->getSquadra().end() && id != cont; ++i){
-        //if(!i->getDeathState())
-            cont++;
+        cont++;
     }
-    qDebug()<<"(4) QUI NON CRASHA";
     pMod->cambiaPersonaggio(i->getNome());
-    qDebug()<<"(5) QUI NON CRASHA";
-    //aggiornaDatiPersonaggio();
+    qDebug()<<pMod->getNomePersonaggio()<<"turni A3 mancanti: "<<pMod->getTurnoA3();
     creaMatch();
 }
-
-/*void Controller::aggiornaDatiPersonaggio(){
-    qDebug()<<"entra in Controller::aggiornaDatiPersonaggio";
-    smp->setNome(pMod->getNomePersonaggio());
-    smp->setArmor(pMod->getArmorPersonaggio());
-    smp->setBa(pMod->getBAPersonaggio());
-    smp->setHealth(pMod->getHealthPersonaggio());
-    smp->setMana(pMod->getManaPersonaggio());
-    smp->setLivello(pMod->getLivelloPersonaggio());
-    qDebug()<<"setta tutto";
-    StatisticheMatchMostro* smm = new StatisticheMatchMostro(pMod->getHealthMostro(), pMod->getBAMostro(), pMod->getArmorMostro(), pMod->getNomeMostro(), pMod->getLivelloMostro(), pMod->getExpMostro());
-    qDebug()<<"crea smm";
-    Match* m = new Match(smm, smp, pMod->getRound(), pMod->getMonete());
-    qDebug()<<"crea m";
-
-    mw->setCentralWidget(m);
-}*/

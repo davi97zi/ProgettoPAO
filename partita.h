@@ -42,17 +42,11 @@ public:
 
     //parametro = attacco del giocatore ricevuto dal controller
     void attaccaMostro(int);
-
     void guarisciTutti(int);
-
     void resuscita(int);
-
     void aggiungiPersonaggio(Personaggio*);
-
     void attaccaPersonaggio(int);
-
     void deleteMostro();
-
     Contenitore getSquadra();
 
     /*void cambiaPersonaggio(QString nome){
