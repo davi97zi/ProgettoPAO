@@ -23,7 +23,7 @@ private:
 public:
     ChangeCharacter(){}
     ChangeCharacter(Contenitore squadra, QWidget *parent);
-    QGroupBox* addLayoutPersonaggio(Contenitore);
+    QGroupBox* addLayoutPersonaggio(const Personaggio&, int);
 
 public slots:
     void handleButton();

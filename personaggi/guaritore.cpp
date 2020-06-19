@@ -1,4 +1,5 @@
 #include "guaritore.h"
+#include <QDebug>
 
 bool Guaritore::increaseLevel(unsigned int newExpPoint){
     if(Personaggio::increaseLevel(newExpPoint) == true){
@@ -57,12 +58,5 @@ unsigned int Guaritore::smite(){ //usato per attacco benedetto
 }
 
 unsigned int Guaritore::divineIntervention(){//USATO PER RIPORTARE IN VITA UN PERSONAGGIO CADUTO IN BATTAGLIA
-    if(getBlessing()>=3){
-        return healingWord()+pray(true);
-    }
-    else{
-        //error, cant use cause no holy(juice) water
-        throw 3;
-        //return 0;
-    }
+    return healingWord()+pray(true);
 }

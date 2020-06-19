@@ -6,6 +6,7 @@ bool Mago::increaseLevel(unsigned int newExpPoint){//newExpPoint guadagnati dall
     increaseArmor(3*getLevel());
     increaseAttack(6*getLevel());
     increaseMaxMana(15*getLevel());
+    resetMana();
     return true;
   }
   else {

@@ -8,7 +8,7 @@
     </avventuriero>
     <avventuriero id="1">
         <nome>Taako Taaco</nome>
-        <tipo>Mago</tipo>
+        <tipo>Arciere</tipo>
         <livello>1</livello>
         <prezzo>0</prezzo>
     </avventuriero>
@@ -20,25 +20,25 @@
     </avventuriero>
     <avventuriero id="3">
         <nome>tom</nome>
-        <tipo>Tank</tipo>
+        <tipo>Artificiere</tipo>
         <livello>2</livello>
         <prezzo>1</prezzo>
     </avventuriero>
     <avventuriero id="4">
         <nome>jerry</nome>
-        <tipo>Mago</tipo>
+        <tipo>Berseker</tipo>
         <livello>2</livello>
         <prezzo>3</prezzo>
     </avventuriero>
     <avventuriero id="5">
         <nome>dik</nome>
-        <tipo>Guaritore</tipo>
+        <tipo>Paladino</tipo>
         <livello>2</livello>
-        <prezzo>3</prezzo>
+        <prezzo>1</prezzo>
     </avventuriero>
     <avventuriero id="6">
         <nome>tommy</nome>
-        <tipo>Tank</tipo>
+        <tipo>Soldato</tipo>
         <livello>3</livello>
         <prezzo>3</prezzo>
     </avventuriero>

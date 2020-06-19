@@ -32,7 +32,7 @@
         <nome>Satan the demon</nome>
         <livello>5</livello>
         <exp>200</exp>
-        <oro>100</oro>
+        <oro>10</oro>
         <descrizione>Satan è un demone che vuole la tua anima!</descrizione>
     </boss>
 </dungeon>

@@ -27,6 +27,7 @@ Match::Match(StatisticheMatchMostro* smm, StatisticheMatchPersonaggio* smp, int 
     contenitore->addWidget(statsP);
 
     setLayout(contenitore);
+    resize(500,350);
 }
 
 void Match::sendAction(QString a){

@@ -37,7 +37,7 @@ public:
     void monsterAttack();
     void endRoundActions();
     void creaNuovoNegozio();
-    void aggiornaDatiPersonaggio();
+    //void aggiornaDatiPersonaggio();
     void setVistaCambiaPersonaggio();
 
 public slots:

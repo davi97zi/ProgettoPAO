@@ -3,7 +3,7 @@
 
 
 MainWindow::MainWindow(QWidget* central, QWidget *parent) : firstWindow(central),
-    QMainWindow(parent) //corretto?
+    QMainWindow(parent)
 {
     resize(500,350);
 

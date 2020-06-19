@@ -69,15 +69,12 @@ void Partita::cambiaPersonaggio(QString s){
 
 //tutta la squadra è morta -> ritorna true se tutta la squadra è stata sconfitta (il mostro ha vinto), else altrimenti (c'è qualche personaggio ancora vivo)
 bool Partita::squadraSconfitta(){
-    bool squadraSconfitta=false;
-    for(Contenitore::Iteratore i= squadra.begin(); i!=squadra.end() && !squadraSconfitta; ++i){
+    for(Contenitore::Iteratore i= squadra.begin(); i!=squadra.end(); ++i){
         qDebug() << "death state personaggio: " << i->getDeathState();
         if(!i->getDeathState())
-            squadraSconfitta=false;
-        else
-            squadraSconfitta=true;
+            return false;
     }
-    return squadraSconfitta;
+    return true;
 }
 
 /*

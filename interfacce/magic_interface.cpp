@@ -2,7 +2,7 @@
 
 //usato da increaselevel
 void MagicInterface::increaseMaxMana(unsigned int addVal){
-    maxMana = addVal;
+    maxMana += addVal;
 }
 
 unsigned int MagicInterface::getMaxMana() const {return maxMana;}

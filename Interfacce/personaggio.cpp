@@ -95,13 +95,13 @@ bool Personaggio::getDeathState() const {return dead;}//in lettura, per il contr
 
 //gain=hp guarita, divineIntervention=is a REZ or NOT
 void Personaggio::receiveHealing(unsigned int gain, bool divineIntervention){//chiamato da controller (O da contenitore?) per aumentare Health (hp= hp+gain) tramite setHP
-    if(dead==divineIntervention){//valori concordanti, guarigione NORM o REZ
+    if(dead == divineIntervention){//valori concordanti, guarigione NORM o REZ
         setHealth(static_cast<int>(gain));
         if(dead)
             resurrect();
-}
+    }
     else{//valori discordanti
-        //ERRORE: non è possibile normale guarigione su cadavere || riportare in vita un personaggio già vivo
+        //
     }
 }
 
