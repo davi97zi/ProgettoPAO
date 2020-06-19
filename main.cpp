@@ -10,7 +10,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
-using namespace std;
+
 
 int main(int argc, char *argv[]){
     //NOTA: critico() FUNZIONA MA VA MESSA LA RIGA SEGUENTE NEL MAIN (O IN PARTITA) PER FARLO FUNZIONARE
@@ -18,27 +18,6 @@ int main(int argc, char *argv[]){
     srand(static_cast<unsigned int>(time(NULL)));
     QApplication a(argc, argv);
 
-
-    /*Soldato* s=new Soldato("ss1", 115);
-    cout<<"s=> "<<s->getBaseAttack()<<' '<<s->getLevel()<<' '<<s->getExpPoint()<<endl;
-    cout<<"s confronto cout=> "<<s->getArmor()<<' '<<s->getBaseAttack()<<' '<<s->getDeathState()<<endl;
-    cout<<"s=> "<<*s<<endl;
-    delete s;
-
-    Soldato* s2=new Soldato("ss2", 0);
-    cout<<"s2=> "<<*s2<<endl;
-
-    Soldato* s3=new Soldato("ss3", 526);
-    cout<<"s3=> "<<*s3<<endl;
-    Mago* m = new Mago("aifseiof", 100);
-    cout <<"mago= "<<*m<< endl;
-
-    Contenitore Pers;
-    Pers.addNodo(s2);
-    Pers.addNodo(s3);
-    Pers.addNodo(m);
-
-    cout<<Pers<<endl;*/
     Controller C;
 
     return a.exec();

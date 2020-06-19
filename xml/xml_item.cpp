@@ -51,14 +51,14 @@ Personaggio *XmlItem::convertiInPersonaggio() const{
     qDebug()<<"entra in convertiinpersonaggio";
     Personaggio* pers=0;
     switch(convertToInt()){
-        case 0: pers= new Arciere(getNome(), (getLivello()-1)*100); break;
-        case 1: pers= new Artificiere(getNome(), (getLivello()-1)*100); break;
-        case 2: pers= new Berserker(getNome(), (getLivello()-1)*100); break;
-        case 3: pers= new Guaritore(getNome(), (getLivello()-1)*100); break;
-        case 4: pers= new Mago(getNome(), (getLivello()-1)*100); break;
-        case 5: pers= new Paladino(getNome(), (getLivello()-1)*100); break;
-        case 6: pers= new Soldato(getNome(), (getLivello()-1)*100); break;
-        case 7: pers= new Tank(getNome(), (getLivello()-1)*100); break;
+        case 0: pers= new Arciere(getNome().toStdString(), (getLivello()-1)*100); break;
+        case 1: pers= new Artificiere(getNome().toStdString(), (getLivello()-1)*100); break;
+        case 2: pers= new Berserker(getNome().toStdString(), (getLivello()-1)*100); break;
+        case 3: pers= new Guaritore(getNome().toStdString(), (getLivello()-1)*100); break;
+        case 4: pers= new Mago(getNome().toStdString(), (getLivello()-1)*100); break;
+        case 5: pers= new Paladino(getNome().toStdString(), (getLivello()-1)*100); break;
+        case 6: pers= new Soldato(getNome().toStdString(), (getLivello()-1)*100); break;
+        case 7: pers= new Tank(getNome().toStdString(), (getLivello()-1)*100); break;
     }
     return pers;
 }

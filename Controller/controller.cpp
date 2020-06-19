@@ -125,8 +125,8 @@ void Controller::stampaRowInfo(int i){
 }
 
 void Controller::creaMatch(){
-    StatisticheMatchMostro* smm = new StatisticheMatchMostro(pMod->getHealthMostro(), pMod->getBAMostro(), pMod->getArmorMostro(), pMod->getNomeMostro(), pMod->getLivelloMostro(), pMod->getExpMostro());
-    smp = new StatisticheMatchPersonaggio(pMod->getHealthPersonaggio(), pMod->getBAPersonaggio(), pMod->getArmorPersonaggio(), pMod->getNomePersonaggio(), pMod->getLivelloPersonaggio(), pMod->getManaPersonaggio());
+    StatisticheMatchMostro* smm = new StatisticheMatchMostro(pMod->getHealthMostro(), pMod->getBAMostro(), pMod->getArmorMostro(), QString::fromStdString(pMod->getNomeMostro()), pMod->getLivelloMostro(), pMod->getExpMostro());
+    smp = new StatisticheMatchPersonaggio(pMod->getHealthPersonaggio(), pMod->getBAPersonaggio(), pMod->getArmorPersonaggio(), QString::fromStdString(pMod->getNomePersonaggio()), pMod->getLivelloPersonaggio(), pMod->getManaPersonaggio());
     Match* m = new Match(smm, smp, pMod->getRound(), pMod->getMonete());
     qDebug() << "Controller::creaMatch() -> monete " << pMod->getMonete();
     qDebug() << "Health mostro: " << pMod->getHealthMostro();
@@ -229,7 +229,7 @@ void Controller::getAction(QString a) try{
             pMod->setTurniA3(3);
         }
     }
-    qDebug()<<pMod->getNomePersonaggio()<<"turni A3 mancanti: "<<pMod->getTurnoA3();
+    qDebug()<<QString::fromStdString(pMod->getNomePersonaggio())<<"turni A3 mancanti: "<<pMod->getTurnoA3();
     monsterAttack();
     endRoundActions();
 }catch(int x){
@@ -340,8 +340,8 @@ void Controller::endRoundActions(){
                 StoricoModello::StoricoModelloItem* partita = new StoricoModello::StoricoModelloItem(QDateTime::currentDateTime().toString(), false, pMod->getRound(), pMod->getMonete());
 
                 for(auto it=pMod->getSquadra().begin(); it!=pMod->getSquadra().end(); ++it){
-                    qDebug() << "Controller::endRoundActions(): passaggio dei parametri al nuovo xmlitem \n" << it->getNome() <<" " << it->getTipoPersonaggio() <<" " << it->getLevel() <<" " << it->getPrezzo();
-                    p = XmlItem(it->getNome(), it->getTipoPersonaggio(), it->getLevel(), it->getPrezzo());
+                    qDebug() << "Controller::endRoundActions(): passaggio dei parametri al nuovo xmlitem \n" << QString::fromStdString(it->getNome()) <<" " << QString::fromStdString(it->getTipoPersonaggio()) <<" " << it->getLevel() <<" " << it->getPrezzo();
+                    p = XmlItem(QString::fromStdString(it->getNome()), QString::fromStdString(it->getTipoPersonaggio()), it->getLevel(), it->getPrezzo());
                     qDebug() << "p.stampaItem() --------------------";
                     p.stampaItem(); //ok
                     qDebug() << "-------------------------";
@@ -375,8 +375,8 @@ void Controller::endRoundActions(){
                 StoricoModello::StoricoModelloItem* partita = new StoricoModello::StoricoModelloItem(QDateTime::currentDateTime().toString(), true, pMod->getRound(), pMod->getMonete());
 
                 for(auto it=pMod->getSquadra().begin(); it!=pMod->getSquadra().end(); ++it){
-                    qDebug() << "Controller::endRoundActions(): passaggio dei parametri al nuovo xmlitem \n" << it->getNome() <<" " << it->getTipoPersonaggio() <<" " << it->getLevel() <<" " << it->getPrezzo();
-                    p = XmlItem(it->getNome(), it->getTipoPersonaggio(), it->getLevel(), it->getPrezzo());
+                    qDebug() << "Controller::endRoundActions(): passaggio dei parametri al nuovo xmlitem \n" << QString::fromStdString(it->getNome()) <<" " << QString::fromStdString(it->getTipoPersonaggio()) <<" " << it->getLevel() <<" " << it->getPrezzo();
+                    p = XmlItem(QString::fromStdString(it->getNome()), QString::fromStdString(it->getTipoPersonaggio()), it->getLevel(), it->getPrezzo());
                     qDebug() << "p.stampaItem() --------------------";
                     p.stampaItem(); //ok
                     qDebug() << "-------------------------";
@@ -429,6 +429,6 @@ void Controller::cambiaPersonaggioController(QString s){
         cont++;
     }
     pMod->cambiaPersonaggio(i->getNome());
-    qDebug()<<pMod->getNomePersonaggio()<<"turni A3 mancanti: "<<pMod->getTurnoA3();
+    qDebug()<<QString::fromStdString(pMod->getNomePersonaggio())<<"turni A3 mancanti: "<<pMod->getTurnoA3();
     creaMatch();
 }

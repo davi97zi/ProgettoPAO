@@ -61,7 +61,7 @@ void Partita::cambiaMostro(Mostro* m2){
     m = m2;
 }
 
-void Partita::cambiaPersonaggio(QString s){
+void Partita::cambiaPersonaggio(string s){
     Contenitore::Iteratore i;
     i = squadra.trovaPersonaggio(s);
     personaggioInUso = i;
@@ -167,7 +167,7 @@ int Partita::getMoneteMostro() const{
     return m->getPrezzo();
 }
 
-QString Partita::getNomeMostro() const{
+string Partita::getNomeMostro() const{
     return m->getNome();
 }
 
@@ -196,7 +196,7 @@ int Partita::getManaPersonaggio() const{
         return p->getMana();
 }
 
-QString Partita::getNomePersonaggio() const{
+string Partita::getNomePersonaggio() const{
     return personaggioInUso->getNome();
 }
 
@@ -245,7 +245,6 @@ void Partita::gestioneTurniAbilita3(){
     for(Contenitore::Iteratore i= squadra.begin(); i!=squadra.end(); ++i){
         if(i->getTurniAbilita3() != 0)
             i->setTurniAbilita3(-1);
-        qDebug()<<i->getNome()<<"turni A3 mancanti: "<<i->getTurniAbilita3();
         DefenceInterface* df = dynamic_cast<DefenceInterface*>(&*i);
         if(df && i->getTurniAbilita3() == 0)
             df->setDefaultArmor();

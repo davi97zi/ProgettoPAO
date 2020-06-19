@@ -1,7 +1,8 @@
 #ifndef PERSONAGGIO_H
 #define PERSONAGGIO_H
 
-#include <QString>
+#include <string>
+using std::string;//va bene o va tolto?
 
 class Personaggio{
 private:
@@ -13,8 +14,8 @@ private:
     unsigned int armor;
     //proposta da healInterf-> aggiungere un campo bool alive x controllare stato, true= is alive, false= is alive
     bool dead;
-    const QString tipoPersonaggio;// dovrebbe essere static? idk
-    const QString nome;
+    const string tipoPersonaggio;// dovrebbe essere static? idk
+    const string nome;
     unsigned int prezzo; //dovrebbe essere const
     short int turniAbilita3;
 
@@ -45,8 +46,8 @@ public:
               unsigned int ba,
               unsigned int exp, // NB sostituito a lv xke quello è calcolato via increaseLevel
               unsigned int a,
-              QString t,
-              QString n,
+              string t,
+              string n,
               unsigned int p):
                  maxHealth(mh),
                  health(static_cast<int>(mh)),
@@ -63,8 +64,8 @@ public:
   virtual ~Personaggio() = default;
 
 
-  QString getTipoPersonaggio()const;
-  QString getNome()const;
+  string getTipoPersonaggio()const;
+  string getNome()const;
   unsigned int getPrezzo() const;
 
   int getHealth() const;

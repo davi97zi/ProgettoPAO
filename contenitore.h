@@ -11,23 +11,6 @@
 class Contenitore{
 friend class Iteratore;
 private:
-    /*class Nodo;
-    class SmartP{
-    public:
-        Nodo* punt;
-        SmartP(Nodo*p=0): punt(p){
-            if (punt)
-                punt->riferimenti++;
-        }
-        SmartP(const SmartP&);
-        ~SmartP();
-        SmartP& operator=(const SmartP&);
-        Nodo& operator*()const;
-        Nodo* operator->()const;
-        bool operator==(const SmartP&)const;
-        bool operator!=(const SmartP&)const;
-    };*/
-
     class Nodo{       
     public:
         Personaggio* info;
@@ -50,11 +33,7 @@ public:
     friend class Contenitore;
     private:
         Nodo* punt;
-        //Serve per usare op--
-        //Contenitore& parent;
     public:
-        //Iteratore(Contenitore& p, Nodo* s=0): punt(s), parent(p) {}
-        //Iteratore(const Iteratore& it, Contenitore& p): punt(it.punt), parent(p) {}
         Iteratore(Nodo* s=0): punt(s) {}
         Iteratore(const Iteratore& it): punt(it.punt) {}
         //IL DISTRUTTORE NON SERVE
@@ -78,7 +57,7 @@ public:
     Iteratore end() const;
     bool vuoto() const;
     //se non lo trova restituisce un iteratore=Contenitore.end()
-    Iteratore trovaPersonaggio(QString nome) const;
+    Iteratore trovaPersonaggio(string nome) const;
 
 
 };

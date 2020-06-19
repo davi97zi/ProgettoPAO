@@ -49,16 +49,6 @@ public:
     void deleteMostro();
     Contenitore getSquadra();
 
-    /*void cambiaPersonaggio(QString nome){
-        if(trovaPersonaggio(nome)->getDeathState()){
-            personaggioInUso= trovaPersonaggio(nome); // contenitore::iteratore & trovaPersonaggio(QString) const in CONTENITORE!
-        }
-        else{
-            //errore eccezione, personaggioInUso non cambia
-        }
-
-    }*/
-
     //MANCA DEFINIZIONE
     void cambiaMostro(Mostro*);
 
@@ -67,7 +57,7 @@ public:
     int getArmorMostro() const;
     int getLivelloMostro() const;
     int getExpMostro() const;
-    QString getNomeMostro() const;
+    string getNomeMostro() const;
     int getMoneteMostro() const;
 
     int getHealthPersonaggio() const;
@@ -75,7 +65,7 @@ public:
     int getArmorPersonaggio() const;
     int getLivelloPersonaggio() const;
     int getManaPersonaggio() const;
-    QString getNomePersonaggio() const;
+    string getNomePersonaggio() const;
 
     int getAbilita1() const;
     int getAbilita2() const;
@@ -90,7 +80,7 @@ public:
     int getMonete() const;
     void setMonete(int);
 
-    void cambiaPersonaggio(QString s);
+    void cambiaPersonaggio(string s);
 
 /*
 f1: dice se ha vinto la PARTITA

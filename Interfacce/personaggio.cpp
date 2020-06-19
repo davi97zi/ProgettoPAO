@@ -54,8 +54,8 @@ void Personaggio::kill(){
     dead=true;
 }
 
-QString Personaggio::getTipoPersonaggio() const{ return tipoPersonaggio;}
-QString Personaggio::getNome() const{ return nome;}
+string Personaggio::getTipoPersonaggio() const{ return tipoPersonaggio;}
+string Personaggio::getNome() const{ return nome;}
 unsigned int Personaggio::getPrezzo() const{return prezzo;}
 
 int Personaggio::getHealth() const{return health;}

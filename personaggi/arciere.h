@@ -14,7 +14,7 @@ protected:
 public:
     /***Il costruttore richiama in automatico il costruttore standard di DpsInterface, che inizializza
     ProbCritico sempre a 20, valutare se togliere il parametro in dps o renderlo variabile***/
-    Arciere(QString nome, unsigned int ex): Personaggio (200, 15, 1, 15, "Arciere", nome, 0), DpsInterface(10){
+    Arciere(string nome, unsigned int ex): Personaggio (200, 15, 1, 15, "Arciere", nome, 0), DpsInterface(10){
         increaseLevel(ex);
     }
     virtual ~Arciere();

@@ -29,7 +29,7 @@ Dungeon::Dungeon(){
 //trova il mostro da combattere alla i-esima battaglia
 Mostro* Dungeon::challengeMonster(int i){
     DungeonItem di = v[i];
-    return new Mostro((di.getLivello()-1)*100, di.getNome(), di.getOro(), di.getExp());
+    return new Mostro((di.getLivello()-1)*100, di.getNome().toStdString(), di.getOro(), di.getExp());
 }
 
 //legge tutti i "mostro" da "dungeon" (file xml)

@@ -58,9 +58,3 @@ unsigned int Mago::avadaKedavra(){	//abilità speciale, costa 3 turni, uccide in
     } else
         throw 5;
 }
-
-//PER TEST
-std::ostream &operator<<(std::ostream &os, const Mago &m)
-{
-    return os<<"arm= "<<m.getArmor()<<" bAtt= "<<m.getBaseAttack()<<" Exp= "<<m.getExpPoint()<<" lvl= "<<m.getLevel();
-}

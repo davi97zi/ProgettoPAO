@@ -24,8 +24,8 @@ void ChangeCharacter::handleButton(){
 QGroupBox* ChangeCharacter::addLayoutPersonaggio(const Personaggio& it, int i){
     QGroupBox * scheda= new QGroupBox("Personaggio" + QString::number(i));
     QVBoxLayout * groupLay= new QVBoxLayout();
-    nome= new QLabel("Nome: " + it.getNome());
-    tipo= new QLabel("Tipo: " + it.getTipoPersonaggio());
+    nome= new QLabel("Nome: " + QString::fromStdString(it.getNome()));
+    tipo= new QLabel("Tipo: " + QString::fromStdString(it.getTipoPersonaggio()));
     livello= new QLabel("Livello: " + QString::number(it.getLevel()));
     health= new QLabel("Health: " + QString::number(it.getHealth()));
     assolda= new QPushButton("Scegli");

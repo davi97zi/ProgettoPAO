@@ -13,7 +13,7 @@ private:
     //per dare BOTTE
     unsigned int ultimateSmite();
 public:
-    Paladino(QString nome, unsigned int ex);
+    Paladino(string nome, unsigned int ex);
 
     bool increaseLevel(unsigned int newExpPoints) override;
 

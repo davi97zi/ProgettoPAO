@@ -11,7 +11,7 @@ protected:
     virtual bool increaseLevel(unsigned int newExpPoint);
 
 public:
-    Tank(QString nome, unsigned int ex): Personaggio(80,6,1,25,"Tank",nome,0), DefenceInterface(25) {   //MaxArmor come MaxMana?
+    Tank(string nome, unsigned int ex): Personaggio(80,6,1,25,"Tank",nome,0), DefenceInterface(25) {   //MaxArmor come MaxMana?
         increaseLevel(ex);
     }
     virtual ~Tank() {}

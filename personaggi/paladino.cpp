@@ -1,6 +1,6 @@
 #include "paladino.h"
 
-Paladino::Paladino(QString nome, unsigned int ex):
+Paladino::Paladino(string nome, unsigned int ex):
     Personaggio(30, 20, 1, 15, "Paladino", nome, 4),
     DefenceInterface(15), HealInterface(){
         increaseLevel(ex);

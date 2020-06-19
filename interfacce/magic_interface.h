@@ -16,7 +16,7 @@ protected:
     virtual void increaseMaxMana(unsigned int addVal);
 
 public:
-    /*MagicInterface(unsigned int mH, unsigned int bA, unsigned int lv, unsigned int a, QString t, QString n, unsigned int p, unsigned int m):
+    /*MagicInterface(unsigned int mH, unsigned int bA, unsigned int lv, unsigned int a, string t, string n, unsigned int p, unsigned int m):
         Personaggio(mH, bA, lv, a, t, n, p), maxMana(m), mana(m) {}*/
     MagicInterface(unsigned int m): maxMana(m), mana(m) {}
 

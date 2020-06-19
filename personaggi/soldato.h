@@ -15,7 +15,7 @@ protected:
 public:
     /***Il costruttore richiama in automatico il costruttore standard di DpsInterface, che inizializza
     ProbCritico sempre a 20, valutare se togliere il parametro in dps***/
-    Soldato(QString nome, unsigned int ex): Personaggio(65, 20, 1, 25, "Soldato", nome, 0), DpsInterface(10){
+    Soldato(string nome, unsigned int ex): Personaggio(65, 20, 1, 25, "Soldato", nome, 0), DpsInterface(10){
         increaseLevel(ex);
     }
     virtual ~Soldato() {}
