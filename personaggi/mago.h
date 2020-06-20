@@ -17,7 +17,7 @@ public:
             increaseLevel(ex);
     }*/
 
-    Mago(string nome, unsigned int ex): Personaggio(40,20,1,15,"Mago",nome,0), MagicInterface(100){
+    Mago(string nome, unsigned int ex): Personaggio(80,20,1,15,"Mago",nome,0), MagicInterface(100){
         increaseLevel(ex);
         setCostoA1(50);
         setCostoA2(80);

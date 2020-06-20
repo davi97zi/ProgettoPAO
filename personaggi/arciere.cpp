@@ -19,9 +19,9 @@ int Arciere::abilita3()
 
 bool Arciere::increaseLevel(unsigned int newExpPoint){//newExpPoint guadagnati dalla vittoria della battaglia
     if(Personaggio::increaseLevel(newExpPoint) == true){
-        increaseMaxHealth(5*getLevel());
+        increaseMaxHealth(10*getLevel());
         increaseArmor(3*getLevel());
-        increaseAttack(6*getLevel());
+        increaseAttack(20*getLevel());
         increaseProbCritico();
         return true;
     }
@@ -32,13 +32,13 @@ bool Arciere::increaseLevel(unsigned int newExpPoint){//newExpPoint guadagnati d
 
 //IL fatto di impedire di usare un metodo per un tot di turni si fa con la GUI
 unsigned int Arciere::frecciaAppuntita() const{
-    return 2*getBaseAttack()*critico()+getLevel();
+    return getBaseAttack()*critico();
 }
 
 unsigned int Arciere::frecciaInfuocata() const{
-    return 3*getBaseAttack()*critico()+getLevel();
+    return 2*getBaseAttack()*critico()+getLevel();
 }
 
 unsigned int Arciere::frecciaPesante() const{
-    return 2*getBaseAttack()*critico()+getLevel()*2;
+    return 3*getBaseAttack()*critico();
 }

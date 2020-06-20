@@ -12,7 +12,7 @@ protected:
     virtual bool increaseLevel(unsigned int newExpPoints);
 public:
     //NB consiglio di aggiungere PREZZO QUI COME ESPLICITO!!!
-    Guaritore(string nome, unsigned int ex): Personaggio(50, 10, 1, 5, "Guaritore", nome, 0), HealInterface(){
+    Guaritore(string nome, unsigned int ex): Personaggio(80, 10, 1, 10, "Guaritore", nome, 0), HealInterface(){
         increaseLevel(ex);
     }
 

@@ -1,9 +1,0 @@
-debug/
-Makefile
-Makefile.Debug
-Makefile.Release
-.qmake
-.qmake.stash
-object_script.ProgettoPAO.Debug
-object_script.ProgettoPAO.Release
-.pro.user

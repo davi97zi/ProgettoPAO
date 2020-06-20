@@ -17,7 +17,7 @@ public:
     //->30*getLevel() per determinare quanti numeri exp vengono passati come bottino
     //mHp,bAtk,exp,arm, type, nome, prz
     //p = oro che da
-    Mostro(unsigned int lv, string n, unsigned int p, int exp): Personaggio(50, 10, lv, 10, "Mostro", n, p){
+    Mostro(unsigned int lv, string n, unsigned int p, int exp): Personaggio(100, 10, lv, 10, "Mostro", n, p){
         increaseLevel(0);
         setExp(exp-getExpPoint());
     }

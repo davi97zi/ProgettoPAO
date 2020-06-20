@@ -2,7 +2,7 @@
 
 bool Mostro::increaseLevel(unsigned int ex){
     if(Personaggio::increaseLevel(ex)){
-        increaseMaxHealth(5*getLevel());
+        increaseMaxHealth(25*getLevel());
         increaseArmor(5*getLevel());
         increaseAttack(5*getLevel());
         return true;
@@ -57,17 +57,17 @@ int Mostro::abilita3()
 
 //abilità
 unsigned int Mostro::attaccoSemplice(){
-    unsigned int x= getBaseAttack()*2*(getLevel()); // NB evitare le divisioni! al lvl 1 possono voler dire che si fanno 0 danni!
+    unsigned int x= getBaseAttack()*2; // NB evitare le divisioni! al lvl 1 possono voler dire che si fanno 0 danni!
     return x;
 }
 
 unsigned int Mostro::morsoVampirico(){
-    unsigned int x= getBaseAttack()*2*(getLevel());
+    unsigned int x= getBaseAttack()*getLevel();
     receiveHealing(x);
     return x;
 }
 
 unsigned int Mostro::attaccoPotente(){
-    unsigned int x= getBaseAttack()*2*(2*getLevel());
+    unsigned int x= getBaseAttack()*2*(getLevel());
     return x;
 }

@@ -1,4 +1,5 @@
 #include "mago.h"
+#include <QDebug>
 
 bool Mago::increaseLevel(unsigned int newExpPoint){//newExpPoint guadagnati dalla vittoria della battaglia
   if(Personaggio::increaseLevel(newExpPoint) == true){

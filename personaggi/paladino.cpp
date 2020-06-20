@@ -1,4 +1,5 @@
 #include "paladino.h"
+#include <QDebug>
 
 Paladino::Paladino(string nome, unsigned int ex):
     Personaggio(30, 20, 1, 15, "Paladino", nome, 4),
@@ -47,6 +48,7 @@ int Paladino::abilita2()
 
 int Paladino::abilita3()
 {
+    qDebug() << "Abilita3 paladino: " << ultimateSmite();
     return static_cast<int>(this->ultimateSmite())*(-1);
 }
 

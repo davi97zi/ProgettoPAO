@@ -8,16 +8,16 @@ class Artificiere : public DpsInterface, public MagicInterface{
 private:
     unsigned int bombardaMaxima();
     unsigned int rainOfSpells();
-    unsigned int autodistruzione();
+    unsigned int distruzione();
 protected:
     virtual bool increaseLevel(unsigned int newExpPoint);
 
 public:
-    Artificiere(string nome, unsigned int ex): Personaggio(40,20,1,15,"Artificiere",nome,0), DpsInterface(10), MagicInterface(80) {
+    Artificiere(string nome, unsigned int ex): Personaggio(100,20,1,10,"Artificiere",nome,0), DpsInterface(10), MagicInterface(100) {
         increaseLevel(ex);
-        setCostoA1(60);
-        setCostoA2(80);
-        setCostoA3(130);
+        setCostoA1(30);
+        setCostoA2(40);
+        setCostoA3(70);
     }
     virtual ~Artificiere() {}
 

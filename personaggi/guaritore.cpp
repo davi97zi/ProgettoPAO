@@ -3,8 +3,8 @@
 
 bool Guaritore::increaseLevel(unsigned int newExpPoint){
     if(Personaggio::increaseLevel(newExpPoint) == true){
-        increaseArmor(2+getLevel());
-        increaseAttack(2*getLevel());
+        increaseArmor(3*getLevel());
+        increaseAttack(5*getLevel());
         increaseMaxHealth(5+getLevel());
         increaseBlessing();//chiama reset con NEWLevel, in entrambi i casi riporta a "zero" il blessing per la prossima BATTAGLIA
         return true;

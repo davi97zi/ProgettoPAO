@@ -400,7 +400,9 @@ void Controller::endRoundActions(){
     else{ //fineRound == false
         //controllo sui turni (per le abilità)
         pMod->gestioneTurniAbilita3();
+        emit updatedArmPersonaggio(pMod->getArmorPersonaggio());
     }
+
 }
 
 void Controller::creaNuovoNegozio(){

@@ -20,4 +20,104 @@
    </avventuriero>
   </squadra>
  </partita>
+ <partita id="1">
+  <data>sab giu 20 14:58:36 2020</data>
+  <stato>Vittoria</stato>
+  <battaglia>5</battaglia>
+  <oro>13</oro>
+  <squadra>
+   <avventuriero>
+    <nome>jerry</nome>
+    <tipo>Mago</tipo>
+    <livello>7</livello>
+    <prezzo>0</prezzo>
+   </avventuriero>
+   <avventuriero>
+    <nome>Magnus Burnsides</nome>
+    <tipo>Tank</tipo>
+    <livello>8</livello>
+    <prezzo>0</prezzo>
+   </avventuriero>
+   <avventuriero>
+    <nome>tommy</nome>
+    <tipo>Soldato</tipo>
+    <livello>9</livello>
+    <prezzo>0</prezzo>
+   </avventuriero>
+   <avventuriero>
+    <nome>tom</nome>
+    <tipo>Artificiere</tipo>
+    <livello>10</livello>
+    <prezzo>0</prezzo>
+   </avventuriero>
+  </squadra>
+ </partita>
+ <partita id="2">
+  <data>sab giu 20 15:22:46 2020</data>
+  <stato>Sconfitta</stato>
+  <battaglia>2</battaglia>
+  <oro>2</oro>
+  <squadra>
+   <avventuriero>
+    <nome>Magnus Burnsides</nome>
+    <tipo>Tank</tipo>
+    <livello>2</livello>
+    <prezzo>0</prezzo>
+   </avventuriero>
+  </squadra>
+ </partita>
+ <partita id="3">
+  <data>sab giu 20 15:28:35 2020</data>
+  <stato>Vittoria</stato>
+  <battaglia>5</battaglia>
+  <oro>15</oro>
+  <squadra>
+   <avventuriero>
+    <nome>tom</nome>
+    <tipo>Tank</tipo>
+    <livello>7</livello>
+    <prezzo>0</prezzo>
+   </avventuriero>
+   <avventuriero>
+    <nome>Magnus Burnsides</nome>
+    <tipo>Tank</tipo>
+    <livello>8</livello>
+    <prezzo>0</prezzo>
+   </avventuriero>
+   <avventuriero>
+    <nome>jerryone</nome>
+    <tipo>Mago</tipo>
+    <livello>9</livello>
+    <prezzo>0</prezzo>
+   </avventuriero>
+  </squadra>
+ </partita>
+ <partita id="4">
+  <data>sab giu 20 16:39:55 2020</data>
+  <stato>Sconfitta</stato>
+  <battaglia>1</battaglia>
+  <oro>0</oro>
+  <squadra>
+   <avventuriero>
+    <nome>Magnus Burnsides</nome>
+    <tipo>Tank</tipo>
+    <livello>1</livello>
+    <prezzo>0</prezzo>
+   </avventuriero>
+  </squadra>
+ </partita>
+ <partita id="5">
+  <data>sab giu 20 16:41:23 2020</data>
+  <stato>Sconfitta</stato>
+  <battaglia>1</battaglia>
+  <oro>0</oro>
+  <squadra>
+   <avventuriero>
+    <nome>Magnus Burnsides</nome>
+    <tipo>Tank</tipo>
+    <livello>1</livello>
+    <prezzo>0</prezzo>
+   </avventuriero>
+  </squadra>
+ </partita>
 </storico>
