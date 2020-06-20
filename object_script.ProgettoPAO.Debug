@@ -20,7 +20,6 @@ INPUT(
 ./debug\storico.o
 ./debug\controller.o
 ./debug\dungeon.o
-./debug\incantesimo.o
 ./debug\taverna.o
 ./debug\change_character.o
 ./debug\info_partita_storico.o

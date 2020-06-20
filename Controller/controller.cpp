@@ -89,7 +89,7 @@ void Controller::slotQualeBottone(QString str){
 
         //2) inserisci i dati nella gui
         //per ogni riga della tabella passa: data, battaglia, #personaggi, monete e risultato
-        for(int i=0; i < sMod->getSize(); i++){
+        for(unsigned int i=0; i < sMod->getSize(); i++){
             storicoGui->addRow(sMod->getPartita(i));
         }
 
@@ -112,7 +112,7 @@ void Controller::remakeMain(){
 }
 
 void Controller::stampaRowInfo(int i){
-    StoricoModello::StoricoModelloItem partitaMod = sMod->getPartita(i);
+    StoricoModello::StoricoModelloItem partitaMod = sMod->getPartita(static_cast<unsigned int>(i));
     InfoPartitaStorico * partitaGui= new InfoPartitaStorico;
     qDebug() << "size squadra: " << partitaMod.getSizeSquadra();
     for(int k=0; k<partitaMod.getSizeSquadra(); k++){
@@ -165,13 +165,13 @@ void Controller::creaPersonaggio(int i){
 
     if(pMod==0){
         assoldabili= taverna.trovaTuttiLivello(1);
-        base=assoldabili[i];
+        base=assoldabili[static_cast<unsigned int>(i)];
         pMod=new Partita(base.convertiInPersonaggio());
         getMostro(pMod->getRound()-1);
         creaMatch();
     }else{
         assoldabili= taverna.trovaTuttiLivello(pMod->getRound());
-        base=assoldabili[i];
+        base=assoldabili[static_cast<unsigned int>(i)];
         if(base.getPrezzo() > pMod->getMonete()){
             //DA INSERIRE IN UN CATCH
             QMessageBox* error = new QMessageBox(mw);
@@ -341,7 +341,7 @@ void Controller::endRoundActions(){
 
                 for(auto it=pMod->getSquadra().begin(); it!=pMod->getSquadra().end(); ++it){
                     qDebug() << "Controller::endRoundActions(): passaggio dei parametri al nuovo xmlitem \n" << QString::fromStdString(it->getNome()) <<" " << QString::fromStdString(it->getTipoPersonaggio()) <<" " << it->getLevel() <<" " << it->getPrezzo();
-                    p = XmlItem(QString::fromStdString(it->getNome()), QString::fromStdString(it->getTipoPersonaggio()), it->getLevel(), it->getPrezzo());
+                    p = XmlItem(QString::fromStdString(it->getNome()), QString::fromStdString(it->getTipoPersonaggio()), static_cast<int>(it->getLevel()), static_cast<int>(it->getPrezzo()));
                     qDebug() << "p.stampaItem() --------------------";
                     p.stampaItem(); //ok
                     qDebug() << "-------------------------";
@@ -376,7 +376,7 @@ void Controller::endRoundActions(){
 
                 for(auto it=pMod->getSquadra().begin(); it!=pMod->getSquadra().end(); ++it){
                     qDebug() << "Controller::endRoundActions(): passaggio dei parametri al nuovo xmlitem \n" << QString::fromStdString(it->getNome()) <<" " << QString::fromStdString(it->getTipoPersonaggio()) <<" " << it->getLevel() <<" " << it->getPrezzo();
-                    p = XmlItem(QString::fromStdString(it->getNome()), QString::fromStdString(it->getTipoPersonaggio()), it->getLevel(), it->getPrezzo());
+                    p = XmlItem(QString::fromStdString(it->getNome()), QString::fromStdString(it->getTipoPersonaggio()), static_cast<int>(it->getLevel()), static_cast<int>(it->getPrezzo()));
                     qDebug() << "p.stampaItem() --------------------";
                     p.stampaItem(); //ok
                     qDebug() << "-------------------------";

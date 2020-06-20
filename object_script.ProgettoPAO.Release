@@ -20,7 +20,6 @@ INPUT(
 ./release\storico.o
 ./release\controller.o
 ./release\dungeon.o
-./release\incantesimo.o
 ./release\taverna.o
 ./release\change_character.o
 ./release\info_partita_storico.o

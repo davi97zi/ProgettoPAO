@@ -7,10 +7,10 @@ Negozio_personaggio::Negozio_personaggio(int i, QString n, QString t, int l, int
     //id= i;
 
     //popola i label
-    nome= new QLabel(n);
-    tipo= new QLabel(t);
-    livello= new QLabel(QString::number(l));
-    prezzo= new QLabel(QString::number(p));
+    nome= new QLabel("Nome: " + n);
+    tipo= new QLabel("Tipo: " + t);
+    livello= new QLabel("Livello: " + QString::number(l));
+    prezzo= new QLabel("Prezzo: " + QString::number(p));
 
     //crea il bottone
     assolda= new QPushButton("Assolda");
@@ -21,7 +21,7 @@ Negozio_personaggio::Negozio_personaggio(int i, QString n, QString t, int l, int
     connect(assolda, SIGNAL(released()), this, SLOT(comunicaPersonaggio()));
 
     //crea il groupbox
-    QGroupBox * scheda= new QGroupBox("Personaggio");
+    QGroupBox * scheda= new QGroupBox("Personaggio" + QString::number(i+1));
 
     //inserisci tutto in layout
     QVBoxLayout * groupLay= new QVBoxLayout();
