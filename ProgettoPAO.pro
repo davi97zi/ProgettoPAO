@@ -46,7 +46,6 @@ SOURCES += \
     gui/storico.cpp \
     controller/controller.cpp \
     xml/dungeon.cpp \
-    xml/incantesimo.cpp \
     xml/taverna.cpp \
     gui/change_character.cpp \
     gui/info_partita_storico.cpp \
@@ -83,7 +82,6 @@ HEADERS += \
     gui/negozio_widget.h \
     gui/storico.h \
     controller/controller.h \
-    xml/incantesimo.h \
     xml/taverna.h \
     xml/dungeon.h \
     gui/change_character.h \
