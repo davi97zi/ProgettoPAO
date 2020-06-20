@@ -30,8 +30,8 @@ void Taverna::stampaTutti()const{
 std::vector<XmlItem> Taverna::trovaTuttiLivello(int liv){
     std::vector<XmlItem> res;
     for(int i= (liv-1)*3; i<liv*3; i++){
-        if(v[i].getLivello()==liv){
-            res.push_back(v[i]);
+        if(static_cast<int>(v[static_cast<unsigned int>(i)].getLivello())==liv){
+            res.push_back(v[static_cast<unsigned int>(i)]);
         }
     }
     return res;
@@ -47,14 +47,7 @@ XmlItem Taverna::ingaggia(QString nome, int prezzo){
             found=true;
         }
     }
-    if(found){
-        qDebug() << "congratulations congratulations congratulations! " << res.getNome() << " is part of your party!";
-        return res;
-    }
-    else{
-        qDebug() << "there is no one there with that name or that asks that amount of money";
-        //error found! not enough money or the adventurer is not in the tavern (wrong name)
-    }
+    return res;
 }
 
 //legge un "adventuriero" da "taverna" (file xml)
@@ -70,7 +63,7 @@ void Taverna::readTheRoom(const QDomElement & root){
 void Taverna::readTheAdventurer(const QDomElement & adventurer){
     //dove metto i dati raccolti:
     QString nomeAdv, tipoAdv;
-    int livelloAdv, prezzoAdv;
+    int livelloAdv=0, prezzoAdv=0;
     QDomElement charAdv=adventurer.firstChild().toElement();// entro in primo figlio
     while(!charAdv.isNull()){//leggo le caratteristiche dell'avventuriero
         if(charAdv.tagName()=="nome"){

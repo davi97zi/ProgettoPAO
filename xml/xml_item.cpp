@@ -18,6 +18,7 @@ int XmlItem::convertToInt() const{
         return 6;
     if(getTipo()=="Tank")
         return 7;
+    return -1;
 }
 
 XmlItem::XmlItem(){}
@@ -40,7 +41,7 @@ QString XmlItem::getTipo() const{
 }
 
 unsigned int XmlItem::getLivello() const{
-    return livello;
+    return static_cast<unsigned int>(livello);
 }
 
 int XmlItem::getPrezzo() const{

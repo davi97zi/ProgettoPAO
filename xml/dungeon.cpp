@@ -28,8 +28,8 @@ Dungeon::Dungeon(){
 
 //trova il mostro da combattere alla i-esima battaglia
 Mostro* Dungeon::challengeMonster(int i){
-    DungeonItem di = v[i];
-    return new Mostro((di.getLivello()-1)*100, di.getNome().toStdString(), di.getOro(), di.getExp());
+    DungeonItem di = v[static_cast<unsigned int>(i)];
+    return new Mostro((static_cast<unsigned int>(di.getLivello())-1)*100, di.getNome().toStdString(), static_cast<unsigned int>(di.getOro()), di.getExp());
 }
 
 //legge tutti i "mostro" da "dungeon" (file xml)
@@ -46,7 +46,7 @@ void  Dungeon::fillTheDungeon(const QDomElement & root){
 void  Dungeon::faceTheMonster(const QDomElement & monster){
     //dove metto i dati raccolti:
     QString nomeMon, descrizioneMon;
-    int livelloMon, expMon, oroMon;
+    int livelloMon=0, expMon=0, oroMon=0;
     QDomElement charMon=monster.firstChild().toElement();// entro in primo figlio
     while(!charMon.isNull()){//leggo le caratteristiche del mostro
         if(charMon.tagName()=="nome"){

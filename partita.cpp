@@ -32,13 +32,13 @@ void Partita::attaccaMostro(int i){
 
 void Partita::guarisciTutti(int i){
     for(Contenitore::Iteratore it=squadra.begin(); it!=squadra.end(); ++it){
-        it->receiveHealing(i);
+        it->receiveHealing(static_cast<unsigned int>(i));
     }
 }
 
 void Partita::resuscita(int i){
     for(Contenitore::Iteratore it=squadra.begin(); it!=squadra.end(); ++it){
-        it->receiveHealing(i, true);
+        it->receiveHealing(static_cast<unsigned int>(i), true);
     }
 }
 
@@ -125,7 +125,7 @@ void Partita::deleteMostro(){
 }
 
 
-short Partita::getTurnoA3() const
+int Partita::getTurnoA3() const
 {
     return personaggioInUso->getTurniAbilita3();
 }
@@ -148,23 +148,23 @@ int Partita::getHealthMostro() const{
 }
 
 int Partita::getBAMostro() const{
-    return m->getBaseAttack();
+    return static_cast<int>(m->getBaseAttack());
 }
 
 int Partita::getArmorMostro() const{
-    return m->getArmor();
+    return static_cast<int>(m->getArmor());
 }
 
 int Partita::getLivelloMostro() const{
-    return m->getLevel();
+    return static_cast<int>(m->getLevel());
 }
 
 int Partita::getExpMostro() const{
-    return m->getExpPoint();
+    return static_cast<int>(m->getExpPoint());
 }
 
 int Partita::getMoneteMostro() const{
-    return m->getPrezzo();
+    return static_cast<int>(m->getPrezzo());
 }
 
 string Partita::getNomeMostro() const{
@@ -176,15 +176,15 @@ int Partita::getHealthPersonaggio() const{
 }
 
 int Partita::getBAPersonaggio() const{
-    return personaggioInUso->getBaseAttack();
+    return static_cast<int>(personaggioInUso->getBaseAttack());
 }
 
 int Partita::getArmorPersonaggio() const{
-    return personaggioInUso->getArmor();
+    return static_cast<int>(personaggioInUso->getArmor());
 }
 
 int Partita::getLivelloPersonaggio() const{
-    return personaggioInUso->getLevel();
+    return static_cast<int>(personaggioInUso->getLevel());
 }
 
 int Partita::getManaPersonaggio() const{
@@ -193,14 +193,14 @@ int Partita::getManaPersonaggio() const{
     if(!p)
         return 0;
     else
-        return p->getMana();
+        return static_cast<int>(p->getMana());
 }
 
 string Partita::getNomePersonaggio() const{
     return personaggioInUso->getNome();
 }
 
-int Partita::getRound() const{
+unsigned int Partita::getRound() const{
     return battaglia;
 }
 
@@ -210,11 +210,11 @@ void Partita::setRound()
 }
 
 int Partita::getMonete() const{
-    return oro;
+    return static_cast<int>(oro);
 }
 
 void Partita::setMonete(int m){
-    oro = oro - m;
+    oro = oro - static_cast<unsigned int>(m);
 }
 
 int Partita::getAbilita1() const{

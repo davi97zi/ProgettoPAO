@@ -75,7 +75,7 @@ public:
     int getAbilitaM2() const;
     int getAbilitaM3() const;
 
-    int getRound() const;
+    unsigned int getRound() const;
     void setRound();
     int getMonete() const;
     void setMonete(int);
@@ -95,7 +95,7 @@ f3: dice se la battaglia è in corso o è finita?
 
     bool finePartita();
 
-    short int getTurnoA3() const;
+    int getTurnoA3() const;
     void setTurniA3(int);
     //void resetArmor();
 

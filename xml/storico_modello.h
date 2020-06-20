@@ -34,7 +34,7 @@ public:
         QString getVittoria() const;
         QString getBattaglia() const;
         QString getOro() const;
-        int getSizeSquadra() const;
+        unsigned int getSizeSquadra() const;
         XmlItem getAvv(int i)const;
 
         void setId(unsigned int s);
@@ -81,46 +81,6 @@ private:
     void aggiungiAvventurieroInXml(QDomDocument& doc, QDomElement& root, XmlItem adv)const;
 
     void addSquadra(QDomDocument& document, StoricoModelloItem s, QDomElement & newSquadra)const;
-
-/*
-    void aggiungiPartitaInXml(QDomDocument& doc, QDomElement& root, int i)const{// make a node from info at StoricoModelloPartite[i]
-
-        StoricoModelloItem s= StoricoModelloPartite[i];
-        //crea nuovo elemento
-        QDomElement newChild= doc.createElement("partita");
-        //assegna id
-        newChild.setAttribute("id", i+1);
-        //crea gli elementi caratteristiche e popolali
-        QDomElement newData= doc.createElement("data");
-        newData.appendChild( doc.createTextNode(s.data));
-
-        QDomElement newStato= doc.createElement("stato");
-        newStato.appendChild( doc.createTextNode(s.vittoria? "vittoria" : "sconfitta"));
-
-        QDomElement newBattaglia= doc.createElement("battaglia");
-        newBattaglia.appendChild( doc.createTextNode(QString::number(s.battaglia)));
-
-        QDomElement newOro= doc.createElement("oro");
-        newOro.appendChild((doc.createTextNode(QString::number(s.oro))));
-
-        QDomElement newSquadra= doc.createElement("squadra");
-
-        //inserisci gli avventurieri, something
-        for(auto it= s.squadra.begin(); it!=s.squadra.end(); it++){
-            aggiungiAvventurieroInXml(doc, newSquadra, *it);
-        }
-
-        //assembla i pezzi
-        newChild.appendChild(newData);
-        newChild.appendChild(newStato);
-        newChild.appendChild(newBattaglia);
-        newChild.appendChild(newOro);
-        newChild.appendChild(newSquadra);
-
-        //aggiungi a root
-        root.appendChild(newChild);
-    }
-*/
 
 };
 

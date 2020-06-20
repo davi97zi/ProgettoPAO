@@ -21,7 +21,7 @@ void Personaggio::setLevel(unsigned int newLevel){
 void Personaggio::setHealth(int damage){//proposta da healInterf:(int+)= guarigione; (int-)=colpo subito; 0=Dead==true
     health=health + damage;
     if(static_cast<int>(maxHealth)< health){ //NB correzione funzione per evitare OVERHEALING
-        health=maxHealth;
+        health=static_cast<int>(maxHealth);
     }
     if(health<=0){
         kill();
@@ -36,7 +36,7 @@ void Personaggio::setExp(unsigned int ex){
 
 void Personaggio::setArmor(int arm)
 {
-    armor+=arm;
+    armor+=static_cast<unsigned int>(arm);
 }
 
 
@@ -65,7 +65,7 @@ unsigned int Personaggio::getLevel() const{return level;}
 unsigned int Personaggio::getExpPoint() const{return expPoint;}
 unsigned int Personaggio::getArmor() const{return armor;}
 
-short Personaggio::getTurniAbilita3() const{
+int Personaggio::getTurniAbilita3() const{
     return turniAbilita3;
 }
 

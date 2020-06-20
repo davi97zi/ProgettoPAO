@@ -17,7 +17,7 @@ private:
     const string tipoPersonaggio;// dovrebbe essere static? idk
     const string nome;
     unsigned int prezzo; //dovrebbe essere const
-    short int turniAbilita3;
+    int turniAbilita3;
 
 protected:
     void increaseMaxHealth(unsigned int addVal);
@@ -75,7 +75,7 @@ public:
   unsigned int getExpPoint() const;
   unsigned int getArmor() const;
 
-  short int getTurniAbilita3() const;
+  int getTurniAbilita3() const;
   void setTurniAbilita3(int);
 
   //proposta da healInterf->per modificare i campi specifici delle interfaccie deve essere virtuale! && potrebbe ritornare se è avvenuto o no un cambio lvl wt a BOOL

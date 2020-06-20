@@ -9,7 +9,7 @@ private:
     unsigned int maxArmor;
 
 protected:
-    virtual unsigned int reducedDamageWithArmor(unsigned int damage) const;
+    virtual int reducedDamageWithArmor(int damage) const;
     //increaseArmor utilizzato in increaseLevel
     virtual void increaseArmor(unsigned int valAdd);
 

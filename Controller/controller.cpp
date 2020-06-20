@@ -115,7 +115,7 @@ void Controller::stampaRowInfo(int i){
     StoricoModello::StoricoModelloItem partitaMod = sMod->getPartita(static_cast<unsigned int>(i));
     InfoPartitaStorico * partitaGui= new InfoPartitaStorico;
     qDebug() << "size squadra: " << partitaMod.getSizeSquadra();
-    for(int k=0; k<partitaMod.getSizeSquadra(); k++){
+    for(int k=0; k<static_cast<int>(partitaMod.getSizeSquadra()); k++){
         QString nome= partitaMod.getAvv(k).getNome(),
                 tipo= partitaMod.getAvv(k).getTipo(),
                 livello= QString::number(partitaMod.getAvv(k).getLivello());
@@ -127,7 +127,7 @@ void Controller::stampaRowInfo(int i){
 void Controller::creaMatch(){
     StatisticheMatchMostro* smm = new StatisticheMatchMostro(pMod->getHealthMostro(), pMod->getBAMostro(), pMod->getArmorMostro(), QString::fromStdString(pMod->getNomeMostro()), pMod->getLivelloMostro(), pMod->getExpMostro());
     smp = new StatisticheMatchPersonaggio(pMod->getHealthPersonaggio(), pMod->getBAPersonaggio(), pMod->getArmorPersonaggio(), QString::fromStdString(pMod->getNomePersonaggio()), pMod->getLivelloPersonaggio(), pMod->getManaPersonaggio());
-    Match* m = new Match(smm, smp, pMod->getRound(), pMod->getMonete());
+    Match* m = new Match(smm, smp, static_cast<int>(pMod->getRound()), pMod->getMonete());
     qDebug() << "Controller::creaMatch() -> monete " << pMod->getMonete();
     qDebug() << "Health mostro: " << pMod->getHealthMostro();
     mw->setCentralWidget(m);
@@ -167,10 +167,10 @@ void Controller::creaPersonaggio(int i){
         assoldabili= taverna.trovaTuttiLivello(1);
         base=assoldabili[static_cast<unsigned int>(i)];
         pMod=new Partita(base.convertiInPersonaggio());
-        getMostro(pMod->getRound()-1);
+        getMostro(static_cast<int>(pMod->getRound())-1);
         creaMatch();
     }else{
-        assoldabili= taverna.trovaTuttiLivello(pMod->getRound());
+        assoldabili= taverna.trovaTuttiLivello(static_cast<int>(pMod->getRound()));
         base=assoldabili[static_cast<unsigned int>(i)];
         if(base.getPrezzo() > pMod->getMonete()){
             //DA INSERIRE IN UN CATCH
@@ -181,7 +181,7 @@ void Controller::creaPersonaggio(int i){
             error->show();
         } else{
             pMod->aggiungiPersonaggio(base.convertiInPersonaggio());
-            getMostro(pMod->getRound()-1);
+            getMostro(static_cast<int>(pMod->getRound())-1);
             pMod->setMonete(base.getPrezzo());
             creaMatch();
         }
@@ -337,7 +337,7 @@ void Controller::endRoundActions(){
                 sMod = new StoricoModello();
 
                 XmlItem p;
-                StoricoModello::StoricoModelloItem* partita = new StoricoModello::StoricoModelloItem(QDateTime::currentDateTime().toString(), false, pMod->getRound(), pMod->getMonete());
+                StoricoModello::StoricoModelloItem* partita = new StoricoModello::StoricoModelloItem(QDateTime::currentDateTime().toString(), false, static_cast<int>(pMod->getRound()), pMod->getMonete());
 
                 for(auto it=pMod->getSquadra().begin(); it!=pMod->getSquadra().end(); ++it){
                     qDebug() << "Controller::endRoundActions(): passaggio dei parametri al nuovo xmlitem \n" << QString::fromStdString(it->getNome()) <<" " << QString::fromStdString(it->getTipoPersonaggio()) <<" " << it->getLevel() <<" " << it->getPrezzo();
@@ -372,7 +372,7 @@ void Controller::endRoundActions(){
                 sMod = new StoricoModello();
 
                 XmlItem p;
-                StoricoModello::StoricoModelloItem* partita = new StoricoModello::StoricoModelloItem(QDateTime::currentDateTime().toString(), true, pMod->getRound(), pMod->getMonete());
+                StoricoModello::StoricoModelloItem* partita = new StoricoModello::StoricoModelloItem(QDateTime::currentDateTime().toString(), true, static_cast<int>(pMod->getRound()), pMod->getMonete());
 
                 for(auto it=pMod->getSquadra().begin(); it!=pMod->getSquadra().end(); ++it){
                     qDebug() << "Controller::endRoundActions(): passaggio dei parametri al nuovo xmlitem \n" << QString::fromStdString(it->getNome()) <<" " << QString::fromStdString(it->getTipoPersonaggio()) <<" " << it->getLevel() <<" " << it->getPrezzo();
@@ -407,7 +407,7 @@ void Controller::endRoundActions(){
 
 void Controller::creaNuovoNegozio(){
     Taverna taverna;
-    std::vector<XmlItem> assoldabili= taverna.trovaTuttiLivello(pMod->getRound());
+    std::vector<XmlItem> assoldabili= taverna.trovaTuttiLivello(static_cast<int>(pMod->getRound()));
     qDebug() << "Controller::creaNuovoNegozio() -> monete" << pMod->getMonete();
     Negozio_widget* newNegozio = new Negozio_widget(assoldabili, pMod->getMonete(), false, mw);
     mw->setCentralWidget(newNegozio);
@@ -418,7 +418,7 @@ void Controller::creaNuovoNegozio(){
 
 
 void Controller::createNewMatch(){
-    getMostro(pMod->getRound()-1);
+    getMostro(static_cast<int>(pMod->getRound())-1);
     creaMatch();
 }
 

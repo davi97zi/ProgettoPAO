@@ -71,7 +71,7 @@ void StoricoModello::saveStoricoModello()const{
     qDebug() << "Sto cercando " << rootElement.lastChildElement().tagName();
 
     unsigned int StoricoModelloSize=StoricoModelloPartite.size();
-    unsigned int xmlSize= rootElement.childNodes().size();
+    unsigned int xmlSize= static_cast<unsigned int>(rootElement.childNodes().size());
     if(xmlSize==0){
         //inserisco il primo elemento nel file
         for(unsigned int i=0; i<StoricoModelloSize; i++){
@@ -114,7 +114,7 @@ void StoricoModello::saveStoricoModello()const{
         }
     }
     else{
-        unsigned int lastElementId= rootElement.lastChildElement().attribute("id").toInt();
+        unsigned int lastElementId= static_cast<unsigned int>(rootElement.lastChildElement().attribute("id").toInt());
         //aggiungi il prossimo elemento
         for(unsigned int i=lastElementId+1; i<StoricoModelloSize; i++){
             StoricoModelloItem s= StoricoModelloPartite[i];
@@ -173,7 +173,7 @@ void StoricoModello::saveStoricoModello()const{
 XmlItem StoricoModello::readTheAdventurer(const QDomElement &adventurer){//NB! REFACTOR!!! +++ SIMILE A FUN PRESENTE IN TAVERNA.H
     //dove metto i dati raccolti:
     QString nomeAdv, tipoAdv;
-    int livelloAdv, prezzoAdv;
+    int livelloAdv=0, prezzoAdv=0;
     //
     QDomElement charAdv=adventurer.firstChild().toElement();// entro in primo figlio
     while(!charAdv.isNull()){//leggo le caratteristiche dell'avventuriero
@@ -198,8 +198,8 @@ XmlItem StoricoModello::readTheAdventurer(const QDomElement &adventurer){//NB! R
 void StoricoModello::readTheArchive(QDomElement & root){
     //dove metto i dati raccolti:
     QString dataPart;
-    bool statoPart;
-    int battagliaPart, oroPart, idPart;
+    bool statoPart=true;
+    int battagliaPart=0, oroPart=0, idPart=0;
     std::vector<XmlItem> squadraPart; //estrai Item da Negozio
 
     //entra in primo figlio (partita)
@@ -242,7 +242,7 @@ void StoricoModello::readTheArchive(QDomElement & root){
             charPart=charPart.nextSibling().toElement();
         }
         //scrivo caratteristiche in nuovo item
-        StoricoModelloItem nuovaPart(idPart, dataPart, statoPart, battagliaPart, oroPart, squadraPart);
+        StoricoModelloItem nuovaPart(static_cast<unsigned int>(idPart), dataPart, statoPart, battagliaPart, oroPart, squadraPart);
         StoricoModelloPartite.push_back(nuovaPart);
         //passo alla partita successiva E azzeri la squadra
         partita= partita.nextSibling().toElement();
@@ -277,7 +277,7 @@ void StoricoModello::aggiungiAvventurieroInXml(QDomDocument &doc, QDomElement& r
 void StoricoModello::addSquadra(QDomDocument &document, StoricoModello::StoricoModelloItem s, QDomElement &newSquadra) const{
     qDebug() << "StoricoModello::addSquadra -> newSquadra.tagName(): " << newSquadra.tagName();
     qDebug() << "StoricoModello::addSquadra -> newSquadra.size(): " << s.getSizeSquadra();
-    for(int i=0; i<s.getSizeSquadra(); i++){
+    for(int i=0; i<static_cast<int>(s.getSizeSquadra()); i++){
         QDomElement adv=document.createElement("avventuriero");
         aggiungiAvventurieroInXml(document, adv, s.getAvv(i));
         newSquadra.appendChild(adv);
@@ -313,9 +313,9 @@ QString StoricoModello::StoricoModelloItem::getBattaglia() const{ return QString
 
 QString StoricoModello::StoricoModelloItem::getOro() const{ return QString::number(oro);}
 
-int StoricoModello::StoricoModelloItem::getSizeSquadra() const{ return squadra.size();}
+unsigned int StoricoModello::StoricoModelloItem::getSizeSquadra() const{ return squadra.size();}
 
-XmlItem StoricoModello::StoricoModelloItem::getAvv(int i) const{ qDebug() << "squadra[" << i <<"] :" << squadra[i].getNome(); return squadra[i];}
+XmlItem StoricoModello::StoricoModelloItem::getAvv(int i) const{ qDebug() << "squadra[" << i <<"] :" << squadra[static_cast<unsigned int>(i)].getNome(); return squadra[static_cast<unsigned int>(i)];}
 
 void StoricoModello::StoricoModelloItem::setId(unsigned int s){ id= s;}
 
