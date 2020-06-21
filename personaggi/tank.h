@@ -11,12 +11,10 @@ protected:
     virtual bool increaseLevel(unsigned int newExpPoint);
 
 public:
-    Tank(string nome, unsigned int ex): Personaggio(80,6,1,25,"Tank",nome,0), DefenceInterface(25) {   //MaxArmor come MaxMana?
+    Tank(string nome, unsigned int ex): Personaggio(110,8,1,25,"Tank",nome,0), DefenceInterface(25) {
         increaseLevel(ex);
     }
     virtual ~Tank() {}
-
-
 
     int abilita1();
     int abilita2();

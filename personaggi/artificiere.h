@@ -13,7 +13,7 @@ protected:
     virtual bool increaseLevel(unsigned int newExpPoint);
 
 public:
-    Artificiere(string nome, unsigned int ex): Personaggio(100,20,1,10,"Artificiere",nome,0), DpsInterface(10), MagicInterface(100) {
+    Artificiere(string nome, unsigned int ex): Personaggio(80,20,1,10,"Artificiere",nome,0), DpsInterface(10), MagicInterface(100) {
         increaseLevel(ex);
         setCostoA1(30);
         setCostoA2(40);

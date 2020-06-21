@@ -14,21 +14,21 @@ unsigned int HealInterface::askForBlessing(){//chiamato per usare il blessing ac
     return result;
 }
 
-void HealInterface::increaseBlessing(){//chiamato da increaseLevel->(!) must be VIRTUAL! al salire di livello
-    resetBlessing();//... RIDONDANZA O CHIAREZZA???
+void HealInterface::increaseBlessing(){
+    resetBlessing();
 }
 
-unsigned int HealInterface::getBlessing()const{//ritorna Blessing come VALORE IN LETTURA, usato per fare check di valore
+unsigned int HealInterface::getBlessing()const{
     return blessing;
 }
 
-unsigned int HealInterface::pray(bool use){// può essere usato x accumulare blessing tramite preghiere O per fare "un azione benedetta dalla divinità" azzerando blessing
-    if(!use){// add holy juice to tank
+unsigned int HealInterface::pray(bool use){// può essere usato x accumulare blessing
+    if(!use){
         prayForBlessing();
         return 0;
     }
-    else{//use holy juice
-        unsigned int smite=blessing;//valore da ritornare
+    else{
+        unsigned int smite=blessing;
         resetBlessing();
         return smite;
     }

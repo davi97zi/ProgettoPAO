@@ -21,7 +21,7 @@ private:
 public:
     explicit Negozio_widget(std::vector<XmlItem> assoldabili , int m, bool inizio= false, QWidget *parent = nullptr);
     void setPersonaggioNegozio(int quale, QString n, QString t, int l, int p);
-    ~Negozio_widget(){qDebug() << "widget eliminato";}
+    ~Negozio_widget(){}
 
 signals:
     void personaggioAcquistato(int);

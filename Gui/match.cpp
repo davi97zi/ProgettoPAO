@@ -1,5 +1,4 @@
 #include "match.h"
-#include <QDebug>
 
 
 Match::Match(StatisticheMatchMostro* smm, StatisticheMatchPersonaggio* smp, int t, int m, QWidget* parent): QWidget(parent){

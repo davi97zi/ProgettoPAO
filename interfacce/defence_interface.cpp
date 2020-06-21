@@ -1,7 +1,6 @@
 #include "defence_interface.h"
 
 
-
 int DefenceInterface::reducedDamageWithArmor(int damage) const {
     return damage - (damage*static_cast<int>(getArmor()))/100;
 }
@@ -9,8 +8,6 @@ int DefenceInterface::reducedDamageWithArmor(int damage) const {
 void DefenceInterface::increaseArmor(unsigned int valAdd){
     setArmor(static_cast<int>(valAdd));
 }
-
-
 
 void DefenceInterface::buffArmor(){
     setArmor(15*static_cast<int>(getLevel()));

@@ -1,33 +1,21 @@
 #ifndef TAVERNA_H
 #define TAVERNA_H
 
-#include <vector> //TEMP!
+#include <vector>
 #include <QFile>
 #include <QtXml>
 #include "xml_item.h"
 #include "../interfacce/personaggio.h"
 
-#include <QDebug>
 
 class Taverna{
 private:
     std::vector<XmlItem> v;
 
-    //legge un "adventuriero" da "taverna" (file xml)
+    //legge un "avventuriero" da "taverna" (file xml)
     void readTheRoom(const QDomElement & root);
 
     void readTheAdventurer(const QDomElement & adventurer);
-
-    /*void ingaggiaAdv(QString nome, int gold){
-        std::vector<XmlItem>::iterator it=v.begin();
-        while(it!=v.end() && it->nome!= nome){
-            qDebug() << it->nome;
-            it++;
-        }
-        if(it!=v.end() && gold==it->prezzo){
-            v.erase(it);
-        }
-    }*/
 
 public:
 
@@ -35,7 +23,7 @@ public:
     Taverna();
     void stampaTutti()const;
 
-    //ritorna tutti i personaggi di livello liv (ok?)
+    //ritorna tutti i personaggi di livello liv
     std::vector<XmlItem> trovaTuttiLivello(int liv);
 
     XmlItem ingaggia(QString nome, int prezzo);

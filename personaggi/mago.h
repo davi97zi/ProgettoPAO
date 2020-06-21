@@ -12,12 +12,7 @@ protected:
     virtual bool increaseLevel(unsigned int newExpPoint);
 
 public:
-    /*Mago(string nome, unsigned int ex): MagicInterface(40,20,1,15,"Mago",nome,1,100){ //ultimo parametro = maxMana iniziale
-        while(ex >= 100)
-            increaseLevel(ex);
-    }*/
-
-    Mago(string nome, unsigned int ex): Personaggio(80,20,1,15,"Mago",nome,0), MagicInterface(100){
+    Mago(string nome, unsigned int ex): Personaggio(85,20,1,9,"Mago",nome,0), MagicInterface(100){
         increaseLevel(ex);
         setCostoA1(50);
         setCostoA2(80);
@@ -26,13 +21,9 @@ public:
     virtual ~Mago() {}
 
 
-
     int abilita1();
     int abilita2();
     int abilita3();
 };
-
-//PER TEST
-std::ostream& operator<<(std::ostream&, const Mago&);
 
 #endif // MAGO_H

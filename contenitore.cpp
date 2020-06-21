@@ -40,7 +40,6 @@ void Contenitore::addNodo(Personaggio *p){
     Nodo* n=new Nodo(p,first,0);
     first=n;
     if(first->next){
-        qDebug()<<"entra nell'if";
         first->next->prev=first;
     }
 }

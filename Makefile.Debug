@@ -492,7 +492,6 @@ debug/moc_info_match.cpp: C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtWidgets/QWidg
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtWidgets/qgridlayout.h \
 		interfacce/personaggio.h \
 		personaggi/mostro.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/QDebug \
 		gui/info_match.h \
 		debug/moc_predefs.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/bin/moc.exe
@@ -615,7 +614,6 @@ debug/moc_match.cpp: C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtWidgets/QWidget \
 		gui/info_match.h \
 		interfacce/personaggio.h \
 		personaggi/mostro.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/QDebug \
 		gui/statistiche_match_mostro.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtWidgets/QSizePolicy \
 		personaggi/mago.h \
@@ -749,7 +747,6 @@ debug/moc_negozio_personaggio.cpp: C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtWidg
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtWidgets/qgridlayout.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtWidgets/QGroupBox \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtWidgets/qgroupbox.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/QDebug \
 		gui/negozio_personaggio.h \
 		debug/moc_predefs.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/bin/moc.exe
@@ -880,7 +877,6 @@ debug/moc_negozio_widget.cpp: C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtWidgets/Q
 		personaggi/soldato.h \
 		personaggi/tank.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/QString \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/QDebug \
 		gui/negozio_personaggio.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtWidgets/QLabel \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtWidgets/qlabel.h \
@@ -1164,7 +1160,6 @@ debug/moc_storico.cpp: C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtWidgets/QWidget 
 		personaggi/soldato.h \
 		personaggi/tank.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/QString \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/QDebug \
 		gui/storico.h \
 		debug/moc_predefs.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/bin/moc.exe
@@ -1273,7 +1268,6 @@ debug/moc_controller.cpp: C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/QObject 
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qfiledevice.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtGui/qvector2d.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtGui/qtouchdevice.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/QDebug \
 		gui/main_window.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtWidgets/QMainWindow \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtWidgets/qmainwindow.h \
@@ -1595,7 +1589,6 @@ debug/moc_change_character.cpp: C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/QO
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtWidgets/QVBoxLayout \
 		contenitore.h \
 		interfacce/personaggio.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/QDebug \
 		gui/change_character.h \
 		debug/moc_predefs.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/bin/moc.exe
@@ -2110,7 +2103,6 @@ debug/moc_main_window.cpp: C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtWidgets/QMai
 		personaggi/soldato.h \
 		personaggi/tank.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/QString \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/QDebug \
 		gui/main_window.h \
 		debug/moc_predefs.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/bin/moc.exe
@@ -2358,7 +2350,6 @@ debug/moc_statistiche_match_mostro.cpp: C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/Q
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtWidgets/QGroupBox \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtWidgets/qgroupbox.h \
 		contenitore.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/QDebug \
 		gui/statistiche_match_mostro.h \
 		debug/moc_predefs.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/bin/moc.exe
@@ -2491,7 +2482,6 @@ debug/moc_statistiche_match_personaggio.cpp: C:/Qt/Qt5.9.5/5.9.5/mingw53_32/incl
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtWidgets/QGroupBox \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtWidgets/qgroupbox.h \
 		contenitore.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/QDebug \
 		gui/statistiche_match_personaggio.h \
 		debug/moc_predefs.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/bin/moc.exe
@@ -2624,7 +2614,6 @@ debug/main.o: main.cpp C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtWidgets/QApplica
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtWidgets/QMessageBox \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtWidgets/qmessagebox.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtWidgets/qdialog.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/QDebug \
 		gui/main_window.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtWidgets/QMainWindow \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtWidgets/qmainwindow.h \
@@ -2823,68 +2812,7 @@ debug/main.o: main.cpp C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtWidgets/QApplica
 		partita.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\main.o main.cpp
 
-debug/personaggio.o: interfacce/personaggio.cpp interfacce/personaggio.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/QDebug \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qdebug.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qalgorithms.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qglobal.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qconfig-bootstrapped.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qconfig.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qtcore-config.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qsystemdetection.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qprocessordetection.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qcompilerdetection.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qtypeinfo.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qsysinfo.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qlogging.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qflags.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qatomic.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qbasicatomic.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qatomic_bootstrap.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qgenericatomic.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qatomic_cxx11.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qatomic_msvc.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qglobalstatic.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qmutex.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qnumeric.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qversiontagging.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qhash.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qchar.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qiterator.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qlist.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qrefcount.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qarraydata.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qhashfunctions.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qpair.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qbytearraylist.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qbytearray.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qnamespace.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qstring.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qstringbuilder.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qstringlist.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qregexp.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qstringmatcher.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qmap.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qtextstream.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qiodevice.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qobject.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qobjectdefs.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qobjectdefs_impl.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qcoreevent.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qscopedpointer.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qmetatype.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qvarlengtharray.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qcontainerfwd.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qobject_impl.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qlocale.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qvariant.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qshareddata.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qvector.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qpoint.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qset.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qcontiguouscache.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qsharedpointer.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qsharedpointer_impl.h
+debug/personaggio.o: interfacce/personaggio.cpp interfacce/personaggio.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\personaggio.o interfacce\personaggio.cpp
 
 debug/arciere.o: personaggi/arciere.cpp personaggi/arciere.h \
@@ -2906,266 +2834,22 @@ debug/berserker.o: personaggi/berserker.cpp personaggi/berserker.h \
 
 debug/guaritore.o: personaggi/guaritore.cpp personaggi/guaritore.h \
 		interfacce/heal_interface.h \
-		interfacce/personaggio.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/QDebug \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qdebug.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qalgorithms.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qglobal.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qconfig-bootstrapped.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qconfig.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qtcore-config.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qsystemdetection.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qprocessordetection.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qcompilerdetection.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qtypeinfo.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qsysinfo.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qlogging.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qflags.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qatomic.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qbasicatomic.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qatomic_bootstrap.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qgenericatomic.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qatomic_cxx11.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qatomic_msvc.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qglobalstatic.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qmutex.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qnumeric.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qversiontagging.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qhash.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qchar.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qiterator.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qlist.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qrefcount.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qarraydata.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qhashfunctions.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qpair.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qbytearraylist.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qbytearray.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qnamespace.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qstring.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qstringbuilder.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qstringlist.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qregexp.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qstringmatcher.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qmap.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qtextstream.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qiodevice.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qobject.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qobjectdefs.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qobjectdefs_impl.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qcoreevent.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qscopedpointer.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qmetatype.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qvarlengtharray.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qcontainerfwd.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qobject_impl.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qlocale.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qvariant.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qshareddata.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qvector.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qpoint.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qset.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qcontiguouscache.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qsharedpointer.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qsharedpointer_impl.h
+		interfacce/personaggio.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\guaritore.o personaggi\guaritore.cpp
 
 debug/mago.o: personaggi/mago.cpp personaggi/mago.h \
 		interfacce/magic_interface.h \
-		interfacce/personaggio.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/QDebug \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qdebug.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qalgorithms.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qglobal.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qconfig-bootstrapped.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qconfig.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qtcore-config.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qsystemdetection.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qprocessordetection.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qcompilerdetection.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qtypeinfo.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qsysinfo.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qlogging.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qflags.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qatomic.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qbasicatomic.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qatomic_bootstrap.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qgenericatomic.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qatomic_cxx11.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qatomic_msvc.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qglobalstatic.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qmutex.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qnumeric.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qversiontagging.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qhash.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qchar.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qiterator.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qlist.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qrefcount.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qarraydata.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qhashfunctions.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qpair.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qbytearraylist.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qbytearray.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qnamespace.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qstring.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qstringbuilder.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qstringlist.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qregexp.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qstringmatcher.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qmap.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qtextstream.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qiodevice.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qobject.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qobjectdefs.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qobjectdefs_impl.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qcoreevent.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qscopedpointer.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qmetatype.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qvarlengtharray.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qcontainerfwd.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qobject_impl.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qlocale.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qvariant.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qshareddata.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qvector.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qpoint.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qset.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qcontiguouscache.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qsharedpointer.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qsharedpointer_impl.h
+		interfacce/personaggio.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\mago.o personaggi\mago.cpp
 
 debug/mostro.o: personaggi/mostro.cpp personaggi/mostro.h \
-		interfacce/personaggio.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/QDebug \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qdebug.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qalgorithms.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qglobal.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qconfig-bootstrapped.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qconfig.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qtcore-config.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qsystemdetection.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qprocessordetection.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qcompilerdetection.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qtypeinfo.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qsysinfo.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qlogging.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qflags.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qatomic.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qbasicatomic.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qatomic_bootstrap.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qgenericatomic.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qatomic_cxx11.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qatomic_msvc.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qglobalstatic.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qmutex.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qnumeric.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qversiontagging.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qhash.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qchar.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qiterator.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qlist.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qrefcount.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qarraydata.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qhashfunctions.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qpair.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qbytearraylist.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qbytearray.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qnamespace.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qstring.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qstringbuilder.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qstringlist.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qregexp.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qstringmatcher.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qmap.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qtextstream.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qiodevice.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qobject.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qobjectdefs.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qobjectdefs_impl.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qcoreevent.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qscopedpointer.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qmetatype.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qvarlengtharray.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qcontainerfwd.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qobject_impl.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qlocale.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qvariant.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qshareddata.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qvector.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qpoint.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qset.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qcontiguouscache.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qsharedpointer.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qsharedpointer_impl.h
+		interfacce/personaggio.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\mostro.o personaggi\mostro.cpp
 
 debug/paladino.o: personaggi/paladino.cpp personaggi/paladino.h \
 		interfacce/defence_interface.h \
 		interfacce/personaggio.h \
-		interfacce/heal_interface.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/QDebug \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qdebug.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qalgorithms.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qglobal.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qconfig-bootstrapped.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qconfig.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qtcore-config.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qsystemdetection.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qprocessordetection.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qcompilerdetection.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qtypeinfo.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qsysinfo.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qlogging.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qflags.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qatomic.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qbasicatomic.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qatomic_bootstrap.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qgenericatomic.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qatomic_cxx11.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qatomic_msvc.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qglobalstatic.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qmutex.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qnumeric.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qversiontagging.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qhash.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qchar.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qiterator.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qlist.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qrefcount.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qarraydata.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qhashfunctions.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qpair.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qbytearraylist.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qbytearray.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qnamespace.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qstring.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qstringbuilder.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qstringlist.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qregexp.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qstringmatcher.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qmap.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qtextstream.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qiodevice.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qobject.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qobjectdefs.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qobjectdefs_impl.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qcoreevent.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qscopedpointer.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qmetatype.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qvarlengtharray.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qcontainerfwd.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qobject_impl.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qlocale.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qvariant.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qshareddata.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qvector.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qpoint.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qset.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qcontiguouscache.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qsharedpointer.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qsharedpointer_impl.h
+		interfacce/heal_interface.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\paladino.o personaggi\paladino.cpp
 
 debug/soldato.o: personaggi/soldato.cpp personaggi/soldato.h \
@@ -3181,9 +2865,11 @@ debug/tank.o: personaggi/tank.cpp personaggi/tank.h \
 debug/partita.o: partita.cpp partita.h \
 		personaggi/mostro.h \
 		interfacce/personaggio.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/QDebug \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qdebug.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qalgorithms.h \
+		xml/dungeon.h \
+		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/QFile \
+		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qfile.h \
+		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qfiledevice.h \
+		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qiodevice.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qglobal.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qconfig-bootstrapped.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qconfig.h \
@@ -3205,47 +2891,31 @@ debug/partita.o: partita.cpp partita.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qmutex.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qnumeric.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qversiontagging.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qhash.h \
+		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qobject.h \
+		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qobjectdefs.h \
+		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qnamespace.h \
+		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qobjectdefs_impl.h \
+		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qstring.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qchar.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qiterator.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qlist.h \
+		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qbytearray.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qrefcount.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qarraydata.h \
+		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qstringbuilder.h \
+		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qlist.h \
+		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qalgorithms.h \
+		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qiterator.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qhashfunctions.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qpair.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qbytearraylist.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qbytearray.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qnamespace.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qstring.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qstringbuilder.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qstringlist.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qregexp.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qstringmatcher.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qmap.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qtextstream.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qiodevice.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qobject.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qobjectdefs.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qobjectdefs_impl.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qcoreevent.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qscopedpointer.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qmetatype.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qvarlengtharray.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qcontainerfwd.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qobject_impl.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qlocale.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qvariant.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qshareddata.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qvector.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qpoint.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qset.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qcontiguouscache.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qsharedpointer.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qsharedpointer_impl.h \
-		xml/dungeon.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/QFile \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qfile.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qfiledevice.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtXml/QtXml \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtXml/QtXmlDepends \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/QtCore \
@@ -3254,6 +2924,19 @@ debug/partita.o: partita.cpp partita.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qabstracteventdispatcher.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qeventloop.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qabstractitemmodel.h \
+		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qvariant.h \
+		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qmap.h \
+		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qdebug.h \
+		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qhash.h \
+		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qtextstream.h \
+		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qlocale.h \
+		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qshareddata.h \
+		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qvector.h \
+		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qpoint.h \
+		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qset.h \
+		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qcontiguouscache.h \
+		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qsharedpointer.h \
+		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qsharedpointer_impl.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qabstractnativeeventfilter.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qabstractproxymodel.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qabstractstate.h \
@@ -3393,68 +3076,7 @@ debug/partita.o: partita.cpp partita.h \
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\partita.o partita.cpp
 
 debug/contenitore.o: contenitore.cpp contenitore.h \
-		interfacce/personaggio.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/QDebug \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qdebug.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qalgorithms.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qglobal.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qconfig-bootstrapped.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qconfig.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qtcore-config.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qsystemdetection.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qprocessordetection.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qcompilerdetection.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qtypeinfo.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qsysinfo.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qlogging.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qflags.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qatomic.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qbasicatomic.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qatomic_bootstrap.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qgenericatomic.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qatomic_cxx11.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qatomic_msvc.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qglobalstatic.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qmutex.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qnumeric.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qversiontagging.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qhash.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qchar.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qiterator.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qlist.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qrefcount.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qarraydata.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qhashfunctions.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qpair.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qbytearraylist.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qbytearray.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qnamespace.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qstring.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qstringbuilder.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qstringlist.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qregexp.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qstringmatcher.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qmap.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qtextstream.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qiodevice.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qobject.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qobjectdefs.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qobjectdefs_impl.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qcoreevent.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qscopedpointer.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qmetatype.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qvarlengtharray.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qcontainerfwd.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qobject_impl.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qlocale.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qvariant.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qshareddata.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qvector.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qpoint.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qset.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qcontiguouscache.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qsharedpointer.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qsharedpointer_impl.h
+		interfacce/personaggio.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\contenitore.o contenitore.cpp
 
 debug/abilita_personaggio_match.o: gui/abilita_personaggio_match.cpp gui/abilita_personaggio_match.h \
@@ -3682,8 +3304,7 @@ debug/info_match.o: gui/info_match.cpp gui/info_match.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtWidgets/qlayoutitem.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtWidgets/qgridlayout.h \
 		interfacce/personaggio.h \
-		personaggi/mostro.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/QDebug
+		personaggi/mostro.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\info_match.o gui\info_match.cpp
 
 debug/match.o: gui/match.cpp gui/match.h \
@@ -3804,7 +3425,6 @@ debug/match.o: gui/match.cpp gui/match.h \
 		gui/info_match.h \
 		interfacce/personaggio.h \
 		personaggi/mostro.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/QDebug \
 		gui/statistiche_match_mostro.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtWidgets/QSizePolicy \
 		personaggi/mago.h \
@@ -3935,8 +3555,7 @@ debug/negozio_personaggio.o: gui/negozio_personaggio.cpp gui/negozio_personaggio
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtWidgets/qlayoutitem.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtWidgets/qgridlayout.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtWidgets/QGroupBox \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtWidgets/qgroupbox.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/QDebug
+		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtWidgets/qgroupbox.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\negozio_personaggio.o gui\negozio_personaggio.cpp
 
 debug/negozio_widget.o: gui/negozio_widget.cpp gui/negozio_widget.h \
@@ -4065,7 +3684,6 @@ debug/negozio_widget.o: gui/negozio_widget.cpp gui/negozio_widget.h \
 		personaggi/soldato.h \
 		personaggi/tank.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/QString \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/QDebug \
 		gui/negozio_personaggio.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtWidgets/QLabel \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtWidgets/qlabel.h \
@@ -4346,8 +3964,7 @@ debug/storico.o: gui/storico.cpp gui/storico.h \
 		personaggi/paladino.h \
 		personaggi/soldato.h \
 		personaggi/tank.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/QString \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/QDebug
+		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/QString
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\storico.o gui\storico.cpp
 
 debug/controller.o: controller/controller.cpp controller/controller.h \
@@ -4454,7 +4071,6 @@ debug/controller.o: controller/controller.cpp controller/controller.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qfiledevice.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtGui/qvector2d.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtGui/qtouchdevice.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/QDebug \
 		gui/main_window.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtWidgets/QMainWindow \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtWidgets/qmainwindow.h \
@@ -4849,7 +4465,6 @@ debug/dungeon.o: xml/dungeon.cpp xml/dungeon.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtXml/qtxmlversion.h \
 		personaggi/mostro.h \
 		interfacce/personaggio.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/QDebug \
 		xml/xml_item.h \
 		personaggi/arciere.h \
 		interfacce/dps_interface.h \
@@ -5073,8 +4688,7 @@ debug/taverna.o: xml/taverna.cpp xml/taverna.h \
 		personaggi/paladino.h \
 		personaggi/soldato.h \
 		personaggi/tank.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/QString \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/QDebug
+		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/QString
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\taverna.o xml\taverna.cpp
 
 debug/change_character.o: gui/change_character.cpp gui/change_character.h \
@@ -5195,8 +4809,7 @@ debug/change_character.o: gui/change_character.cpp gui/change_character.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtWidgets/qgroupbox.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtWidgets/QVBoxLayout \
 		contenitore.h \
-		interfacce/personaggio.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/QDebug
+		interfacce/personaggio.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\change_character.o gui\change_character.cpp
 
 debug/info_partita_storico.o: gui/info_partita_storico.cpp gui/info_partita_storico.h \
@@ -5704,8 +5317,7 @@ debug/main_window.o: gui/main_window.cpp gui/main_window.h \
 		personaggi/paladino.h \
 		personaggi/soldato.h \
 		personaggi/tank.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/QString \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/QDebug
+		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/QString
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\main_window.o gui\main_window.cpp
 
 debug/scegli_applicativo.o: gui/scegli_applicativo.cpp gui/scegli_applicativo.h \
@@ -5821,8 +5433,7 @@ debug/scegli_applicativo.o: gui/scegli_applicativo.cpp gui/scegli_applicativo.h 
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtWidgets/QSpacerItem \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtWidgets/QLabel \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtWidgets/qlabel.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtWidgets/qframe.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/QDebug
+		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtWidgets/qframe.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\scegli_applicativo.o gui\scegli_applicativo.cpp
 
 debug/statistiche_match_mostro.o: gui/statistiche_match_mostro.cpp gui/statistiche_match_mostro.h \
@@ -5949,8 +5560,7 @@ debug/statistiche_match_mostro.o: gui/statistiche_match_mostro.cpp gui/statistic
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtWidgets/QGridLayout \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtWidgets/QGroupBox \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtWidgets/qgroupbox.h \
-		contenitore.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/QDebug
+		contenitore.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\statistiche_match_mostro.o gui\statistiche_match_mostro.cpp
 
 debug/statistiche_match_personaggio.o: gui/statistiche_match_personaggio.cpp gui/statistiche_match_personaggio.h \
@@ -6080,8 +5690,7 @@ debug/statistiche_match_personaggio.o: gui/statistiche_match_personaggio.cpp gui
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/QObject \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtWidgets/QGroupBox \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtWidgets/qgroupbox.h \
-		contenitore.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/QDebug
+		contenitore.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\statistiche_match_personaggio.o gui\statistiche_match_personaggio.cpp
 
 debug/defence_interface.o: interfacce/defence_interface.cpp interfacce/defence_interface.h \
@@ -6338,8 +5947,7 @@ debug/storico_modello.o: xml/storico_modello.cpp xml/storico_modello.h \
 		personaggi/paladino.h \
 		personaggi/soldato.h \
 		personaggi/tank.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/QString \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/QDebug
+		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/QString
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\storico_modello.o xml\storico_modello.cpp
 
 debug/xml_item.o: xml/xml_item.cpp xml/xml_item.h \
@@ -6384,40 +5992,7 @@ debug/xml_item.o: xml/xml_item.cpp xml/xml_item.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qrefcount.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qnamespace.h \
 		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qarraydata.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qstringbuilder.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/QDebug \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qdebug.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qalgorithms.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qhash.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qiterator.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qlist.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qhashfunctions.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qpair.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qbytearraylist.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qstringlist.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qregexp.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qstringmatcher.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qmap.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qtextstream.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qiodevice.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qobject.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qobjectdefs.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qobjectdefs_impl.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qcoreevent.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qscopedpointer.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qmetatype.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qvarlengtharray.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qcontainerfwd.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qobject_impl.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qlocale.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qvariant.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qshareddata.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qvector.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qpoint.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qset.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qcontiguouscache.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qsharedpointer.h \
-		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qsharedpointer_impl.h
+		C:/Qt/Qt5.9.5/5.9.5/mingw53_32/include/QtCore/qstringbuilder.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\xml_item.o xml\xml_item.cpp
 
 debug/moc_abilita_personaggio_match.o: debug/moc_abilita_personaggio_match.cpp 

@@ -2,9 +2,9 @@
 
 bool Artificiere::increaseLevel(unsigned int newExpPoint){//newExpPoint guadagnati dalla vittoria della battaglia
   if(Personaggio::increaseLevel(newExpPoint) == true){
-    increaseMaxHealth(10*getLevel());
+    increaseMaxHealth(30*(getLevel()-1));
     increaseArmor(3*getLevel());
-    increaseAttack(20*getLevel());
+    increaseAttack(13*(getLevel()-1));
     increaseProbCritico();
     increaseMaxMana(30*getLevel());
     resetMana();
@@ -31,7 +31,7 @@ int Artificiere::abilita3()
 }
 
 unsigned int Artificiere::bombardaMaxima(){
-    unsigned int dmg = getBaseAttack() + 10*getLevel() + 2*critico();
+    unsigned int dmg = getBaseAttack() + 6*getLevel() + 2*critico();
     if(isThrowable(getCostoA1()) == true){
         setMana(getCostoA1());
         return dmg;
@@ -40,7 +40,7 @@ unsigned int Artificiere::bombardaMaxima(){
 }
 
 unsigned int Artificiere::rainOfSpells(){
-    unsigned int dmg = getBaseAttack() + 15*getLevel() + 8*critico();
+    unsigned int dmg = getBaseAttack() + 10*getLevel() + 8*critico();
     if(isThrowable(getCostoA2()) == true){
         setMana(getCostoA2());
         return dmg;
@@ -48,7 +48,7 @@ unsigned int Artificiere::rainOfSpells(){
         throw 5;
 }
 
-unsigned int Artificiere::distruzione(){ //shotta ma ti uccide
+unsigned int Artificiere::distruzione(){
     unsigned int dmg = 100;
     if(isThrowable(getCostoA3()) == true){
         setMana(getCostoA3());

@@ -7,9 +7,6 @@
 #include "xml_item.h"
 #include "dungeon_item.h"
 
-#include <QDebug>
-
-
 
 class Dungeon{
 
@@ -27,12 +24,6 @@ public:
 
     //costruttore: usa QXml per recuperare i dati dalla risorsa
     Dungeon();
-
-    /*void stampaTutti()const{
-        for(auto it= v.begin(); it!=v.end(); it++){
-            it->stampaDungeonItem();
-        }
-    }*/
 
     //trova il mostro da combattere alla i-esima battaglia
     Mostro* challengeMonster(int);

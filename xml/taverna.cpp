@@ -9,24 +9,14 @@ Taverna::Taverna(){
         QDomDocument document;
         document.setContent(&file);
         QDomElement rootElement= document.documentElement();
-        qDebug() << "you enter the " << rootElement.tagName();
         readTheRoom(rootElement);
 
-        //close file
         file.close();
     }
-    else{//segnalo errore
-        qDebug() << "you could not find the tavern, you are lost in the forest, may the gods have mercy on your soul";
-    }
 }
 
-void Taverna::stampaTutti()const{
-    for(auto it= v.begin(); it!=v.end(); it++){
-        it->stampaItem();
-    }
-}
 
-//ritorna tutti i personaggi di livello liv (ok?)
+//ritorna tutti i personaggi di livello liv
 std::vector<XmlItem> Taverna::trovaTuttiLivello(int liv){
     std::vector<XmlItem> res;
     for(int i= (liv-1)*3; i<liv*3; i++){
@@ -50,7 +40,7 @@ XmlItem Taverna::ingaggia(QString nome, int prezzo){
     return res;
 }
 
-//legge un "adventuriero" da "taverna" (file xml)
+//legge un "avventuriero" da "taverna" (file xml)
 void Taverna::readTheRoom(const QDomElement & root){
     //entra in primo figlio (adventuriero)
     QDomElement adventurer=root.firstChild().toElement();

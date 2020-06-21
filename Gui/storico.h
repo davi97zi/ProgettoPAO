@@ -26,7 +26,6 @@ private:
     QVBoxLayout* vertical;
     QLabel* titolo;
     QTableWidget* table;
-    //QPushButton* moreInfo;
     QPushButton* indietro;
 
 public:

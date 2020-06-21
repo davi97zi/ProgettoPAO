@@ -3,7 +3,6 @@
 
 #include <QObject>
 #include <QMessageBox>
-#include <QDebug>
 #include "../gui/main_window.h"
 #include "../gui/negozio_widget.h"
 #include "../gui/storico.h"
@@ -37,7 +36,6 @@ public:
     void monsterAttack();
     void endRoundActions();
     void creaNuovoNegozio();
-    //void aggiornaDatiPersonaggio();
     void setVistaCambiaPersonaggio();
 
 public slots:

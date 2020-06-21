@@ -3,10 +3,6 @@
 
 #include "interfacce/personaggio.h"
 
-//per test
-#include <iostream>
-#include <QDebug>
-
 
 class Contenitore{
 friend class Iteratore;
@@ -19,7 +15,6 @@ private:
         Nodo(): info(0), next(0), prev(0) {}
         Nodo(Personaggio* i, Nodo* n, Nodo*p=0): info(i), next(n), prev(p) {}
         ~Nodo(){
-            qDebug() << "Nodi eliminati";
             if(info)
                 delete info;
             if(next)
@@ -36,9 +31,8 @@ public:
     public:
         Iteratore(Nodo* s=0): punt(s) {}
         Iteratore(const Iteratore& it): punt(it.punt) {}
-        //IL DISTRUTTORE NON SERVE
-        Personaggio& operator*() const; //*p
-        Personaggio* operator->() const; //p
+        Personaggio& operator*() const;
+        Personaggio* operator->() const;
         Iteratore& operator++();
         Iteratore& operator--();
         bool operator==(const Iteratore&) const;
@@ -46,11 +40,7 @@ public:
         Iteratore& operator=(const Iteratore&);
     };
     Contenitore(): first(0) {}
-    /*
-    ~Contenitore(){
-        qDebug() << "Contenitore eliminato";
-        delete first;
-    }*/
+
     void addNodo(Personaggio*);
     Iteratore deleteNodo(Iteratore&);
     Iteratore begin() const;
@@ -61,8 +51,5 @@ public:
 
 
 };
-
-//PER TEST
-std::ostream& operator<<(std::ostream&, Contenitore);
 
 #endif // CONTENITORE_H

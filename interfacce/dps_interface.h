@@ -2,8 +2,8 @@
 #define DPS_INTERFACE_H
 
 #include "personaggio.h"
-#include <cstdlib> //per rand()
-#include <ctime> //per time()
+#include <cstdlib>
+#include <ctime>
 
 class DpsInterface: virtual public Personaggio{
 private:

@@ -1,11 +1,10 @@
 #include "mago.h"
-#include <QDebug>
 
 bool Mago::increaseLevel(unsigned int newExpPoint){//newExpPoint guadagnati dalla vittoria della battaglia
   if(Personaggio::increaseLevel(newExpPoint) == true){
-    increaseMaxHealth(5*getLevel());
+    increaseMaxHealth(15*(getLevel()-1));
     increaseArmor(3*getLevel());
-    increaseAttack(6*getLevel());
+    increaseAttack(8*(getLevel()-1));
     increaseMaxMana(15*getLevel());
     resetMana();
     return true;
@@ -41,7 +40,7 @@ unsigned int Mago::expelliarmus(){ //abilità1, sempre disponibile
         throw 5;
 }
 
-unsigned int Mago::expectoPatronum(){ //abilità2, costa 2 turni, fa danni e guarisce il mago
+unsigned int Mago::expectoPatronum(){ //abilità2, fa danni e guarisce il mago
     unsigned int dmg = getBaseAttack() + 18*getLevel();
     if(isThrowable(getCostoA2()) == true){
         receiveHealing(5*getLevel(), false); //guarisce il mago
@@ -52,7 +51,7 @@ unsigned int Mago::expectoPatronum(){ //abilità2, costa 2 turni, fa danni e gua
 }
 
 unsigned int Mago::avadaKedavra(){	//abilità speciale, costa 3 turni, uccide in un colpo solo il nemico
-    unsigned int dmg = getBaseAttack() + 1000; //indicativo, deve oneshottare il nemico
+    unsigned int dmg = getBaseAttack() + 160;
     if(isThrowable(getCostoA3()) == true){
         setMana(getCostoA3());
         return dmg;

@@ -6,7 +6,7 @@ AbilitaPersonaggioMatch::AbilitaPersonaggioMatch(QWidget* parent): QWidget(paren
     abilita->setHorizontalSpacing(6);
 
     titolo = new QLabel("ABILITÀ");
-    titolo->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed); //horizontal: preferred, vertical: fixed
+    titolo->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
     titolo->setAlignment(Qt::AlignCenter);
 
     baseAttack = new QPushButton("BaseAttack");
@@ -33,18 +33,4 @@ AbilitaPersonaggioMatch::AbilitaPersonaggioMatch(QWidget* parent): QWidget(paren
     abilita->addWidget(abilita3, 2, 1, Qt::AlignRight);
 
     setLayout(abilita);
-}
-
-//funzione gestita dal controller
-void AbilitaPersonaggioMatch::handleButton(){
-    QPushButton* button = dynamic_cast<QPushButton*>(sender()); //QPushButton* button = (QPushButton*)sender();
-    if(button->objectName() == "baseAttack"){
-        //richiama funzione getBaseAttack() + receiveDmg() del mostro
-    } else if(button->objectName() == "abilita1"){
-        //richiama funzione abilita1() del personaggio + receiveDmg() del mostro
-    } else if(button->objectName() == "abilita2"){
-        //richiama funzione abilita2() del personaggio + receiveDmg() del mostro
-    } else if(button->objectName() == "abilita3"){ //basterebbe solo else
-        //richiama funzione abilita3() del personaggio + receiveDmg() del mostro
-    }
 }

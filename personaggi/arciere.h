@@ -12,9 +12,7 @@ protected:
     virtual bool increaseLevel(unsigned int newExpPoint);
 
 public:
-    /***Il costruttore richiama in automatico il costruttore standard di DpsInterface, che inizializza
-    ProbCritico sempre a 20, valutare se togliere il parametro in dps o renderlo variabile***/
-    Arciere(string nome, unsigned int ex): Personaggio (100, 15, 1, 8, "Arciere", nome, 0), DpsInterface(10){
+    Arciere(string nome, unsigned int ex): Personaggio (70, 15, 1, 8, "Arciere", nome, 0), DpsInterface(10){
         increaseLevel(ex);
     }
     virtual ~Arciere();
@@ -24,8 +22,5 @@ public:
     int abilita2();
     int abilita3();
 };
-
-//PER TEST
-std::ostream& operator<<(std::ostream&, const Arciere&);
 
 #endif // ARCIERE_H

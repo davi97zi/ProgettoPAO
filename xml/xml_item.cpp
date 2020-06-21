@@ -25,13 +25,6 @@ XmlItem::XmlItem(){}
 
 XmlItem::XmlItem(QString n, QString t, int l, int p): nome(n), tipo(t), livello(l), prezzo(p){}
 
-void XmlItem::stampaItem() const{
-    qDebug() << "avventuriero: " << nome;
-    qDebug() << "classe: " << tipo;
-    qDebug() << "livello: " << livello;
-    qDebug() << "paga richiesta: " << prezzo;
-}
-
 QString XmlItem::getNome() const{
     return nome;
 }
@@ -49,7 +42,6 @@ int XmlItem::getPrezzo() const{
 }
 
 Personaggio *XmlItem::convertiInPersonaggio() const{
-    qDebug()<<"entra in convertiinpersonaggio";
     Personaggio* pers=0;
     switch(convertToInt()){
         case 0: pers= new Arciere(getNome().toStdString(), (getLivello()-1)*100); break;

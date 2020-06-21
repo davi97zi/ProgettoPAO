@@ -16,5 +16,4 @@ InfoPersonaggioStorico::InfoPersonaggioStorico(QString n, QString t, QString l, 
     container->addWidget(group);
 
     setLayout(container);
-    //setLayout(lay);
 }

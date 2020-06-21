@@ -32,7 +32,6 @@ private:
     QPushButton* abilita1;
     QPushButton* abilita2;
     QPushButton* abilita3;
-    //Personaggio* p;
 
 public:
     StatisticheMatchPersonaggio(){}

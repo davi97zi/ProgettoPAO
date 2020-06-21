@@ -21,7 +21,6 @@ void Partita::seppellisci(){
         if(it->getDeathState()){
             it=squadra.deleteNodo(it);
             --it;
-            //salva i dati per lo storico return QDomElement???
         }
     }
 }
@@ -44,7 +43,6 @@ void Partita::resuscita(int i){
 
 void Partita::aggiungiPersonaggio(Personaggio *p){
     squadra.addNodo(p);
-    //stampaSquadra();
 }
 
 Contenitore Partita::getSquadra(){
@@ -70,7 +68,6 @@ void Partita::cambiaPersonaggio(string s){
 //tutta la squadra è morta -> ritorna true se tutta la squadra è stata sconfitta (il mostro ha vinto), else altrimenti (c'è qualche personaggio ancora vivo)
 bool Partita::squadraSconfitta(){
     for(Contenitore::Iteratore i= squadra.begin(); i!=squadra.end(); ++i){
-        qDebug() << "death state personaggio: " << i->getDeathState();
         if(!i->getDeathState())
             return false;
     }
@@ -134,14 +131,6 @@ void Partita::setTurniA3(int a)
 {
     personaggioInUso->setTurniAbilita3(a);
 }
-/*
-void Partita::resetArmor()
-{
-    qDebug()<<"entra da resetArmor";
-    dynamic_cast<DefenceInterface*>(&(*personaggioInUso))->setDefaultArmor();
-    qDebug()<<"esce da resetArmor";
-}
-*/
 
 int Partita::getHealthMostro() const{
     return m->getHealth();

@@ -1,28 +1,17 @@
 #include "negozio_widget.h"
-#include <QDebug>
 
 Negozio_widget::Negozio_widget(std::vector<XmlItem> assoldabili, int m, bool inizio, QWidget *parent) : QWidget(parent), monete(m){
-    //per popolare dovrei -> recuperare il LIVELLO/BATTAGLIA
-
-    //chiedere al controller-> dammi i tre personaggi che posso scegliere in base al livello in cui sono
-
-    //usa il risultato per effettuare il set dei 3 negozio_personaggio *
     for(int i=0; i<3; i++){
         setPersonaggioNegozio(i,
-            assoldabili[i].getNome(),
-            assoldabili[i].getTipo(),
-            assoldabili[i].getLivello(),
-            assoldabili[i].getPrezzo());
+            assoldabili[static_cast<unsigned int>(i)].getNome(),
+            assoldabili[static_cast<unsigned int>(i)].getTipo(),
+            static_cast<int>(assoldabili[static_cast<unsigned int>(i)].getLivello()),
+            assoldabili[static_cast<unsigned int>(i)].getPrezzo());
     }
 
-    //faccio da passacarte x negozioPersonaggio (quale personaggio scelgo)
     connect(primo, SIGNAL(personaggioAcquistato(int)), this, SLOT(stampaDaNegozio(int)));
     connect(secondo, SIGNAL(personaggioAcquistato(int)), this, SLOT(stampaDaNegozio(int)));
     connect(terzo, SIGNAL(personaggioAcquistato(int)), this, SLOT(stampaDaNegozio(int)));
-
-
-
-    //chiedere al controller-> quanti soldi we got? VA AGGIORNATO DOPO UN ACQUISTO! (tramite segnale dal controller)
 
     //creo indicazione dei soldi posseduti
     soldi= new QLabel(QString::number(m)+" soldi disponibili");
@@ -30,18 +19,13 @@ Negozio_widget::Negozio_widget(std::vector<XmlItem> assoldabili, int m, bool ini
     //bottone di proseguimento-> premi per lasciare la taverna
     prosegui= new QPushButton("prosegui");
     connect(prosegui, SIGNAL(released()), this, SLOT(proseguiMatch()));
-    //set titolo in qlabel NB to do on the WINDOW AS WELL!
     QLabel * titolo= new QLabel("Taverna");
-    //descrivi la pagina
+
     QLabel * descrizione= new QLabel("Ben arrivato alla taverna, qui puoi assoldare avventurieri per il tuo team. "
                                      "\nGuardati attorno e scegli un compagno di avventure.\n hai: ");
-    //
 
-
-    //set cssNames
     titolo->setObjectName("titolo");
     descrizione->setObjectName("descrizione");
-    //prova a vedere un paio di effetti
     titolo->setStyleSheet("QLabel#titolo{color:blue;}");
 
     descrizione->setStyleSheet("QLabel#descrizione{text-align: center;"
@@ -64,7 +48,6 @@ Negozio_widget::Negozio_widget(std::vector<XmlItem> assoldabili, int m, bool ini
         lay->addWidget(prosegui, 0, Qt::AlignCenter);
     }
 
-    //imposta il layout principale
     setLayout(lay);
 }
 
@@ -83,7 +66,6 @@ void Negozio_widget::setPersonaggioNegozio(int quale, QString n, QString t, int 
 }
 
 void Negozio_widget::stampaDaNegozio(int i){
-    qDebug() << "2) negozio ha ricevuto " << i;
     emit personaggioAcquistato(i);
 }
 

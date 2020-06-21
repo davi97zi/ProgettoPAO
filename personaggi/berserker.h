@@ -11,11 +11,8 @@ private:
 protected:
     virtual bool increaseLevel(unsigned int newExpPoint);
 public:
-    /***Il costruttore richiama in automatico il costruttore standard di DpsInterface, che inizializza
-    ProbCritico sempre a 20, valutare se togliere il parametro in dps***/
-    //max serve per inizializzare maxarmor di defenceinterface
     Berserker(string nome, unsigned int ex)
-      : Personaggio (120, 6, 1, 50, "Berserker", nome, 0), DpsInterface(5), DefenceInterface(50){
+      : Personaggio (90, 22, 1, 20, "Berserker", nome, 0), DpsInterface(5), DefenceInterface(50){
             increaseLevel(ex);
     }
     virtual ~Berserker() {}

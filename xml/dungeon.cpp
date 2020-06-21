@@ -9,22 +9,13 @@ Dungeon::Dungeon(){
         QDomDocument document;
         document.setContent(&file);
         QDomElement rootElement= document.documentElement();
-        qDebug() << "you enter the " << rootElement.tagName();
         fillTheDungeon(rootElement);
 
         //close file
         file.close();
     }
-    else{//segnalo errore
-        qDebug() << "you got lost the dungeon is on the other side of the forest!";
-    }
 }
 
-/*void stampaTutti()const{
-    for(auto it= v.begin(); it!=v.end(); it++){
-        it->stampaDungeonItem();
-    }
-}*/
 
 //trova il mostro da combattere alla i-esima battaglia
 Mostro* Dungeon::challengeMonster(int i){

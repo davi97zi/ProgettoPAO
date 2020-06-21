@@ -1,5 +1,4 @@
 #include "personaggio.h"
-#include <QDebug>
 
 void Personaggio::increaseMaxHealth(unsigned int addVal){
     maxHealth+= addVal;
@@ -18,14 +17,13 @@ void Personaggio::setLevel(unsigned int newLevel){
         level += newLevel;
 } //usato da increaselevel (serve ad accedere al campo privato)
 
-void Personaggio::setHealth(int damage){//proposta da healInterf:(int+)= guarigione; (int-)=colpo subito; 0=Dead==true
+void Personaggio::setHealth(int damage){//(int+)= guarigione; (int-)=colpo subito; 0=Dead==true
     health=health + damage;
-    if(static_cast<int>(maxHealth)< health){ //NB correzione funzione per evitare OVERHEALING
+    if(static_cast<int>(maxHealth)< health){
         health=static_cast<int>(maxHealth);
     }
     if(health<=0){
         kill();
-        qDebug() << "setHealth::KILL = " << getDeathState();
         health=0;
     }
 }
@@ -40,11 +38,10 @@ void Personaggio::setArmor(int arm)
 }
 
 
-int Personaggio::reducedDamageWithArmor(int damage) const{ //restituisce il danno ridotto dall'armatura (in defence interface usa maxarmor, invece che armor)
+int Personaggio::reducedDamageWithArmor(int damage) const{ //restituisce il danno ridotto dall'armatura
     return damage - (damage*static_cast<int>(armor))/100;
 }
 
-//proposta da healIntef
 //per riportare in vita un personaggio, va chiamato DURANTE UNA BATTAGLIA
 void Personaggio::resurrect(){
     dead=false;
@@ -90,18 +87,13 @@ void Personaggio::receiveDamage(int damage){//utilizza SetHealth e ReducedDamage
     setHealth(dmg);
 }
 
-//proposte da healInterf
-bool Personaggio::getDeathState() const {return dead;}//in lettura, per il controller
+bool Personaggio::getDeathState() const {return dead;}
 
-//gain=hp guarita, divineIntervention=is a REZ or NOT
-void Personaggio::receiveHealing(unsigned int gain, bool divineIntervention){//chiamato da controller (O da contenitore?) per aumentare Health (hp= hp+gain) tramite setHP
-    if(dead == divineIntervention){//valori concordanti, guarigione NORM o REZ
+void Personaggio::receiveHealing(unsigned int gain, bool divineIntervention){
+    if(dead == divineIntervention){
         setHealth(static_cast<int>(gain));
         if(dead)
             resurrect();
-    }
-    else{//valori discordanti
-        //
     }
 }
 

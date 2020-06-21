@@ -2,9 +2,9 @@
 
 bool Soldato::increaseLevel(unsigned int newExpPoint){
     if(Personaggio::increaseLevel(newExpPoint) == true){
-        increaseMaxHealth(5*getLevel());
+        increaseMaxHealth(22*(getLevel()-1));
         increaseArmor(4*getLevel());
-        increaseAttack(5*getLevel());
+        increaseAttack(5*(getLevel()-1));
         increaseProbCritico();
         return true;
     }
@@ -20,15 +20,14 @@ int Soldato::abilita1()
 
 int Soldato::abilita2()
 {
-    return static_cast<int>(this->fendente())*(-1);
+    return static_cast<int>(this->coltellata())*(-1);
 }
 
 int Soldato::abilita3()
 {
-    return static_cast<int>(this->coltellata())*(-1);
+    return static_cast<int>(this->fendente())*(-1);
 }
 
-//IL fatto di impedire di usare un metodo per un tot di turni si fa con la GUI
 unsigned int Soldato::pugnoFurtivo() const{
     return 2*getBaseAttack()*critico()+getLevel();
 }
@@ -41,8 +40,3 @@ unsigned int Soldato::coltellata() const{
     return 2*getBaseAttack()*critico()+getLevel()*3;
 }
 
-//PER TEST
-std::ostream &operator<<(std::ostream &os, const Soldato &s)
-{
-    return os<<"arm= "<<s.getArmor()<<" bAtt= "<<s.getBaseAttack()<<" Exp= "<<s.getExpPoint()<<" lvl= "<<s.getLevel();
-}

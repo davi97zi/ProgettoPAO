@@ -24,7 +24,6 @@ public:
 
 public slots:
     void handleButton();
-    void remakeMain();
 
 signals:
     void signalBottone(QString);

@@ -2,19 +2,19 @@
 
 bool Mostro::increaseLevel(unsigned int ex){
     if(Personaggio::increaseLevel(ex)){
-        increaseMaxHealth(25*getLevel());
+        increaseMaxHealth(60*(getLevel()-1));
         increaseArmor(5*getLevel());
-        increaseAttack(5*getLevel());
+        increaseAttack(10*(getLevel()-1));
         return true;
     }
     else
         return false;
 }
 
-//LOOT! functions
+
 unsigned int Mostro::giveUpExp()const{
     if(Personaggio::getDeathState())
-        return getExpPoint(); //? i guess
+        return getExpPoint();
     else
         return 0;
 }
@@ -26,7 +26,7 @@ unsigned int Mostro::giveUpCoins()const{
         return 0;
 }
 
-//possibile funzione che ritorni entrambi? probably wont be used
+
 unsigned int * Mostro::giveUpLoot()const{
     if(Personaggio::getDeathState()){
     unsigned int* loot= new unsigned int;
@@ -57,17 +57,17 @@ int Mostro::abilita3()
 
 //abilità
 unsigned int Mostro::attaccoSemplice(){
-    unsigned int x= getBaseAttack()*2; // NB evitare le divisioni! al lvl 1 possono voler dire che si fanno 0 danni!
+    unsigned int x= getBaseAttack()*2;
     return x;
 }
 
 unsigned int Mostro::morsoVampirico(){
-    unsigned int x= getBaseAttack()*getLevel();
+    unsigned int x= getBaseAttack()+getLevel()*15;
     receiveHealing(x);
     return x;
 }
 
 unsigned int Mostro::attaccoPotente(){
-    unsigned int x= getBaseAttack()*2*(getLevel());
+    unsigned int x= getBaseAttack()+(getLevel()*25);
     return x;
 }

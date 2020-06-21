@@ -1,35 +1,3 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <storico>
- <partita id="0">
-  <data>sab giu 20 17:56:04 2020</data>
-  <stato>Vittoria</stato>
-  <battaglia>5</battaglia>
-  <oro>17</oro>
-  <squadra>
-   <avventuriero>
-    <nome>tom</nome>
-    <tipo>Tank</tipo>
-    <livello>7</livello>
-    <prezzo>0</prezzo>
-   </avventuriero>
-   <avventuriero>
-    <nome>jerryone</nome>
-    <tipo>Mago</tipo>
-    <livello>9</livello>
-    <prezzo>0</prezzo>
-   </avventuriero>
-   <avventuriero>
-    <nome>tom</nome>
-    <tipo>Artificiere</tipo>
-    <livello>10</livello>
-    <prezzo>0</prezzo>
-   </avventuriero>
-   <avventuriero>
-    <nome>Taako Taaco</nome>
-    <tipo>Arciere</tipo>
-    <livello>10</livello>
-    <prezzo>0</prezzo>
-   </avventuriero>
-  </squadra>
- </partita>
 </storico>

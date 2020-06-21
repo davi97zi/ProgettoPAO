@@ -18,7 +18,6 @@ private:
 
 public:
     AbilitaPersonaggioMatch(QWidget* parent=0);
-    void handleButton();
 };
 
 #endif // ABILITA_PERSONAGGIO_MATCH_H

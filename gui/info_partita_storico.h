@@ -11,7 +11,7 @@ class InfoPartitaStorico : public QWidget
 
 public:
     explicit InfoPartitaStorico(QWidget *parent = nullptr);
-    void addPersonaggio(QString, QString, QString, int);//add 1 personaggio?
+    void addPersonaggio(QString, QString, QString, int);
 
 private:
     QVBoxLayout * lay;

@@ -6,22 +6,17 @@
 #include "interfacce/magic_interface.h"
 #include "contenitore.h"
 
-#include <iostream>
-#include <QDebug>
 
 class Partita{
 private:
     Contenitore squadra;
     Contenitore::Iteratore personaggioInUso;
-
     //mostro preso da xml con una funzione
     Mostro *m;
     unsigned int oro;
     unsigned int battaglia;
-    //turno?
 
     void incrementaLvl(unsigned int);
-
     void ottieniBottino(unsigned int);
 
     //funzione chiamata DA compraPersonaggio
@@ -49,7 +44,6 @@ public:
     void deleteMostro();
     Contenitore getSquadra();
 
-    //MANCA DEFINIZIONE
     void cambiaMostro(Mostro*);
 
     int getHealthMostro() const;
@@ -97,14 +91,6 @@ f3: dice se la battaglia è in corso o è finita?
 
     int getTurnoA3() const;
     void setTurniA3(int);
-    //void resetArmor();
-
-    //PER TEST: da togliere
-    void stampaSquadra() const{
-        qDebug()<<"stampaSQQ";
-        std::cout<<squadra;
-    }
-
     void gestioneTurniAbilita3();
 
 };

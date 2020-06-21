@@ -14,8 +14,8 @@ protected:
     virtual void increaseArmor(unsigned int valAdd);
 
 public:
-    DefenceInterface(unsigned int m): turni(0), maxArmor(m){}//NB turni dovrebbe essere zero?
-    virtual void buffArmor(); //incrementa l'armatura
+    DefenceInterface(unsigned int m): turni(0), maxArmor(m){}
+    virtual void buffArmor(); //incrementa l'armatura (abilita')
     void setDefaultArmor();
 
 };

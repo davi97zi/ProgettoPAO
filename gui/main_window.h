@@ -10,9 +10,6 @@
 #include "storico.h"
 
 
-
-
-
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -23,13 +20,6 @@ private:
 public:
     MainWindow(QWidget* central=new ScegliApplicativo, QWidget *parent = 0);
     void resetCentralWidget();
-
-public slots:
-    //void handleButton();
-    //void remakeMain();
-/*
-signals:
-    void signalBottone(QString);*/
 
 };
 

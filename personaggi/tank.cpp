@@ -2,9 +2,9 @@
 
 bool Tank::increaseLevel(unsigned int newExpPoint){
     if(Personaggio::increaseLevel(newExpPoint) == true){
-        increaseMaxHealth(20*getLevel());
-        increaseArmor(10*getLevel());
-        increaseAttack(5*getLevel());
+        increaseMaxHealth(10*(getLevel()-1));
+        increaseArmor(7*getLevel());
+        increaseAttack(5*(getLevel()-1));
         return true;
     }
     else
@@ -29,6 +29,6 @@ unsigned int Tank::schiacciasassi() const{
     return (getBaseAttack() + 2*(getMaxHealth()-static_cast<unsigned int>(getHealth()))); //danni in base alla vita mancante: meno vita (health) + danni
 }
 unsigned int Tank::jackhammer() const{
-    return (getBaseAttack() + 2*(getArmor())); //danni in base all'armor: +armor (base, no MaxArmor) + danni
+    return (getBaseAttack() + (getArmor())); //danni in base all'armor: +armor (base, no MaxArmor) + danni
 }
 

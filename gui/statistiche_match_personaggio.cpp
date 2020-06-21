@@ -1,5 +1,4 @@
 #include "statistiche_match_personaggio.h"
-#include <QDebug>
 
 StatisticheMatchPersonaggio::StatisticheMatchPersonaggio(int h, int ba, int a, QString n, int l, int m, QWidget* parent): QWidget(parent) {
     tot = new QHBoxLayout;
@@ -50,20 +49,6 @@ StatisticheMatchPersonaggio::StatisticheMatchPersonaggio(int h, int ba, int a, Q
     setLayout(tot);
 }
 
-/*controller
-if(p->getTipoPersonaggio() == "Mago"){
-    Mago* m;
-    auto pMana = QString::number(m->getMana());
-
-    mana = new QLabel("Mana: " + pMana);
-} else if(p->getTipoPersonaggio() == "Artificiere"){
-    Artificiere* a;
-    auto pMana = QString::number(a->getMana());
-
-    mana = new QLabel("Mana: " + pMana);
-} else
-    mana = new QLabel("Mana: 0");*/
-
 QGridLayout* StatisticheMatchPersonaggio::getAbilities(){
     QGridLayout* abilita = new QGridLayout();
     abilita->setVerticalSpacing(6);
@@ -103,13 +88,11 @@ QGridLayout* StatisticheMatchPersonaggio::getAbilities(){
 }
 
 void StatisticheMatchPersonaggio::handleButton(){
-    QPushButton* button = dynamic_cast<QPushButton*>(sender()); //QPushButton* button = (QPushButton*)sender();
-    qDebug() << button->objectName();
+    QPushButton* button = dynamic_cast<QPushButton*>(sender());
     if(button->objectName() != "cambiaPersonaggio"){
         emit eseguiAbilita(button->objectName());
     }else{
         emit cambiaPersonaggioBtn(button->objectName());
-        qDebug()<<"entra nell'else di handle button";
     }
 }
 

@@ -11,14 +11,11 @@ private:
 protected:
     virtual bool increaseLevel(unsigned int newExpPoints);
 public:
-    //NB consiglio di aggiungere PREZZO QUI COME ESPLICITO!!!
-    Guaritore(string nome, unsigned int ex): Personaggio(80, 10, 1, 10, "Guaritore", nome, 0), HealInterface(){
+    Guaritore(string nome, unsigned int ex): Personaggio(95, 8, 1, 10, "Guaritore", nome, 0), HealInterface(){
         increaseLevel(ex);
     }
 
-    virtual unsigned int useBlessing();//ridef da healIterf
-
-    //add or get juice
+    virtual unsigned int useBlessing();
     virtual unsigned int pray(bool use);
 
 
